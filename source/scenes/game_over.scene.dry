@@ -1,4 +1,4 @@
-title: Game Over.
+title: 게임 끝
 new-page: true
 go-to: eg_menu
 audio: music/TchaikovskyQuartet2.ogg
@@ -55,166 +55,166 @@ if (Q.monthly_inflation < 3) {
 }
 !}
 
-= End
+= 게임 끝
 
 @eg_menu
 
 - #endings
-- @end_game: End game.
+- @end_game: 게임 끝.
 
 @ca_held
-title: Constituent Assembly elections held!
+title: 제헌의회 선거 실시!
 view-if: ca_held
 tags: endings
 go-to: eg_menu
 
-The Constituent Assembly elections have been held! So much is riding on this new assembly to solve all of Russia's problems.
+마침내 제헌의회 선거가 실시되었습니다! 러시아가 마주한 산적한 난제들을 해결할 이 새로운 의회에 실로 막중한 기대와 책임이 실려 있습니다.
 
 @red_october
-title: Red October
+title: 붉은 10월
 view-if: revolutionary_victory and player_party = "b"
 tags: endings
 go-to: eg_menu
 
-The Bolshevik Revolution has won! Now, it is up to the Bolsheviks to bring forth the true socialist revolution.
+볼셰비키 혁명이 승리를 거두었습니다! 이제 진정한 사회주의 혁명을 완수하고 이끌어 나가는 것은 볼셰비키의 손에 달려 있습니다.
 
 @junior_partner
-title: A junior partner
+title: 보조적인 동반자
 view-if: revolutionary_victory and player_party != "b" and join_bolshevik
 tags: endings
 go-to: eg_menu
 
-The Bolsheviks, with our assistance, have won the revolution! Hopefully we will be able to maintain our distinctiveness as a party and preserve democracy.
+볼셰비키가 우리의 조력에 힘입어 혁명에서 승리하였습니다! 부디 우리가 정당으로서의 독자성을 유지하고 민주주의의 가치를 보존할 수 있기를 희망합니다.
 
 @dustbin_of_history
-title: The dustbin of history
+title: 역사의 쓰레기통
 view-if: revolutionary_victory and player_party != "b" and not join_bolshevik
 tags: endings
 go-to: eg_menu
 
-The Bolsheviks have taken over Petrograd, and are consolidating their rule over the rest of the country. To paraphrase Trotsky, our movement is being consigned to "the dustbin of history."
+볼셰비키가 페트로그라드를 완전히 장악하였으며, 국가 전역에 대한 지배력을 공고히 하고 있습니다. 트로츠키의 말을 빌리자면, 우리의 운동은 이제 "역사의 쓰레기통"으로 던져지고 있습니다.
 
 @war_persists
-title: The war goes on...
+title: 전쟁은 계속된다...
 view-if: not is_armistice and not is_peace and not allied_victory
 tags: endings
 go-to: eg_menu
 
-The war continues unabated. [? if revolutionary_victory: Now, it will be the task of the Bolsheviks to end the war. ?][? if ca_held: It will be the task of the Constituent Assembly to end the war. ?]
+전쟁의 불길이 수그러들지 않은 채 계속되고 있습니다. [? if revolutionary_victory: 이제 이 전쟁을 끝내는 것은 볼셰비키의 과업이 될 것입니다. ?][? if ca_held: 전쟁을 종결짓는 것은 제헌의회의 몫이 될 것입니다. ?]
 
 @allied_victory
-title: Allied victory!
+title: 협상국의 승리!
 view-if: allied_victory
 tags: endings
 go-to: eg_menu
 
-The Great War is over, and Russia is one of the victors. German forces have collapsed following repeated Allied victories. Now, Russia must work with the Allies to shape the fate of the post-war world.
+대전쟁이 마침내 막을 내렸으며, 러시아는 승전국의 지위를 확보하였습니다. 연이은 협상국의 승리 앞에 독일군은 결국 궤멸하였습니다. 이제 러시아는 전후 세계 질서를 재편하기 위해 협상국 열강들과 긴밀히 협력해야 합니다.
 
 @armistice_
-title: A fragile peace
+title: 위태로운 평화
 view-if: is_armistice and not is_peace
 tags: endings
 go-to: eg_menu
 
-An armistice has been signed with the Central Powers, but it is not a permanent peace treaty. [? if ca_held: It will be the task of the Constituent Assembly to sign the peace. ?][? if revolutionary_victory: It will be the task of the Bolsheviks to sign the peace. ?]
+동맹국 측과 휴전 협정이 체결되었으나, 이는 아직 영구적인 평화 조약은 아닙니다. [? if ca_held: 정식 평화 조약에 서명하는 것은 제헌의회의 과업이 될 것입니다. ?][? if revolutionary_victory: 정식 평화 조약에 서명하는 것은 볼셰비키의 과업이 될 것입니다. ?]
 
 @all_soc
-title: An all-socialist government
+title: 단일 사회주의 정부 수립
 view-if: ca_held and in_socialist_coalition
 tags: endings
 go-to: eg_menu
 
-We have formed an all-socialist government that includes the Social Democrats and Socialist-Revolutionaries. This could lay the groundwork for a future socialist Russia at the Constituent Assembly.
+우리는 사회민주주의자들과 사회혁명당을 포괄하는 단일 사회주의 정부를 구성하였습니다. 이는 향후 제헌의회에서 사회주의 러시아를 건설하기 위한 초석이 될 것입니다.
 
 @peace_
-title: A peace treaty!
+title: 평화 조약 체결!
 view-if: is_peace
 tags: endings
 go-to: eg_menu
 
-A peace treaty has been signed with the Central Powers.
+동맹국 측과 정식 평화 조약이 체결되었습니다.
 
 @victories
-title: Victories in the war
+title: 전선의 승전보
 view-if: victory_count >= 1
 tags: endings
 go-to: eg_menu
 
-We have won at least one battle with our democratized army!
+우리는 민주화된 군대를 이끌고 적어도 한 번 이상의 전투에서 값진 승리를 거두었습니다!
 
 @high_hunger
-title: Hunger stalks the country.
+title: 기근의 그림자
 view-if: hunger >= 35
 tags: endings
 go-to: eg_menu
 
-Over the course of the war and revolution, the problem of hunger has worsened.
+전쟁과 혁명의 소용돌이 속에서, 굶주림의 고통은 더욱 참혹하게 악화되었습니다.
 
 @hunger_abated
-title: Hunger has been abated somewhat.
+title: 완화되는 식량난
 view-if: hunger < 20 and hunger >= 11
 tags: endings
 go-to: eg_menu
 
-There is still a long way to go, but we have somewhat ameliorated the food shortages.
+아직 갈 길이 멀지만, 우리는 극심했던 식량 부족 사태를 어느 정도 진정시키는 데 성공하였습니다.
 
 @hunger_abated_2
-title: Hunger has been abated greatly!
+title: 기근 위기 극복!
 view-if: hunger < 11
 tags: endings
 go-to: eg_menu
 
-We have successfully ameliorated the hunger crisis, despite the war and ongoing crises!
+전쟁과 끊임없는 위기 속에서도, 우리는 기근 사태를 성공적으로 해결해 냈습니다!
 
 @inflation_lowered
-title: Inflation has been lowered.
+title: 물가 안정화
 view-if: monthly_inflation < 3
 tags: endings
 go-to: eg_menu
 
-Inflation is still far too high, but it has been successfully reduced from its peak.
+인플레이션 수치는 여전히 높지만, 최악의 상황은 성공적으로 벗어난 상태입니다.
 
 
 @peace_land_bread
-title: Peace, land, bread
+title: 평화, 토지, 그리고 빵
 view-if: (is_armistice or is_peace) and hunger < 20 and land_reform_progress >= 3
 tags: endings
 go-to: eg_menu
 
-We have made progress towards the goals of the February Revolution - signing an armistice, redistributing land, and reducing hunger.
+우리는 휴전 체결, 토지 재분배, 기근 해소라는 2월 혁명의 핵심 목표들을 향해 커다란 진전을 이루어 냈습니다.
 
 
 @kornilovite
-title: Kornilov Coup victorious
+title: 코르닐로프 쿠데타 성공
 view-if: k_coup > 0 and coup_victory = 1
 tags: endings
 go-to: eg_menu
 
-The Kornilov Coup is victorious. The Petrograd Soviet has been dissolved and the Provisional Government rules as a military dictatorship. However, forces loyal to the Soviets are rebelling, and a civil war is on the horizon.
+코르닐로프의 쿠데타가 승리를 거두었습니다. 페트로그라드 소비에트는 강제 해산되었으며, 임시정부는 이제 군사 독재 체제로 국가를 통치합니다. 그러나 소비에트에 충성하는 세력들이 이에 맞서 봉기하고 있으며, 내전의 전운이 짙게 드리우고 있습니다.
 
 @coup_defeated
-title: Kornilov Coup defeated
+title: 코르닐로프 쿠데타의 실패
 view-if: coup_defeated = 1
 tags: endings
 go-to: eg_menu
 
-We attempted to launch a coup with General Kornilov, but our attempt has failed. The Kadets are no longer a functional party in Russia.
+우리는 코르닐로프 장군과 손을 잡고 쿠데타를 시도하였으나, 결국 실패로 돌아갔습니다. 이제 카데트(입헌민주당)는 러시아에서 정당으로서의 기능을 완전히 상실하였습니다.
 
 @total_defeat
-title: A Total Defeat
+title: 완전한 패배
 view-if: total_defeat = 1
 tags: endings
 go-to: eg_menu
 
-The Germans have taken over Petrograd. The revolution is over. We have lost.
+독일군이 페트로그라드를 점령하였습니다. 혁명은 수포로 돌아갔으며, 우리는 모든 것을 잃고 패배하였습니다.
 
 @social_peace
-title: Social Peace
+title: 사회적 평화의 도래
 view-if: social_peace = 1
 tags: endings
 go-to: eg_menu
 
-Finally, unrest among the working classes, soldiers, and peasantry has ended.
+마침내 노동계급과 병사들, 그리고 농민들 사이에 몰아쳤던 격렬한 소요 사태가 막을 내렸습니다.
 
 
 @achievements
@@ -223,157 +223,157 @@ view-if: achievement_game_completed == 1
 tags: endings
 go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
-= Completed Achievements in this Playthrough
+= 이번 회차에서 달성한 업적.
 
 
-[? if game_achievement_dustbin : **Свалка истории (The Dustbin of History)** - defeated by the Bolshevik revolution. ?]
+[? if game_achievement_dustbin : **Свалка истории (역사의 쓰레기통)** - 볼셰비키 혁명에 의해 권력을 잃고 패배하였습니다. ?]
 
-[? if game_achievement_rev_failed : **Неудавшаяся революция (A Failed Revolution)** - as the Bolsheviks, launch the revolution and fail. ?]
+[? if game_achievement_rev_failed : **Неудавшаяся революция (실패한 혁명)** - 볼셰비키로 플레이하여 혁명을 일으켰으나 실패하였습니다. ?]
 
-[? if game_achievement_constituent_assembly : **Учредительное собрание (Constituent Assembly)** - reach the end of the game as the Mensheviks, SRs, or Kadets on at least Normal difficulty. ?]
+[? if game_achievement_constituent_assembly : **Учредительное собрание (제헌의회)** - 보통 이상의 난이도에서 멘셰비키, 사회혁명당(SR), 또는 입헌민주당(카데트)으로 게임의 결말에 도달하였습니다. ?]
 
-[? if game_achievement_free_russia : **Свободная Россия (A Free Russia)** - reach the end of the game as the Mensheviks, SRs, or Kadets on Hard difficulty. ?]
+[? if game_achievement_free_russia : **Свободная Россия (자유 러시아)** - 어려움 난이도에서 멘셰비키, 사회혁명당(SR), 또는 입헌민주당(카데트)으로 게임의 결말에 도달하였습니다. ?]
 
-[? if game_achievement_red_october : **Красный Октябрь (Red October)** - as the Bolsheviks, launch the revolution and win. ?]
+[? if game_achievement_red_october : **Красный Октябрь (적색 10월)** - 볼셰비키로 플레이하여 혁명을 성공시키고 승리하였습니다. ?]
 
-[? if game_achievement_kamenevs_dream : **Мечта Каменева (Kamenev's Dream)** - as the Bolsheviks, win at least 30% of the vote in the Constituent Assembly election without launching a revolution. ?]
+[? if game_achievement_kamenevs_dream : **Мечта Каменева (카메네프의 꿈)** - 볼셰비키로 플레이하여 혁명을 일으키지 않고 제헌의회 선거에서 30% 이상의 득표율을 기록하였습니다. ?]
 
-[? if game_achievement_junior_partner : **Младший партнер (Junior Partner)** - join the Bolshevik revolution as a junior partner. ?]
+[? if game_achievement_junior_partner : **Младший партнер (보조적인 동반자)** - 보조적인 세력으로서 볼셰비키 혁명에 동참하였습니다. ?]
 
-[? if game_achievement_historical_materialism : **Исторический материализм (Historical Materialism)** - reach the end of the game as the Mensheviks. ?]
+[? if game_achievement_historical_materialism : **Исторический материализм (사적 유물론)** - 멘셰비키로 게임의 결말에 도달하였습니다. ?]
 
-[? if game_achievement_land_and_liberty : **Земля и воля (Land and Liberty)** - reach the end of the game as the Socialist-Revolutionaries. ?]
+[? if game_achievement_land_and_liberty : **Земля и воля (토지와 자유)** - 사회혁명당(SR)으로 게임의 결말에 도달하였습니다. ?]
 
-[? if game_achievement_constitutional_democracy : **Народная Свобода (People's Freedom)** - reach the end of the game as the Kadets. ?]
+[? if game_achievement_constitutional_democracy : **Народная Свобода (인민의 자유)** - 입헌민주당(카데트)으로 게임의 결말에 도달하였습니다. ?]
 
-[? if game_achievement_peace : **Циммервальд (Zimmerwald)** - sign an armistice with the Central Powers. ?]
+[? if game_achievement_peace : **Циммервальд (치머발트)** - 동맹국 측과 휴전 협정을 체결하였습니다. ?]
 
-[? if game_achievement_no_peace_no_war: **Ни мира, ни войны (No peace, no war)** - sign an armistice, and then let the Central Powers declare war again. ?]
+[? if game_achievement_no_peace_no_war: **Ни мира, ни войны (평화도 전쟁도 없이)** - 휴전을 체결한 뒤, 동맹국 측이 다시 전쟁을 선포하도록 유도하였습니다. ?]
 
-[? if game_achievement_peace_2: **Брест-Литовск (Brest-Litovsk)** - sign a permanent peace treaty with the Central Powers. ?] 
+[? if game_achievement_peace_2: **Брест-Литовск (브레스트-리토프스크)** - 동맹국 측과 정식 평화 조약을 체결하였습니다. ?] 
 
-[? if game_achievement_victory : **Прорыв (Breakthrough)** - win at least one battle in the Great War. ?]
+[? if game_achievement_victory : **Прорыв (돌파)** - 제1차 세계대전의 전투에서 최소 한 번 이상 승리하였습니다. ?]
 
-[? if game_achievement_milyukovs_dream : **Мечта Милюкова (Milyukov's Dream)** - defeat the Ottoman Empire. ?]
+[? if game_achievement_milyukovs_dream : **Мечта Милюкова (밀류코프의 꿈)** - 오스만 제국을 굴복시켰습니다. ?]
 
-[? if game_achievement_allied_victory : **Победа Антанты (Entente Victory)** - win the Great War as part of the Allies. ?]
+[? if game_achievement_allied_victory : **Победа Антанты (협상국의 승리)** - 협상국의 일원으로서 제1차 세계대전에서 최종 승리하였습니다. ?]
 
-[? if game_achievement_womens_battalion : **Женские батальоны смерти (Women's Battalion of Death)** - form the Women's Battalion of Death. ?]
+[? if game_achievement_womens_battalion : **Женские батальоны смерти (여성 죽음의 대대)** - 여성 죽음의 대대를 창설하였습니다. ?]
 
-[? if game_achievement_martovs_dream : **Мечта Мартова (Martov's Dream)** - as the Mensheviks, form an all-socialist government, sign an armistice, and hold the Constituent Assembly elections. ?]
+[? if game_achievement_martovs_dream : **Мечта Мартова (마르토프의 꿈)** - 멘셰비키로 플레이하여 단일 사회주의 정부를 구성하고, 휴전을 체결하며, 제헌의회 선거를 실시하였습니다. ?]
 
-[? if game_achievement_peace_land_bread : **Мир, земля, хлеб (Peace, Land, Bread)** - sign an armistice, commence land redistribution, and reduce hunger. ?]
+[? if game_achievement_peace_land_bread : **Мир, земля, хлеб (평화, 토지, 빵)** - 휴전 체결, 토지 재분배 착수, 기근 완화라는 목표를 모두 달성하였습니다. ?]
 
-[? if game_achievement_end_famine : **Конец голода (The end of hunger)** - hunger has been reduced to a low level. ?]
+[? if game_achievement_end_famine : **Конец голода (기근의 종말)** - 기근 수치를 매우 낮은 수준까지 안정화하였습니다. ?]
 
-[? if game_achievement_low_inflation : **Прекращение эмиссии (Stopping the printers)** - inflation is somewhat under control. ?]
+[? if game_achievement_low_inflation : **Прекращение эмиссии (화폐 발행 중단)** - 인플레이션을 어느 정도 통제 가능한 수준으로 억제하였습니다. ?]
 
-[? if game_achievement_law_and_order : **Правопорядок (Law and Order)** - reduce unrest among the working classes, soldiers, and peasantry. ?]
+[? if game_achievement_law_and_order : **Правопорядок (법과 질서)** - 노동계급, 군인, 농민들 사이의 소요 사태를 진정시켰습니다. ?]
 
-[? if game_achievement_kornilovite : **Корниловцы (Kornilovite)** - successfully launch a military coup. ?]
+[? if game_achievement_kornilovite : **Корниловцы (코르닐로프주의자)** - 군사 쿠데타를 성공적으로 완수하였습니다. ?]
 
-[? if game_achievement_coup_defeated: **Корниловцы разгромлены (Kornilovites defeated)** - attempt to launch a coup and fail. ?]
+[? if game_achievement_coup_defeated: **Корниловцы разгромлены (격퇴당한 코르닐로프주의자들)** - 쿠데타를 시도하였으나 실패로 돌아갔습니다. ?]
 
 
-= Completed Achievements Overall
+= 전체 업적 달성 기록
 
-[? if achievement_dustbin : **Свалка истории (The Dustbin of History)** - defeated by the Bolshevik revolution. ?]
+[? if achievement_dustbin : **Свалка истории (역사의 쓰레기통)** - 볼셰비키 혁명에 의해 권력을 잃고 패배하였습니다. ?]
 
-[? if achievement_rev_failed : **Неудавшаяся революция (A Failed Revolution)** - as the Bolsheviks, launch the revolution and fail. ?]
+[? if achievement_rev_failed : **Неудавшаяся революция (실패한 혁명)** - 볼셰비키로 플레이하여 혁명을 일으켰으나 실패하였습니다. ?]
 
-[? if achievement_constituent_assembly : **Учредительное собрание (Constituent Assembly)** - reach the end of the game as the Mensheviks, SRs, or Kadets on at least Normal difficulty. ?]
+[? if achievement_constituent_assembly : **Учредительное собрание (제헌의회)** - 보통 이상의 난이도에서 멘셰비키, 사회혁명당(SR), 또는 입헌민주당(카데트)으로 게임의 결말에 도달하였습니다. ?]
 
-[? if achievement_free_russia : **Свободная Россия (A Free Russia)** - reach the end of the game as the Mensheviks, SRs, or Kadets on Hard difficulty. ?]
+[? if achievement_free_russia : **Свободная Россия (자유 러시아)** - 어려움 난이도에서 멘셰비키, 사회혁명당(SR), 또는 입헌민주당(카데트)으로 게임의 결말에 도달하였습니다. ?]
 
-[? if achievement_red_october : **Красный Октябрь (Red October)** - as the Bolsheviks, launch the revolution and win. ?]
+[? if achievement_red_october : **Красный Октябрь (적색 10월)** - 볼셰비키로 플레이하여 혁명을 성공시키고 승리하였습니다. ?]
 
-[? if achievement_kamenevs_dream : **Мечта Каменева (Kamenev's Dream)** - as the Bolsheviks, win at least 30% of the vote in the Constituent Assembly election without launching a revolution. ?]
+[? if achievement_kamenevs_dream : **Мечта Каменева (카메네프의 꿈)** - 볼셰비키로 플레이하여 혁명을 일으키지 않고 제헌의회 선거에서 30% 이상의 득표율을 기록하였습니다. ?]
 
-[? if achievement_junior_partner : **Младший партнер (Junior Partner)** - join the Bolshevik revolution as a junior partner. ?]
+[? if achievement_junior_partner : **Младший партнер (보조적인 동반자)** - 보조적인 세력으로서 볼셰비키 혁명에 동참하였습니다. ?]
 
-[? if achievement_historical_materialism : **Исторический материализм (Historical Materialism)** - reach the end of the game as the Mensheviks. ?]
+[? if achievement_historical_materialism : **Исторический материализм (사적 유물론)** - 멘셰비키로 게임의 결말에 도달하였습니다. ?]
 
-[? if achievement_land_and_liberty : **Земля и воля (Land and Liberty)** - reach the end of the game as the Socialist-Revolutionaries. ?]
+[? if achievement_land_and_liberty : **Земля и воля (토지와 자유)** - 사회혁명당(SR)으로 게임의 결말에 도달하였습니다. ?]
 
-[? if achievement_constitutional_democracy : **Народная Свобода (People's Freedom)** - complete the game as the Kadets. ?]
+[? if achievement_constitutional_democracy : **Народная Свобода (인민의 자유)** - 입헌민주당(카데트)으로 게임을 완료하였습니다. ?]
 
-[? if achievement_peace : **Циммервальд (Zimmerwald)** - sign an armistice with the Central Powers. ?]
+[? if achievement_peace : **Циммервальд (치머발트)** - 동맹국 측과 휴전 협정을 체결하였습니다. ?]
 
-[? if achievement_no_peace_no_war: **Ни мира, ни войны (No peace, no war)** - sign an armistice, and then let the Central Powers declare war again. ?]
+[? if achievement_no_peace_no_war: **Ни мира, ни войны (평화도 전쟁도 없이)** - 휴전을 체결한 뒤, 동맹국 측이 다시 전쟁을 선포하도록 유도하였습니다. ?]
 
-[? if achievement_peace_2: **Брест-Литовск (Brest-Litovsk)** - sign a permanent peace treaty with the Central Powers. ?] 
+[? if achievement_peace_2: **Брест-Литовск (브레스트-리토프스크)** - 동맹국 측과 정식 평화 조약을 체결하였습니다. ?] 
 
-[? if achievement_victory : **Прорыв (Breakthrough)** - win at least one battle in the Great War. ?]
+[? if achievement_victory : **Прорыв (돌파)** - 제1차 세계대전의 전투에서 최소 한 번 이상 승리하였습니다. ?]
 
-[? if achievement_milyukovs_dream : **Мечта Милюкова (Milyukov's Dream)** - defeat the Ottoman Empire. ?]
+[? if achievement_milyukovs_dream : **Мечта Милюкова (밀류코프의 꿈)** - 오스만 제국을 굴복시켰습니다. ?]
 
-[? if achievement_allied_victory : **Победа Антанты (Entente Victory)** - win the Great War as part of the Allies. ?]
+[? if achievement_allied_victory : **Победа Антанты (협상국의 승리)** - 협상국의 일원으로서 제1차 세계대전에서 최종 승리하였습니다. ?]
 
-[? if achievement_womens_battalion : **Женские батальоны смерти (Women's Battalion of Death)** - form the Women's Battalion of Death. ?]
+[? if achievement_womens_battalion : **Женские батальоны смерти (여성 죽음의 대대)** - 여성 죽음의 대대를 창설하였습니다. ?]
 
-[? if achievement_martovs_dream : **Мечта Мартова (Martov's Dream)** - as the Mensheviks, form an all-socialist government, sign an armistice, and hold the Constituent Assembly elections. ?]
+[? if achievement_martovs_dream : **Мечта Мартова (마르토프의 꿈)** - 멘셰비키로 플레이하여 단일 사회주의 정부를 구성하고, 휴전을 체결하며, 제헌의회 선거를 실시하였습니다. ?]
 
-[? if achievement_peace_land_bread : **Мир, земля, хлеб (Peace, Land, Bread)** - sign an armistice, commence land redistribution, and reduce hunger. ?]
+[? if achievement_peace_land_bread : **Мир, земля, хлеб (평화, 토지, 빵)** - 휴전 체결, 토지 재분배 착수, 기근 완화라는 목표를 모두 달성하였습니다. ?]
 
-[? if achievement_end_famine : **Конец голода (The end of hunger)** - hunger has been reduced to a low level. ?]
+[? if achievement_end_famine : **Конец голода (기근의 종말)** - 기근 수치를 매우 낮은 수준까지 안정화하였습니다. ?]
 
-[? if achievement_low_inflation : **Прекращение эмиссии (Stopping the printers)** - inflation is somewhat under control. ?]
+[? if achievement_low_inflation : **Прекращение эмиссии (화폐 발행 중단)** - 인플레이션을 어느 정도 통제 가능한 수준으로 억제하였습니다. ?]
 
-[? if achievement_law_and_order : **Правопорядок (Law and Order)** - reduce unrest among the working classes, soldiers, and peasantry. ?]
+[? if achievement_law_and_order : **Правопорядок (법과 질서)** - 노동계급, 군인, 농민들 사이의 소요 사태를 진정시켰습니다. ?]
 
-[? if achievement_kornilovite : **Корниловцы (Kornilovite)** - successfully launch a military coup. ?]
+[? if achievement_kornilovite : **Корниловцы (코르닐로프주의자)** - 군사 쿠데타를 성공적으로 완수하였습니다. ?]
 
-[? if achievement_coup_defeated: **Корниловцы разгромлены (Kornilovites defeated)** - attempt to launch a coup and fail. ?]
+[? if achievement_coup_defeated: **Корниловцы разгромлены (격퇴당한 코르닐로프주의자들)** - 쿠데타를 시도하였으나 실패로 돌아갔습니다. ?]
 
-= Incomplete Achievements
+= 미달성 업적
 
-[? if not achievement_dustbin : **Свалка истории (The Dustbin of History)** - defeated by the Bolshevik revolution. ?]
+[? if not achievement_dustbin : **Свалка истории (역사의 쓰레기통)** - 볼셰비키 혁명에 의해 권력을 잃고 패배하였습니다. ?]
 
-[? if not achievement_rev_failed : **Неудавшаяся революция (A Failed Revolution)** - as the Bolsheviks, launch the revolution and fail. ?]
+[? if not achievement_rev_failed : **Неудавшаяся революция (실패한 혁명)** - 볼셰비키로 플레이하여 혁명을 일으켰으나 실패하였습니다. ?]
 
-[? if not achievement_constituent_assembly : **Учредительное собрание (Constituent Assembly)** - hold the Constituent Assembly elections as the Mensheviks, SRs, or Kadets on at least Normal difficulty. ?]
+[? if not achievement_constituent_assembly : **Учредительное собрание (제헌의회)** - 보통 이상의 난이도에서 멘셰비키, 사회혁명당(SR), 또는 입헌민주당(카데트)으로 제헌의회 선거를 실시하였습니다. ?]
 
-[? if not achievement_free_russia : **Свободная Россия (A Free Russia)** - reach the end of the game as the Mensheviks, SRs, or Kadets on Hard difficulty. ?]
+[? if not achievement_free_russia : **Свободная Россия (자유 러시아)** - 어려움 난이도에서 멘셰비키, 사회혁명당(SR), 또는 입헌민주당(카데트)으로 게임의 결말에 도달하였습니다. ?]
 
-[? if not achievement_red_october : **Красный Октябрь (Red October)** - as the Bolsheviks, launch the revolution and win. ?]
+[? if not achievement_red_october : **Красный Октябрь (적색 10월)** - 볼셰비키로 플레이하여 혁명을 성공시키고 승리하였습니다. ?]
 
-[? if not achievement_kamenevs_dream : **Мечта Каменева (Kamenev's Dream)** - as the Bolsheviks, win at least 30% of the vote in the Constituent Assembly election without launching a revolution. ?]
+[? if not achievement_kamenevs_dream : **Мечта Каменева (카메네프의 꿈)** - 볼셰비키로 플레이하여 혁명을 일으키지 않고 제헌의회 선거에서 30% 이상의 득표율을 기록하였습니다. ?]
 
-[? if not achievement_junior_partner : **Младший партнер (Junior Partner)** - join the Bolshevik revolution as a junior partner. ?]
+[? if not achievement_junior_partner : **Младший партнер (보조적인 동반자)** - 보조적인 세력으로서 볼셰비키 혁명에 동참하였습니다. ?]
 
-[? if not achievement_historical_materialism : **Исторический материализм (Historical Materialism)** - reach the end of the game as the Mensheviks. ?]
+[? if not achievement_historical_materialism : **Исторический материализм (사적 유물론)** - 멘셰비키로 게임의 결말에 도달하였습니다. ?]
 
-[? if not achievement_land_and_liberty : **Земля и воля (Land and Liberty)** - reach the end of the game as the Socialist-Revolutionaries. ?]
+[? if not achievement_land_and_liberty : **Земля и воля (토지와 자유)** - 사회혁명당(SR)으로 게임의 결말에 도달하였습니다. ?]
 
-[? if not achievement_constitutional_democracy : **Народная Свобода (People's Freedom)** - reach the end of the game as the Kadets. ?]
+[? if not achievement_constitutional_democracy : **Народная Свобода (인민의 자유)** - 입헌민주당(카데트)으로 게임의 결말에 도달하였습니다. ?]
 
-[? if not achievement_peace : **Циммервальд (Zimmerwald)** - sign an armistice with the Central Powers. ?]
+[? if not achievement_peace : **Циммервальд (치머발트)** - 동맹국 측과 휴전 협정을 체결하였습니다. ?]
 
-[? if not achievement_no_peace_no_war: **Ни мира, ни войны (No peace, no war)** - sign an armistice, and then let the Central Powers declare war again. ?]
+[? if not achievement_no_peace_no_war: **Ни мира, ни войны (평화도 전쟁도 없이)** - 휴전을 체결한 뒤, 동맹국 측이 다시 전쟁을 선포하도록 유도하였습니다. ?]
 
-[? if not achievement_peace_2: **Брест-Литовск (Brest-Litovsk)** - sign a permanent peace treaty with the Central Powers. ?] 
+[? if not achievement_peace_2: **Брест-Литовск (브레스트-리토프스크)** - 동맹국 측과 정식 평화 조약을 체결하였습니다. ?] 
 
-[? if not achievement_victory : **Прорыв (Breakthrough)** - win at least one battle in the Great War. ?]
+[? if not achievement_victory : **Прорыв (돌파)** - 제1차 세계대전의 전투에서 최소 한 번 이상 승리하였습니다. ?]
 
-[? if not achievement_milyukovs_dream : **Мечта Милюкова (Milyukov's Dream)** - defeat the Ottoman Empire. ?]
+[? if not achievement_milyukovs_dream : **Мечта Милюкова (밀류코프의 꿈)** - 오스만 제국을 굴복시켰습니다. ?]
 
-[? if not achievement_allied_victory : **Победа Антанты (Entente Victory)** - win the Great War as part of the Allies. ?]
+[? if not achievement_allied_victory : **Победа Антанты (협상국의 승리)** - 협상국의 일원으로서 제1차 세계대전에서 최종 승리하였습니다. ?]
 
-[? if not achievement_womens_battalion : **Женские батальоны смерти (Women's Battalion of Death)** - form the Women's Battalion of Death. ?]
+[? if not achievement_womens_battalion : **Женские батальоны смерти (여성 죽음의 대대)** - 여성 죽음의 대대를 창설하였습니다. ?]
 
-[? if not achievement_martovs_dream : **Мечта Мартова (Martov's Dream)** - as the Mensheviks, form an all-socialist government, sign an armistice, and hold the Constituent Assembly elections. ?]
+[? if not achievement_martovs_dream : **Мечта Мартова (마르토프의 꿈)** - 멘셰비키로 플레이하여 단일 사회주의 정부를 구성하고, 휴전을 체결하며, 제헌의회 선거를 실시하였습니다. ?]
 
-[? if not achievement_peace_land_bread : **Мир, земля, хлеб (Peace, Land, Bread)** - sign an armistice, commence land redistribution, and reduce hunger. ?]
+[? if not achievement_peace_land_bread : **Мир, земля, хлеб (평화, 토지, 빵)** - 휴전 체결, 토지 재분배 착수, 기근 완화라는 목표를 모두 달성하였습니다. ?]
 
-[? if not achievement_end_famine : **Конец голода (The end of hunger)** - hunger has been reduced to a low level. ?]
+[? if not achievement_end_famine : **Конец голода (기근의 종말)** - 기근 수치를 매우 낮은 수준까지 안정화하였습니다. ?]
 
-[? if not achievement_low_inflation : **Прекращение эмиссии (Stopping the printers)** - inflation is somewhat under control. ?]
+[? if not achievement_low_inflation : **Прекращение эмиссии (화폐 발행 중단)** - 인플레이션을 어느 정도 통제 가능한 수준으로 억제하였습니다. ?]
 
-[? if not achievement_law_and_order : **Правопорядок (Law and Order)** - reduce unrest among the working classes, soldiers, and peasantry. ?]
+[? if not achievement_law_and_order : **Правопорядок (법과 질서)** - 노동계급, 군인, 농민들 사이의 소요 사태를 진정시켰습니다. ?]
 
-[? if not achievement_kornilovite : **Корниловцы (Kornilovite)** - successfully launch a military coup. ?]
+[? if not achievement_kornilovite : **Корниловцы (코르닐로프주의자)** - 군사 쿠데타를 성공적으로 완수하였습니다. ?]
 
-[? if not achievement_coup_defeated: **Корниловцы разгромлены (Kornilovites defeated)** - attempt to launch a coup and fail. ?]
+[? if not achievement_coup_defeated: **Корниловцы разгромлены (격퇴당한 코르닐로프주의자들)** - 쿠데타를 시도하였으나 실패로 돌아갔습니다. ?]
 
 @end_game
 game-over: true
