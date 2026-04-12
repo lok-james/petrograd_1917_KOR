@@ -1035,15 +1035,15 @@ set-bg: img/map_2.jpg
 new-page: true
 
 
-> * In general, people do not see events concretely, solidly. They think more in words than in clearly-imagined pictures, and they have absolutely no idea what a revolution is, – of those many millions of causes which have gone to give it its present form, – and they are therefore inclined to exaggerate the importance in the progress of the revolution of their personality and of that attitude which they, their friends and co-thinkers will take up in this enormous upheaval. And of course they are absolutely incapable of understanding how powerless is any individual, whatever his intelligence and experience, in this whirlpool of hundreds of thousands of forces which have been put into motion by the upheaval.*
+> * 일반적으로 사람들은 사건을 구체적이거나 실체적으로 파악하지 못한다. 명확하게 그려지는 이미지보다는 언어에 의존해 사고하며, 혁명이 무엇인지에 대해서도 전혀 이해하지 못한다. 오늘날의 혁명을 만든 수많은 원인들에 대해서도 마찬가지다. 그렇기에 사람들은 이 거대한 격변 속에서 자신의 개성이나 자신과 동료들이 취하는 태도가 혁명의 진전에 미치는 영향을 과장하는 경향이 있다. 물론 이들은 격변으로 인해 요동치는 수십만 가지 힘의 소용돌이 속에서, 개인의 지능이나 경험이 얼마나 무력한지를 이해할 능력조차 전혀 없다.**
 
-> *They do not understand that once such a great natural phenomenon has begun, such as an earthquake, or, rather, such as a typhoon, separate individuals are powerless to exercise any kind of influence on the course of events. A party perhaps can do something, – far less than is usually thought, – and on the surface of the oncoming waves, its influence may, perhaps, be very slightly noticeable. But separate small aggregations not forming a fairly large mass are undoubtedly powerless – their Powers are certainly nil. *
+> *이들은 지진이나 태풍 같은 거대한 자연 현상이 일단 시작되면, 개별적인 개인이 사건의 흐름에 어떠한 영향력도 행사할 수 없다는 사실을 이해하지 못한다. 정당이라면 무언가 할 수 있을지도 모르나, 그조차 대개 생각하는 것보다 훨씬 미미한 수준이며, 몰아치는 파도의 표면 위에서 그 영향력은 겨우 알아차릴 수 있을 정도로만 나타날 뿐이다. 하지만 상당히 큰 집단을 형성하지 못한 작은 모임들은 의심할 여지 없이 무력하며, 그들의 힘은 사실상 전무하다. *
 
- - Peter Kropotkin, The Russian Revolution and the Soviet Government, 1919
+ - 표트르 크로포트킨, 러시아 혁명과 소비에트 정부, 1919
 
-For more information on the politics of the Provisional Government, see the "Library" page on the top left. If this is your first time playing the game, it is recommended that you read at least some of this information.
+임시정부의 정치 상황에 대한 상세 정보는 왼쪽 상단의 "도서관" 페이지에서 확인하실 수 있습니다. 이 게임을 처음 플레이하신다면, 해당 정보를 최소한 일부라도 읽어보시는 것을 권장합니다.
 
-Difficulty affects starting resources and inter-party relations, as well as how difficult it is to change party advisors and ideology, reduce dissent, and increase relations.
+난이도는 시작 자원과 정당 간의 관계뿐만 아니라, 정당 고문 및 이데올로기 교체, 불만도 감소, 관계 개선 등의 난도에도 영향을 미칩니다.
 
 - @easy_mode
 - @single_player
@@ -1052,25 +1052,25 @@ Difficulty affects starting resources and inter-party relations, as well as how 
 #- @online_multiplayer
 
 @easy_mode
-title: Single Player (Easy)
+title: 싱글 플레이어 (쉬움)
 on-arrival: difficulty = -1; m_resources = 4; sr_resources = 4; k_resources = 5; b_resources = 4; m_dues = 3; sr_dues = 3; b_dues = 3; m_k_relation = 50; m_sr_relation = 62; sr_k_relation = 50; m_split_threshold = 65; sr_split_threshold = 65; m_support_change = 10; sr_support_change = 10; m_discipline_change = 8; sr_discipline_change = 8; max_advisors = 5; ipr_change = 8; unrest_modifier = 1.6
 go-to: party_selection
 
-Select a party:
+정당을 선택하십시오:
 
 @single_player
-title: Single Player (Normal)
+title: 싱글 플레이어 (보통)
 on-arrival: unrest_modifier = 1
 go-to: party_selection
 
-Select a party:
+정당을 선택하십시오:
 
 @hard_mode
-title: Single Player (Hard)
+title: 싱글 플레이어 (어려움)
 on-arrival: difficulty = 1; m_resources = 2; sr_resources = 2; k_resources = 2; b_resources = 0; b_dues = 0; m_split_threshold = 50; sr_split_threshold = 50; m_support_change = 5; sr_support_change = 5; m_discipline_change = 4; sr_discipline_change = 4; max_advisors = 3; ipr_change = 5; unrest_modifier = 0.7
 go-to: party_selection
 
-Select a party:
+정당을 선택하십시오:
 
 
 @party_selection
@@ -1081,28 +1081,28 @@ Select a party:
 - @bolsheviks
 
 @local_multiplayer
-title: Local Multiplayer
+title: 로컬 멀티플레이어
 choose-if: 1 == 0
-unavailable-subtitle: Not yet implemented
+unavailable-subtitle: 아직 구현되지 않았습니다
 
 TODO
 
 @online_multiplayer
-title: Online Multiplayer
+title: 온라인 멀티플레이어
 choose-if: 1 == 0
-unavailable-subtitle: Not yet implemented
+unavailable-subtitle: 아직 구현되지 않았습니다
 
 TODO
 
 @bolsheviks
-title: Russian Social-Democratic Labor Party (Bolshevik)
+title: 러시아 사회민주노동당 (볼셰비키)
 choose-if: achievement_game_completed
-unavailable-subtitle: Complete the game as one of the other parties first.
+unavailable-subtitle: 다른 정당 중 하나로 먼저 게임을 클리어하십시오.
 
-**Russian Social-Democratic Labor Party (Bolsheviks)** - The "majority" faction of the RSDLP is in fact the smaller party. Established by Vladimir Lenin's arguments in the various RSDLP congresses, the Bolsheviks are seen as more radical than the Mensheviks. They are a disciplined and centralized party of professional revolutionaries who aim to act as the vanguard of a proletarian revolution. During Lenin's exile, the remaining members in Russia have become more moderate and accommodating.
+**러시아 사회민주노동당 (볼셰비키)** - 사회민주노동당 내 '다수파'를 뜻하지만, 실제로는 더 작은 규모의 정당입니다. 여러 차례의 당 대회를 거치며 블라디미르 레닌의 주도하에 결성된 볼셰비키는 멘셰비키보다 급진적인 성향을 띱니다. 이들은 프롤레타리아 혁명의 전위대 역할을 자처하는 직업 혁명가들로 구성된, 규율이 엄격하고 중앙집권적인 정당입니다. 레닌이 망명 중인 동안 러시아 내에 잔류한 당원들은 비교적 온건하고 협조적인 태도를 보이기도 했습니다.
 
-- @bolsheviks_2: Yes, I am a Bolshevik!
-- @party_selection: No, select a different party.
+- @bolsheviks_2: 그렇다, 나는 볼셰비키다!
+- @party_selection: 아니다, 다른 정당을 선택한다.
 
 @bolsheviks_2
 on-arrival: player_party_name = "Bolshevik"; player_party = "b"; b_is_player = 1; m_is_player = 0; player_in_soviet = 1; player_in_exco = 0; player_in_gov = 0;
@@ -1110,12 +1110,12 @@ go-to: intros
 
 
 @mensheviks
-title: Russian Social-Democratic Labor Party (Menshevik)
+title: 러시아 사회민주노동당 (멘셰비키)
 
-**Russian Social-Democratic Labor Party (Mensheviks)** - The "minority" faction of the RSDLP, the Mensheviks emerged from party splits, reunifications, and further splits in the 1900s. It is in fact the larger party, seeking to organize a mass party among the working class. A social-democratic party based on the teachings of Karl Marx, the party argues that the current revolution is the "bourgeois" revolution. The task of socialists is to achieve a democratic republic and gain political and economic rights for workers. The Mensheviks are deeply divided on their attitudes towards the war and participation in a bourgeois government.
+**러시아 사회민주노동당 (멘셰비키)** - 사회민주노동당 내 '소수파'를 뜻하는 멘셰비키는 1900년대의 분열과 통합 과정을 거치며 형성되었습니다. 실제로는 볼셰비키보다 규모가 큰 정당으로, 노동계급에 기반한 대중 정당 조직을 지향합니다. 카를 마르크스의 이론을 따르는 사회민주주의 정당인 이들은 현재의 혁명을 '부르주아 혁명' 단계로 규정합니다. 따라서 사회주의자의 과업은 민주 공화국을 수립하고 노동자의 정치·경제적 권리를 확보하는 것이라 봅니다. 현재 멘셰비키는 전쟁 지속 여부와 부르주아 정부 참여 문제를 두고 내부적으로 심각한 갈등을 겪고 있습니다.
 
-- @mensheviks_2: Yes, I am a Menshevik!
-- @party_selection: No, select a different party.
+- @mensheviks_2: 그렇다, 나는 멘셰비키다!
+- @party_selection: 아니다, 다른 정당을 선택한다.
 
 
 @mensheviks_2
@@ -1125,12 +1125,12 @@ go-to: intros
 
 
 @sr
-title: Party of Socialist-Revolutionaries (SRs)
+title: 사회혁명당 (SRs)
 
-**Party of Socialist-Revolutionaries (SR)** - The SRs are based in the Russian ideology of *narodism*, or populism, which is an agrarian socialism that sees the traditional Russian village (the *obshchina*) as the basis of a future socialist society. Their support is strongest in the peasantry, but they have substantial support among workers as well. The SRs are deeply divided between left and right wings based on their attitudes towards the war and participation in government.
+**사회혁명당 (SR)** - SR은 러시아 고유의 이데올로기인 '나로드니즘(인민주의)'에 뿌리를 두고 있습니다. 이들은 전통적인 러시아 공동체인 '옵쉬나'를 미래 사회주의 사회의 토대로 삼는 농본 사회주의를 지향합니다. 주로 농민층에서 압도적인 지지를 얻고 있으나, 노동자들 사이에서도 세력이 만만치 않습니다. 현재 전쟁에 대한 입장과 정부 참여 문제를 놓고 좌파와 우파가 극명하게 대립하고 있습니다.
 
-- @sr_2: Yes, I am a Socialist-Revolutionary!
-- @party_selection: No, select a different party.
+- @sr_2: 그렇다, 나는 사회혁명당이다!
+- @party_selection: 아니다, 다른 정당을 선택한다.
 
 
 @sr_2
@@ -1138,12 +1138,12 @@ on-arrival: player_party = "sr"; player_party_name = "SR"; sr_is_player = 1; m_i
 go-to: intros
 
 @kadets
-title: Constitutional Democratic Party (Kadets)
+title: 입헌민주당 (카데트)
 
-**Constitutional Democratic Party (Kadets)** - The Kadets were formerly on the left of the political spectrum, but they have moved to the center-right following the revolution. They are a liberal party whose goal is to establish a democratic republic or constitutional monarchy with moderate social reforms, while winning the war. They consider themselves a party representing all of Russian society, but are predominantly based in the middle class.
+**입헌민주당 (카데트)** - 과거에는 진보 진영에 속했으나, 혁명 이후 중도 우파 성향으로 돌아섰습니다. 전쟁에서 승리하는 한편, 온건한 사회 개혁을 병행하며 민주 공화국이나 입헌 군주제를 수립하는 것을 목표로 하는 자유주의 정당입니다. 스스로를 러시아 사회 전체를 대변하는 정당이라 자처하지만, 실제 지지 기반은 주로 중산층입니다.
 
-- @kadets_2: Yes, I am a Kadet!
-- @party_selection: No, select a different party.
+- @kadets_2: 그렇다, 나는 카데트다!
+- @party_selection: 아니다, 다른 정당을 선택한다.
 
 
 @kadets_2

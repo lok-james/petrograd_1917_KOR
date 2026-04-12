@@ -1,4 +1,4 @@
-title: Status
+title: 현 상황
 new-page: true
 is-special: true
 on-arrival: {!
@@ -96,17 +96,17 @@ Q.unemployed_disp = Q.unemployed.toFixed(1);
 
 = [+ player_party_name +] Status
 
-Week [+ week +], [+ month : month +] [+ year +]
+[+ year +]년 [+ month : month +]월 [+ week +]주차 
 
-Position: [+ position +]
+현재 지위: [+ position +]
 
-Party resources available:
+사용 가능한 정당 자원:
 [? if player_party == "b": [+ b_resources +] ?]
 [? if player_party == "m": [+ m_resources +] ?]
 [? if player_party == "k": [+ k_resources +] ?]
 [? if player_party == "sr": [+ sr_resources +] ?]
 
-Internal dissent:
+당내 불만도:
 [? if player_party == "b": [+ b_dissent_percent : dissent +] ?]
 [? if player_party == "m": [+ m_dissent_percent : dissent +] ?]
 [? if player_party == "k": [+ k_dissent_percent : dissent +] ?]
@@ -114,76 +114,76 @@ Internal dissent:
 
 = [+ government_form : government_form +]
 
-Prime Minister: [+ prime_minister +] ([+ prime_minister_party +])
+총리: [+ prime_minister +] ([+ prime_minister_party +])
 
-Parties in government: [+ governing_parties_str +]
+정부 참여 정당: [+ governing_parties_str +]
 
 # Coalition dissent???
 
-Budget: [+ budget +]
+국가 예산: [+ budget +]
 
-[? if not ca_election_held: Constituent Assembly elections: [? if ca_scheduled: Week [+ next_election_week +], [+ next_election_month : month +] [+ next_election_year +] ?] [? if not ca_scheduled: Not scheduled ?] ?]
+[? if not ca_election_held: 제헌의회 선거 일정: [? if ca_scheduled: [+ next_election_year +]년 [+ next_election_month : month +]월 [+ next_election_week +]주차로 예정 ?] [? if not ca_scheduled: 아직 일정이 잡히지 않았음 ?] ?]
 
-[? if ca_election_held: Constituent Assembly convocation: Week [+ ca_week +], [+ ca_month : month +] [+ ca_year +] ?]
+[? if ca_election_held: 제헌의회 소집일: [+ ca_year +]년 [+ ca_month : month +]월 [+ ca_week +]주차 ?]
 
-= Petrograd Soviet
+= 페트로그라드 소비에트
 
-Chair: [+ soviet_chair +] ([+ soviet_chair_party +])
+의장: [+ soviet_chair +] ([+ soviet_chair_party +])
 
-Executive committee: [+ exco_parties_str +]
+집행위원회 구성 정당: [+ exco_parties_str +]
 
-Overal composition:
-Mensheviks: [+ m_soviet +]%
-Bolsheviks: [+ b_soviet +]%
-SRs: [+ sr_soviet +]%
-Anarchists: [+ anarchist_soviet +]%
-Others: [+ other_soviet +]%
-[? if defensist_split: Menshevik-Defensists: [+ defensist_soviet_votes_dec +]% ?]
-[? if internationalist_split: Menshevik-Internationalists: [+ internationalist_soviet_votes_dec +]% ?]
-[? if right_sr_split: Right-SRs: [+ right_sr_soviet_votes_dec +]% ?]
-[? if left_sr_split: Left-SRs: [+ left_sr_soviet_votes_dec +]% ?]
+의석 전체 구성:
+멘셰비키: [+ m_soviet +]%
+볼셰비키: [+ b_soviet +]%
+사회혁명당: [+ sr_soviet +]%
+아나키스트: [+ anarchist_soviet +]%
+기타: [+ other_soviet +]%
+[? if defensist_split: 멘셰비키 방위주의파: [+ defensist_soviet_votes_dec +]% ?]
+[? if internationalist_split: 멘셰비키 국제주의파: [+ internationalist_soviet_votes_dec +]% ?]
+[? if right_sr_split: 우파 사회혁명당: [+ right_sr_soviet_votes_dec +]% ?]
+[? if left_sr_split: 좌파 사회혁명당: [+ left_sr_soviet_votes_dec +]% ?]
 
-= Peace
+= 평화
 
-War progress: [+ war_progress : war_score +]
+전쟁 진행 상황: [+ war_progress : war_score +]
 
-[? if not is_armistice and not is_peace and armistice_progress: Armistice negotiations: [+ armistice_progress +] ?]
+[? if not is_armistice and not is_peace and armistice_progress: 휴전 협상 진행도: [+ armistice_progress +] ?]
 
-[? if is_armistice: We are currently in an armistice. ?]
+[? if is_armistice: 현재 휴전 상태가 유지되고 있습니다. ?]
 
-[? if is_armistice and not is_peace: Peace negotiations: [+ central_negotiations +]?]
+[? if is_armistice and not is_peace: 평화 협상 진행도: [+ central_negotiations +]?]
 
-[? if allied_victory: The Central Powers have sued for a ceasefire. The war is over. ?]
+[? if allied_victory: 동맹국 측에서 휴전을 요청해 왔습니다. 이로써 전쟁이 종결되었습니다. ?]
 
-War weariness: [+ war_weariness : war_weariness +]
+전쟁 피로도: [+ war_weariness : war_weariness +]
 
-Soldier unrest: [+ soldier_unrest : war_weariness +]
+군대 내 불안: [+ soldier_unrest : war_weariness +]
 
-= Land
+= 토지
 
-Land reform policy: [+ land_reform : land_reform +]
+토지 개혁 정책: [+ land_reform : land_reform +]
 
-Land reform progress: [+ land_reform_progress : land_reform_progress +]
+토지 개혁 진행도: [+ land_reform_progress : land_reform_progress +]
 
-Rural unrest: [+ rural_unrest : war_weariness +]
+농촌 지역 불안: [+ rural_unrest : war_weariness +]
 
-= Bread
+= 식량
 
 # Real income (% of 1913): [+ income +]%
-Monthly inflation: [+ monthly_inflation +]% ([+ inflation +]% annually)
+월간 인플레이션: [+ monthly_inflation +]% ([+ inflation +]% annually)
 
-Hunger: [+ hunger : hunger +]
+식량 부족 상황: [+ hunger : hunger +]
 
-Unemployment: [+ unemployed +]%
+실업률: [+ unemployed +]%
 
-Labor unrest: [+ labor_unrest : war_weariness +]
+노동계 불안: [+ labor_unrest : war_weariness +]
 
 
 
 
 
 @politics
-title: Politics
+title: 정치
 on-arrival: {!
 Q.m_relation = 0;
 Q.b_relation = 0;
@@ -219,129 +219,129 @@ switch (Q.player_party) {
 
 # TODO: inter-party relationships
 
-= Inter-party Relationships
+= 정당 간 관계
 
-[? if player_party != "m": Mensheviks: [+ m_relation : relationships +] ?]
-[? if player_party != "m": </br> Leadership: [+ m_leadership : m_leadership +] ?]
+[? if player_party != "m": 멘셰비키: [+ m_relation : relationships +] ?]
+[? if player_party != "m": </br> 지도부: [+ m_leadership : m_leadership +] ?]
 
-[? if player_party != "b": Bolsheviks: [+ b_relation : relationships +] ?]
-[? if player_party != "b": </br> Leadership: [+ b_leadership : b_leadership +] ?]
-
-
-[? if player_party != "sr": SRs: [+ sr_relation : relationships +] ?]
-[? if player_party != "sr": </br> Leadership: [+ sr_leadership : sr_leadership +] ?]
+[? if player_party != "b": 볼셰비키: [+ b_relation : relationships +] ?]
+[? if player_party != "b": </br> 지도부: [+ b_leadership : b_leadership +] ?]
 
 
-[? if player_party != "k": Kadets: [+ k_relation : relationships +] ?]
-[? if player_party != "k": </br> Leadership: [+ k_leadership : k_leadership +] ?]
+[? if player_party != "sr": 사회혁명당: [+ sr_relation : relationships +] ?]
+[? if player_party != "sr": </br> 지도부: [+ sr_leadership : sr_leadership +] ?]
 
-[? if player_party == "k": Conservatives: [+ k_conservative_relation : relationships +] ?]
+
+[? if player_party != "k": 카데트: [+ k_relation : relationships +] ?]
+[? if player_party != "k": </br> 지도부: [+ k_leadership : k_leadership +] ?]
+
+[? if player_party == "k": 보수 세력: [+ k_conservative_relation : relationships +] ?]
 
 = Internal factions
 
-[? if player_party == "b": Moderate ?]
-[? if player_party == "b": dissent: [+ moderate_dissent : dissent +], strength: [+ moderate_strength : strength_2 +]?]
+[? if player_party == "b": 온건파 ?]
+[? if player_party == "b": 불만도: [+ moderate_dissent : dissent +], 세력: [+ moderate_strength : strength_2 +]?]
 
-[? if player_party == "b": Center ?]
-[? if player_party == "b": dissent: [+ center_dissent : dissent +], strength: [+ center_strength : strength_2 +]?]
+[? if player_party == "b": 중앙파 ?]
+[? if player_party == "b": 불만도: [+ center_dissent : dissent +], 세력: [+ center_strength : strength_2 +]?]
 
-[? if player_party == "b": Leninist ?]
-[? if player_party == "b": dissent: [+ leninist_dissent : dissent +], strength: [+ leninist_strength : strength_2 +]?]
+[? if player_party == "b": 레닌주의파 ?]
+[? if player_party == "b": 불만도: [+ leninist_dissent : dissent +], 세력: [+ leninist_strength : strength_2 +]?]
 
-[? if player_party == "m": Social Patriot ?]
-[? if player_party == "m": dissent: [+ social_patriot_dissent : dissent +], strength: [+ social_patriot_strength : strength_2 +]?]
+[? if player_party == "m": 사회애국주의파 ?]
+[? if player_party == "m": 불만도: [+ social_patriot_dissent : dissent +], 세력: [+ social_patriot_strength : strength_2 +]?]
 
-[? if player_party == "m": Revolutionary Defensist  ?]
-[? if player_party == "m": dissent: [+ defensist_dissent : dissent +], strength: [+ defensist_strength : strength_2 +]?]
+[? if player_party == "m": 혁명적 방위주의파 ?]
+[? if player_party == "m": 불만도: [+ defensist_dissent : dissent +], 세력: [+ defensist_strength : strength_2 +]?]
 
-[? if player_party == "m": Internationalist ?]
-[? if player_party == "m": dissent: [+ internationalist_dissent : dissent +], strength: [+ internationalist_strength : strength_2 +]?]
+[? if player_party == "m": 국제주의파 ?]
+[? if player_party == "m": 불만도: [+ internationalist_dissent : dissent +], 세력: [+ internationalist_strength : strength_2 +]?]
 
-[? if player_party == "k": Right-Kadet ?]
-[? if player_party == "k": dissent: [+ right_kadet_dissent : dissent +], strength: [+ right_kadet_strength : strength_2 +]?]
+[? if player_party == "k": 카데트 우파 ?]
+[? if player_party == "k": 불만도: [+ right_kadet_dissent : dissent +], 세력: [+ right_kadet_strength : strength_2 +]?]
 
-[? if player_party == "k": Left-Kadet ?]
-[? if player_party == "k": dissent: [+ left_kadet_dissent : dissent +], strength: [+ left_kadet_strength : strength_2 +]?]
+[? if player_party == "k": 카데트 좌파 ?]
+[? if player_party == "k": 불만도: [+ left_kadet_dissent : dissent +], 세력: [+ left_kadet_strength : strength_2 +]?]
 
-[? if player_party == "sr": Right-SR ?]
-[? if player_party == "sr": dissent: [+ right_sr_dissent : dissent +], strength: [+ right_sr_strength : strength_2 +]?]
+[? if player_party == "sr": 사회혁명당 우파 ?]
+[? if player_party == "sr": 불만도: [+ right_sr_dissent : dissent +], 세력: [+ right_sr_strength : strength_2 +]?]
 
-[? if player_party == "sr": Center-SR ?]
-[? if player_party == "sr": dissent: [+ center_sr_dissent : dissent +], strength: [+ center_sr_strength : strength_2 +]?]
+[? if player_party == "sr": 사회혁명당 중앙파 ?]
+[? if player_party == "sr": 불만도: [+ center_sr_dissent : dissent +], 세력: [+ center_sr_strength : strength_2 +]?]
 
-[? if player_party == "sr": Left-SR ?]
-[? if player_party == "sr": dissent: [+ left_sr_dissent : dissent +], strength: [+ left_sr_strength : strength_2 +]?]
+[? if player_party == "sr": 사회혁명당 좌파 ?]
+[? if player_party == "sr": 불만도: [+ left_sr_dissent : dissent +], 세력: [+ left_sr_strength : strength_2 +]?]
 
-= [+ player_party_name +] Party Positions
+= [+ player_party_name +] 정당 노선 현황
 
-Provisional Government policy: [? if player_party = "m": [+ m_prov_gov_policy : prov_gov_policy +]?][? if player_party = "sr": [+ sr_prov_gov_policy : prov_gov_policy +]?][? if player_party = "k": [+ k_prov_gov_policy : prov_gov_policy +]?][? if player_party = "b": [+ b_prov_gov_policy : prov_gov_policy +]?]
+임시정부에 대한 방침: [? if player_party = "m": [+ m_prov_gov_policy : prov_gov_policy +]?][? if player_party = "sr": [+ sr_prov_gov_policy : prov_gov_policy +]?][? if player_party = "k": [+ k_prov_gov_policy : prov_gov_policy +]?][? if player_party = "b": [+ b_prov_gov_policy : prov_gov_policy +]?]
 
-Labor policy: [? if player_party = "m": [+ m_industrial_policy : industrial_policy +]?][? if player_party = "sr": [+ sr_industrial_policy : industrial_policy +]?][? if player_party = "k": [+ k_industrial_policy : industrial_policy +]?][? if player_party = "b": [+ b_industrial_policy : industrial_policy +]?]
+노동 정책 방침: [? if player_party = "m": [+ m_industrial_policy : industrial_policy +]?][? if player_party = "sr": [+ sr_industrial_policy : industrial_policy +]?][? if player_party = "k": [+ k_industrial_policy : industrial_policy +]?][? if player_party = "b": [+ b_industrial_policy : industrial_policy +]?]
 
-War policy: [? if player_party = "m": [+ m_war_policy : war_policy +]?][? if player_party = "sr": [+ sr_war_policy : war_policy +]?][? if player_party = "k": [+ k_war_policy : war_policy +]?][? if player_party = "b": [+ b_war_policy : war_policy +]?]
+전쟁 수행 방침: [? if player_party = "m": [+ m_war_policy : war_policy +]?][? if player_party = "sr": [+ sr_war_policy : war_policy +]?][? if player_party = "k": [+ k_war_policy : war_policy +]?][? if player_party = "b": [+ b_war_policy : war_policy +]?]
 
-Land/agricultural policy: [? if player_party = "m": [+ m_land_policy : land_policy +], [+ m_agricultural_policy : agricultural_policy +]?][? if player_party = "sr": [+ sr_land_policy : land_policy +], [+ sr_agricultural_policy : agricultural_policy +]?][? if player_party = "k": [+ k_land_policy : land_policy +], [+ k_agricultural_policy : agricultural_policy +]?][? if player_party = "b": [+ b_land_policy : land_policy +], [+ b_agricultural_policy : agricultural_policy +]?]
+토지 및 농업 정책 방침: [? if player_party = "m": [+ m_land_policy : land_policy +], [+ m_agricultural_policy : agricultural_policy +]?][? if player_party = "sr": [+ sr_land_policy : land_policy +], [+ sr_agricultural_policy : agricultural_policy +]?][? if player_party = "k": [+ k_land_policy : land_policy +], [+ k_agricultural_policy : agricultural_policy +]?][? if player_party = "b": [+ b_land_policy : land_policy +], [+ b_agricultural_policy : agricultural_policy +]?]
 
-Nationality policy: [? if player_party = "m": [+ m_nationality_policy : nationality_policy +]?][? if player_party = "sr": [+ sr_nationality_policy : nationality_policy +]?][? if player_party = "k": [+ k_nationality_policy : nationality_policy +]?][? if player_party = "b": [+ b_nationality_policy : nationality_policy +]?]
+민족 문제 방침: [? if player_party = "m": [+ m_nationality_policy : nationality_policy +]?][? if player_party = "sr": [+ sr_nationality_policy : nationality_policy +]?][? if player_party = "k": [+ k_nationality_policy : nationality_policy +]?][? if player_party = "b": [+ b_nationality_policy : nationality_policy +]?]
 
 @gov
-title: Government
+title: 정부 구성
 
 = [+ government_form : government_form +]
 
 [+ government_form : leader +]: [+ prime_minister +] ([+ prime_minister_party +])
 
-Interior [+ government_form : minister +]: [+ interior_minister +] ([+ interior_minister_party +])
+내무부 [+ government_form : minister +]: [+ interior_minister +] ([+ interior_minister_party +])
 
-Foreign [+ government_form : minister +]: [+ foreign_minister +] ([+ foreign_minister_party +])
+외무부 [+ government_form : minister +]: [+ foreign_minister +] ([+ foreign_minister_party +])
 
-War [+ government_form : minister +]: [+ war_minister +] ([+ war_minister_party +])
+전쟁부 [+ government_form : minister +]: [+ war_minister +] ([+ war_minister_party +])
 
-Finance [+ government_form : minister +]: [+ finance_minister +] ([+ finance_minister_party +])
+재무부 [+ government_form : minister +]: [+ finance_minister +] ([+ finance_minister_party +])
 
-Justice [+ government_form : minister +]: [+ justice_minister +] ([+ justice_minister_party +])
+법무부 [+ government_form : minister +]: [+ justice_minister +] ([+ justice_minister_party +])
 
-Agriculture [+ government_form : minister +]: [+ agriculture_minister +] ([+ agriculture_minister_party +])
+농무부 [+ government_form : minister +]: [+ agriculture_minister +] ([+ agriculture_minister_party +])
 
-Transport [+ government_form : minister +]: [+ transport_minister +] ([+ transport_minister_party +])
+교통부 [+ government_form : minister +]: [+ transport_minister +] ([+ transport_minister_party +])
 
-Industry and Trade [+ government_form : minister +]: [+ trade_minister +] ([+ trade_minister_party +])
+상공부 [+ government_form : minister +]: [+ trade_minister +] ([+ trade_minister_party +])
 
 # there is no content for the education minister for now.
-Education [+ government_form : minister +]: [+ education_minister +] ([+ education_minister_party +])
+교육부 [+ government_form : minister +]: [+ education_minister +] ([+ education_minister_party +])
 
 
-[? if post_minister: Posts and Telegraph [+ government_form : minister +]: [+ post_minister +] ([+ post_minister_party +]) ?]
+[? if post_minister: 체신부 [+ government_form : minister +]: [+ post_minister +] ([+ post_minister_party +]) ?]
 
-[? if labor_minister: Labor [+ government_form : minister +]: [+ labor_minister +] ([+ labor_minister_party +]) ?]
+[? if labor_minister: 노동부 [+ government_form : minister +]: [+ labor_minister +] ([+ labor_minister_party +]) ?]
 
-Government efficacy: [+ prov_gov_efficacy : efficacy +]
+정부 효율성: [+ prov_gov_efficacy : efficacy +]
 
-Government legitimacy: [+ prov_gov_legitimacy : legitimacy +]
+정부의 정통성: [+ prov_gov_legitimacy : legitimacy +]
 
-= Petrograd Soviet
+= 페트로그라드 소비에트
 
-Chair: [+ soviet_chair +] ([+ soviet_chair_party +])
+의장: [+ soviet_chair +] ([+ soviet_chair_party +])
 
-Executive committee: [? if m_in_exco: Mensheviks, ?] [? if sr_in_exco: SRs ?] [? if b_in_exco: Bolsheviks ?][? if defensist_in_exco:, Menshevik-Defensists ?][? if internationalist_in_exco:, Menshevik-Internationalists ?][? if left_sr_in_exco:, Left-SRs ?][? if right_sr_in_exco:, Right-SRs ?]
+집행위원회: [? if m_in_exco: 멘셰비키, ?] [? if sr_in_exco: 사회혁명당 ?] [? if b_in_exco: 볼셰비키 ?][? if defensist_in_exco:, 멘셰비키 방위주의파 ?][? if internationalist_in_exco:, 멘셰비키 국제주의파 ?][? if left_sr_in_exco:, 좌파 사회혁명당 ?][? if right_sr_in_exco:, 우파 사회혁명당 ?]
 
-Overal composition:
-Mensheviks: [+ m_soviet +]%
-Bolsheviks: [+ b_soviet +]%
-SRs: [+ sr_soviet +]%
-Anarchists: [+ anarchist_soviet +]%
-Others: [+ other_soviet +]%
-[? if defensist_split: Menshevik-Defensists: [+ defensist_soviet_votes_dec +]% ?]
-[? if internationalist_split: Menshevik-Internationalists: [+ internationalist_soviet_votes_dec +]% ?]
-[? if right_sr_split: Right-SRs: [+ right_sr_soviet_votes_dec +]% ?]
-[? if left_sr_split: Left-SRs: [+ left_sr_soviet_votes_dec +]% ?]
+의석 전체 구성 현황:
+멘셰비키: [+ m_soviet +]%
+볼셰비키: [+ b_soviet +]%
+사회혁명당: [+ sr_soviet +]%
+아나키스트: [+ anarchist_soviet +]%
+기타 세력: [+ other_soviet +]%
+[? if defensist_split: 멘셰비키 방위주의파: [+ defensist_soviet_votes_dec +]% ?]
+[? if internationalist_split: 멘셰비키 국제주의파: [+ internationalist_soviet_votes_dec +]% ?]
+[? if right_sr_split: 사회혁명당 우파: [+ right_sr_soviet_votes_dec +]% ?]
+[? if left_sr_split: 사회혁명당 좌파: [+ left_sr_soviet_votes_dec +]% ?]
 
-Soviet efficacy: [+ soviet_efficacy : efficacy +]
+소비에트 효율성: [+ soviet_efficacy : efficacy +]
 
-Soviet cooperation with Provisional Government: [+ soviet_cooperation : efficacy +]
+소비에트의 임시정부 협력도: [+ soviet_cooperation : efficacy +]
 
 @economy
-title: Economy
+title: 경제
 on-arrival: {!
 Q.trains_total = Math.round(Q.train_capacity/1000);
 Q.food_total = Math.round(Q.food_production/1000);
@@ -349,141 +349,141 @@ Q.food_sold_disp = (Q.food_sold*100).toFixed(1);
 Q.food_requisitioned_disp = (Q.food_requisitioned*100).toFixed(1);
 !}
 
-= Industrial Production
+= 산업 생산 현황
 
-Military: [+ military_industry +]%
+군수 산업: [+ military_industry +]%
 
-Civilian goods: [+ civilian_industry +]%
+소비재: [+ civilian_industry +]%
 
-Agricultural equipment: [+ agricultural_industry +]%
+농기구 생산: [+ agricultural_industry +]%
 
-Transportation equipment: [+ transportation_industry +]%
+수송 장비: [+ transportation_industry +]%
 
-Capital goods: [+ capital_industry +]%
+자본재 생산: [+ capital_industry +]%
 
-Total industrial production (% of 1916): [+ industry +]%
+총 산업 생산량 (1916년 대비 %): [+ industry +]%
 
-= Railways
+= 철도
 
-Military usage: [+ military_trains +]%
+군사적 활용도: [+ military_trains +]%
 
-Civilian usage: [+ civilian_trains +]%
+민간 활용도: [+ civilian_trains +]%
 
-Total transport capacity: [+ trains_total +] million tons/year
+총 운송 용량: 연간 [+ trains_total +]백만 톤
 
-= Agriculture
+= 농업 생산 현황
 
-Food production: [+ food_total +] million tons/year
+식량 생산량: 연간 [+ food_total +]백만 톤
 
-Food sold to cities and towns: [+ food_sold_disp +]%
+도시 및 도심지 판매 비중: [+ food_sold_disp +]%
 
-Food requisitioned by the military: [+ food_requisitioned_disp +]%
+군용 식량 징발 비중: [+ food_requisitioned_disp +]%
 
-= Land Reform
+= 토지 개혁
 
-Land reform policy: [+ land_reform : land_reform +]
+토지 개혁 정책: [+ land_reform : land_reform +]
 
-Land reform progress: [+ land_reform_progress : land_reform_progress +]
+토지 개혁 진행도: [+ land_reform_progress : land_reform_progress +]
 
-= Finances and Debt
+= 재정 및 채무
 
-Budget balance: [+ budget +]
+예산 수지: [+ budget +]
 
-Long-term domestic debt: [+ domestic_debt +]
+장기 국내 부채: [+ domestic_debt +]
 
-Foreign debt: [+ foreign_debt +]
+대외 부채: [+ foreign_debt +]
 
 
 @defense
-title: Defense
+title: 국방
 
-[? if is_armistice and not is_peace: An armistice with the Central Powers has been signed, but it is not yet a permanent peace treaty. ?]
+[? if is_armistice and not is_peace: 동맹국 측과 휴전 협정을 체결하였으나, 아직 정식 평화 조약 단계에는 이르지 못했습니다. ?]
 
-[? if is_peace: A peace treaty with the Central Powers has been signed. ?]
+[? if is_peace: 동맹국 측과 정식 평화 조약을 체결하였습니다. ?]
 
-= Armies and Fronts
+= 군대 및 전선 상황
 
-Northern Front: [+ northern_front_soldiers +] divisions
+북부 전선군: [+ northern_front_soldiers +]개 사단
 {!</br>!}[+ northern_progress : war_progress +]
 
-Western Front: [+ western_front_soldiers +] divisions
+서부 전선군: [+ western_front_soldiers +]개 사단
 {!</br>!}[+ western_progress : war_progress +]
 
-Southwestern Front: [+ southwestern_front_soldiers +] divisions
+남서부 전선군: [+ southwestern_front_soldiers +]개 사단
 {!</br>!}[+ southwestern_progress : war_progress +]
 
-Romanian Front: [+ romanian_front_soldiers +] divisions
+루마니아 전선군: [+ romanian_front_soldiers +]개 사단
 {!</br>!}[+ romanian_progress : war_progress +]
 
-Caucasus Front: [+ caucasus_front_soldiers +] divisions
+코카서스 전선군: [+ caucasus_front_soldiers +]개 사단
 {!</br>!}[+ caucasus_progress : war_progress +]
 
-Garrisons and reserves: [+ reserve_soldiers +] divisions
+후방 주둔군 및 예비대: [+ reserve_soldiers +]개 사단
 
-Morale: [+ morale : efficacy +]
+군 사기: [+ morale : efficacy +]
 
-Discipline: [+ discipline : efficacy +]
+군 규율: [+ discipline : efficacy +]
 
-Supply quality: [+ supply_quality : efficacy +]
+보급 수준: [+ supply_quality : efficacy +]
 
-= Foreign Relations
+= 대외 관계
 
-Relations with the West: [+ west_relation : relationships +]
+서방 연합국과의 관계: [+ west_relation : relationships +]
 
-[? if not is_armistice and not is_peace: Armistice negotiations: [+ armistice_progress +] ?]
+[? if not is_armistice and not is_peace: 휴전 협상 진행도: [+ armistice_progress +] ?]
 
-[? if is_armistice: We are currently in an armistice. ?]
+[? if is_armistice: 현재 휴전 상태가 유지되고 있습니다. ?]
 
-[? if is_armistice and not is_peace: Peace negotiations: [+ central_negotiations +]?]
+[? if is_armistice and not is_peace: 평화 협상 진행도: [+ central_negotiations +]?]
 
 
 @security
-title: Internal Security
+title: 내부 치안 및 보안
 
-= Petrograd Forces
+= 페트로그라드 무장 세력
 
-Workers' militias: [+ workers_militia_strength +] thousand
+노동자 민병대: [+ workers_militia_strength +]천 명
 
-Workers' militia allegiance: Mensheviks: [+ workers_militia_m_loyalty : strength_2 +], Bolsheviks: [+ workers_militia_b_loyalty : strength_2 +], SRs: [+ workers_militia_sr_loyalty : strength_2 +], Independent: [+ workers_militia_independent : strength_2 +]
-[? if right_sr_split: Right-SRs: [+ workers_militia_right_sr_loyalty : strength_2 +] ?]
-[? if left_sr_split: Left-SRs: [+ workers_militia_left_sr_loyalty : strength_2 +] ?]
+노동자 민병대 성향: 멘셰비키: [+ workers_militia_m_loyalty : strength_2 +], 볼셰비키: [+ workers_militia_b_loyalty : strength_2 +], 사회혁명당: [+ workers_militia_sr_loyalty : strength_2 +], 독립 세력: [+ workers_militia_independent : strength_2 +]
+[? if right_sr_split: 우파 사회혁명당: [+ workers_militia_right_sr_loyalty : strength_2 +] ?]
+[? if left_sr_split: 좌파 사회혁명당: [+ workers_militia_left_sr_loyalty : strength_2 +] ?]
 
-City militias: [+ city_militia_strength +] thousand
+도시 민병대: [+ city_militia_strength +]천 명
 
-City militia allegiance: Mensheviks: [+ city_militia_m_loyalty : strength_2 +], Kadets: [+ city_militia_k_loyalty : strength_2 +], SRs: [+ city_militia_sr_loyalty : strength_2 +], Independent: [+ city_militia_independent : strength_2 +]
+도시 민병대 성향: 멘셰비키: [+ city_militia_m_loyalty : strength_2 +], 카데트: [+ city_militia_k_loyalty : strength_2 +], 사회혁명당: [+ city_militia_sr_loyalty : strength_2 +], 독립 세력: [+ city_militia_independent : strength_2 +]
 
-Garrison: [+ garrison_strength +] thousand
+페트로그라드 주둔군: [+ garrison_strength +]천 명
 
-Garrison allegiance: Mensheviks: [+ garrison_m_loyalty : strength +], Bolsheviks: [+ garrison_b_loyalty : strength +], Kadets: [+ garrison_k_loyalty : strength +], SRs: [+ garrison_sr_loyalty : strength +], Independent: [+ garrison_independent : strength +]
-[? if defensist_split: Menshevik-Defensists: [+ garrison_defensist_loyalty : strength_2 +] ?]
-[? if internationalist_split: Menshevik-Internationalists: [+ garrison_internationalist_loyalty : strength_2 +] ?]
-[? if right_sr_split: Right-SRs: [+ garrison_right_sr_loyalty : strength_2 +] ?]
-[? if left_sr_split: Left-SRs: [+ garrison_left_sr_loyalty : strength_2 +] ?]
+주둔군 성향: 멘셰비키: [+ garrison_m_loyalty : strength +], 볼셰비키: [+ garrison_b_loyalty : strength +], 카데트: [+ garrison_k_loyalty : strength +], 사회혁명당: [+ garrison_sr_loyalty : strength +], 독립 세력: [+ garrison_independent : strength +]
+[? if defensist_split: 멘셰비키 방위주의파: [+ garrison_defensist_loyalty : strength_2 +] ?]
+[? if internationalist_split: 멘셰비키 국제주의파: [+ garrison_internationalist_loyalty : strength_2 +] ?]
+[? if right_sr_split: 우파 사회혁명당: [+ garrison_right_sr_loyalty : strength_2 +] ?]
+[? if left_sr_split: 좌파 사회혁명당: [+ garrison_left_sr_loyalty : strength_2 +] ?]
 
-[? if loyal_troops > 0 : Loyal troops (Battalions of Death): [+ loyal_troops_strength +] thousand ?]
+[? if loyal_troops > 0 : 정부 충성 부대 (결사대): [+ loyal_troops_strength +]천 명 ?]
 
-= Social Issues
+= 사회 문제 현황
 
-Labor unrest: [+ labor_unrest : war_weariness +]
+노동계 소요: [+ labor_unrest : war_weariness +]
 
-Rural unrest: [+ rural_unrest : war_weariness +]
+농촌 지역 소요: [+ rural_unrest : war_weariness +]
 
-Soldier unrest: [+ soldier_unrest : war_weariness +]
+군대 내 소요: [+ soldier_unrest : war_weariness +]
 
-Crime rate: [+ crime : war_weariness +]
+범죄 발생률: [+ crime : war_weariness +]
 
 
 
 @policy
-title: Policy
+title: 정책 기조
 
-= Foreign Relations
+= 대외 관계 방침
 
-Relations with the West: [+ west_relation : relationships +]
+서방 연합국과의 관계: [+ west_relation : relationships +]
 
-[? if not is_armistice: Armistice negotiations: [+ armistice_progress +] ?]
+[? if not is_armistice: 휴전 협상 진행도: [+ armistice_progress +] ?]
 
-[? if is_armistice: We are currently in an armistice. ?]
+[? if is_armistice: 현재 휴전 상태가 유지되고 있습니다. ?]
 
-[? if is_armistice: Peace negotiations: [+ central_negotiations +]?]
+[? if is_armistice: 평화 협상 진행도: [+ central_negotiations +]?]
 

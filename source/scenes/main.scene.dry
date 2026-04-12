@@ -79,7 +79,7 @@ max-cards: 3
 
 
 @party_m
-title: Party Affairs
+title: 당내 업무
 card-image: img/iskra.jpg
 is-deck: true
 view-if: player_party = "m"
@@ -87,7 +87,7 @@ view-if: player_party = "m"
 - #m_party
 
 @party_b
-title: Party Affairs
+title: 당내 업무
 card-image: img/pravda.jpg
 is-deck: true
 view-if: player_party = "b"
@@ -95,7 +95,7 @@ view-if: player_party = "b"
 - #b_party
 
 @party_sr
-title: Party Affairs
+title: 당내 업무
 card-image: img/sr.png
 is-deck: true
 view-if: player_party = "sr"
@@ -103,7 +103,7 @@ view-if: player_party = "sr"
 - #sr_party
 
 @party_k
-title: Party Affairs
+title: 당내 업무
 card-image: img/kadet.png
 is-deck: true
 view-if: player_party = "k"
@@ -111,7 +111,7 @@ view-if: player_party = "k"
 - #k_party
 
 @prov_gov
-title: Provisional Government
+title: 임시 정부
 view-if: player_party = "k" or (player_party = "m" and m_in_gov) or (player_party = "sr" and sr_in_gov) or (player_party = "b" and b_in_gov)
 card-image: img/prov_gov_1.jpg
 is-deck: true
@@ -119,7 +119,7 @@ is-deck: true
 - #prov_gov
 
 @soviet_affairs
-title: Petrograd Soviet
+title: 페트로그라드 소비에트
 view-if: player_party == "m" or player_party == "sr" or player_party == "b"
 card-image: img/soviet_1.jpg
 is-deck: true
