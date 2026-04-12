@@ -188,169 +188,168 @@ Q.food_requisitioned_disp = (Q.food_requisitioned*100).toFixed(1);
 !}
 go-to: menu
 
-= Industrial Production
+= 산업 생산 현황
 
-Military: [+ military_industry +]%
+군수 산업: [+ military_industry +]%
 
-Civilian goods: [+ civilian_industry +]%
+민간 소비재: [+ civilian_industry +]%
 
-Agricultural equipment: [+ agricultural_industry +]%
+농기구 생산: [+ agricultural_industry +]%
 
-Transportation equipment: [+ transportation_industry +]%
+수송 장비: [+ transportation_industry +]%
 
-Capital goods: [+ capital_industry +]%
+자본재 생산: [+ capital_industry +]%
 
-Total industrial production (% of 1916): [+ industry +]%
+총 산업 생산량 (1916년 대비 %): [+ industry +]%
 
-= Railways
+= 철도
 
-Military usage: [+ military_trains +]%
+군사적 이용도: [+ military_trains +]%
 
-Civilian usage: [+ civilian_trains +]%
+민간 이용도: [+ civilian_trains +]%
 
-Total transport capacity: [+ trains_total +] million tons/year
+총 운송 용량: 연간 [+ trains_total +]백만 톤
 
-= Agriculture
+= 농업 생산
 
-Food production: [+ food_total +] million tons/year
+식량 생산량: 연간 [+ food_total +]백만 톤
 
-Food sold to cities and towns: [+ food_sold_disp +]%
+도시 및 도심지 판매 비중: [+ food_sold_disp +]%
 
-Food requisitioned by the military: [+ food_requisitioned_disp +]%
+군용 식량 징발 비중: [+ food_requisitioned_disp +]%
 
-= Food Consumption
+= 식량 소비 현황
 
-Urban food demand: [+ food_demand_urban +] million kg/year
+도시 지역 식량 수요: 연간 [+ food_demand_urban +]백만 kg
 
-Urban food supply: [+ food_supply_urban +] million kg/year
+도시 지역 식량 공급: 연간 [+ food_supply_urban +]백만 kg
 
-Food shortage: [+ hunger +]% 
+식량 부족률: [+ hunger +]% 
 
-= Finances and Debt
+= 재정 및 채무
 
-Budget balance: [+ budget +]
+예산 수지: [+ budget +]
 
-Long-term domestic debt: [+ domestic_debt +]
+장기 국내 부채: [+ domestic_debt +]
 
-Foreign debt: [+ foreign_debt +]
+대외 부채: [+ foreign_debt +]
 
 
 @election_projections
 go-to: menu
 
-**Projected election results** (if the election were to be held now):
+**예상 선거 결과** (현시점에서 선거가 실시될 경우를 가정한 수치입니다):
 
 @parties
 go-to: menu
 
-**Major Parties:**
+**주요 정당 일람:**
 
-**Russian Social-Democratic Labor Party (Mensheviks)** - The "minority" faction of the RSDLP, the Mensheviks emerged from party splits, reunifications, and further splits in the 1900s. It is in fact the larger party, seeking to organize a mass party among the working class. A social-democratic party based on the teachings of Karl Marx, the party argues that the current revolution is the "bourgeois" revolution. The task of socialists is to achieve a democratic republic and gain political and economic rights for workers. The Mensheviks are deeply divided on their attitudes towards the war and participation in a bourgeois government.
+**러시아 사회민주노동당 (멘셰비키)** - 사회민주노동당 내 '소수파'를 뜻하는 멘셰비키는 1900년대의 분열과 통합 과정을 거치며 형성되었습니다. 실제로는 볼셰비키보다 규모가 큰 정당으로, 노동계급에 기반한 대중 정당 조직을 지향합니다. 카를 마르크스의 이론을 따르는 사회민주주의 정당인 이들은 현재의 혁명을 '부르주아 혁명' 단계로 규정합니다. 따라서 사회주의자의 과업은 민주 공화국을 수립하고 노동자의 정치·경제적 권리를 확보하는 것이라 봅니다. 현재 멘셰비키는 전쟁 지속 여부와 부르주아 정부 참여 문제를 두고 내부적으로 심각한 갈등을 겪고 있습니다.
 
-[? if player_party = "Bolshevik": Current relations: [+ bolshevik_menshevik : relationships +] ?]
-[? if player_party = "SR": Current relations: [+ sr_menshevik_relation : relationships +] ?]
-[? if player_party = "Kadet": Current relations: [+ kadet_menshevik_relation : relationships +] ?]
+[? if player_party = "Bolshevik": 현재 관계: [+ bolshevik_menshevik : relationships +] ?]
+[? if player_party = "SR": 현재 관계: [+ sr_menshevik_relation : relationships +] ?]
+[? if player_party = "Kadet": 현재 관계: [+ kadet_menshevik_relation : relationships +] ?]
 
-**Russian Social-Democratic Labor Party (Bolsheviks)** - The "majority" faction of the RSDLP is in fact the smaller party. Created largely by Vladimir Lenin's arguments in the various RSDLP congresses, the Bolsheviks are seen as more radical. They are a disciplined party of revolutionaries.
+**러시아 사회민주노동당 (볼셰비키)** - 사회민주노동당 내 '다수파'를 뜻하지만, 실제로는 더 작은 규모의 정당입니다. 여러 차례의 당 대회를 거치며 블라디미르 레닌의 주도하에 결성된 볼셰비키는 멘셰비키보다 급진적인 성향을 띱니다. 이들은 엄격한 규율을 갖춘 혁명가들의 정당입니다.
 
-[? if player_party = "Menshevik": Current relations: [+ menshevik_bolshevik_relation : relationships +] ?]
-[? if player_party = "SR": Current relations: [+ sr_bolshevik_relation : relationships +] ?]
-[? if player_party = "Kadet": Current relations: [+ kadet_bolshevik_relation : relationships +] ?]
+[? if player_party = "Menshevik": 현재 관계: [+ menshevik_bolshevik_relation : relationships +] ?]
+[? if player_party = "SR": 현재 관계: [+ sr_bolshevik_relation : relationships +] ?]
+[? if player_party = "Kadet": 현재 관계: [+ kadet_bolshevik_relation : relationships +] ?]
 
-**Party of Socialist-Revolutionaries (SR)** - The SRs are based in the Russian ideology of *narodism*, or populism, which is an agrarian socialism that sees the traditional Russian village (the *obshchina*) as the basis of a future socialist society. Their support is strongest in the peasantry, but they have substantial support among workers as well. The SRs are deeply divided between left and right wings based on their attitudes towards the war and participation in government.
+**사회혁명당 (SR)** - SR은 러시아 고유의 이데올로기인 '나로드니즘(인민주의)'에 뿌리를 두고 있습니다. 이들은 전통적인 러시아 공동체인 '옵쉬나'를 미래 사회주의 사회의 토대로 삼는 농본 사회주의를 지향합니다. 주로 농민층에서 압도적인 지지를 얻고 있으나, 노동자들 사이에서도 세력이 만만치 않습니다. 현재 전쟁에 대한 입장과 정부 참여 문제를 놓고 좌파와 우파가 극명하게 대립하고 있습니다.
 
 
-[? if player_party = "Menshevik": Current relations: [+ menshevik_sr_relation : relationships +] ?]
-[? if player_party = "Bolshevik": Current relations: [+ bolshevik_sr_relation : relationships +] ?]
-[? if player_party = "Kadet": Current relations: [+ kadet_sr_relation : relationships +] ?]
+[? if player_party = "Menshevik": 현재 관계: [+ menshevik_sr_relation : relationships +] ?]
+[? if player_party = "Bolshevik": 현재 관계: [+ bolshevik_sr_relation : relationships +] ?]
+[? if player_party = "Kadet": 현재 관계: [+ kadet_sr_relation : relationships +] ?]
 
-**Constitutional Democratic Party (Kadets)** - The Kadets were formerly on the left of the political spectrum, but they have moved to the center-right following the revolution. They are a liberal party whose goal is to establish a democratic republic or constitutional monarchy with moderate social reforms, while winning the war. They consider themselves a party representing all of Russian society, but are predominantly based in the middle class.
+**입헌민주당 (카데트)** - 과거에는 진보 진영에 속했으나, 혁명 이후 중도 우파 성향으로 돌아섰습니다. 전쟁에서 승리를 지향하는 한편, 온건한 사회 개혁을 병행하며 민주 공화국이나 입헌 군주제를 수립하는 것을 목표로 하는 자유주의 정당입니다. 스스로를 러시아 사회 전체를 대변하는 정당이라 자처하지만, 실제 지지 기반은 주로 중산층입니다.
 
-[? if player_party = "Menshevik": Current relations: [+ menshevik_kadet_relation : relationships +] ?]
-[? if player_party = "Bolshevik": Current relations: [+ bolshevik_kadet_relation : relationships +] ?]
-[? if player_party = "SR": Current relations: [+ sr_kadet_relation : relationships +] ?]
+[? if player_party = "Menshevik": 현재 관계: [+ menshevik_kadet_relation : relationships +] ?]
+[? if player_party = "Bolshevik": 현재 관계: [+ bolshevik_kadet_relation : relationships +] ?]
+[? if player_party = "SR": 현재 관계: [+ sr_kadet_relation : relationships +] ?]
 
-**Other parties:**
+**기타 정당:**
 
-**Popular Socialists** and **Trudoviks** ware rooted in the same *narodist* ideology as the SRs, but argued for a non-revolutionary path to socialism. Alexander Kerensky is the most well-known Trudovik.
+**인민사회당**과 **트루도비키(노동그룹)**는 사회혁명당과 같은 나로드니즘 이데올로기에 기반을 두고 있으나, 사회주의로의 비혁명적이고 점진적인 이행을 주장합니다. 알렉산드르 케렌스키가 가장 대표적인 트루도비키 출신 인사입니다.
 
-**Conservatives** have been largely marginalized since the February Revolution. The **Octobrists** are a conservative-liberal faction that supports constitutional monarchy. Much more radical were the **Union of the Russian People** and the **Black Hundreds**, extremist nationalist and antisemitic groups that were suppressed following the February Revolution.
+**보수 세력**은 2월 혁명 이후 정치적 영향력을 거의 상실했습니다. **10월당**은 입헌 군주제를 지지하는 보수 자유주의 성향의 파벌입니다. 이보다 훨씬 극단적인 세력으로는 **러시아 인민 연합**과 **검은 백인조**가 있었으나, 이들 극우 민족주의 및 반유대주의 단체들은 2월 혁명 이후 활동이 금지되었습니다.
 
-**Anarchists** are not a formally organized party, but they are prevalent among some of the workers. They are the most radical group and seek to replace the Provisional Government with a federation of free soviets.
+**아나키스트(무정부주의자)**들은 공식적인 정당 형태를 갖추고 있지는 않으나, 일부 노동자들 사이에서 강력한 영향력을 행사합니다. 이들은 가장 급진적인 집단으로, 임시정부를 해체하고 자유로운 소비에트 연맹 체제로 대체할 것을 요구합니다.
 
-There are many **minority nationality parties**, based in the Empire's various nationalities. Some are autonomous branches of broader parties, such as the Ukrainian SRs and Social Democrats. Others are autonomous national movements (often having some national-liberal influences), such as the Kazakh Alash party or the Azeri Musavat party.
-
+제국 내의 각 민족에 기반을 둔 수많은 **소수 민족 정당**들이 존재합니다. 우크라이나 사회혁명당이나 우크라이나 사회민주당처럼 대정당의 자치 분과 성격을 띠는 경우도 있고, 카자흐족의 알라시 당이나 아제르바이잔의 무사바트 당처럼 독자적인 민족주의 운동(종종 민족 자유주의적 성향을 띰)을 전개하는 경우도 있습니다.
 
 @paramilitaries
 on-arrival: {!
 !}
 go-to: menu
 
-= Armies and Fronts
+군대 및 전선 현황
 
-Northern Front: [+ northern_front_soldiers +] divisions - {!</br>!}[+ northern_progress : war_progress +]
+북부 전선군: [+ northern_front_soldiers +]개 사단 - {!</br>!}[+ northern_progress : war_progress +]
 
-Western Front: [+ western_front_soldiers +] divisions - 
+서부 전선군: [+ western_front_soldiers +]개 사단 - 
 {!</br>!}[+ western_progress : war_progress +]
 
-Southwestern Front: [+ southwestern_front_soldiers +] divisions - 
+남서부 전선군: [+ southwestern_front_soldiers +]개 사단 - 
 {!</br>!}[+ southwestern_progress : war_progress +]
 
-Romanian Front: [+ romanian_front_soldiers +] divisions - 
+루마니아 전선군: [+ romanian_front_soldiers +]개 사단 - 
 {!</br>!}[+ romanian_progress : war_progress +]
 
-Caucasus Front: [+ caucasus_front_soldiers +] divisions - 
+코카서스 전선군: [+ caucasus_front_soldiers +]개 사단 - 
 {!</br>!}[+ caucasus_progress : war_progress +]
 
-Garrisons and reserves: [+ reserve_soldiers +] divisions
+후방 주둔군 및 예비대: [+ reserve_soldiers +]개 사단
 
-= Morale and readiness
+= 사기 및 전투 준비 태세
 
-Morale: [+ morale : efficacy +]
+군 사기: [+ morale : efficacy +]
 
-Discipline: [+ discipline : efficacy +]
+군 규율: [+ discipline : efficacy +]
 
-Supply quality: [+ supply_quality : efficacy +]
+보급 수준: [+ supply_quality : efficacy +]
 
-= Enemy forces
+= 적군 병력 현황
 
-Northwestern Front: [+ northwestern_enemy_soldiers +] divisions
+북서부 전선: [+ northwestern_enemy_soldiers +]개 사단
 
-Southwestern Front: [+ southwestern_enemy_soldiers +] divisions
+남서부 전선: [+ southwestern_enemy_soldiers +]개 사단
 
-Caucasus Front: [+ caucasus_enemy_soldiers +] divisions
+코카서스 전선: [+ caucasus_enemy_soldiers +]개 사단
 
-= Forces in Petrograd
+= 페트로그라드 내 무장 세력
 
-**Workers' Militias**: The industrial workers of Petrograd have organized militias for defense of their neighborhoods against criminals and counter-revolutionaries.
+**노동자 민병대**: 페트로그라드의 산업 노동자들은 범죄자 및 반혁명 세력으로부터 자신들의 거주지를 지키기 위해 민병대를 조직하였습니다.
 
-Strength: [+ workers_militia_strength +] thousand
+병력 규모: [+ workers_militia_strength +]천 명
 
-Militarization: [+ workers_militia_militancy : militancy +]
+군사화 수준: [+ workers_militia_militancy : militancy +]
 
-Loyalties:
+충성도:
 
-Mensheviks: [+ workers_militia_m_loyalty : strength_2 +], Bolsheviks: [+ workers_militia_b_loyalty : strength_2 +], SRs: [+ workers_militia_sr_loyalty : strength_2 +], Independent: [+ workers_militia_independent : strength_2 +]
+멘셰비키: [+ workers_militia_m_loyalty : strength_2 +], 볼셰비키: [+ workers_militia_b_loyalty : strength_2 +], 사회혁명당: [+ workers_militia_sr_loyalty : strength_2 +], 독립 세력: [+ workers_militia_independent : strength_2 +]
 
-**City Militias**: In the wake of the revolution, militias were formed to replace the tsarist police. Consisting mostly of middle-class students and youth, these bodies are mostly loyal to the bourgeois government.
+**도시 민병대**: 혁명 직후 차르 체제의 경찰을 대체하기 위해 결성되었습니다. 주로 중산층 학생과 청년들로 구성되어 있으며, 대부분 부르주아 정부에 충성하고 있습니다.
 
-Strength: [+ city_militia_strength +] thousand
+병력 규모: [+ city_militia_strength +]천 명
 
-Militarization: [+ city_militia_militancy : militancy +]
+군사화 수준: [+ city_militia_militancy : militancy +]
 
-Loyalties:
+충성도:
 
-Mensheviks: [+ city_militia_m_loyalty : strength_2 +], Kadets: [+ city_militia_k_loyalty : strength_2 +], SRs: [+ city_militia_sr_loyalty : strength_2 +], Independent: [+ city_militia_independent : strength_2 +]
+멘셰비키: [+ city_militia_m_loyalty : strength_2 +], Kadets: [+ city_militia_k_loyalty : strength_2 +], 사회혁명당: [+ city_militia_sr_loyalty : strength_2 +], 독립 세력: [+ city_militia_independent : strength_2 +]
 
-**Petrograd Garrison**: The military forces stationed in Petrograd were the heart of the February revolution.
+**페트로그라드 주둔군**: 페트로그라드에 주둔 중인 이 군사력은 2월 혁명의 핵심 동력이었습니다.
 
-Strength: [+ garrison_strength +] thousand
+병력 규모: [+ garrison_strength +]천 명
 
-Militarization: [+ garrison_militancy : militancy +]
+군사화 수준: [+ garrison_militancy : militancy +]
 
-Loyalties:
+충성도:
 
-Mensheviks: [+ garrison_m_loyalty : strength +], Bolsheviks: [+ garrison_b_loyalty : strength +], Kadets: [+ garrison_k_loyalty : strength +], SRs: [+ garrison_sr_loyalty : strength +], Independent: [+ garrison_independent : strength +]
+멘셰비키: [+ garrison_m_loyalty : strength +], 볼셰비키: [+ garrison_b_loyalty : strength +], Kadets: [+ garrison_k_loyalty : strength +], 사회혁명당: [+ garrison_sr_loyalty : strength +], 독립 세력: [+ garrison_independent : strength +]
 
 
 
@@ -360,58 +359,58 @@ go-to: factions_b if player_party = "b"; factions_k if player_party = "k"; facti
 @factions_b
 go-to: menu
 
-**Internal factions of the Bolsheviks:**
+**볼셰비키 당내 파벌 현황:**
 
-Overall dissent: [+ b_dissent_percent : dissent +]
+전체 불만도: [+ b_dissent_percent : dissent +]
 
-**Moderates**
+**온건파**
 
-The moderates among the Bolsheviks seek to work with other socialist parties to form a homogeneous socialist government. They are opposed to using force to take power. This grouping is led by Lev Kamenev and Grigory Zinoviev.
+볼셰비키 내 온건파는 여타 사회주의 정당들과 협력하여 단일 사회주의 정부를 구성하고자 합니다. 이들은 권력 장악을 위한 무력 사용에 반대합니다. 레프 카메네프와 그리고리 지노비예프가 이 파벌을 이끌고 있습니다.
 
-Strength: [+ moderate_strength : strength_2 +]
+세력: [+ moderate_strength : strength_2 +]
 
-Dissent: [+ moderate_dissent : dissent +]
+불만도: [+ moderate_dissent : dissent +]
 
-**Center**
+**중앙파**
 
-Most Bolsheviks are pragmatists willing to be pulled in either a more or less radical direction, depending on the circumstances.
+대부분의 볼셰비키 당원들은 상황에 따라 급진적이거나 온건한 방향 중 어느 쪽으로든 선회할 수 있는 실용주의자들입니다.
 
-Strength: [+ center_strength : strength_2 +]
+세력: [+ center_strength : strength_2 +]
 
-Dissent: [+ center_dissent : dissent +]
+불만도: [+ center_dissent : dissent +]
 
 
-**Leninists**
+**레닌주의파**
 
-Vladimir Lenin is by far the most influential Bolshevik, although his influence has waned due to his long exile. Lenin is against all cooperation with the Provisional Government or any socialist party that would cooperate with it, and is willing to risk a civil war to end the Great War.
+블라디미르 레닌은 볼셰비키 내에서 독보적인 영향력을 지닌 인물이지만, 오랜 망명 생활로 인해 그 기세가 다소 꺾인 상태입니다. 레닌은 임시정부 및 그에 협력하는 모든 사회주의 정당과의 공조를 거부하며, 전쟁 종결을 위해서라면 내전의 위험조차 감수하겠다는 입장입니다.
 
-Strength: [+ leninist_strength : strength_2 +]
+세력: [+ leninist_strength : strength_2 +]
 
-Dissent: [+ leninist_dissent : dissent +]
+불만도: [+ leninist_dissent : dissent +]
 
 
 
 @factions_k
 go-to: menu
 
-**Internal factions of the Kadets:**
+*입헌민주당(카데트) 당내 파벌 현황:**
 
-**Right Kadets**
+**우파 카데트**
 
-The grouping of Pavel Milyukov backed the revolution because they believed they could manage the war better than the Tsar. They are very much Russian nationalists who support expanding the Russian Empire's territory.
+파벨 밀류코프가 이끄는 이들은 자신들이 차르보다 전쟁을 더 효율적으로 수행할 수 있다고 믿었기에 혁명을 지지했습니다. 이들은 러시아 제국의 영토 확장을 옹호하는 강력한 러시아 민족주의 성향을 띱니다.
 
-Strength: [+ right_kadet_strength : strength_2 +]
+세력: [+ right_kadet_strength : strength_2 +]
 
-Dissent: [+ right_kadet_dissent : dissent +]
+불만도: [+ right_kadet_dissent : dissent +]
 
 
-**Left Kadets**
+**좌파 카데트**
 
-Nikolai Nekrasov and his allies are willing to work with moderate socialists to build a democratic Russia that respects the rights of workers and minorities without totally restructuring society, while not compromising on the war or Russia's territorial integrity.
+니콜라이 네크라소프와 그 동맹들은 사회 체제를 완전히 뒤엎지 않는 선에서 노동자와 소수 민족의 권리를 존중하는 민주 러시아를 건설하고자 합니다. 이를 위해 온건 사회주의자들과 협력할 의사가 있으나, 전쟁 수행이나 러시아의 영토 보전 문제에서는 절대 타협하지 않습니다.
 
-Strength: [+ left_kadet_strength : strength_2 +]
+세력: [+ left_kadet_strength : strength_2 +]
 
-Dissent: [+ left_kadet_dissent : dissent +]
+불만도: [+ left_kadet_dissent : dissent +]
 
 
 
@@ -419,69 +418,69 @@ Dissent: [+ left_kadet_dissent : dissent +]
 @factions_m
 go-to: menu
 
-**Internal factions of the Mensheviks:**
+**멘셰비키 당내 파벌 현황:**
 
-Overall dissent: [+ m_dissent_percent : dissent +]
+전체 불만도: [+ m_dissent_percent : dissent +]
 
-**Social Patriots**
+**사회애국주의파**
 
-A substantial grouping of Menshevik-aligned Social Democrats actively support the war and the cause of Allied victory, even before the revolution. The venerable Social Democrat Georgy Plekhanov leads a faction called "Unity", a misleadingly named pro-war grouping.
+멘셰비키 계열 사회민주주의자들 중 상당수는 혁명 이전부터 전쟁 지속과 연합국의 승리를 적극적으로 지지해 왔습니다. 원로 사회민주주의자인 게오르기 플레하노프가 '통합(예딘스트보)'이라는 이름의 친전파 파벌을 이끌고 있습니다.
 
-Strength: [+ social_patriot_strength : strength_2 +]
+세력: [+ social_patriot_strength : strength_2 +]
 
-Dissent: [+ social_patriot_dissent : dissent +]
-
-
-**Revolutionary Defensists**
-
-Ideologically defined by Irakli Tsereteli's "Siberian Zimmerwaldists", the revolutionary defensists only support a defensive war to protect the gains of the revolution, while calling for the international proletariat to rise up and force the powers to accept a general peace without annexations or indemnities. Until the proletariat of Germany rise up, they say that war is still necessary to defend against the Kaiser's counterrevolutionary attack.
-
-Strength: [+ defensist_strength : strength_2 +]
-
-Dissent: [+ defensist_dissent : dissent +]
+불만도: [+ social_patriot_dissent : dissent +]
 
 
-**Internationalists**
+**혁명적 방위주의파**
 
-Many Social Democrats believe that the cause of the war is primarily French and British imperialism, and that Russian workers and peasants have no business dying for Western or Russian capitalists. They are willing to accept a separate peace, even if it means a loss of territory.
+이라클리 츠레텔리의 '시베리아 치머발트주의자' 노선을 따르는 이들은 혁명의 성과를 지키기 위한 방어적 전쟁만을 지지합니다. 동시에 국제 프롤레타리아가 봉기하여 열강들이 무병합·무배상의 보편적 평화를 수용하도록 압박할 것을 촉구합니다. 이들은 독일 프롤레타리아가 혁명을 일으키기 전까지는 카이저의 반혁명적 공격에 맞서기 위한 전쟁이 불가피하다고 주장합니다.
 
-Strength: [+ internationalist_strength : strength_2 +]
+세력: [+ defensist_strength : strength_2 +]
 
-Dissent: [+ internationalist_dissent : dissent +]
+불만도: [+ defensist_dissent : dissent +]
+
+
+**국제주의파**
+
+많은 사회민주주의자들은 이 전쟁의 본질이 프랑스와 영국의 제국주의적 야욕에 있다고 보며, 러시아의 노동자와 농민들이 서방이나 러시아 자본가들을 위해 희생될 이유가 없다고 믿습니다. 이들은 설령 영토 손실이 발생하더라도 단독 평화 조약을 체결해야 한다는 입장입니다.
+
+세력: [+ internationalist_strength : strength_2 +]
+
+불만도: [+ internationalist_dissent : dissent +]
 
 
 @factions_sr
 go-to: menu
 
-**Internal factions of the SRs:**
+**사회혁명당 당내 파벌 현황:**
 
-Overall dissent: [+ sr_dissent_percent : dissent +]
+전체 불만도: [+ sr_dissent_percent : dissent +]
 
-**Right SRs**
+**우파 사회혁명당**
 
-The right wing of the Socialist Revolutionaries support the war as necessary in order to defend Russia against Germany. They are willing to place social revolution on hold and work with the bourgeoisie until the war ends and the Constituent Assembly is called.
+사회혁명당 내 우파 세력은 독일의 침공으로부터 러시아를 지키기 위해 전쟁 지속이 필요하다고 봅니다. 이들은 전쟁이 끝나고 제헌의회가 소집될 때까지 사회 혁명을 잠시 미루고 부르주아 세력과 협력할 의사가 있습니다.
 
-Strength: [+ right_sr_strength : strength_2 +]
+세력: [+ right_sr_strength : strength_2 +]
 
-Dissent: [+ right_sr_dissent : dissent +]
-
-
-**Center SRs**
-
-Led by the venerable Viktor Chernov, the center of the SRs hope for an international socialist revolution to end the war, but are willing to accept a separate peace. Chernov's primary interest is in rural land redistribution.
-
-Strength: [+ center_sr_strength : strength_2 +]
-
-Dissent: [+ center_sr_dissent : dissent +]
+불만도: [+ right_sr_dissent : dissent +]
 
 
-**Left SRs**
+**중앙파 사회혁명당**
 
-The left wing of the SRs seek an immediate end to the war and are willing to accept territorial losses. Their goal is immediate social revolution, to redistribute land to the peasants and the means of production to the workers.
+당의 원로인 빅토르 체르노프가 이끄는 중앙파는 국제적인 사회주의 혁명을 통해 전쟁이 종결되기를 희망하지만, 필요하다면 단독 평화도 수용할 수 있다는 입장입니다. 체르노프의 주된 관심사는 농촌의 토지 재분배에 집중되어 있습니다.
 
-Strength: [+ left_sr_strength : strength_2 +]
+세력: [+ center_sr_strength : strength_2 +]
 
-Dissent: [+ left_sr_dissent : dissent +]
+불만도: [+ center_sr_dissent : dissent +]
+
+
+**좌파 사회혁명당**
+
+사회혁명당 내 좌파 세력은 즉각적인 종전을 요구하며, 이를 위한 영토 손실도 감수하려 합니다. 이들의 목표는 즉각적인 사회 혁명을 단행하여 농민에게는 토지를, 노동자에게는 생산 수단을 재분배하는 것입니다.
+
+세력: [+ left_sr_strength : strength_2 +]
+
+불만도: [+ left_sr_dissent : dissent +]
 
 
 @figures
@@ -618,39 +617,39 @@ if (window && d3) {
 }
 !}
 
-= Petrograd Soviet
+= 페트로그라드 소비에트 구성 현황
 
 {!<svg id="soviet" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td>Party</td><td>Vote share</td></tr>!}
+{!<tr><td>정당</td><td>의석 비중</td></tr>!}
 
-{!<tr><td><div class="box b"> </div> !} Bolsheviks: {!</td><td>!} [+ b_soviet +]% {!</td>!}
+{!<tr><td><div class="box b"> </div> !} 볼셰비키: {!</td><td>!} [+ b_soviet +]% {!</td>!}
 
-[? if internationalist_soviet_votes_dec : {!<tr><td><div class="box internationalist"></div> Menshevik-Internationalists: </td><td>!} [+ internationalist_soviet_votes_dec +]% {!</td>!} ?]
+[? if internationalist_soviet_votes_dec : {!<tr><td><div class="box internationalist"></div> 멘셰비키 국제주의파: </td><td>!} [+ internationalist_soviet_votes_dec +]% {!</td>!} ?]
 
-{!<tr><td><div class="box m"> </div> !} Mensheviks: {!</td><td>!} [+ m_soviet +]% {!</td>!}
+{!<tr><td><div class="box m"> </div> !} 멘셰비키: {!</td><td>!} [+ m_soviet +]% {!</td>!}
 
-[? if defensist_soviet_votes_dec : {!<tr><td><div class="box defensist"></div> Menshevik-Defensists: </td><td>!} [+ defensist_soviet_votes_dec +]% {!</td>!} ?]
+[? if defensist_soviet_votes_dec : {!<tr><td><div class="box defensist"></div> 멘셰비키 방위주의파: </td><td>!} [+ defensist_soviet_votes_dec +]% {!</td>!} ?]
 
-[? if left_sr_soviet_votes_dec : {!<tr><td><div class="box left_sr"></div> !}Left-SRs: {!</td><td>!} [+ left_sr_soviet_votes_dec +]% {!</td>!} ?]
+[? if left_sr_soviet_votes_dec : {!<tr><td><div class="box left_sr"></div> !}좌파-사회혁명당: {!</td><td>!} [+ left_sr_soviet_votes_dec +]% {!</td>!} ?]
 
-{!<tr><td><div class="box sr"> </div> !} SRs: {!</td><td>!} [+ sr_soviet +]% {!</td>!}
+{!<tr><td><div class="box sr"> </div> !} 사회혁명당: {!</td><td>!} [+ sr_soviet +]% {!</td>!}
 
-[? if right_sr_soviet_votes_dec : {!<tr><td><div class="box right_sr"></div> !}Right-SRs: {!</td><td>!} [+ right_sr_soviet_votes_dec +]% {!</td>!} ?]
+[? if right_sr_soviet_votes_dec : {!<tr><td><div class="box right_sr"></div> !}우파-사회혁명당: {!</td><td>!} [+ right_sr_soviet_votes_dec +]% {!</td>!} ?]
 
-{!<tr><td><div class="box a"> </div> !} Anarchists: {!</td><td>!} [+ anarchist_soviet +]% {!</td>!}
+{!<tr><td><div class="box a"> </div> !} 아나키스트: {!</td><td>!} [+ anarchist_soviet +]% {!</td>!}
 
-{!<tr><td><div class="box other"> </div> !} Others: {!</td><td>!} [+ other_soviet +]% {!</td>!}
+{!<tr><td><div class="box other"> </div> !} 기타: {!</td><td>!} [+ other_soviet +]% {!</td>!}
 {!</table>!}
 
 
-= Soviet support history
+= 소비에트 지지율 변동 추이
 
 {!<svg id="soviet_support_history" style="width: 500px; height: 400px;"> </svg>!}
 
 
-= Economic history
+= 주요 경제 지표 변동 기록
 
 {!<svg id="economic_history" style="width: 500px; height: 300px;"> </svg>!}
 

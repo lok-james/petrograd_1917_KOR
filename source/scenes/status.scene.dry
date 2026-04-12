@@ -353,7 +353,7 @@ Q.food_requisitioned_disp = (Q.food_requisitioned*100).toFixed(1);
 
 군수 산업: [+ military_industry +]%
 
-소비재: [+ civilian_industry +]%
+민간 소비재: [+ civilian_industry +]%
 
 농기구 생산: [+ agricultural_industry +]%
 
@@ -365,9 +365,9 @@ Q.food_requisitioned_disp = (Q.food_requisitioned*100).toFixed(1);
 
 = 철도
 
-군사적 활용도: [+ military_trains +]%
+군사적 이용도: [+ military_trains +]%
 
-민간 활용도: [+ civilian_trains +]%
+민간 이용도: [+ civilian_trains +]%
 
 총 운송 용량: 연간 [+ trains_total +]백만 톤
 
