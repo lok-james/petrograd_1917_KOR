@@ -9,13 +9,13 @@ new-page: true
 go-to: start_menu_2
 
 
-= Social Democracy: Petrograd 1917 - An Alternate History
+= 사회민주주의: 페트로그라드 1917 - 대체역사
 
 @start_menu_2
 
-- @start: Start game
-- @election_simulation: Election simulation
-- @credits: Credits
+- @start: 게임 시작
+- @election_simulation: 선거 시뮬레이터
+- @credits: 크레딧
 - @game_over.achievements
 
 
