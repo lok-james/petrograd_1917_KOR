@@ -1,12 +1,12 @@
 
 # Progress for the whole war
 
-(..-7) the Central Powers are on the verge of defeating Russia
-(-6..-5) major Central Powers advantage
-(-4..-2) Central Powers advantage
-(-1..-1) minor Central Powers advantage
-(0..0) mixed
-(1..1) minor Russian advantage
-(2..4) Russian advantage
-(5..6) major Russian advantage
-(7..) Russia is on the verge of victory
+(..-7) 러시아가 패배 직전에 몰림
+(-6..-5) 동맹국의 압도적 우세
+(-4..-2) 동맹국의 우세
+(-1..-1) 동맹국의 미미한 우세
+(0..0) 전황 불분명
+(1..1) 러시아군의 미미한 우세
+(2..4) 러시아군의 우세
+(5..6) 러시아군의 압도적 우세
+(7..) 러시아가 승리 직전에 도달함

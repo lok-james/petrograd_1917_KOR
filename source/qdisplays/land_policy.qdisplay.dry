@@ -1,7 +1,7 @@
 
-(-2..-2) No policy
-(-1..-1) No change
-(0..0) Voluntary sales
-(1..1) Compensated seizures
-(2..2) Uncompensated seizures
-(3..3) Rural class struggle
+(-2..-2) 정책 없음
+(-1..-1) 현상 유지
+(0..0) 자발적 매각
+(1..1) 유상 몰수
+(2..2) 무상 몰수
+(3..3) 농촌 계급 투쟁

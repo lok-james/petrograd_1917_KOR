@@ -1,7 +1,7 @@
 
 (-2..-2) 정책 없음
-(-1..-1) Stolypin privatization
-(0..0) Voluntary privatization
-(1..1) Land redistribution
-(2..2) State-owned farming
-(3..3) Collective farming
+(-1..-1) 스톨리핀식 토지 사유화
+(0..0) 자발적 사유화
+(1..1) 토지 재분배
+(2..2) 국영 농장 운영
+(3..3) 집단 농장화

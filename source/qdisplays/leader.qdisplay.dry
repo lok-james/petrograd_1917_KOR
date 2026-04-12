@@ -1,7 +1,7 @@
 # This is using the same scale as government_form
 
-(0..0) Prime Minister
-(1..1) Chairman
-(2..2) Prime Minister
-(3..3) Minister-President
-(4..4) President
+(0..0) 총리
+(1..1) 의장
+(2..2) 총리
+(3..3) 각료회의 의장
+(4..4) 대통령

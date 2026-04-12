@@ -1,7 +1,7 @@
 
 
-(..-1) Laissez-faire
-(0..0) Trade unions
-(1..1) Worker supervision
-(2..2) Syndicalism
-(3..) State ownership
+(..-1) 자유방임주의
+(0..0) 노동조합 인정
+(1..1) 노동자 감독제
+(2..2) 생디칼리즘
+(3..) 국가 소유제

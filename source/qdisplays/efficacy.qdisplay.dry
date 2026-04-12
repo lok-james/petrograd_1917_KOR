@@ -1,11 +1,11 @@
 
 # Efficacy - also used for morale and equipment quality
 
-(..0.05) nonexistant
-(0.05..0.14) very low
-(0.14..0.34) low
-(0.34..0.45) medium-low
-(0.45..0.55) medium
-(0.55..0.69) medium-high
-(0.69..0.86) high
-(0.86..) very high
+(..0.05) 전무함
+(0.05..0.14) 매우 낮음
+(0.14..0.34) 낮음
+(0.34..0.45) 중하
+(0.45..0.55) 보통
+(0.55..0.69) 중상
+(0.69..0.86) 높음
+(0.86..) 매우 높음

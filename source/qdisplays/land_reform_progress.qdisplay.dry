@@ -1,7 +1,7 @@
 
 
-(0..0) no policy
-(1..1) Land Committees
-(2..2) Land acquisition
-(3..4) Redistribution
-(5..) Continued redistribution
+(0..0) 정책 없음
+(1..1) 토지 위원회 설치
+(2..2) 토지 수용
+(3..4) 토지 재분배
+(5..) 지속적인 재분배

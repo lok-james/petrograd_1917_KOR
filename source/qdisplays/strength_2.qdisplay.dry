@@ -1,8 +1,8 @@
 
 # faction strength - for parties with 3-4 factions
 
-(..20) weak
-(20..40) moderate
-(40..55) strong
-(55..70) very strong
-(70..) dominant
+(..20) 약함
+(20..40) 보통
+(40..55) 강함
+(55..70) 매우 강함
+(70..) 지배적

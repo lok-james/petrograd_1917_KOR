@@ -1,7 +1,7 @@
 
-(0..0) Provisional Government
-(1..1) Soviet Government
-(2..2) Constitutional Government
-(3..3) Directorate
-(4..4) Dictatorship
-(5..5) One-Party Soviet Government
+(0..0) 임시정부
+(1..1) 소비에트 정부
+(2..2) 헌정 정부
+(3..3) 집정부
+(4..4) 독재 체제
+(5..5) 일당제 소비에트 정부
