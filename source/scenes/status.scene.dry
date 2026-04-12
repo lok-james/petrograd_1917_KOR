@@ -94,7 +94,7 @@ Q.inflation_disp = Q.inflation.toFixed(1);
 Q.unemployed_disp = Q.unemployed.toFixed(1);
 !}
 
-= [+ player_party_name +] Status
+= [+ player_party_name +] 현황
 
 [+ year +]년 [+ month : month +]월 [+ week +]주차 
 
