@@ -1,4 +1,4 @@
-title: Return card to hand.
+title: 카드를 손패로 되돌린다.
 view-if: difficulty <= 0 and not last_advisor_action
 go-to: root
 on-arrival: {!

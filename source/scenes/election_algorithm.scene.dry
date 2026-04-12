@@ -1,4 +1,4 @@
-title: Election
+title: 선거
 on-arrival: {!
 // TODO: this is only for the national constituent assembly election. Petrograd elections will be different.
 // calculate normalized class voting amounts (0 to 100)
@@ -80,7 +80,7 @@ go-to: jumpScene
 
 ######################################### Petrograd Soviet
 @petrograd_soviet
-title: Petrograd Soviet Elections
+title: 페트로그라드 소비에트 선거
 on-arrival: {!
 var petrograd_classes = ["workers", "soldiers"];
 
@@ -137,7 +137,7 @@ go-to: jumpScene
 
 ######################################### All-Russian Soviet
 @all_russian_soviet
-title: All-Russian Soviet Elections
+title: 전러시아 소비에트 선거
 on-arrival: {!
 var soviet_classes = ["workers", "soldiers"];
 
@@ -192,7 +192,7 @@ go-to: jumpScene
 
 ######################################### Petrograd City Duma
 @petrograd_duma
-title: Petrograd Duma Elections
+title: 페트로그라드 두마 선거
 on-arrival: {!
 
 for (var c of Q.classes) {

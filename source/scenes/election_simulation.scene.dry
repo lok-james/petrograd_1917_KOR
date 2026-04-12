@@ -2,10 +2,10 @@ title: 선거 시뮬레이션
 set-jump: post_election
 
 
-- @1917_1: Constituent Assembly (March 1917 support levels)
-- @1917_11: Constituent Assembly (November 1917)
-- @ps_1917_3: Petrograd Soviet (March 1917)
-- @ps_1917_8: Petrograd Soviet (August 1917)
+- @1917_1: 제헌의회 (1917년 3월 당시 지지율)
+- @1917_11: 제헌의회 (1917년 11월)
+- @ps_1917_3: 페트로그라드 소비에트 (1917년 3월)
+- @ps_1917_8: 페트로그라드 소비에트 (1917년 8월)
 
 @1917_1
 on-arrival: {!
@@ -498,33 +498,33 @@ Q.muslim_national_r = Q.musavat_assembly_votes_dec + Q.alash_assembly_votes_dec 
 // minority parties
 !}
 
-**Election results:**
+**선거 결과:**
 
-SR: [+ sr_r +]%
+사회혁명당: [+ sr_r +]%
 
-Ukrainian SRs: [+ ukrainian_sr_assembly_votes_dec +]%
+우크라이나 사회혁명당: [+ ukrainian_sr_assembly_votes_dec +]%
 
-Mensheviks: [+ m_r +]%
+멘셰비키: [+ m_r +]%
 
-Bolsheviks: [+ b_r +]%
+볼셰비키: [+ b_r +]%
 
-Kadets: [+ k_r +]%
+입헌민주당(카데트): [+ k_r +]%
 
-Conservatives: [+ conservative_r +]%
+보수 세력: [+ conservative_r +]%
 
-Popular Socialists: [+ popular_socialist_r +]%
+인민사회당: [+ popular_socialist_r +]%
 
-Cossacks: [+ cossacks_assembly_votes_dec +]%
+코사크: [+ cossacks_assembly_votes_dec +]%
 
-Muslim Socialists: [+ muslim_socialists_assembly_votes_dec +]%
+이슬람 사회주의 세력: [+ muslim_socialists_assembly_votes_dec +]%
 
-Muslim national parties (Alash, Musavat, others): [+ muslim_national_r +]%
+이슬람 민족 정당 (알라시, 무사바트 등): [+ muslim_national_r +]%
 
-Armenian Revolutionary Federation (Dashnaks): [+ dashnak_assembly_votes_dec +]%
+아르메니아 혁명 연맹 (다슈나크): [+ dashnak_assembly_votes_dec +]%
 
-Jewish National List: [+ jewish_national_list_assembly_votes_dec +]%
+유대인 민족 명부: [+ jewish_national_list_assembly_votes_dec +]%
 
-Other: [+ other_r +]%
+기타: [+ other_r +]%
 
 
 @post_election_soviet
@@ -541,16 +541,16 @@ Q.other_r = Q.other_soviet_votes_dec + Q.k_soviet_votes_dec + Q.conservative_sov
 // minority parties
 !}
 
-**Election results:**
+**선거 결과:**
 
-SR: [+ sr_r +]
+사회혁명당(SR): [+ sr_r +]
 
-Mensheviks: [+ m_r +]
+멘셰비키: [+ m_r +]
 
-Bolsheviks: [+ b_r +]
+볼셰비키: [+ b_r +]
 
-Popular Socialists: [+ popular_socialist_r +]
+인민사회당: [+ popular_socialist_r +]
 
-Anarchists: [+ anarchist_r +]
+아나키스트: [+ anarchist_r +]
 
-Other: [+ other_r +]
+기타 세력: [+ other_r +]

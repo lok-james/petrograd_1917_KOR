@@ -1,4 +1,4 @@
-title: Battle
+title: 전투
 go-to: jumpScene
 on-arrival: {!
 // front, outcomes
