@@ -140,8 +140,8 @@ Q.unemployed_disp = Q.unemployed.toFixed(1);
 기타: [+ other_soviet +]%
 [? if defensist_split: 멘셰비키 방위주의파: [+ defensist_soviet_votes_dec +]% ?]
 [? if internationalist_split: 멘셰비키 국제주의파: [+ internationalist_soviet_votes_dec +]% ?]
-[? if right_sr_split: 우파 사회혁명당: [+ right_sr_soviet_votes_dec +]% ?]
-[? if left_sr_split: 좌파 사회혁명당: [+ left_sr_soviet_votes_dec +]% ?]
+[? if right_sr_split: 사회혁명당 우파: [+ right_sr_soviet_votes_dec +]% ?]
+[? if left_sr_split: 사회혁명당 좌파: [+ left_sr_soviet_votes_dec +]% ?]
 
 = 평화
 
@@ -323,7 +323,7 @@ title: 정부 구성
 
 의장: [+ soviet_chair +] ([+ soviet_chair_party +])
 
-집행위원회: [? if m_in_exco: 멘셰비키, ?] [? if sr_in_exco: 사회혁명당 ?] [? if b_in_exco: 볼셰비키 ?][? if defensist_in_exco:, 멘셰비키 방위주의파 ?][? if internationalist_in_exco:, 멘셰비키 국제주의파 ?][? if left_sr_in_exco:, 좌파 사회혁명당 ?][? if right_sr_in_exco:, 우파 사회혁명당 ?]
+집행위원회: [? if m_in_exco: 멘셰비키, ?] [? if sr_in_exco: 사회혁명당 ?] [? if b_in_exco: 볼셰비키 ?][? if defensist_in_exco:, 멘셰비키 방위주의파 ?][? if internationalist_in_exco:, 멘셰비키 국제주의파 ?][? if left_sr_in_exco:, 사회혁명당 좌파 ?][? if right_sr_in_exco:, 사회혁명당 우파 ?]
 
 의석 전체 구성 현황:
 멘셰비키: [+ m_soviet +]%
@@ -445,8 +445,8 @@ title: 내부 치안 및 보안
 노동자 민병대: [+ workers_militia_strength +]천 명
 
 노동자 민병대 성향: 멘셰비키: [+ workers_militia_m_loyalty : strength_2 +], 볼셰비키: [+ workers_militia_b_loyalty : strength_2 +], 사회혁명당: [+ workers_militia_sr_loyalty : strength_2 +], 독립 세력: [+ workers_militia_independent : strength_2 +]
-[? if right_sr_split: 우파 사회혁명당: [+ workers_militia_right_sr_loyalty : strength_2 +] ?]
-[? if left_sr_split: 좌파 사회혁명당: [+ workers_militia_left_sr_loyalty : strength_2 +] ?]
+[? if right_sr_split: 사회혁명당 우파: [+ workers_militia_right_sr_loyalty : strength_2 +] ?]
+[? if left_sr_split: 사회혁명당 좌파: [+ workers_militia_left_sr_loyalty : strength_2 +] ?]
 
 도시 민병대: [+ city_militia_strength +]천 명
 
@@ -457,8 +457,8 @@ title: 내부 치안 및 보안
 주둔군 성향: 멘셰비키: [+ garrison_m_loyalty : strength +], 볼셰비키: [+ garrison_b_loyalty : strength +], 카데트: [+ garrison_k_loyalty : strength +], 사회혁명당: [+ garrison_sr_loyalty : strength +], 독립 세력: [+ garrison_independent : strength +]
 [? if defensist_split: 멘셰비키 방위주의파: [+ garrison_defensist_loyalty : strength_2 +] ?]
 [? if internationalist_split: 멘셰비키 국제주의파: [+ garrison_internationalist_loyalty : strength_2 +] ?]
-[? if right_sr_split: 우파 사회혁명당: [+ garrison_right_sr_loyalty : strength_2 +] ?]
-[? if left_sr_split: 좌파 사회혁명당: [+ garrison_left_sr_loyalty : strength_2 +] ?]
+[? if right_sr_split: 사회혁명당 우파: [+ garrison_right_sr_loyalty : strength_2 +] ?]
+[? if left_sr_split: 사회혁명당 좌파: [+ garrison_left_sr_loyalty : strength_2 +] ?]
 
 [? if loyal_troops > 0 : 정부 충성 부대 (결사대): [+ loyal_troops_strength +]천 명 ?]
 
