@@ -1,13 +1,13 @@
-title: Boris Savinkov
+title: 보리스 사빈코프
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/sr/savinkov.jpg
 view-if: savinkov_advisor = 1 and player_party = "sr"
 new-page: true 
 
-= Boris Savinkov
+= 보리스 사빈코프
 
-Savinkov was a former leader of the SR Combat Organization, the terroristic assassination group. He has become disillusioned with violent revolution after the Azev Affair, and is now a very strong supporter of defensism and the war.
+사빈코프는 과거 사회혁명당 내 테러 및 암살 조직인 '전투 기구'의 수장이었습니다. 그러나 아제프 밀고 사건 이후 폭력 혁명 노선에 환멸을 느꼈으며, 현재는 방위주의와 전쟁 지속을 강력히 지지하고 있습니다.
 
 - @root: 메인 화면으로 돌아가기
 
@@ -17,28 +17,28 @@ Savinkov was a former leader of the SR Combat Organization, the terroristic assa
 
 
 @military_discipline
-title: Military Discipline
-subtitle: Increase the discipline of our troops.
+title: 군 기강 확립
+subtitle: 군대의 기강을 엄격히 바로잡습니다.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; disipline += 0.1*(1-war_weariness/100); soldiers_sr -= 3; morale -= 0.02
 
-We have increased the application of military discipline. This has the side effect of decreasing support for our party and lowering morale, as soldiers feel their long-fought rights have been trampled upon.
+군 기강을 강화하기 위한 조치들을 시행하였습니다. 다만, 이는 장병들이 투쟁으로 쟁취한 권리가 침해당했다고 느끼게 하여 당에 대한 지지율과 군 사기를 저하시키는 부작용을 낳았습니다.
 
 
 @support_war_effort
-title: Support the War Effort
-subtitle: Raise support for the war and the defensist cause.
+title: 전쟁 수행 지지
+subtitle: 전쟁 지속과 방위주의 노선에 대한 지지 여론을 조성합니다.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; war_weariness -= 5; right_sr_strength += 5; right_sr_dissent -= 5; defensist_strength += 5; defensist_dissent -= 5
 
-We have increased support for the war, and for the defensist factions in the SRs and Mensheviks.
+전쟁 수행의 당위성을 홍보하여 사회혁명당 및 멘셰비키 내 방위주의 파벌의 입지를 강화하였습니다.
 
 
 @ag_
-title: Agricultural Policy
-subtitle: Chernov is the Agriculture Minister.
+title: 농업 정책
+subtitle: 체르노프가 농무부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and agriculture_minister = "Chernov"
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if agriculture_minister != "Chernov" : Chernov is not the Agriculture Minister. ?]
 on-arrival: advisor_action_timer = 4; agricultural_policy_timer -= 4; last_advisor_action = 1
@@ -46,5 +46,5 @@ go-to: agricultural_policy
 
 
 @party_unity
-title: Party Unity
+title: 당내 결속 강화
 

@@ -1,13 +1,13 @@
-title: Viktor Chernov
+title: 빅토르 체르노프
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/sr/chernov.jpg
 view-if: chernov_advisor = 1 and player_party = "sr"
 new-page: true 
 
-= Viktor Chernov
+= 빅토르 체르노프
 
-Chernov is one of the founders of the Socialist-Revolutionary Party, and has been its chief theoretician.
+체르노프는 사회혁명당의 공동 창립자이자 당의 핵심 이론가입니다.
 
 - @emergency_fundraising
 - @ag_
@@ -16,38 +16,38 @@ Chernov is one of the founders of the Socialist-Revolutionary Party, and has bee
 - @root: 메인 화면으로 돌아가기
 
 @emergency_fundraising
-title: Emergency Fundraising
-subtitle: An emergency infusion of resources.
+title: 긴급 자금 모집
+subtitle: 당 운영을 위한 긴급 자원을 수급합니다.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; sr_resources += sr_dues
 
-We have gained +[+ sr_dues +] resources.
+총 [+ sr_dues +]만큼의 자원을 추가로 확보하였습니다.
 
 
 @ag_
-title: Agricultural Policy
-subtitle: Chernov is the Agriculture Minister.
+title: 농업 정책
+subtitle: 체르노프가 농무부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and agriculture_minister = "Chernov"
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if agriculture_minister != "Chernov" : Chernov is not the Agriculture Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if agriculture_minister != "Chernov" : 체르노프가 농무부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; agricultural_policy_timer -= 4; last_advisor_action = 1
 go-to: agricultural_policy
 
 
 @party_unity
-title: Party Unity
-subtitle: Reduce dissent across the party.
+title: 당내 결속 강화
+subtitle: 당 전반의 불만도를 낮추고 단결을 도모합니다.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; left_sr_dissent -= sr_discipline_change+1; right_sr_dissent -= sr_discipline_change+1; center_sr_dissent -= sr_discipline_change+4;
 
-With Chernov's help, we have reduced dissent across the party.
+체르노프의 지도력을 바탕으로 당내 여러 파벌 간의 갈등을 완화하였습니다.
 
 @clear_agenda
-title: Clear the agenda
-subtitle: Removes all cards from the hand.
+title: 의제 정리하기
+subtitle: 현재 손에 든 모든 카드를 제거합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: {!
 Q.advisor_action_timer = 4;
 if (Q.difficulty == 0) {
@@ -59,4 +59,4 @@ if (Q.difficulty == 0) {
 } 
 !}
 
-All items from our agenda have been cleared.
+현재 추진 중이던 모든 의제들이 정리되었습니다.

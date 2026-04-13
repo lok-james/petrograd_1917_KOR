@@ -1,29 +1,29 @@
-title: Nikolai Avksentiev
+title: 니콜라이 아브크센티예프
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/sr/avksentiev.jpg
 view-if: avksentiev_advisor = 1 and player_party = "sr"
 new-page: true 
 
-= Nikolai Avksentiev
+= 니콜라이 아브크센티예프
 
-Avksentiev is a right-wing defensist SR leader.
+아브크센티예프는 사회혁명당 내 우익 방위주의 파벌을 이끄는 지도자입니다.
 
 - @interior_
 - @root: 메인 화면으로 돌아가기
 
 
 @interior_
-title: Internal Security
-subtitle: Avksentiev is the Interior Minister.
+title: 치안 유지
+subtitle: 아브크센티예프가 내무부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and interior_minister = "Avksentiev"
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if interior_minister != "Avksentiev" : Avksentiev is not the Interior Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if interior_minister != "Avksentiev" : 아브크센티예프가 내무부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; internal_security_timer -= 4; last_advisor_action = 1
 go-to: internal_security
 
 @support_defensism_
-title: Support Revolutionary Defensism
-subtitle: Support the continuation of the war for national defense.
+title: 혁명적 방위주의 지지
+subtitle: 국가 방위를 위한 전쟁 지속 노선을 지지합니다.
 choose-if: advisor_action_timer = 0 
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; internal_security_timer -= 4; last_advisor_action = 1

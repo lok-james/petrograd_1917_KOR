@@ -1,13 +1,13 @@
-title: Catherine Breshko-Breshkovskaya
+title: 예카테리나 브레슈코-브레슈코프스카야
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/sr/breshkovskaya.jpg
 view-if: breshkovskaya_advisor = 1 and player_party = "sr"
 new-page: true 
 
-= Catherine Breshko-Breshkovskaya
+= 예카테리나 브레슈코-브레슈코프스카야
 
-Breshko-Breshkovskaya is a veteran activist for the Narodnik cause, and has made many trips abroad for fundraising.
+브레슈코-브레슈코프스카야는 나로드니키(인민주의) 운동의 원로 활동가로, 당의 자금 조달을 위해 수차례 해외를 순방하며 헌신해 왔습니다.
 
 - @foreign_fundraising
 #- @ag_
@@ -15,29 +15,29 @@ Breshko-Breshkovskaya is a veteran activist for the Narodnik cause, and has made
 - @root: 메인 화면으로 돌아가기
 
 @foreign_fundraising
-title: Foreign Fundraising
-subtitle: An emergency infusion of resources. +3 resources.
+title: 해외 자금 모집
+subtitle: 해외 인맥을 통해 긴급 자원을 수급합니다. (자원 +3)
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 6; sr_resources += 3
 
-We have gained +3 resources.
+총 3만큼의 자원을 추가로 확보하였습니다.
 
 
 @ag_
-title: Agricultural Policy
-subtitle: Chernov is the Agriculture Minister.
+title: 농업 정책
+subtitle: 체르노프가 농무부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and agriculture_minister = "Chernov"
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if agriculture_minister != "Chernov" : Chernov is not the Agriculture Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if agriculture_minister != "Chernov" : 체르노프가 농무부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; agricultural_policy_timer -= 4; last_advisor_action = 1
 go-to: agricultural_policy
 
 
 @party_unity
-title: Party Unity
-subtitle: Reduce dissent across the party.
+title: 당내 결속 강화
+subtitle: 당 전반의 불만도를 낮추고 단결을 도모합니다.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; left_sr_dissent -= 6; right_sr_dissent -= 6; center_sr_dissent -= 10;
 
-With Chernov's help, we have reduced dissent across the party.
+체르노프의 중재를 통해 당내 여러 파벌의 불만 세력을 진정시켰습니다.

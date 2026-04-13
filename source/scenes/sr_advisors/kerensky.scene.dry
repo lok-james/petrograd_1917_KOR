@@ -1,13 +1,13 @@
-title: Alexander Kerensky
+title: 알렉산드르 케렌스키
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/sr/kerensky.jpg
 view-if: kerensky_advisor = 1 and player_party = "sr"
 new-page: true 
 
-= Alexander Kerensky
+= 알렉산드르 케렌스키
 
-Kerensky is a Duma member for the Trudovik, or Labor, faction, and is affiliated with Socialist-Revolutionary circles. He has built a great deal of esteem as a lawyer for the common people, and is working as a bridge between the Provisional Government and the Soviet. [? if prime_minister = "Kerensky": Currently, he serves as the Prime Minister of the Provisional Government. ?]
+케렌스키는 트루도비키(노동파) 소속의 두마 의원이자 사회혁명당 서클과 밀접한 관계를 맺고 있는 정치인입니다. 민중을 대변하는 변호사로서 큰 명성을 쌓은 그는, 현재 임시정부와 소비에트 사이를 잇는 가교 역할을 수행하고 있습니다. [? if prime_minister = "Kerensky": 현재 그는 임시정부의 총리직을 맡고 있습니다. ?]
 
 - @civil_rights_
 - @military_policy_
@@ -18,47 +18,47 @@ Kerensky is a Duma member for the Trudovik, or Labor, faction, and is affiliated
 
 
 @civil_rights_
-title: Civil Rights
-subtitle: Kerensky is the Justice Minister.
+title: 시민권 신장
+subtitle: 케렌스키가 법무부 장관직을 수행 중입니다.
 view-if: not womens_rights or not freedom_of_religion
 choose-if: advisor_action_timer = 0 and justice_minister = "Kerensky"
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if justice_minister != "Kerensky" : Kerensky is not the Justice Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if justice_minister != "Kerensky" : 케렌스키가 법무부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; civil_rights_timer -= 4; last_advisor_action = 1
 go-to: civil_rights
 
 @military_policy_
-title: Military Policy
-subtitle: Kerensky is the War Minister.
+title: 군사 정책
+subtitle: 케렌스키가 전쟁부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and war_minister = "Kerensky"
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if war_minister != "Kerensky" : Kerensky is not the War Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if war_minister != "Kerensky" : 케렌스키가 전쟁부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; war_policy_timer -= 4; last_advisor_action = 1
 go-to: military_policy
 
 @elections_
-title: Preparing for Constituent Assembly Elections
-subtitle: We should prepare to hold Constituent Assembly elections soon.
+title: 제헌의회 선거 준비
+subtitle: 조속한 제헌의회 선거 실시를 위한 준비 작업에 착수합니다.
 choose-if: advisor_action_timer = 0 and (war_minister = "Kerensky" or justice_minister = "Kerensky" or prime_minister = "Kerensky" or sr_in_gov)
 view-if: difficulty <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not sr_in_gov : We are not in the Provisional Government. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not sr_in_gov : 현재 임시정부에 참여하고 있지 않습니다. ?]
 on-arrival: advisor_action_timer = 4; prepare_ca_timer -= 4; last_advisor_action = 1
 go-to: prepare_ca
 
 
 @troops
-title: Motivating the Troops
-subtitle: Kerensky enjoys touring the front and giving motivational speeches to the troops.
+title:장병 사기 진작
+subtitle: 케렌스키가 직접 전선을 시찰하며 장병들에게 독려 연설을 합니다.
 choose-if: advisor_action_timer = 0 and war_minister = "Kerensky"
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if war_minister != "Kerensky" : Kerensky is not the War Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if war_minister != "Kerensky" : 케렌스키가 전쟁부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; morale += 0.1*(1-war_weariness/100);
 
-Kerensky launches a tour of the front, giving speeches to the troops to motivate them to fight for Russia. [? if war_weariness >= 50 : Our high war weariness impedes the effectiveness of Kerensky's tour. ?]
+케렌스키가 전선 순회에 나서 러시아를 위해 헌신하는 장병들의 사기를 북돋우는 연설을 펼칩니다. [? if war_weariness >= 50 : 극심한 전쟁 피로도로 인해 케렌스키의 순회 연설 효과가 반감되었습니다. ?]
 
 @shuffle_cabinet
-title: Shuffle Cabinet
-subtitle: Change the ministers of the Provisional Government.
+title: 내각 개편
+subtitle: 임시정부의 각료 구성을 변경합니다.
 view-if: prime_minister = "Kerensky"
 choose-if: advisor_action_timer = 0 and sr_in_gov
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not sr_in_gov : We are not in the Provisional Government. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not sr_in_gov : 현재 임시정부에 참여하고 있지 않습니다. ?]
 on-arrival: advisor_action_timer = 4;
 go-to: sr_join_prov_gov
 

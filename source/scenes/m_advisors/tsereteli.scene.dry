@@ -61,7 +61,7 @@ on-arrival: advisor_action_timer = 4; soviet_cooperation += 0.05; m_k_relation +
 
 @support_defensism
 title: 혁명적 방위주의 지지 강화
-subtitle: 당내 혁명적 방위주의 분파에 대한 지지 기반을 확대합니다.
+subtitle: 당내 혁명적 방위주의 파벌에 대한 지지 기반을 확대합니다.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; defensist_strength += m_support_change; defensist_dissent -= 5; internationalist_strength -= 4;

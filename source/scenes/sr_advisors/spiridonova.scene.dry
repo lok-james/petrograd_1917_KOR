@@ -1,13 +1,13 @@
-title: Maria Spiridonova
+title: 마리아 스피리도노바
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/sr/spiridonova.jpg
 view-if: spiridonova_advisor = 1 and player_party = "sr"
 new-page: true 
 
-= Maria Spiridonova
+= 마리아 스피리도노바
 
-Maria Spiridonova is a leader of the Left Socialist Revolutionaries. She was exiled to Siberia for decades for assassinating a cruel Tsarist official, making her something of a hero among the peasants.
+마리아 스피리도노바는 사회혁명당 좌파의 지도자입니다. 과거 잔학한 제정 관리를 처단한 죄로 수십 년간 시베리아 유배 생활을 견뎌낸 그녀는 농민들 사이에서 전설적인 영웅으로 추앙받고 있습니다.
 
 - @support_left
 - @adopt_left
@@ -15,8 +15,8 @@ Maria Spiridonova is a leader of the Left Socialist Revolutionaries. She was exi
 - @root: 메인 화면으로 돌아가기
 
 @support_left
-title: Support the Left-SR cause
-subtitle: Increase support for Left-SR ideology within the SRs.
+title: 사회혁명당 좌파 노선 지지
+subtitle: 사회혁명당 내에서 사회혁명당 좌파 이데올로기의 영향력을 확대합니다.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; left_sr_strength += sr_support_change+2; left_sr_dissent -= 6; right_sr_dissent += 6
@@ -24,20 +24,20 @@ on-arrival: advisor_action_timer = 4; left_sr_strength += sr_support_change+2; l
 We have influenced the party towards a Left-SR position.
 
 @adopt_left
-title: Adopt Left-SR positions
-subtitle: Adopt some of the Left-SR ideological positions.
+title: 사회혁명당 좌파 강령 채택
+subtitle: 사회혁명당 좌파의 핵심 이데올로기적 입장들을 당론으로 수용합니다.
 choose-if: advisor_action_timer = 0 and left_sr_strength >= right_sr_strength
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if left_sr_strength < right_sr_strength: The Left-SR faction is not strong enough. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if left_sr_strength < right_sr_strength: 사회혁명당 좌파 파벌의 세력이 충분하지 않습니다. ?]
 on-arrival: advisor_action_timer = 4; sr_leadership = 1; sr_war_policy = 2; sr_prov_gov_policy = 3 if sr_prov_gov_policy < 3 else sr_prov_gov_policy = 4; sr_industrial_policy = 2; left_sr_strength += 10; left_sr_dissent -= 10; right_sr_dissent += 25;  
 
-We have adopted a whole slew of Left-SR positions around the war, the Provisional Government, and labor policy.
+전쟁, 임시정부 대응, 노동 정책 등 전 분야에 걸쳐 사회혁명당 좌파의 급진적인 정책들을 대거 채택하였습니다.
 
 
 @rally_soldiers
-title: Rally the soldiers
-subtitle: Increase our support among the soldiers. -1 resource
+title: 장병 결집 활동
+subtitle: 군인 계층 내에서 당의 지지 기반을 확충합니다. (자원 -1)
 choose-if: advisor_action_timer = 0 and sr_resources >= 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if sr_resources < 1: Not enough resources. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if sr_resources < 1: 자원이 부족합니다. ?]
 on-arrival: advisor_action_timer = 4; sr_resources -= 1; soldiers_sr += 7*(1-sr_dissent); soldiers_sr -= 4 if war_weariness >= 50 and sr_war_policy <= 1; sr_soldiers_org += 1 if war_weariness <= 50 or sr_war_policy > 1
 
-We have increased our organizing among the soldiers. [? if war_weariness >= 50 and sr_war_policy <= 1 : Our policy is viewed as too pro-war, and makes it harder to organize among the soldiers. ?]
+군인들 사이에서 조직화 사업을 전개하였습니다. [? if war_weariness >= 50 and sr_war_policy <= 1 : 당의 정책이 지나치게 주전론적으로 비춰져 장병 포섭에 어려움을 겪고 있습니다. ?]

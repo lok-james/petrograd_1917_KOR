@@ -1,23 +1,23 @@
-title: Vladimir Zenzinov
+title: 블라디미르 젠지노프
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/sr/zenzinov.jpg
 view-if: zenzinov_advisor = 1 and player_party = "sr"
 new-page: true 
 
-= Vladimir Zenzinov
+= 블라디미르 젠지노프
 
-Zenzinov was one of the few SR leaders who remained free in Russia instead of going into exile or imprisonment.
+젠지노프는 유배나 투옥을 피해 러시아 본토에 남아 활동을 이어온 소수의 사회혁명당 지도자 중 한 명입니다.
 
 - @organizing_peasants
 - @root: 메인 화면으로 돌아가기
 
 @organizing_peasants
-title: Organizing Peasants
-subtitle: Zenzinov seeks to organize a Peasants' Soviet.
+title: 농민 조직화
+subtitle: 젠지노프가 주도하여 농민 소비에트 구성을 추진합니다.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; last_advisor_action = 1; sr_peasants += 6*(1-sr_dissent); sr_peasants_org += 1
 
-We have organized among the peasants.
+농민 계층을 대상으로 한 조직화 사업에서 성과를 거두었습니다.
 
