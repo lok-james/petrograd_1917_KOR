@@ -11,14 +11,14 @@ Vladimir Groman is a Menshevik economist.
 
 - @food_
 - @trade_
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 
 @food_
 title: Food Policy
 subtitle: Groman is the Food Minister.
 choose-if: advisor_action_timer = 0 and food_minister = "Groman"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if food_minister != "Groman" : Groman is not the Trade and Industry Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if food_minister != "Groman" : Groman is not the Trade and Industry Minister. ?]
 on-arrival: advisor_action_timer = 4; food_policy_timer -= 4; last_advisor_action = 1
 go-to: food_policy 
 
@@ -26,7 +26,7 @@ go-to: food_policy
 title: Industrial Policy
 subtitle: Groman is the Trade and Industry Minister.
 choose-if: advisor_action_timer = 0 and trade_minister = "Groman"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if trade_minister != "Groman" : Groman is not the Trade and Industry Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if trade_minister != "Groman" : Groman is not the Trade and Industry Minister. ?]
 on-arrival: advisor_action_timer = 4; industrial_policy_timer -= 4; last_advisor_action = 1
 go-to: industrial_policy 
 

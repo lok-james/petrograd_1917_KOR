@@ -1,25 +1,25 @@
-title: Sofia Panina
+title: 소피아 파니나
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/k/panina.jpg
 view-if: panina_advisor = 1 and player_party = "k"
 new-page: true 
 
-= Sofia Panina
+= 소피아 파니나
 
-Countess Sofia Panina is an aristocratic woman and social reformer who previously devoted her life to serving the poor. She has an interest in welfare and education policy.
+소피아 파니나 백작부인은 귀족 출신의 사회 개혁가로, 평생을 빈민 구제에 헌신해 온 인물입니다. 그녀는 특히 복지와 교육 정책 분야에 깊은 관심을 가지고 있습니다.
 
 
 - @clear_agenda
 - @fundraising
 #- @liberal_feminism
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @clear_agenda
-title: Clear the agenda
-subtitle: Removes all cards from the hand.
+title: 의제 정리하기
+subtitle: 현재 손에 든 모든 카드를 제거합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: {!
 Q.advisor_action_timer = 4;
 if (Q.difficulty >= 0) {
@@ -29,24 +29,24 @@ if (Q.difficulty >= 0) {
 }
 !}
 
-All items from our agenda have been cleared.
+현재 추진 중이던 모든 의제들이 정리되었습니다.
 
 
 @fundraising
-title: Emergency fundraising
-subtitle: An emergency infusion of resources.
+title: 긴급 자금 모집
+subtitle: 당 운영을 위한 긴급 자원을 수급합니다.
 choose-if: advisor_action_timer <= 0
 on-arrival: advisor_action_timer = 4; k_resources += k_dues
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 
-We have gained [+ k_dues +] additional resources.
+총 [+ k_dues +]만큼의 자원을 추가로 확보하였습니다.
 
 
 @liberal_feminism
-title: Liberal Feminism
-subtitle: Promote the rights of women.
+title: 자유주의 페미니즘
+subtitle: 여성의 권익 신장을 도모합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4;
 
 # TODO

@@ -13,13 +13,13 @@ Matvey Skobelev is a Menshevik member of the Duma.
 
 - @labor
 - @soviet_labor
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @labor
 title: Labor Policy
 subtitle: Skobelev is the Labor Minister in the Provisional Government.
 choose-if: advisor_action_timer = 0 and labor_minister = "Skobelev"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if labor_minister != "Skobelev" : Skobelev is not the Labor Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if labor_minister != "Skobelev" : Skobelev is not the Labor Minister. ?]
 on-arrival: advisor_action_timer = 4; labor_policy_timer -= 4; last_advisor_action = 1
 go-to: labor_policy
 
@@ -27,7 +27,7 @@ go-to: labor_policy
 title: Soviet Labor Policy
 subtitle: Change the Soviet's labor policy.
 choose-if: advisor_action_timer = 0 and m_in_exco
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if not m_in_exco : The Mensheviks are not on the Soviet Executive Committee. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not m_in_exco : The Mensheviks are not on the Soviet Executive Committee. ?]
 on-arrival: advisor_action_timer = 4; labor_soviet_timer -= 4; last_advisor_action = 1
 go-to: labor_soviet
 

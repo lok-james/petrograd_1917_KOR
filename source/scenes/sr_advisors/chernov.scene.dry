@@ -13,13 +13,13 @@ Chernov is one of the founders of the Socialist-Revolutionary Party, and has bee
 - @ag_
 - @party_unity
 - @clear_agenda
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @emergency_fundraising
 title: Emergency Fundraising
 subtitle: An emergency infusion of resources.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; sr_resources += sr_dues
 
 We have gained +[+ sr_dues +] resources.
@@ -29,7 +29,7 @@ We have gained +[+ sr_dues +] resources.
 title: Agricultural Policy
 subtitle: Chernov is the Agriculture Minister.
 choose-if: advisor_action_timer = 0 and agriculture_minister = "Chernov"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if agriculture_minister != "Chernov" : Chernov is not the Agriculture Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if agriculture_minister != "Chernov" : Chernov is not the Agriculture Minister. ?]
 on-arrival: advisor_action_timer = 4; agricultural_policy_timer -= 4; last_advisor_action = 1
 go-to: agricultural_policy
 
@@ -38,7 +38,7 @@ go-to: agricultural_policy
 title: Party Unity
 subtitle: Reduce dissent across the party.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; left_sr_dissent -= sr_discipline_change+1; right_sr_dissent -= sr_discipline_change+1; center_sr_dissent -= sr_discipline_change+4;
 
 With Chernov's help, we have reduced dissent across the party.

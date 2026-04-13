@@ -10,14 +10,14 @@ new-page: true
 Avksentiev is a right-wing defensist SR leader.
 
 - @interior_
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 
 @interior_
 title: Internal Security
 subtitle: Avksentiev is the Interior Minister.
 choose-if: advisor_action_timer = 0 and interior_minister = "Avksentiev"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if interior_minister != "Avksentiev" : Avksentiev is not the Interior Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if interior_minister != "Avksentiev" : Avksentiev is not the Interior Minister. ?]
 on-arrival: advisor_action_timer = 4; internal_security_timer -= 4; last_advisor_action = 1
 go-to: internal_security
 
@@ -25,7 +25,7 @@ go-to: internal_security
 title: Support Revolutionary Defensism
 subtitle: Support the continuation of the war for national defense.
 choose-if: advisor_action_timer = 0 
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; internal_security_timer -= 4; last_advisor_action = 1
 go-to: internal_security
 

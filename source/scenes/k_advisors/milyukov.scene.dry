@@ -1,13 +1,13 @@
-title: Pavel Milyukov
+title: 파벨 밀류코프
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/k/miliukov.jpg
 view-if: milyukov_advisor = 1 and player_party = "k"
 new-page: true 
 
-= Pavel Milyukov
+= 파벨 밀류코프
 
-Pavel Milyukov is the leader of the Constitutional Democrats. He worked as a history professor before entering politics, and is convinced that liberal democracy will allow Russia to further expand its empire.
+파벨 밀류코프는 입헌민주당(카데트)의 지도자입니다. 정계 입문 전 역사학 교수로 재직했던 그는, 자유 민주주의 체제야말로 러시아 제국의 지속적인 팽창을 가능케 할 유일한 길이라고 확신하고 있습니다.
 
 - @foreign
 - @adopt_positions
@@ -15,37 +15,37 @@ Pavel Milyukov is the leader of the Constitutional Democrats. He worked as a his
 - @root: Return to main
 
 @foreign
-title: Foreign Affairs
-subtitle: Milyukov is the Foreign Minister.
+title: 외교 현안
+subtitle: 밀류코프가 외무부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and foreign_minister = "Milyukov"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if foreign_minister != "Milyukov" : Milyukov is not the Foreign Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if foreign_minister != "Milyukov" : Milyukov is not the Foreign Minister. ?]
 on-arrival: advisor_action_timer = 4; foreign_policy_timer -= 4; last_advisor_action = 1 
 go-to: foreign_policy
 
 
 @adopt_positions
-title: Adopt Right-Kadet positions.
-subtitle: Support free-market and pro-war policies.
+title: 카데트 우파 노선 채택하기
+subtitle: 자유 시장 경제와 전쟁 지속 정책을 지지합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; k_war_policy = -1; k_industrial_policy = -1; k_prov_gov_policy = -1; right_kadet_strength += 10;
 
-With Milyukov's influence, the Kadets have become a more pro-war, pro-free-market party.
+밀류코프의 영향력 아래, 카데트는 보다 선명한 주전론과 자유 방임주의를 내세우는 정당으로 변모하였습니다.
 
 @cons
-title: Increase relations with conservatives.
-subtitle: Support free-market and pro-war policies.
+title: 보수 세력과의 관계 강화하기
+subtitle: 자유 시장 경제와 전쟁 지속 정책을 지지합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; k_conservative_relation += 5*(1-k_dissent); k_conservative_relation -= 3 if left_kadet_strength > right_kadet_strength;
 
-The conservative and monarchist right has largely been marginalized since the revolution, but they still have important contacts within the military, church, and upper-level bureaucracy. We attempt to build our relations with them.
+보수 및 군주제 지지 우파 세력은 혁명 이후 정계에서 밀려났으나, 여전히 군부와 교회, 고위 관료층 내에 강력한 인맥을 보유하고 있습니다. 우리는 이들과의 유대 관계를 구축하고자 합니다.
 
 @clear_agenda
-title: Clear the agenda
-subtitle: Removes all cards from the hand.
+title: 의제 정리하기
+subtitle: 현재 손에 든 모든 카드를 제거합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: {!
 Q.advisor_action_timer = 4;
 if (Q.difficulty == 0) {
@@ -57,5 +57,5 @@ if (Q.difficulty == 0) {
 }
 !}
 
-All items from our agenda have been cleared.
+현재 추진 중이던 모든 의제들이 정리되었습니다.
 

@@ -10,13 +10,13 @@ new-page: true
 Zenzinov was one of the few SR leaders who remained free in Russia instead of going into exile or imprisonment.
 
 - @organizing_peasants
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @organizing_peasants
 title: Organizing Peasants
 subtitle: Zenzinov seeks to organize a Peasants' Soviet.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; last_advisor_action = 1; sr_peasants += 6*(1-sr_dissent); sr_peasants_org += 1
 
 We have organized among the peasants.

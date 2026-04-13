@@ -1,34 +1,34 @@
-title: Georgy Lvov
+title: 게오르기 리보프
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/k/lvov.jpg
 view-if: lvov_advisor = 1 and player_party = "k"
 new-page: true 
 
-= Georgy Lvov
+= 게오르기 리보프
 
-[? if prime_minister = "Lvov": Prince Georgy Lvov is the current Prime Minister of the Provisional Government. [? if interior_minister = "Lvov": He is also the Interior Minister. ?] ?]
-[? if prime_minister != "Lvov": Prince Georgy Lvov is the former Prime Minister of the Provisional Government. ?]
-He is an aristocrat who has been on the forefront of the reform movement for years prior to the revolution.
+[? if prime_minister = "Lvov": 게오르기 리보프 공작은 현재 임시정부의 총리직을 맡고 있습니다. [? if interior_minister = "Lvov": 그는 내무부 장관직도 겸임하고 있습니다. ?] ?]
+[? if prime_minister != "Lvov": 게오르기 리보프 공작은 임시정부의 전임 총리입니다. ?]
+그는 혁명이 일어나기 수년 전부터 개혁 운동의 선봉에 서 왔던 귀족 출신 정치인입니다.
 
 - @interior_ministry_
 - @military_
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @interior_ministry_
-title: Internal Security
-subtitle: Lvov is the Interior Minister.
+title: 내무부
+subtitle: 리보프가 내무부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and interior_minister = "Lvov"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if interior_minister != "Lvov" : Lvov is not the Interior Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if interior_minister != "Lvov" : 리보프가 내무부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; internal_security_timer -= 4; last_advisor_action = 1 
 go-to: internal_security
 
 
 @military_
-title: Military Policy
-subtitle: We control the Ministry of War.
+title: 군사 정책
+subtitle: 당에서 전쟁부를 통제하고 있습니다.
 choose-if: advisor_action_timer = 0 and war_minister = "Guchkov"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if war_minister != "Guchkov" : We do not control the Ministry of War. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if war_minister != "Guchkov" : 현재 전쟁부를 통제하고 있지 않습니다. ?]
 on-arrival: advisor_action_timer = 4; military_policy_timer -= 3; last_advisor_action = 1 
 go-to: military_policy
 

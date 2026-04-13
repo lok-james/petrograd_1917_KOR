@@ -12,13 +12,13 @@ Breshko-Breshkovskaya is a veteran activist for the Narodnik cause, and has made
 - @foreign_fundraising
 #- @ag_
 #- @party_unity
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @foreign_fundraising
 title: Foreign Fundraising
 subtitle: An emergency infusion of resources. +3 resources.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 6; sr_resources += 3
 
 We have gained +3 resources.
@@ -28,7 +28,7 @@ We have gained +3 resources.
 title: Agricultural Policy
 subtitle: Chernov is the Agriculture Minister.
 choose-if: advisor_action_timer = 0 and agriculture_minister = "Chernov"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if agriculture_minister != "Chernov" : Chernov is not the Agriculture Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if agriculture_minister != "Chernov" : Chernov is not the Agriculture Minister. ?]
 on-arrival: advisor_action_timer = 4; agricultural_policy_timer -= 4; last_advisor_action = 1
 go-to: agricultural_policy
 
@@ -37,7 +37,7 @@ go-to: agricultural_policy
 title: Party Unity
 subtitle: Reduce dissent across the party.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; left_sr_dissent -= 6; right_sr_dissent -= 6; center_sr_dissent -= 10;
 
 With Chernov's help, we have reduced dissent across the party.

@@ -20,14 +20,14 @@ Irakli Tsereteli is a Georgian Menshevik revolutionary who returned from Siberia
 - @party_discipline
 - @interior_
 - @shuffle_cabinet
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @fundraising
 title: Emergency fundraising
 subtitle: An emergency infusion of resources.
 choose-if: advisor_action_timer <= 0
 on-arrival: advisor_action_timer = 4; m_resources += m_dues
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 
 We have gained [+ m_dues +] additional resources.
 
@@ -54,7 +54,7 @@ All items from our agenda have been cleared.
 title: Soviet-Government Cooperation
 subtitle: Improve cooperation between the Petrograd Soviet and the Provisional Government.
 choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; soviet_cooperation += 0.05; m_k_relation += 5*(1-m_dissent) if k_in_gov; soviet_efficacy += 0.01
 
 We have increased cooperation between the Soviet and the Provisional Government. This also improves our relations with the Kadets.
@@ -63,7 +63,7 @@ We have increased cooperation between the Soviet and the Provisional Government.
 title: Support Revolutionary Defensism
 subtitle: Increase support for revolutionary defensism within our party.
 choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; defensist_strength += m_support_change; defensist_dissent -= 5; internationalist_strength -= 4;
 
 Tsereteli is advocating in favor of the Revolutionary Defensist position.
@@ -73,7 +73,7 @@ Tsereteli is advocating in favor of the Revolutionary Defensist position.
 title: Inter-party Relations
 subtitle: Improve cooperation with the moderate pro-government parties.
 choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; soviet_cooperation += 0.05; m_k_relation += 5*(1-m_dissent); m_sr_relation += 5*(1-m_dissent) if not right_sr_split; soviet_efficacy += 0.01
 
 We have improved relations with the Kadets[? if right_sr_split:. ?][? if not right_sr_split: and the SRs. ?]
@@ -82,7 +82,7 @@ We have improved relations with the Kadets[? if right_sr_split:. ?][? if not rig
 title: Media Campaigning
 subtitle: Use our media apparatus to support the Mensheviks. -1 resource
 choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?][? if m_resources < 1: Not enough resources. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if m_resources < 1: Not enough resources. ?]
 on-arrival: advisor_action_timer = 4; workers_m += 4*(1-m_dissent); soldiers_m += 4*(1-m_dissent); soldiers_m -= 2 if (war_weariness >= 60 and m_war_policy <= 1);
 
 Our propaganda campaign encourages support for the Menshevik party among the workers and soldiers.
@@ -91,7 +91,7 @@ Our propaganda campaign encourages support for the Menshevik party among the wor
 title: Party Discipline
 subtitle: Reduce dissent across the party.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; defensist_dissent -= m_discipline_change; internationalist_dissent -= m_discipline_change; social_patriot_dissent -= m_discipline_change;
 
 We have enforced party discipline to reduce dissent across all factions.
@@ -101,7 +101,7 @@ title: Internal Security
 subtitle: Tsereteli is the Interior Minister.
 view-if: m_in_gov
 choose-if: advisor_action_timer = 0 and interior_minister = "Tsereteli"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if interior_minister != "Tsereteli" : Tsereteli is not the Interior Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if interior_minister != "Tsereteli" : Tsereteli is not the Interior Minister. ?]
 on-arrival: advisor_action_timer = 4; internal_security_timer -= 4; last_advisor_action = 1
 go-to: internal_security
 
@@ -110,7 +110,7 @@ title: Shuffle Cabinet
 subtitle: Change the ministers of the Provisional Government.
 view-if: prime_minister = "Tsereteli" 
 choose-if: advisor_action_timer = 0 and m_in_gov 
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if not m_in_gov : We are not in the Provisional Government. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not m_in_gov : We are not in the Provisional Government. ?]
 on-arrival: advisor_action_timer = 4; 
 go-to: m_join_prov_gov 
 

@@ -1,52 +1,52 @@
-title: Nikolai Nekrasov
+title: 니콜라이 네크라소프
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/k/nekrasov.jpg
 view-if: nekrasov_advisor = 1 and player_party = "k"
 new-page: true 
 
-= Nikolai Nekrasov
+= 니콜라이 네크라소프
 
-Nikolai Nekrasov is a long-time Duma member for the Kadets. He generally supports left-Kadet positions and cooperation with moderate socialists.
+니콜라이 네크라소프는 카데트 소속의 중진 두마 의원입니다. 그는 주로 카데트 좌파의 입장을 대변하며, 온건 사회주의 세력과의 협력을 중시합니다.
 
 - @finance
 - @trans
 - @adopt_positions
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @finance
-title: Fiscal Policy
-subtitle: Nekrasov is the Finance Minister.
+title: 재정 정책
+subtitle: 네크라소프가 재무부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and finance_minister = "Nekrasov"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if finance_minister != "Nekrasov" : Nekrasov is not the Finance Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if finance_minister != "Nekrasov" : 네크라소프가 재무부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; fiscal_policy_timer -= 4; last_advisor_action = 1 
 go-to: fiscal_policy
 
 
 @trans
-title: Transportation
-subtitle: Nekrasov is the Transportation Minister.
+title: 교통 행정
+subtitle: 네크라소프가 교통부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and transport_minister = "Nekrasov"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if transport_minister != "Nekrasov" : Nekrasov is not the Transporation Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if transport_minister != "Nekrasov" : 네크라소프가 교통부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; transport_policy_timer -= 4; last_advisor_action = 1 
 go-to: transport_policy
 
 
 @adopt_positions
-title: Adopt Left-Kadet positions.
-subtitle: Support interventionist economic policies and moderation on the war.
+title: 카데트 좌파 노선 채택하기
+subtitle: 국가 개입주의 경제 정책과 전쟁에 대한 온건한 태도를 지지합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; k_war_policy = 0; k_industrial_policy = 0; k_prov_gov_policy = 0; left_kadet_strength += 10;
 
-With Nekrasov's influence, the Kadets have become somewhat more socialistic-leaning.
+네크라소프의 영향력으로 인해, 카데트는 다소 사회주의에 우호적인 성향을 띠게 되었습니다.
 
 @s_negotiations
-title: Negotiating with the socialists
-subtitle: Improve our relations with the Mensheviks and SRs.
+title: 사회주의 세력과의 협상
+subtitle: 멘셰비키 및 사회혁명당과의 관계를 개선합니다.
 choose-if: advisor_action_timer = 0 and left_kadet_strength > right_kadet_strength
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?][? if left_kadet_strength <= right_kadet_strength: The left-kadets should be stronger than the right-Kadets. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if left_kadet_strength <= right_kadet_strength: 카데트 좌파의 세력이 우파보다 강해야 합니다. ?]
 on-arrival: advisor_action_timer = 4; m_k_relation += 5*(1-k_dissent) if m_war_policy <= 1; sr_k_relation += 5*(1-k_dissent) if sr_war_policy <= 1
 
-[? if m_war_policy > 1 or sr_war_policy > 1 : The radical anti-war positions of some of the socialists makes it difficult to build relations. ?]
-[? if m_war_policy <= 1 and sr_war_policy <= 1 : We have improved our relations with the moderate socialist parties. ?]
+[? if m_war_policy > 1 or sr_war_policy > 1 : 일부 사회주의 세력의 급진적인 반전 노선으로 인해 관계 구축에 어려움을 겪고 있습니다. ?]
+[? if m_war_policy <= 1 and sr_war_policy <= 1 : 온건 사회주의 정당들과의 유대 관계를 성공적으로 강화하였습니다. ?]

@@ -15,13 +15,13 @@ Vladimir Voitinsky is an Menshevik recolutionary who returned from exile in Sibe
 - @organizing_
 - @militias_
 - @finance_
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @organizing_
 title: Soviet Organizations
 subtitle: Voitinsky can help build the Soviet's organizational infrastructure.
 choose-if: advisor_action_timer = 0 and m_in_exco
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if not m_in_exco : We are not in the Soviet Executive Committee. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not m_in_exco : We are not in the Soviet Executive Committee. ?]
 on-arrival: advisor_action_timer = 4; organization_soviet_timer -= 4; last_advisor_action = 1
 go-to: organization_soviet
 
@@ -29,7 +29,7 @@ go-to: organization_soviet
 title: Workers' Militias
 subtitle: Build up the Workers' Militias.
 choose-if: advisor_action_timer = 0 and m_in_exco
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if not m_in_exco : We are not in the Soviet Executive Committee. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not m_in_exco : We are not in the Soviet Executive Committee. ?]
 on-arrival: advisor_action_timer = 4; militias_timer -= 4; last_advisor_action = 1
 go-to: militias
 
@@ -37,7 +37,7 @@ go-to: militias
 title: Fiscal Policy
 subtitle: Voitinsky is the Finance Minister.
 choose-if: advisor_action_timer = 0 and finance_minister = "Voitinsky"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if finance_minister != "Voitinsky" : Voitinsky is not the Finance Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if finance_minister != "Voitinsky" : Voitinsky is not the Finance Minister. ?]
 on-arrival: advisor_action_timer = 4; fiscal_policy_timer -= 4; last_advisor_action = 1
 go-to: fiscal_policy 
 

@@ -1,33 +1,33 @@
-title: Andrei Shingarev
+title: 안드레이 싱가레프
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/k/shingarev.jpg
 view-if: shingarev_advisor = 1 and player_party = "k"
 new-page: true 
 
-= Andrei Shingarev
+= 안드레이 싱가레프
 
-Andrei Shingarev is a long-time Kadet member of the Duma.
+안드레이 싱가레프는 카데트 소속의 중진 두마 의원입니다.
 
 - @agriculture_
 - @foreign
 #- @emergency_fundraising
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @agriculture_
-title: Agricultural Policy
-subtitle: Shingarev is the Agriculture Minister.
+title: 농업 정책
+subtitle: 싱가레프가 농무부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and agriculture_minister = "Shingarev"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if agriculture_minister != "Shingarev" : Shingarev is not the Agriculture Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if agriculture_minister != "Shingarev" : 싱가레프가 농무부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; agricultural_policy_timer -= 4; last_advisor_action = 1 
 go-to: agricultural_policy
 
 
 @foreign
-title: Foreign Affairs
-subtitle: Shingarev is the Foreign Minister.
+title: 외교 현안
+subtitle: 싱가레프가 외무부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and foreign_minister = "Shingarev"
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?] [? if foreign_minister != "Shingarev" : Shingarev is not the Foreign Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if foreign_minister != "Shingarev" : 싱가레프가 외무부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; foreign_policy_timer -= 4; last_advisor_action = 1 
 go-to: foreign_policy
 
