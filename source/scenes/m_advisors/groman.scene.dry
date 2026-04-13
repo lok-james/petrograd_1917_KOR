@@ -1,13 +1,13 @@
-title: Vladimir Groman
+title: 블라디미르 그로만
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/m/groman.jpg
 view-if: groman_advisor = 1 and player_party = "m"
 new-page: true 
 
-= Vladimir Groman
+= 블라디미르 그로만
 
-Vladimir Groman is a Menshevik economist.
+블라디미르 그로만은 멘셰비키 소속의 유능한 경제학자입니다.
 
 - @food_
 - @trade_
@@ -15,18 +15,18 @@ Vladimir Groman is a Menshevik economist.
 
 
 @food_
-title: Food Policy
-subtitle: Groman is the Food Minister.
+title: 식량 정책
+subtitle: 그로만이 식량부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and food_minister = "Groman"
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if food_minister != "Groman" : Groman is not the Trade and Industry Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if food_minister != "Groman" : 그로만이 식량부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; food_policy_timer -= 4; last_advisor_action = 1
 go-to: food_policy 
 
 @trade_
-title: Industrial Policy
-subtitle: Groman is the Trade and Industry Minister.
+title:산업 정책
+subtitle: 그로만이 상공부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and trade_minister = "Groman"
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if trade_minister != "Groman" : Groman is not the Trade and Industry Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if trade_minister != "Groman" : 그로만이 상공부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; industrial_policy_timer -= 4; last_advisor_action = 1
 go-to: industrial_policy 
 

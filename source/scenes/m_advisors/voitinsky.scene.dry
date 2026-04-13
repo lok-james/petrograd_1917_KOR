@@ -1,13 +1,13 @@
-title: Vladimir Voitinsky
+title: 블라디미르 보이틴스키
 is-pinned-card: true
 tags: advisor, labor
 card-image: img/portraits/m/voitinsky.jpg
 view-if: voitinsky_advisor = 1 and player_party = "m"
 new-page: true 
 
-= Vladimir Voitinsky
+= 블라디미르 보이틴스키
 
-Vladimir Voitinsky is an Menshevik recolutionary who returned from exile in Siberia. He is an academic from Petrograd who studied economics, and is close to the revolutionary defensist faction led by Tsereteli.
+블라디미르 보이틴스키는 시베리아 유배 생활을 마치고 돌아온 멘셰비키 혁명가입니다. 페트로그라드 출신의 경제학자로, 체레텔리가 이끄는 혁명적 방위주의 분파와 뜻을 같이하고 있습니다.
 
 # organizing soldiers, worker's militias, trade ministry, finance ministry, foreign ministry
 # soviet labor affairs
@@ -18,26 +18,26 @@ Vladimir Voitinsky is an Menshevik recolutionary who returned from exile in Sibe
 - @root: 메인 화면으로 돌아가기
 
 @organizing_
-title: Soviet Organizations
-subtitle: Voitinsky can help build the Soviet's organizational infrastructure.
+title: 소비에트 조직 강화
+subtitle: 보이틴스키의 역량을 활용해 소비에트의 조직적 기반을 확충합니다.
 choose-if: advisor_action_timer = 0 and m_in_exco
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not m_in_exco : We are not in the Soviet Executive Committee. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not m_in_exco : 현재 소비에트 집행위원회에 진입하지 못했습니다. ?]
 on-arrival: advisor_action_timer = 4; organization_soviet_timer -= 4; last_advisor_action = 1
 go-to: organization_soviet
 
 @militias_
-title: Workers' Militias
-subtitle: Build up the Workers' Militias.
+title: 노동자 민병대 육성
+subtitle: 노동자 민병대의 역량을 강화하고 조직화합니다.
 choose-if: advisor_action_timer = 0 and m_in_exco
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not m_in_exco : We are not in the Soviet Executive Committee. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not m_in_exco : 현재 소비에트 집행위원회에 진입하지 못했습니다. ?]
 on-arrival: advisor_action_timer = 4; militias_timer -= 4; last_advisor_action = 1
 go-to: militias
 
 @finance_
-title: Fiscal Policy
-subtitle: Voitinsky is the Finance Minister.
+title: 재정 정책
+subtitle: 보이틴스키가 재무부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and finance_minister = "Voitinsky"
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if finance_minister != "Voitinsky" : Voitinsky is not the Finance Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if finance_minister != "Voitinsky" : 보이틴스키가 재무부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; fiscal_policy_timer -= 4; last_advisor_action = 1
 go-to: fiscal_policy 
 

@@ -1,13 +1,13 @@
-title: Pavel Axelrod
+title: 파벨 악셀로드
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/m/axelrod.jpg
 view-if: axelrod_advisor = 1 and player_party = "m"
 new-page: true 
 
-= Pavel Axelrod
+= 파벨 악셀로드
 
-Axelrod is a venerable social democrat and one of the founders of the RSDLP, and later the Menshevik faction. He spent his exile in Switzerland along with Martov, where he developed a business selling kefir. He is an internationalist who opposes the war.
+악셀로드는 러시아 사회민주노동당(RSDLP)과 멘셰비키 파벌의 창립을 주도한 원로 사회민주주의자입니다. 그는 마르토프와 함께 스위스에서 망명 생활을 하며 케피어 판매 사업을 운영하기도 했습니다. 그는 전쟁에 단호히 반대하는 국제주의파의 핵심 인물입니다.
 
 # actions: increase internationalist strength, adopt anti-war ideology
 
@@ -18,39 +18,39 @@ Axelrod is a venerable social democrat and one of the founders of the RSDLP, and
 - @root: 메인 화면으로 돌아가기
 
 @fundraising
-title: Emergency fundraising
-subtitle: An emergency infusion of resources.
+title: 긴급 자금 모집
+subtitle: 당 운영을 위한 긴급 자원을 수급합니다.
 choose-if: advisor_action_timer <= 0
 on-arrival: advisor_action_timer = 4; m_resources += m_dues
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 
-We have gained [+ m_dues +] additional resources.
+총 [+ m_dues +]만큼의 자원을 추가로 확보하였습니다.
 
 @party_unity
-title: Party Unity
-subtitle: Reduce dissent across the party.
+title: 당내 결속 강화
+subtitle: 당 전반의 불만도를 낮추고 단결을 도모합니다.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; defensist_dissent -= m_discipline_change; internationalist_dissent -= m_discipline_change;
 
-We have reduced the dissent of some of the factions.
+일부 파벌 내의 불만 세력을 진정시켰습니다.
 
 
 @adopt_internationalism
-title: Adopt Internationalism as our party policy.
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if m_war_policy = 2 : We already have an internationalist war policy. ?][? if internationalist_strength < defensist_strength + social_patriot_strength: There is not enough support for this position within the party. ?]
+title: 국제주의 노선 공식 채택하기
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if m_war_policy = 2 : 이미 국제주의 전쟁 정책을 시행 중입니다. ?][? if internationalist_strength < defensist_strength + social_patriot_strength: 당내 지지 기반이 충분하지 않습니다. ?]
 choose-if: advisor_action_timer <= 0 and internationalist_strength >= defensist_strength + social_patriot_strength and m_war_policy != 2
 on-arrival: advisor_action_timer = 4; m_war_policy = 2; internationalist_strength += 5; internationalist_dissent -= 5; defensist_dissent += 15; social_patriot_dissent += 30; m_leadership = 1;
 
-We have adopted an internationalist position, calling for an immediate end to the war.
+전쟁의 즉각적인 종결을 촉구하는 국제주의적 입장을 당의 공식 노선으로 확정하였습니다.
 
 
 @internationalism
-title: Support Internationalism
-subtitle: Increase support for internationalism among our party.
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if m_war_policy = 2 : We already have an internationalist war policy. ?]
+title: 국제주의 세력 포섭
+subtitle: 당내 국제주의파에 대한 지지 기반을 확대합니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if m_war_policy = 2 : 이미 국제주의 전쟁 정책을 시행 중입니다. ?]
 choose-if: advisor_action_timer <= 0 and m_war_policy != 2
 on-arrival: advisor_action_timer = 4; internationalist_strength += 6; internationalist_dissent -= 3; defensist_dissent += 5
 
-We are building up support for internationalism within the party, so that we may eventually adopt this position.
+추후 국제주의 노선을 채택할 수 있도록 당내 지지 세력을 규합하고 있습니다.
 

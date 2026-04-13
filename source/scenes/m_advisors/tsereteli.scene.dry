@@ -1,13 +1,13 @@
-title: Irakli Tsereteli
+title: 이라클리 체레텔리
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/m/tsereteli.jpg
 view-if: tsereteli_advisor = 1 and player_party = "m"
 new-page: true 
 
-= Irakli Tsereteli
+= 이라클리 체레텔리
 
-Irakli Tsereteli is a Georgian Menshevik revolutionary who returned from Siberian exile. He is widely viewed as the leader of the Mensheviks. In exile, he developed a nuanced position on the war, calling for a negotiated end to the war without defeatism, although in Petrograd he tends to support the Provisional Government's policies.
+이라클리 체레텔리는 시베리아 유배 생활을 마치고 돌아온 그루지야 출신의 멘셰비키 혁명가입니다. 그는 사실상 멘셰비키의 최고 지도자로 인정받고 있습니다. 유배 시절 그는 패배주의에 빠지지 않으면서도 협상을 통한 종전을 추구하는 정교한 전쟁관을 정립하였으나, 페트로그라드 복귀 후에는 대체로 임시정부의 정책 노선을 지지하고 있습니다.
 
 # actions: fundraising, organizing workers, inter-party relations, clear the agenda
 
@@ -23,19 +23,19 @@ Irakli Tsereteli is a Georgian Menshevik revolutionary who returned from Siberia
 - @root: 메인 화면으로 돌아가기
 
 @fundraising
-title: Emergency fundraising
-subtitle: An emergency infusion of resources.
+title: 긴급 자금 모집
+subtitle: 당 운영을 위한 긴급 자원을 수급합니다.
 choose-if: advisor_action_timer <= 0
 on-arrival: advisor_action_timer = 4; m_resources += m_dues
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 
-We have gained [+ m_dues +] additional resources.
+총 [+ m_dues +]만큼의 자원을 추가로 확보하였습니다.
 
 @clear_agenda
-title: Clear the agenda
-subtitle: Removes all cards from the hand.
+title: 의제 정리하기
+subtitle: 현재 손에 든 모든 카드를 제거합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다.  ?]
 on-arrival: {!
 Q.advisor_action_timer = 4;
 if (Q.difficulty == 0) {
@@ -47,70 +47,70 @@ if (Q.difficulty == 0) {
 } 
 !}
 
-All items from our agenda have been cleared.
+현재 추진 중이던 모든 의제들이 정리되었습니다.
 
 
 @prov_gov_cooperation
-title: Soviet-Government Cooperation
-subtitle: Improve cooperation between the Petrograd Soviet and the Provisional Government.
+title: 소비에트-임시정부 협력 강화
+subtitle: 페트로그라드 소비에트와 임시정부 간의 원활한 공조를 도모합니다.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; soviet_cooperation += 0.05; m_k_relation += 5*(1-m_dissent) if k_in_gov; soviet_efficacy += 0.01
 
-We have increased cooperation between the Soviet and the Provisional Government. This also improves our relations with the Kadets.
+소비에트와 임시정부 사이의 협력 체계를 공고히 하였습니다. 이는 카데트와의 관계 개선으로도 이어집니다.
 
 @support_defensism
-title: Support Revolutionary Defensism
-subtitle: Increase support for revolutionary defensism within our party.
+title: 혁명적 방위주의 지지 강화
+subtitle: 당내 혁명적 방위주의 분파에 대한 지지 기반을 확대합니다.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; defensist_strength += m_support_change; defensist_dissent -= 5; internationalist_strength -= 4;
 
-Tsereteli is advocating in favor of the Revolutionary Defensist position.
+체레텔리가 전면에 나서 혁명적 방위주의 노선의 정당성을 설파하고 있습니다.
 
 
 @inter_party_relations
-title: Inter-party Relations
-subtitle: Improve cooperation with the moderate pro-government parties.
+title: 정당 간 관계
+subtitle: 정부를 지지하는 온건 정당들과의 협력을 강화합니다.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; soviet_cooperation += 0.05; m_k_relation += 5*(1-m_dissent); m_sr_relation += 5*(1-m_dissent) if not right_sr_split; soviet_efficacy += 0.01
 
-We have improved relations with the Kadets[? if right_sr_split:. ?][? if not right_sr_split: and the SRs. ?]
+카데트[? if right_sr_split:와의 유대 관계를 강화하였습니다. ?][? if not right_sr_split: 및 사회혁명당(SR)과의 유대 관계를 강화하였습니다. ?]
 
 @media
-title: Media Campaigning
-subtitle: Use our media apparatus to support the Mensheviks. -1 resource
+title: 언론 선전 활동
+subtitle: 당의 언론 기구를 동원하여 멘셰비키에 대한 지지를 호소합니다. (자원 -1)
 choose-if: advisor_action_timer <= 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if m_resources < 1: Not enough resources. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if m_resources < 1: 자원이 부족합니다. ?]
 on-arrival: advisor_action_timer = 4; workers_m += 4*(1-m_dissent); soldiers_m += 4*(1-m_dissent); soldiers_m -= 2 if (war_weariness >= 60 and m_war_policy <= 1);
 
-Our propaganda campaign encourages support for the Menshevik party among the workers and soldiers.
+대대적인 선전 활동을 통해 노동자와 병사 계층 내에서 멘셰비키에 대한 지지 여론을 확산시켰습니다.
 
 @party_discipline
-title: Party Discipline
-subtitle: Reduce dissent across the party.
+title: 당 기강 확립
+subtitle: 당 전반의 불만도를 낮추고 단결을 도모합니다.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; defensist_dissent -= m_discipline_change; internationalist_dissent -= m_discipline_change; social_patriot_dissent -= m_discipline_change;
 
-We have enforced party discipline to reduce dissent across all factions.
+당의 기강을 엄격히 세워 모든 파벌 내의 불만 세력을 진정시켰습니다.
 
 @interior_
-title: Internal Security
-subtitle: Tsereteli is the Interior Minister.
+title: 치안 유지
+subtitle: 체레텔리가 내무부 장관직을 수행 중입니다.
 view-if: m_in_gov
 choose-if: advisor_action_timer = 0 and interior_minister = "Tsereteli"
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if interior_minister != "Tsereteli" : Tsereteli is not the Interior Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if interior_minister != "Tsereteli" : 체레텔리가 내무부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; internal_security_timer -= 4; last_advisor_action = 1
 go-to: internal_security
 
 @shuffle_cabinet
-title: Shuffle Cabinet 
-subtitle: Change the ministers of the Provisional Government.
+title: 내각 개편
+subtitle: 임시정부의 각료 구성을 변경합니다.
 view-if: prime_minister = "Tsereteli" 
 choose-if: advisor_action_timer = 0 and m_in_gov 
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not m_in_gov : We are not in the Provisional Government. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not m_in_gov : 현재 임시정부에 참여하고 있지 않습니다. ?]
 on-arrival: advisor_action_timer = 4; 
 go-to: m_join_prov_gov 
 

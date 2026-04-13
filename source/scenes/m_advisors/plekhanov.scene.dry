@@ -1,13 +1,13 @@
-title: Georgi Plekhanov
+title: 게오르기 플레하노프
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/m/plekhanov.jpg
 view-if: plekhanov_advisor = 1 and player_party = "m"
 new-page: true
 
-= Georgi Plekhanov
+= 게오르기 플레하노프
 
-Plekhanov has been called the father of Russian Marxism, and he was instrumental in creating the RSDLP. At one time, he sided with Lenin and the Bolsheviks, before aligning with the Mensheviks. More recently, he has turned towards unalloyed support for the Allied cause in the Great War.
+플레하노프는 '러시아 마르크스주의의 아버지'로 불리며 사회민주노동당 창립에 결정적인 기여를 한 인물입니다. 한때 레닌 및 볼셰비키와 뜻을 같이하기도 했으나 이후 멘셰비키로 전향하였습니다. 최근 그는 대전쟁에서 연합군 측을 무조건적으로 지지하는 입장으로 선회하였습니다.
 
 # transportation ministry, support the war effort
 
@@ -16,19 +16,19 @@ Plekhanov has been called the father of Russian Marxism, and he was instrumental
 - @root: 메인 화면으로 돌아가기.
 
 @trans_
-title: Transportation Policy
-subtitle: Plekhanov is the Transport Minister in the Provisional Government.
+title: 교통 행정
+subtitle: 플레하노프가 임시정부의 교통부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and transport_minister = "Plekhanov"
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if transport_minister != "Plekhanov" : Plekhanov is not the Transport Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if transport_minister != "Plekhanov" : 플레하노프가 교통부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; transport_policy_timer -= 4; last_advisor_action = 1
 go-to: transport_policy
 
 @support_war
-title: Support the War
-subtitle: Advocate in favor of the war against Germany.
+title: 전쟁 지속 지지
+subtitle: 독일에 맞선 전쟁 수행의 정당성을 역설합니다.
 choose-if: advisor_action_timer = 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; social_patriot_strength += 8*(1-m_dissent); social_patriot_dissent -= 8*(1-m_dissent); internationalist_dissent += 5; war_weariness -= 3*(1-m_dissent);
 
-Our newspapers print editorials in support of the war effort, without any of the revolutionary defensist conditions. This bolsters the Social Patriot faction.
+당 기관지를 통해 혁명적 방위주의의 전제 조건조차 배제한 채 전쟁 수행을 적극 독려하는 사설을 게재하였습니다. 이는 당내 사회애국주의 분파의 입지를 강화합니다.
 

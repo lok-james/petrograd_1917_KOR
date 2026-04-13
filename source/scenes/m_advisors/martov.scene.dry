@@ -1,13 +1,13 @@
-title: Julius Martov
+title: 율리우스 마르토프
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/m/martov.jpg
 view-if: martov_advisor = 1 and player_party = "m"
 new-page: true 
 
-= Julius Martov
+= 율리우스 마르토프
 
-Julius Martov is one of the founding members of the RSDLP and the Menshevik faction. He is known for being an argumentative but principled intellectual who has cut his teeth in intra-party debates for decades. In the war, he supports an Internationalist position.
+율리우스 마르토프는 러시아 사회민주노동당(RSDLP)과 멘셰비키의 공동 창립자입니다. 그는 매우 논쟁적이면서도 원칙을 고수하는 지식인으로 정평이 나 있으며, 수십 년간의 당내 노선 투쟁을 통해 단련되었습니다. 전쟁 문제에 있어서는 선명한 국제주의적 입장을 견지합니다.
 
 # actions: increase internationalist strength, adopt anti-war ideology
 
@@ -18,41 +18,41 @@ Julius Martov is one of the founding members of the RSDLP and the Menshevik fact
 - @root: 메인 화면으로 돌아가기
 
 @adopt_internationalism
-title: Adopt Internationalism as our party policy.
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if m_war_policy = 2 : We already have an internationalist war policy. ?][? if internationalist_strength < defensist_strength + social_patriot_strength: There is not enough support for this position within the party. ?]
+title: 국제주의 노선 공식 채택하기
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if m_war_policy = 2 : 이미 국제주의 전쟁 정책을 시행 중입니다. ?][? if internationalist_strength < defensist_strength + social_patriot_strength: 당내 지지 기반이 충분하지 않습니다. ?]
 choose-if: advisor_action_timer <= 0 and internationalist_strength >= defensist_strength + social_patriot_strength and m_war_policy != 2
 on-arrival: advisor_action_timer = 4; m_war_policy = 2; internationalist_strength += 5; internationalist_dissent -= 5; defensist_dissent += 15; social_patriot_dissent += 30; m_leadership = 1;
 
-We have adopted an internationalist position, calling for an immediate end to the war.
+전쟁의 즉각적인 종결을 촉구하는 국제주의적 입장을 당의 공식 노선으로 확정하였습니다.
 
 
 @internationalism
-title: Support Internationalism
-subtitle: Increase support for internationalism among our party.
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if m_war_policy = 2 : We already have an internationalist war policy. ?]
+title: 국제주의 세력 포섭
+subtitle: 당내 국제주의파에 대한 지지 기반을 확대합니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if m_war_policy = 2 : 이미 국제주의 전쟁 정책을 시행 중입니다. ?]
 choose-if: advisor_action_timer <= 0 and m_war_policy != 2
 on-arrival: advisor_action_timer = 4; internationalist_strength += m_support_change; internationalist_dissent -= 3; defensist_dissent += 5
 
-We are building up support for internationalism within the party, so that we may eventually adopt this position.
+추후 국제주의 노선을 채택할 수 있도록 당내 지지 세력을 규합하고 있습니다.
 
 
 @soc_cooperation
-title: Socialist Cooperation
-subtitle: Increase cooperation between the left-wing socialist parties. -1 resource
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if m_resources < 1 : Not enough resources. ?]
+title: 사회주의 세력 간 공조
+subtitle: 좌익 사회주의 정당들과의 협력을 강화합니다. (자원 -1)
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if m_resources < 1 : 자원이 부족합니다. ?]
 choose-if: advisor_action_timer <= 0
 on-arrival: advisor_action_timer = 4; m_b_relation += 5*(1-m_dissent); m_b_relation -= 3 if leninist_strength >= moderate_strength or m_war_policy <= 1 or m_prov_gov_policy <= 1; m_sr_relation += 4*(1-m_dissent) if left_sr_strength >= right_sr_strength; m_resources -= 1
 
-We have attempted to build closer ties with the Bolsheviks, our wayward cousins in the RSDLP. [? if leninist_strength >= moderate_strength : The influence of Lenin makes it difficult for us to build these relationships. ?][? if m_war_policy <= 1 : Our defensist war policy makes it difficult to improve relations. ?][? if m_prov_gov_policy <= 1: Our support of the Provisional Government makes it difficult to improve relations. ?]
+사회민주노동당의 한 뿌리이자 현재는 독자 노선을 걷고 있는 볼셰비키와 유대 관계를 맺고자 노력하였습니다. [? if leninist_strength >= moderate_strength : 레닌의 강력한 영향력으로 인해 관계 구축에 난항을 겪고 있습니다. ?][? if m_war_policy <= 1 : 당의 방위주의적 전쟁 노선이 협력의 걸림돌이 되고 있습니다. ?][? if m_prov_gov_policy <= 1: 임시정부에 대한 당의 지지 태도가 관계 개선을 어렵게 만듭니다. ?]
 
-[? if left_sr_strength >= right_sr_strength : We have also improved our relations with the SRs, now that they are led by the internationalist left wing of the party. ?]
+[? if left_sr_strength >= right_sr_strength : 국제주의 좌파가 주도권을 잡은 사회혁명당과는 성공적으로 관계를 개선하였습니다. ?]
 
 
 @polemics
-title: Polemics
-subtitle: Argue with the Bolsheviks over the working class.
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if internationalist_strength < defensist_strength + social_patriot_strength: The Internationalists must be stronger in the party. ?][? if m_war_policy <= 1 : The Mensheviks must have adopted an Internationalist position on the war. ?]
+title: 이론 투쟁
+subtitle: 노동계급의 주도권을 두고 볼셰비키와 논쟁을 벌입니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if internationalist_strength < defensist_strength + social_patriot_strength: 당내 국제주의파의 세력이 더 강해야 합니다. ?][? if m_war_policy <= 1 : 멘셰비키가 국제주의 전쟁 노선을 먼저 채택해야 합니다. ?]
 choose-if: advisor_action_timer <= 0 and internationalist_strength >= defensist_strength + social_patriot_strength and m_war_policy >= 2
 on-arrival: advisor_action_timer = 4; workers_m += 3*(1-m_dissent); soldiers_m += 3*(1-m_dissent); workers_b -= 4; soldiers_b -= 4;
 
-Martov engages in a campaign of words with prominent Bolsheviks. This is his natural place, and he seems to be adept at convincing people to support the Mensheviks instead.
+마르토프가 볼셰비키의 주요 인사들을 상대로 날 선 필전을 벌입니다. 이는 그의 주특기이며, 대중이 볼셰비키 대신 멘셰비키를 지지하도록 설득하는 데 상당한 성과를 거두고 있습니다.

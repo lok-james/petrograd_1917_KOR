@@ -1,13 +1,13 @@
-title: Nikolai Chkheidze
+title: 니콜라이 치헤이제
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/m/chkheidze.jpg
 view-if: chkheidze_advisor = 1 and player_party = "m"
 new-page: true 
 
-= Nikolai Chkheidze
+= 니콜라이 치헤이제
 
-Nikolai Chkheidze is a Georgian Menshevik member of the Duma, and one of the organizers of the Petrograd Soviet. He is close to the revolutionary defensist faction led by Tsereteli.
+니콜라이 치헤이제는 그루지야 출신의 멘셰비키 중진 의원이자 페트로그라드 소비에트의 핵심 조직가입니다. 그는 체레텔리가 이끄는 혁명적 방위주의 분파와 긴밀한 관계를 맺고 있습니다.
 
 # actions: soviet cooperation with prov gov, improve relations with soviet parties, support revolutionary defensism
 
@@ -18,43 +18,43 @@ Nikolai Chkheidze is a Georgian Menshevik member of the Duma, and one of the org
 - @root: 메인 화면으로 돌아가기
 
 @fundraising
-title: Emergency fundraising
-subtitle: An emergency infusion of resources.
+title: 긴급 자금 모집
+subtitle: 당 운영을 위한 긴급 자원을 수급합니다.
 choose-if: advisor_action_timer <= 0
 on-arrival: advisor_action_timer = 4; m_resources += m_dues
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 
-We have gained [+ m_dues +] additional resources.
+총 [+ m_dues +]만큼의 자원을 추가로 확보하였습니다.
 
 @improve_relations
-title: Improve our relations with the parties of the Soviet Executive Committee.
-subtitle: Primarily the SRs.
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if m_in_exco == 0 : The party is not in the Soviet leadership. ?]
+title: 소비에트 집행위원회 내 정당 관계 개선
+subtitle: 주로 사회혁명당과의 유대를 강화합니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if m_in_exco == 0 : 현재 당이 소비에트 지도부에 진입하지 못했습니다. ?]
 choose-if: advisor_action_timer <= 0 and m_in_exco
 on-arrival: advisor_action_timer = 4; m_sr_relation += 8*(1-m_dissent);
 
 
 @prov_gov_cooperation
-title: Soviet-Government Cooperation
-subtitle: Improve cooperation between the Petrograd Soviet and the Provisional Government.
+title: 소비에트-임시정부 협력 강화
+subtitle: 페트로그라드 소비에트와 임시정부 간의 원활한 공조를 도모합니다.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; soviet_cooperation += 0.05; m_k_relation += 5*(1-m_dissent) if k_in_gov; soviet_efficacy += 0.01
 
-We have increased cooperation between the Soviet and the Provisional Government. This also improves our relations with the Kadets.
+소비에트와 임시정부 사이의 협력 체계를 공고히 하였습니다. 이는 입헌민주당(카데트)과의 관계 개선으로도 이어집니다.
 
 @organizing_workers
-title: Organizing Workers
-subtitle: Build up our factory organizations.
+title: 노동자 조직화
+subtitle: 공장 내 당 조직 기반을 확충합니다.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer += 4; workers_m += 5*(1-m_dissent); m_workers_org += 1; workers_m -= 2 if m_in_gov and prov_gov_legitimacy <= 50;
 
-We have increased our organizing among the workers. [? if m_in_gov and prov_gov_legitimacy <= 50 : Our participation in the unpopular Provisional Government limits our support. ?]
+노동자 계층 내에서의 조직력을 강화하였습니다. [? if m_in_gov and prov_gov_legitimacy <= 50 : 대중적 지지가 낮은 임시정부에 참여하고 있는 탓에 지지 확대에 난항을 겪고 있습니다. ?]
 
 @soviet_election_
-title: Soviet Elections
-subtitle: Call for new elections for the Petrograd Soviet leadership.
+title: 소비에트 선거 실시
+subtitle: 페트로그라드 소비에트 지도부 재선출을 요구합니다.
 choose-if: advisor_action_timer <= 0
 unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4;

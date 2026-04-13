@@ -1,13 +1,13 @@
-title: Matvey Skobelev
+title: 마트베이 스코벨레프
 is-pinned-card: true
 tags: advisor, labor
 card-image: img/portraits/m/skobelev.jpg
 view-if: skobelev_advisor = 1 and player_party = "m"
 new-page: true 
 
-= Matvey Skobelev
+= 마트베이 스코벨레프
 
-Matvey Skobelev is a Menshevik member of the Duma.
+마트베이 스코벨레프는 멘셰비키 소속의 중진 의원입니다.
 
 # actions: organizing workers, labor policy,
 
@@ -16,18 +16,18 @@ Matvey Skobelev is a Menshevik member of the Duma.
 - @root: 메인 화면으로 돌아가기
 
 @labor
-title: Labor Policy
-subtitle: Skobelev is the Labor Minister in the Provisional Government.
+title: 노동 정책
+subtitle: 스코벨레프가 임시정부의 노동부 장관직을 수행 중입니다.
 choose-if: advisor_action_timer = 0 and labor_minister = "Skobelev"
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if labor_minister != "Skobelev" : Skobelev is not the Labor Minister. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if labor_minister != "Skobelev" : 스코벨레프가 노동부 장관이 아닙니다. ?]
 on-arrival: advisor_action_timer = 4; labor_policy_timer -= 4; last_advisor_action = 1
 go-to: labor_policy
 
 @soviet_labor
-title: Soviet Labor Policy
-subtitle: Change the Soviet's labor policy.
+title: 소비에트 노동 정책 수립
+subtitle: 소비에트 차원의 노동 정책을 조정합니다.
 choose-if: advisor_action_timer = 0 and m_in_exco
-unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not m_in_exco : The Mensheviks are not on the Soviet Executive Committee. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?] [? if not m_in_exco : 멘셰비키가 소비에트 집행위원회에 진입하지 못했습니다. ?]
 on-arrival: advisor_action_timer = 4; labor_soviet_timer -= 4; last_advisor_action = 1
 go-to: labor_soviet
 
