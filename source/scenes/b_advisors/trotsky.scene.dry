@@ -1,13 +1,13 @@
-title: Leon Trotsky
+title: 레프 트로츠키
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/b/trotsky.jpg
 view-if: trotsky_advisor = 1 and player_party = "b"
 new-page: true 
 
-= Leon Trotsky
+= 레프 트로츠키
 
-Leon Trotsky is a relative newcomer to the Bolsheviks but a long-time nonpartisan Social Democrat, who recently returned from exile in America. He has become closely aligned with Lenin on political matters, including on the urgent need for revolution against the bourgeois government.
+레프 트로츠키는 볼셰비키에 합류한 지는 얼마 되지 않았으나, 오랫동안 비정파 사회민주주의자로 활동하다 최근 미국 망명에서 돌아온 인물입니다. 그는 부르주아 정부에 맞선 즉각적인 혁명의 필요성을 주장하며 정치적 사안 전반에서 레닌과 긴밀히 궤를 같이하고 있습니다.
 
 # actions: organizing (same as card), agitation against the provisional government, 
 
@@ -15,39 +15,39 @@ Leon Trotsky is a relative newcomer to the Bolsheviks but a long-time nonpartisa
 - @militia_
 - @support_leninist
 - @agitation
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @media
-title: Media
-subtitle: Use our party's newspapers.
+title: 언론
+subtitle: 당 기관지 및 신문들을 활용하여 선전을 수행합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4
 go-to: b_media
 
 @militia_
-title: Worker's Militias
-subtitle: Work with the workers' militias.
+title: 노동자 민병대 조직
+subtitle: 노동자 민병대 세력과 긴밀히 협력합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4;
 go-to: b_workers_militias
 
 
 @support_leninist
-title: Support Lenin 
-subtitle: Support or adopt Leninist ideology within the party.
+title: 레닌 지지 강화
+subtitle: 당내에서 레닌주의 노선을 지지하거나 공식 채택합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 go-to: b_ideology.support_leninist if leninist_strength <= 40; b_ideology.adopt_leninist if leninist_strength > 40 and b_leadership = 1; b_ideology.leninist_continue if b_leadership = 2
 
 
 @agitation
-title: Agitation
-subtitle: Organize the soldiers and workers of Petrograd against the existing order.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?][? if b_in_gov: We are in the government now, so we cannot do this. ?]
+title: 대중 선동
+subtitle: 페트로그라드의 병사들과 노동자들을 규합하여 기존 체제에 정면으로 맞서도록 조직합니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if b_in_gov: 현재 정부에 참여 중이므로 이 행동을 수행할 수 없습니다. ?]
 choose-if: advisor_action_timer <= 0 and not b_in_gov
 on-arrival: advisor_action_timer = 4; workers_m -= 2; soldiers_m -= 2; workers_sr -= 2; soldiers_sr -= 2; workers_b += 3*(1-b_dissent); soldiers_b += 3*(1-b_dissent); prov_gov_legitimacy -= 4; soviet_cooperation -= 0.04; war_weariness += 5; b_threat += 1
 
-Trotsky spends his time giving speeches and arguing that the existing order must be destroyed. Given the present crises, he finds a receptive audience.
+트로츠키는 정열적인 연설을 통해 기존 질서의 완전한 타파를 역설하며 시간을 보냅니다. 현재의 위기 상황 속에서 그의 목소리는 대중의 마음을 깊이 파고들고 있습니다.
 

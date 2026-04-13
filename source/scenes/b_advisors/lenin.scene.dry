@@ -1,13 +1,13 @@
-title: Vladimir Lenin
+title: 블라디미르 레닌
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/b/lenin.jpg
 view-if: lenin_advisor = 1 and player_party = "b"
 new-page: true 
 
-= Vladimir Lenin
+= 블라디미르 레닌
 
-Vladimir Lenin is the undisputed leader of the Bolshevik party, and its chief theoretician and organizer.
+블라디미르 레닌은 볼셰비키당의 독보적인 지도자이자, 당의 최고 이론가이며 조직가입니다.
 
 # actions: organizing (same as card), agitation against the provisional government, 
 
@@ -16,50 +16,50 @@ Vladimir Lenin is the undisputed leader of the Bolshevik party, and its chief th
 - @polemics
 - @radicalization
 - @clear_agenda
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @support_leninist
-title: Party Leadership
-subtitle: Support or adopt Leninist ideology within the party.
+title: 당 지도권 강화
+subtitle: 당내에서 레닌주의 노선을 지지하거나 공식 채택합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4;
 go-to: b_ideology.support_leninist if leninist_strength <= 40; b_ideology.adopt_leninist if leninist_strength > 40 and b_leadership = 1; b_ideology.leninist_continue if b_leadership = 2
 
 
 @organize_soldiers
-title: Organize soldiers
-subtitle: -1 resource
+title: 병사 조직화
+subtitle: (자원 -1)
 choose-if: advisor_action_timer = 0 and b_resources >= 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?][? if b_resources < 1 : Not enough resources. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if b_resources < 1 : 자원이 부족합니다. ?]
 on-arrival: advisor_action_timer = 4;
 go-to: b_organizing.soldiers
 
 
 @polemics
-title: Polemics
-subtitle: Argue with the Mensheviks over the working class.
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+title: 이론 투쟁
+subtitle: 노동계급의 주도권을 두고 멘셰비키와 논쟁을 벌입니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 choose-if: advisor_action_timer <= 0
 on-arrival: advisor_action_timer = 4; workers_m -= 3; soldiers_m -= 3; workers_b += 4*(1-b_dissent); soldiers_b += 4*(1-b_dissent);
 
-The Bolsheviks and Mensheviks have been arguing over Marxist politics for the past two decades. Lenin excels at attacking the Menshevik arguments.
+볼셰비키와 멘셰비키는 지난 20년간 마르크스주의 정치를 두고 끊임없이 대립해 왔습니다. 레닌은 멘셰비키의 논리를 격파하는 데 탁월한 능력을 발휘합니다.
 
 
 @radicalization
-title: Radicalization
-subtitle: Whip up rage against the incompetence of the bourgeois parties and so-called "socialists."
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?][? if b_in_gov: We are in the government now, so we cannot do this. ?]
+title: 대중 급진화
+subtitle: 부르주아 정당들과 이른바 "사회주의자들"의 무능함에 대한 대중의 분노를 선동합니다.
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if b_in_gov: 현재 정부에 참여 중이므로 이 행동을 수행할 수 없습니다. ?]
 choose-if: advisor_action_timer <= 0 and not b_in_gov
 on-arrival: advisor_action_timer = 4; workers_m -= 3; soldiers_m -= 3; workers_sr -= 2; soldiers_sr -= 2; prov_gov_legitimacy -= 4; soviet_cooperation -= 0.04; war_weariness += 5; b_threat += 1
 
-Lenin is arguing that the entire established order must be destroyed. Given the present crises, he finds a receptive audience.
+레닌은 기존의 모든 질서를 타파해야 한다고 역설하고 있습니다. 현재의 위기 상황은 그의 주장이 대중에게 파고들 수 있는 비옥한 토양이 되어 줍니다.
 
 @clear_agenda
-title: Clear the agenda
-subtitle: Removes all cards from the hand.
+title: 의제 정리하기
+subtitle: 현재 손에 든 모든 카드를 제거합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] months before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: {!
 Q.advisor_action_timer = 4;
 if (Q.difficulty == 0) {
@@ -71,4 +71,4 @@ if (Q.difficulty == 0) {
 } 
 !}
 
-All items from our agenda have been cleared.
+현재 추진 중이던 모든 의제들이 정리되었습니다.

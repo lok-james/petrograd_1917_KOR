@@ -1,32 +1,32 @@
-title: Alexander Shliapnikov
+title: 알렉산드르 슐랴프니코프
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/b/shliapnikov.jpg
 view-if: shliapnikov_advisor = 1 and player_party = "b"
 new-page: true
 
-= Alexander Shliapnikov
+= 알렉산드르 슐랴프니코프
 
-Shliapnikov is a metalworker and labor organizer in the factories of Petrograd, and one of the Bolshevik leaders who was not in exile.
+슐랴프니코프는 페트로그라드 공장의 금속공 출신 노동 조직가로, 지도부 대다수가 망명 중일 때도 국내를 지켰던 볼셰비키의 핵심 인물입니다.
 
 - @organize_workers
 - @workers_militias_
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @organize_workers
-title: Organizing workers
-subtitle: Campaigning and organizing among the industrial workers. -1 resource.
+title: 노동자 조직화
+subtitle: 산업 노동자들을 대상으로 선전 활동 및 조직화를 수행합니다. (자원 -1)
 choose-if: advisor_action_timer = 0 and b_resources >= 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?][? if b_resources < 1 : Not enough resources. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if b_resources < 1 : 자원이 부족합니다. ?]
 on-arrival: advisor_action_timer += 4; b_resources -= 1; workers_b += 6*(1-b_dissent); b_workers_org += 1; workers_b -= 2 if b_in_gov and prov_gov_legitimacy <= 50;
 
-We have increased our organizing among the workers.
+노동자 계층 내에서의 조직 기반을 더욱 공고히 하였습니다.
 
 
 @workers_militias_
-title: Militia Loyalty
-subtitle: Support Bolsheviks among the workers' militias. -1 resource.
+title: 민병대 포섭
+subtitle: 노동자 민병대 내에서 볼셰비키에 대한 지지를 확보합니다. (자원 -1)
 choose-if: advisor_action_timer = 0 and b_resources >= 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?][? if b_resources < 1 : Not enough resources. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if b_resources < 1 : 자원이 부족합니다. ?]
 on-arrival: advisor_action_timer = 4; 
 go-to: b_workers_militias.loyalty

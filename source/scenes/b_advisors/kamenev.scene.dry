@@ -1,41 +1,41 @@
-title: Lev Kamenev
+title: 레프 카메네프
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/b/kamenev.jpg
 view-if: kamenev_advisor = 1 and player_party = "b"
 new-page: true 
 
-= Lev Kamenev
+= 레프 카메네프
 
-Lev Kamenev is a Bolshevik leader who has a more conciliatory position towards the other socialists.
+레프 카메네프는 타 사회주의 세력에 대해 보다 유화적인 태도를 견지하는 볼셰비키의 지도자입니다.
 
 # actions: organizing (same as card), agitation against the provisional government, 
 
 - @support_moderate
 - @m_relations
 - @soviet_campaigning
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @support_moderate
-title: Moderate Ideology
-subtitle: Support the moderate position.
+title: 온건 노선 지지
+subtitle: 당내 온건파의 입장을 지지합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4;
 go-to: b_ideology.support_moderate if moderate_strength <= 40; b_ideology.adopt_moderate if moderate_strength > 40 and b_leadership != 1; b_ideology.moderate_continue if b_leadership = 1
 
 @m_relations
-title: Menshevik Relations
-subtitle: Work with the Mensheviks, and increase Internationalist support. -1 resource
+title: 멘셰비키와의 관계 개선
+subtitle: 멘셰비키와 협력하여 국제주의파에 대한 지지를 확대합니다. (자원 -1)
 choose-if: advisor_action_timer = 0 and b_resources >= 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?][? if b_resources < 1: Not enough resources. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if b_resources < 1: 자원이 부족합니다. ?]
 on-arrival: advisor_action_timer = 4; b_resources -= 1; m_b_relation += 7*(1-b_dissent);
 
 @soviet_campaigning
-title: Soviet Campaigning
-subtitle: Increase our vote share in the Petrograd Soviet. -1 resource
+title: 소비에트 선거 운동
+subtitle: 페트로그라드 소비에트 내에서의 득표율을 높입니다. (자원 -1)
 choose-if: advisor_action_timer = 0 and b_resources >= 1
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?][? if b_resources < 1: Not enough resources. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if b_resources < 1: 자원이 부족합니다. ?]
 on-arrival: advisor_action_timer = 4
 go-to: minority_party_soviet.s_campaign
 

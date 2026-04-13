@@ -1,45 +1,45 @@
-title: Elena Stasova
+title: 엘레나 스타소바
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/b/stasova.jpg
 view-if: stasova_advisor = 1 and player_party = "b"
 new-page: true
 
-= Elena Stasova
+= 엘레나 스타소바
 
-Elena Stasova is a member of the Bolshevik central committee, who stayed in Petrograd as many of its other members left to exile. She focuses on fundraising and party organization.
+엘레나 스타소바는 볼셰비키 중앙위원회의 위원으로, 다른 동료들이 망명길에 올랐을 때도 페트로그라드에 남아 당을 지켰습니다. 그녀는 주로 당의 재정 확보와 조직 관리에 주력하고 있습니다.
 
 - @clear_agenda
 - @party_unity
 - @emergency_fundraising
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @clear_agenda
-title: Clear the agenda
-subtitle: Removes all cards from the hand.
+title: 의제 정리하기
+subtitle: 현재 손에 든 모든 카드를 제거합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: {!
 Q.advisor_action_timer = 4;
 window.dendryUI.dendryEngine.state.currentHands['main'] = [];
 !}
 
-All items from our agenda have been cleared.
+현재 추진 중이던 모든 의제들이 정리되었습니다.
 
 @party_unity
-title: Party Unity
-subtitle: Reduce dissent across the party.
+title: 당내 결속 강화
+subtitle: 당 전반의 불만도를 낮추고 단결을 도모합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; leninist_dissent -= 5; center_dissent -= 10; moderate_dissent -= 10;
 
-We have enforced party discipline to reduce dissent across all factions.
+당의 기강을 확립하여 모든 파벌 내의 불만 세력을 진정시켰습니다.
 
 @emergency_fundraising
-title: Emergency Fundraising
-subtitle: An emergency infusion of resources.
+title: 긴급 자금 모집
+subtitle: 당 운영을 위한 긴급 자원을 수급합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4; b_resources += b_dues
 
-We have gained +[+ b_dues +] resources.
+총 [+ b_dues +]만큼의 자원을 추가로 확보하였습니다.

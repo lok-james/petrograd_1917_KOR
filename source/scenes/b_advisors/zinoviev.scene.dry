@@ -1,39 +1,39 @@
-title: Grigory Zinoviev
+title: 그리고리 지노비예프
 is-pinned-card: true
 tags: advisor
 card-image: img/portraits/b/zinoviev.jpg
 view-if: zinoviev_advisor = 1 and player_party = "b"
 new-page: true 
 
-= Grigory Zinoviev
+= 그리고리 지노비예프
 
-Grigory Zinoviev wass one of Lenin's closest companions in exile, but he has taken a more moderate approach.
+그리고리 지노비예프는 망명 시절 레닌의 가장 가까운 동지 중 한 명이었으나, 현재는 보다 온건하고 신중한 접근 방식을 취하고 있습니다.
 
 - @support_moderate
 - @m_relations
 - @soviet_campaigning 
-- @root: Return to main
+- @root: 메인 화면으로 돌아가기
 
 @support_moderate
-title: Moderate Ideology
-subtitle: Support the moderate position.
+title: 온건 노선 지지
+subtitle: 당내 온건파의 입장을 지지합니다.
 choose-if: advisor_action_timer = 0
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?]
 on-arrival: advisor_action_timer = 4;
 go-to: b_ideology.support_moderate if moderate_strength <= 40; b_ideology.adopt_moderate if moderate_strength > 40 and b_leadership != 1; b_ideology.moderate_continue if b_leadership = 1
 
 @m_relations
-title: Menshevik Relations
-subtitle: Work with the Mensheviks, and increase Internationalist support. -1 resource 
+title: 멘셰비키와의 관계 개선
+subtitle: 멘셰비키와 협력하여 국제주의파에 대한 지지를 확대합니다. (자원 -1)
 choose-if: advisor_action_timer = 0 and b_resources >= 1 
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?][? if b_resources < 1: Not enough resources. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if b_resources < 1: 자원이 부족합니다. ?]
 on-arrival: advisor_action_timer = 4; b_resources -= 1; m_b_relation += 7*(1-b_dissent); 
 
 @soviet_campaigning
-title: Soviet Campaigning 
-subtitle: Increase our vote share in the Petrograd Soviet. -1 resource
+title: 소비에트 선거 운동 
+subtitle: 페트로그라드 소비에트 내에서의 득표율을 높입니다. (자원 -1)
 choose-if: advisor_action_timer = 0 and b_resources >= 1 
-unavailable-subtitle: [? if advisor_action_timer > 0 : [+ advisor_action_timer +] weeks before next advisor action. ?][? if b_resources < 1: Not enough resources. ?]
+unavailable-subtitle: [? if advisor_action_timer > 0 : 고문 행동 가능까지 [+ advisor_action_timer +]주 남았습니다. ?][? if b_resources < 1: 자원이 부족합니다. ?]
 on-arrival: advisor_action_timer = 4 
 go-to: minority_party_soviet.s_campaign 
 
