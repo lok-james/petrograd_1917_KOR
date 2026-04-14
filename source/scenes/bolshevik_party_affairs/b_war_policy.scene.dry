@@ -1,13 +1,13 @@
-title: War Policy
+title: 전쟁 정책
 choose-if: m_war_policy_timer = 0
 unavailable-subtitle: It is too early to change this policy again.
 on-arrival: m_war_policy_timer = 6;
 
 # maybe this should be a subset of questions of ideology
 
-= War Policy
+= 전쟁 정책
 
-The war is the greatest question in politics at this moment. What should be our policy regarding the war?
+전쟁은 현 시국에서 가장 중대한 정치적 현안입니다. 전쟁에 대해 어떤 노선을 취해야 합니까?
 
 - @rd
 - @rd_2
@@ -19,72 +19,72 @@ The war is the greatest question in politics at this moment. What should be our 
 - @sp_3
 
 @rd
-title: Continue a policy of revolutionary defensism.
-subtitle: Support an international peace without annexations or indemnities, but fight to defend the revolution in the meantime. [? if m_war_policy = 1: This is our current position. ?]
+title: 혁명적 방위주의 노선을 견지한다.
+subtitle: 무병합·무배상의 평화를 추구하되, 평화가 올 때까지 혁명을 수호하기 위해 싸우자는 노선입니다. [? if m_war_policy = 1: 현재 당의 공식 입장입니다. ?]
 view-if: m_war_policy = 1
 on-arrival: defensist_strength += 5; defensist_dissent -= 4; internationalist_dissent += 5
 
-We are continuing to support a policy of revolutionary defensism.
+우리는 혁명적 방위주의 노선을 지속적으로 지지합니다.
 
 @rd_2
-title: Adopt a policy of revolutionary defensism.
-subtitle: Support an international peace without annexations or indemnities, but fight to defend the revolution in the meantime.
-unavailable-subtitle: There is not enough support for this position within the party.
+title: 혁명적 방위주의 노선을 공식 채택한다.
+subtitle: 무병합·무배상의 평화를 추구하되, 평화가 올 때까지 혁명을 수호하기 위해 싸우자는 노선입니다.
+unavailable-subtitle: 당내 지지 기반이 충분하지 않습니다.
 view-if: m_war_policy != 1
 choose-if: defensist_strength >= internationalist_strength and defensist_strength >= social_patriot_strength
 on-arrival: m_war_policy = 1; defensist_strength += 10; internationalist_dissent += 20 if m_war_policy > 1
 
-We have adopted a revolutionary defensist position, calling on continued support of the war effort while negotiating for a general peace.
+보편적 평화 협상을 추진하는 동시에, 전쟁 수행에 대한 지속적인 지지를 촉구하는 혁명적 방위주의 노선을 채택하였습니다.
 
 
 @i_1
-title: Adopt an internationalist position.
-subtitle: Support an immediate end to the war, even a separate peace if necessary.
-unavailable-subtitle: There is not enough support for this position within the party.
+title: 국제주의 노선을 공식 채택한다.
+subtitle: 즉각적인 종전을 촉구하며, 필요하다면 단독 강화도 불사합니다.
+unavailable-subtitle: 당내 지지 기반이 충분하지 않습니다.
 view-if: m_war_policy != 2
 choose-if: internationalist_strength >= defensist_strength + social_patriot_strength
 on-arrival: m_war_policy = 2; internationalist_strength += 5; internationalist_dissent -= 5; defensist_dissent += 15; social_patriot_dissent += 30
 
-We have adopted an internationalist position, calling for an immediate end to the war.
+전쟁의 즉각적인 종결을 요구하는 국제주의 노선을 당의 공식 입장으로 확정하였습니다.
 
 @i_2
-title: Increase support for an internationalist position.
-subtitle: Support an immediate end to the war, even a separate peace if necessary.
+title: 국제주의 노선에 대한 지지 기반을 확대한다.
+subtitle: 즉각적인 종전을 촉구하며, 필요하다면 단독 강화도 불사합니다.
 view-if: m_war_policy != 2 and internationalist_strength < defensist_strength + social_patriot_strength
 on-arrival: internationalist_strength += 4; internationalist_dissent -= 3; defensist_dissent += 5
 
-We are building up support for internationalism within the party, so that we may eventually adopt this position.
+추후 국제주의 노선을 채택할 수 있도록 당내 지지 세력을 규합하고 있습니다.
 
 @i_3
-title: Continue to support an internationalist position.
-subtitle: Support an immediate end to the war, even a separate peace if necessary.
+title: 국제주의 노선을 지속적으로 지지한다.
+subtitle: 즉각적인 종전을 촉구하며, 필요하다면 단독 강화도 불사합니다.
 view-if: m_war_policy = 2
 on-arrival: internationalist_strength += 4; internationalist_dissent -= 3; social_patriot_dissent += 4; defensist_dissent += 4
 
-We are continuing to support an internationalist position.
+우리는 국제주의 노선을 변함없이 지지합니다.
 
 @sp_1
-title: Adopt a social patriot position.
-subtitle: We must fight the war until we win.
-unavailable-subtitle: There is not enough support for this position within the party.
+title: 사회애국주의 노선을 공식 채택한다.
+subtitle: 승리할 때까지 전쟁을 지속해야 한다고 주장합니다.
+unavailable-subtitle: 당내 지지 기반이 충분하지 않습니다.
 view-if: m_war_policy > 0 
 choose-if: social_patriot_strength >= internationalist_strength
 on-arrival: m_war_policy = 0; social_patriot_strength += 10; internationalist_dissent += 30
 
-We have adopted a social patriot position, calling for the victory of the Allies.
+협상국의 완전한 승리를 목표로 하는 사회애국주의 노선을 채택하였습니다.
 
 @sp_2
-title: Support a social patriot position.
-subtitle: We must fight the war until we win.
+title: 사회애국주의 노선에 대한 지지 기반을 확대한다.
+subtitle: 승리할 때까지 전쟁을 지속해야 한다고 주장합니다.
 view-if: m_war_policy < 0 and social_patriot_strength < internationalist_strength
 on-arrival: social_patriot_strength += 4; social_patriot_dissent -= 5; internationalist_dissent += 5; defensist_dissent += 4
 
-We are building up support for social patriotism within the party, so that we may eventually adopt this position.
+당내 사회애국주의 세력의 입지를 넓히기 위해 노력하고 있습니다.
 
 @sp_3
-title: Continue to support a social patriot position.
-subtitle: We must fight the war until we win.
+title: 사회애국주의 노선을 지속적으로 지지한다.
+subtitle: 승리할 때까지 전쟁을 지속해야 한다고 주장합니다.
 view-if: m_war_policy = 0
 on-arrival: social_patriot_strength += 4; social_patriot_dissent -= 5; internationalist_dissent += 5; defensist_dissent += 4
 
-We are continuing to support a social patriot position.
+우리는 사회애국주의 노선을 지속적으로 견지합니다.

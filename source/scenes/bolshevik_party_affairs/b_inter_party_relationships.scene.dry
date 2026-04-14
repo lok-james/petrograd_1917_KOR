@@ -1,4 +1,4 @@
-title: Inter-Party Relationships
+title: 정당 간 관계
 new-page: true
 view-if: b_inter_party_relationships_timer <= 0 and player_party = "b"
 is-card: true
@@ -7,29 +7,29 @@ card-image: img/portraits/taburin_b_m.jpg
 max-visits: 12
 tags: b_party
 
-= Inter-Party Relationships
+= 정당 간 관계
 
-We can improve our relations with the other democratic or socialist parties.
+다른 민주주의 또는 사회주의 정당들과의 관계 개선을 도모할 수 있습니다.
 
 - @sr
 - @m
-- @root: We do not need to improve our relations.
+- @root: 현재 관계 개선이 필요하지 않다.
 - @easy_discard
 - @cancel_advisor_action
 
 
 @sr
-title: Improve our relations with the Socialist-Revolutionaries.
+title: 사회혁명당과의 관계를 개선한다.
 on-arrival: b_sr_relation += 6*(1-b_dissent); b_resources -= 1;
 choose-if: b_resources >= 1
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 
-We have improved our relations with the Party of Socialist-Revolutionaries.
+사회혁명당과의 유대 관계를 강화하였습니다.
 
 @m
-title: Can we repair our relations with the Mensheviks?
+title: 멘셰비키와의 관계를 복구할 수 있을까?
 on-arrival: m_b_relation += 5*(1-b_dissent); m_b_relation -= 3 if leninist_strength >= moderate_strength; b_resources -= 1;
 choose-if: b_resources >= 1
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 
-We have attempted to build closer ties with the Mensheviks, our wayward cousins in the RSDLP. [? if leninist_strength >= moderate_strength : The influence of Lenin makes it difficult for us to build these relationships. ?]
+사회민주노동당의 한 뿌리였으나 현재는 갈라선 멘셰비키와 다시 긴밀한 관계를 맺고자 시도하였습니다. [? if leninist_strength >= moderate_strength : 레닌의 강력한 영향력으로 인해 관계 수복에 난항을 겪고 있습니다. ?]

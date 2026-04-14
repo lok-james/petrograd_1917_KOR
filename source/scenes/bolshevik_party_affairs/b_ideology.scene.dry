@@ -1,4 +1,4 @@
-title: Questions of Ideology
+title: 이데올로기 논쟁
 new-page: true
 view-if: b_ideology_timer <= 0 and lenin_available = 1
 on-arrival: b_ideology_timer += 2; week_actions += 1
@@ -7,11 +7,11 @@ is-card: true
 card-image: img/portraits/taburin_sd.jpg
 tags: b_party
 
-= Questions of Ideology
+= 이데올로기 논쟁
 
-Within the Bolsheviks, there are two major ideological currents - a "moderate" current that argues for cooperation with the other socialist parties and possibly even the Provisional Government, and a more radical Leninist current that argues for a Bolshevik seizure of power on behalf of the Soviets. Most Bolsheviks will follow the predominant mood of the party, whatever that happens to be.
+볼셰비키 내부에는 두 가지 주요한 이데올로기적 흐름이 존재합니다. 하나는 타 사회주의 정당 및 임시정부와의 협력을 주장하는 "온건파"이며, 다른 하나는 소비에트의 이름으로 볼셰비키가 권력을 독점해야 한다고 주장하는 급진적인 "레닌주의파"입니다. 대다수 당원은 당의 주도적인 분위기가 어느 쪽으로 흐르든 그 결정을 따를 것입니다.
 
-Which ideological current should be supported?
+어떤 노선을 지지하시겠습니까?
 
 - @support_moderate
 - @adopt_moderate
@@ -19,57 +19,57 @@ Which ideological current should be supported?
 - @support_leninist
 - @adopt_leninist
 - @leninist_continue
-- @root: No, we will not change any of our ideological positions.
+- @root: 아니, 현재의 이데올로기적 입장을 고수하겠다.
 - @easy_discard
 
 @support_moderate
-title: Support the moderate course of Kamenev and Zinoviev.
+title: 카메네프와 지노비예프의 온건 노선을 지지한다.
 view-if: moderate_strength < leninist_strength and b_war_policy != 2
 on-arrival: moderate_strength += 10; leninist_dissent += 10;
 
-The moderates support an internationalist war policy (i.e. negotiations to end the war), workers' councils, and the formation of an all-socialist provisional government.
+온건파는 국제주의적 전쟁 정책(협상을 통한 종전), 노동자 평의회 강화, 그리고 모든 사회주의 세력이 참여하는 연립 정부 구성을 옹호합니다.
 
 
 @adopt_moderate
-title: Adopt the moderate course of Kamenev and Zinoviev.
+title: 카메네프와 지노비예프의 온건 노선을 공식 채택한다.
 view-if: moderate_strength >= leninist_strength and b_war_policy != 2
 on-arrival: b_war_policy = 2; b_industrial_policy = 1; b_prov_gov_policy = 3; b_land_policy = 1; moderate_strength += 10; leninist_dissent += 10; lenin_advisor = 0; trotsky_advisor = 0; kamenev_advisor = 1; zinoviev_advisor = 1; b_leadership = 1;
 
-The moderates support an internationalist war policy (i.e. negotiations to end the war), workers' councils, and the formation of an all-socialist provisional government.
+온건파는 국제주의적 전쟁 정책(협상을 통한 종전), 노동자 평의회 강화, 그리고 모든 사회주의 세력이 참여하는 연립 정부 구성을 옹호합니다.
 
-Now, the moderates have control of the party's leadership and key positions within the party.
+이제 온건파가 당 지도부와 모든 핵심 보직을 장악하였습니다.
 
 @moderate_continue
-title: Continue to support Kamenev and Zinoviev's moderate plans.
+title: 카메네프와 지노비예프의 온건 계획을 지속적으로 추진한다.
 view-if: b_war_policy = 2
 on-arrival: moderate_dissent -= 10; moderate_strength += 8
 
-We are continuing to support the moderate course: an internationalist war policy (i.e. negotiations to end the war), workers' councils, and the formation of an all-socialist provisional government.
+우리는 온건 노선을 견지합니다. 이는 국제주의적 전쟁 정책(협상을 통한 종전), 노동자 평의회 활성화, 그리고 사회주의 연립 정부 구성을 의미합니다.
 
 
 @support_leninist
-title: Support Lenin's radical plans.
+title: 레닌의 급진 계획을 지지한다.
 view-if: leninist_strength < moderate_strength
 on-arrival: leninist_strength += 10; moderate_dissent += 10;
 
-Lenin supports an immediate end to the war without conditions, state or collective ownership of industries, and the overthrow of the Provisional Government in favor of one based in the Soviet of Workers' and Soldiers' Deputies.
+레닌은 무조건적이고 즉각적인 종전, 산업의 국유화 또는 집단 소유화, 그리고 노동자·병사 대표 소비에트에 기반한 권력 수립을 위해 임시정부를 전복할 것을 주장합니다.
 
 @adopt_leninist
-title: Adopt Lenin's radical plans.
+title: 레닌의 급진 계획을 공식 채택한다.
 view-if: leninist_strength >= moderate_strength and b_war_policy != 3
 on-arrival: b_war_policy = 3; b_industrial_policy = 3; b_prov_gov_policy = 4; b_land_policy = 2; leninist_strength += 10; moderate_dissent += 10; stasova_advisor = 0; kamenev_advisor = 0; zinoviev_advisor = 0; lenin_advisor = 1; trotsky_advisor = 1 if trotsky_available; sverdlov_advisor = 1; b_leadership = 2;
 
 # drop stasova and shliapnikov?
 
-Lenin supports an immediate end to the war without conditions, state or collective ownership of industries, and the overthrow of the Provisional Government in favor of one based in the Soviet of Workers' and Soldiers' Deputies.
+레닌은 무조건적이고 즉각적인 종전, 산업의 국유화 또는 집단 소유화, 그리고 노동자·병사 대표 소비에트에 기반한 권력 수립을 위해 임시정부를 전복할 것을 주장합니다.
 
-The Leninists have shaken up the party's leadership, and now control all key positions.
+레닌주의파가 당 지도부를 전면 개편하고 모든 핵심 요직을 차지하였습니다.
 
-With this ideological program, we are calling for violent revolution against the Provisional Government. We should make preparations.
+이 강령을 채택함으로써 우리는 임시정부에 맞선 무력 혁명을 선언한 셈입니다. 이제 거사를 준비해야 합니다.
 
 @leninist_continue
-title: Continue to support Lenin's plans.
+title: 레닌의 계획을 지속적으로 추진한다.
 view-if: b_war_policy = 3
 on-arrival: leninist_dissent -= 10; leninist_strength += 8
 
-We are continuing to support Lenin's plans: an immediate end to the war without conditions, state or collective ownership of industries, and the overthrow of the Provisional Government in favor of one based in the Soviet of Workers' and Soldiers' Deputies.
+우리는 레닌의 계획을 계속해서 밀어붙입니다. 즉각적인 무조건 종전, 산업 국유화, 그리고 소비에트 권력 수립을 위한 임시정부 타도를 목표로 합니다.

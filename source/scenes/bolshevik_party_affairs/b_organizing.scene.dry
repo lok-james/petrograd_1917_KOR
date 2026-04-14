@@ -1,4 +1,4 @@
-title: Organizing and Campaigning
+title: 조직화 및 캠페인
 new-page: true
 view-if: b_organizing_timer <= 0
 on-arrival: b_organizing_timer += 2; week_actions += 1
@@ -7,46 +7,46 @@ is-card: true
 card-image: img/lenin_putilov.jpg
 tags: b_party
 
-= Organizing and Campaigning
+= 조직화 및 캠페인
 
-Social Democrats have been organizing among the working class for decades, and have built a formidable base. However, they may not be enough for the revolution. Which groups should we focus our organizing efforts on?
+사회민주주의자들은 수십 년간 노동계급을 조직하며 강력한 지지 기반을 닦아왔습니다. 그러나 혁명을 완수하기에는 그것만으로 부족할 수 있습니다. 어떤 집단에 조직화 역량을 집중해야 합니까?
 
-- @soldiers: Soldiers at the front and in the garrisons.
-- @workers: The urban proletariat, the core of our base.
+- @soldiers: 전선과 주둔지의 병사들.
+- @workers: 당의 핵심 기반인 도시 프롤레타리아.
 #- @middle_class: Can we make in-roads among the middle class?
-- @rural: The peasantry?
-- @root: We don't need to organize right now.
+- @rural: 농민층?
+- @root: 지금은 조직화 활동이 필요하지 않다.
 - @easy_discard
 
 @soldiers
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 choose-if: b_resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 자원이 부족합니다.
 on-arrival: b_resources -= 1; soldiers_b += 6*(1-b_dissent); soldiers_b -= 2 if war_weariness >= 50 and b_war_policy <= 0; soldiers_b -= 2 if war_weariness >= 60 and b_war_policy <= 1; b_soldiers_org += 1 if war_weariness <= 50 or b_war_policy > 1
 
-We have increased our organizing among the soldiers. [? if (war_weariness >= 50 and b_war_policy <= 0) or (war_weariness >= 60 and b_war_policy <= 1): Our policy is viewed as too pro-war, and makes it harder to organize among the soldiers. ?]
+병사들 사이에서 조직화 사업을 강화하였습니다. [? if (war_weariness >= 50 and b_war_policy <= 0) or (war_weariness >= 60 and b_war_policy <= 1): 당의 정책이 지나치게 주전론적으로 비춰져 장병 포섭에 어려움을 겪고 있습니다. ?]
 
 @workers
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 choose-if: b_resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 자원이 부족합니다.
 on-arrival: b_resources -= 1; workers_b += 6*(1-b_dissent); b_workers_org += 1; workers_b -= 2 if b_in_gov and prov_gov_legitimacy <= 50;
 
-We have increased our organizing among the workers. [? if b_in_gov and prov_gov_legitimacy <= 50 : Our participation in the unpopular Provisional Government limits our support. ?]
+노동자 계층 내에서의 조직력을 강화하였습니다. [? if b_in_gov and prov_gov_legitimacy <= 50 : 대중적 지지가 낮은 임시정부에 참여하고 있는 탓에 지지 확대에 난항을 겪고 있습니다. ?]
 
 @middle_class
-subtitle: -1 resource - the middle class is not part of our base.
+subtitle: 자원 -1 소모 - 중산층은 당의 전통적인 지지 기반이 아닙니다.
 choose-if: b_resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 자원이 부족합니다.
 on-arrival: b_resources -= 1; b_middle_class += 3*(1-b_dissent); b_middle_class_org += 1
 
-The middle class has never been a subject of our organizing efforts, but that may change.
+중산층은 그동안 조직화의 대상이 아니었으나, 이제 전략적 변화를 시도할 수 있습니다.
 
 
 @rural
-subtitle: -1 resource - this will be very difficult, as we do not have a traditional base among the peasantry.
+subtitle: 자원 -1 소모 - 농민층 내에 기반이 전무하므로 매우 어려운 작업이 될 것입니다.
 choose-if: b_resources >= 1 and b_rural_policy > 0
-unavailable-subtitle: [? if b_resources < 1 : Not enough resources. ?][? if b_rural_policy = 0 : We do not have a rural policy. ?]
+unavailable-subtitle: [? if b_resources < 1 : 자원이 부족합니다. ?][? if b_rural_policy = 0 : 아직 농촌 정책이 수립되지 않았습니다. ?]
 on-arrival: b_resources -= 1; b_peasants += 5*(1-b_dissent); b_peasants_org += 1
 
 

@@ -1,4 +1,4 @@
-title: Choosing Our Enemies
+title: 우리의 적 선택하기
 new-page: true
 view-if: b_enemies_timer <= 0 and month < 9
 on-arrival: b_enemies_timer = 6; week_actions += 1
@@ -6,9 +6,9 @@ is-card: true
 card-image: img/soviet_leaders.jpg
 tags: b_party
 
-= Choosing Our Enemies
+= 우리의 적 선택하기
 
-In our media and campaign materials, who should we consider our primary enemies?
+우리 당의 언론 매체와 캠페인 자료에서, 누구를 주적으로 설정해야 합니까?
 
 - @bourgeois
 - @counterrevolutionaries
@@ -18,25 +18,25 @@ In our media and campaign materials, who should we consider our primary enemies?
 - @cancel_advisor_action
 
 @counterrevolutionaries
-title: Counterrevolutionary forces, Black Hundreds, [? if kornilov_affair_seen : Kornilovites, ?] and the like.
+title: 반혁명 세력, 검은 백인조, [? if kornilov_affair_seen : 코르닐로프 일파, ?] 그리고 그와 유사한 자들.
 on-arrival: workers_m += 3*(1-b_dissent); b_b_relation += 3*(1-b_dissent); internationalist_dissent -= 2; defensist_dissent -= 2;
 
-Attacking counterrevolutionary forces is a longstanding theme in Social Democratic propaganda.
+반혁명 세력을 공격하는 것은 사회민주주의 선전의 유서 깊은 전통입니다.
 
 @bourgeois
-title: The Kadets and other bourgeois parties.
+title: 카데트(입헌민주당)와 기타 부르주아 정당들.
 on-arrival: b_k_relation -= 8; internationalist_dissent -= 4; internationalist_strength += 5*(1-b_dissent); social_patriot_dissent += 5; defensist_dissent += 4; b_b_relation += 5*(1-b_dissent); soviet_cooperation -= 0.05;
 
-Attacking the Kadets is certainly popular among the Bolshevik base.
+카데트를 공격하는 것은 볼셰비키 지지층 사이에서 매우 대중적인 호응을 얻습니다.
 
 @mensheviks
-title: Mensheviks and SRs, the bourgeois socialists.
+title: 멘셰비키와 사회혁명당, 즉 부르주아 사회주의자들.
 on-arrival: m_b_relation -= 8; b_sr_relation -= 8; workers_m -= (5+b_workers_org)*(1-b_dissent); workers_sr -= (5+b_workers_org)*(1-b_dissent); soldiers_m -= (5+b_soldiers_org)*(1-b_dissent); soldiers_sr -= (5+b_soldiers_org)*(1-b_dissent);
 
-Attacking the bourgeois socialists reduces their standing among the working class and the soldiers.
+부르주아 사회주의자들을 공격하여 노동자 계급과 병사들 사이에서 그들의 위상을 실추시킵니다.
 
 @imperialists
-title: The imperialist powers - Britain and France primarily.
+title: 제국주의 강대국들 - 주로 영국과 프랑스.
 on-arrival: b_k_relation -= 10; war_weariness += 5; prov_gov_legitimacy -= 5; leninist_strength += 8;
 
-Attacking the "Allies" raises doubts about the Provisional Government's policy, and reduces its legitimacy.
+"연합국"을 공격함으로써 임시정부의 외교 정책에 의구심을 갖게 하고, 정부의 정당성을 훼손합니다.

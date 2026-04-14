@@ -428,7 +428,7 @@ title: 국방
 
 = 대외 관계
 
-서방 연합국과의 관계: [+ west_relation : relationships +]
+서방 협상국과의 관계: [+ west_relation : relationships +]
 
 [? if not is_armistice and not is_peace: 휴전 협상 진행도: [+ armistice_progress +] ?]
 
@@ -479,7 +479,7 @@ title: 정책 기조
 
 = 대외 관계 방침
 
-서방 연합국과의 관계: [+ west_relation : relationships +]
+서방 협상국과의 관계: [+ west_relation : relationships +]
 
 [? if not is_armistice: 휴전 협상 진행도: [+ armistice_progress +] ?]
 

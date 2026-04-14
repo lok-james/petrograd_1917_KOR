@@ -1,20 +1,20 @@
-title: Revolution!
+title: 혁명!
 audio: music/RedArmy.mp3
 
-Is it time to finally launch the revolution?
+마침내 혁명을 시작할 때가 온 걸까요?
 
-On our side are the troops of the garrison, [+ garrison_strength +] thousand in total. Support for the Bolsheviks is [+ garrison_b_loyalty : strength_2 +], although the our leadership will raise this. The workers' militia has [+ workers_militia_strength +] thousand members, and support for the Bolsheviks is [+ workers_militia_b_loyalty : strength_2 +].
+현재 우리 측에는 총 [+ garrison_strength +]천 명의 주둔군 병력이 있습니다. 볼셰비키에 대한 충성도는 [+ garrison_b_loyalty : strength_2 +] 수준이나, 지도부의 활약으로 이를 끌어올릴 수 있습니다. 노동자 민병대는 [+ workers_militia_strength +]천 명의 규모를 갖추고 있으며, 볼셰비키 지지도는 [+ workers_militia_b_loyalty : strength_2 +]입니다.
 
-[? if rev_progress >= 4: The preparations for the revolution are in place. Everything is ready. ?]
-[? if rev_progress < 4: Despite our popular support, we have not yet made tactical preparations for this action. Our leadership and organization are not yet in place. ?]
+[? if rev_progress >= 4: 혁명을 위한 모든 준비가 완료되었습니다. 이제 결단만이 남았습니다. ?]
+[? if rev_progress < 4: 대중적 지지는 충분할지 모르나, 아직 구체적인 전술적 준비가 부족합니다. 지도 체계와 조직망이 완전히 갖춰지지 않았습니다. ?]
 
-Opposing us will be the city militias, the loyal troops (Cossacks and Death Battalions), and the Mensheviks and SRs, most of whose members will oppose us (with the exception of the Left-SRs. [? if prov_gov_legitimacy < 40: The Provisional Government is weak and seen as illegitimate. This is good for us. ?]
+우리에 맞설 세력은 도시 민병대, 카자크와 죽음의 대대로 구성된 충성파 부대, 그리고 우리에게 적대적인 멘셰비키와 사회혁명당(SR 좌파 제외) 당원들입니다. [? if prov_gov_legitimacy < 40: 임시정부는 극도로 약화되었으며 정통성마저 잃었습니다. 우리에게 절호의 기회입니다. ?]
 
-- @to_battle: To battle!
-- @root: No, now is not the time!
+- @to_battle: 전투를 시작하자!
+- @root: 아니, 아직은 때가 아니다!
 
 @to_battle
-title: The revolution begins...
+title: 혁명의 시작...
 set-jump: b_revolution.post_battle
 go-to: civil_war
 
@@ -25,20 +25,20 @@ go-to: rev_win if revolutionary_victory; rev_lose if prov_gov_victory
 on-arrival: workers_b -= 15; soldiers_b -= 15; workers_militia_b_loyalty -= 15;
 achievement: rev_failed
 
-= Provisional Government Victory
+= P임시정부의 승리
 
-In the end, our forces were not strong enough to take on the Provisional Government. With many
- casualties, our troops scattered, and our leadership arrested. This is the end of the Bolshev
-iks, for now. 
+결국 우리의 역량은 임시정부를 무너뜨리기에 역부족이었습니다. 
+막대한 사상자를 낸 채 부대들은 흩어졌고 지도부는 체포되었습니다. 
+볼셰비키의 도전은 일단 여기서 막을 내립니다.
 
 - @game_over
 
 @rev_win
 achievement: red_october
 
-= Bolshevik Victory
+= 볼셰비키의 승리
 
-We have won! Our forces have taken control of key government locations, and arrested their leaders. The bourgeois government will be consigned to the dustbin of history, and the dictatorship of the proletariat will commence.
+우리가 승리하였습니다! 우리 군이 정부의 핵심 요충지를 장악하고 지도자들을 체포하였습니다. 부르주아 정부는 역사의 쓰레기통으로 던져질 것이며, 이제 프롤레타리아 독재의 시대가 열릴 것입니다.
 
 - @game_over
 

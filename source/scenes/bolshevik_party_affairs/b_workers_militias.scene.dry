@@ -1,4 +1,4 @@
-title: Workers' Militias
+title: 노동자 민병대
 new-page: true
 view-if: b_workers_militias_timer <= 0
 on-arrival: b_workers_militias_timer += 4; week_actions += 1
@@ -7,9 +7,9 @@ is-card: true
 card-image: img/red_guard_2.jpg
 tags: b_party
 
-= Workers' Militias
+= 노동자 민병대
 
-The workers' militias were organized by the working classes in the industrial districts for self-defense and combatting counterrevolution. They have deep connections to the Bolsheviks.
+노동자 민병대는 산업 지구의 노동계급이 자위권 행사와 반혁명 세력 척결을 위해 조직한 무장 단체입니다. 이들은 볼셰비키와 매우 긴밀한 유대 관계를 맺고 있습니다.
 
 
 - @loyalty
@@ -18,57 +18,57 @@ The workers' militias were organized by the working classes in the industrial di
 - @mrc
 - @preparing
 - @revolution
-- @root: No action is needed.
+- @root: 지금은 조치가 필요하지 않다.
 - @easy_discard
 - @cancel_advisor_action
 
 @loyalty
-title: Increase militia loyalty.
+title: 민병대의 충성도를 강화한다.
 on-arrival: workers_militia_b_loyalty += 7*(1-b_dissent)
 
-Through our party organizations and propaganda campaigns, we are tying the militias closer to the Bolshevik party.
+당 조직과 선전 활동을 통해 민병대원들을 볼셰비키당의 깃발 아래 결집시켰습니다.
 
 # TODO: max recruitment depends on support
 
 @recruitment
-title: Recruit more workers into the militias.
-subtitle: -1 resource
+title: 민병대를 추가 모집한다.
+subtitle: 자원 -1 소모
 choose-if: workers_militia_strength <= 100 and b_resources >= 1
-unavailable-subtitle: [? if workers_militia_strength > 80 : There are not enough willing workers to recruit. ?][? if b_resources < 1 : Not enough resources. ?]
+unavailable-subtitle: [? if workers_militia_strength > 80 : 더 이상 추가로 모집할 수 있는 노동자 자원자가 부족합니다. ?][? if b_resources < 1 : 자원이 부족합니다. ?]
 on-arrival: workers_militia_strength += 6*(1-b_dissent); b_resources -= 1
 
-We have increased recruitment into the workers' militias.
+노동자 민병대의 규모를 확장하였습니다.
 
 @arming
-title: Increase armaments for the militias.
-subtitle: -1 resource
+title: 민병대의 무장을 강화한다.
+subtitle: 자원 -1 소모
 choose-if: workers_militia_militancy <= 1 and  b_resources >= 1
-unavailable-subtitle: [? if b_resources < 1: Not have enough resources. ?][? if workers_militia_militancy > 1 : We cannot arm them any further. ?]
+unavailable-subtitle: [? if b_resources < 1: 자원이 부족합니다. ?][? if workers_militia_militancy > 1 : 현재로서는 무장을 더 강화할 수 없습니다. ?]
 on-arrival: workers_militia_militancy += 0.09; b_resources -= 1;
 
-We have spent resources on purchasing more armaments for the workers' militias.
+자원을 투입하여 노동자 민병대에 더 많은 무기와 장비를 보급하였습니다.
 
 @mrc
-title: Form a Military-Revolutionary Committee!
-subtitle: We will organize the workers' militias for the defense of the revolution against all enemies. -2 resources
-unavailable-subtitle: [? if b_resources < 2: Not enough resources. ?][? if not b_in_exco: We must control the Soviet's Executive Committee. ?]
+title: 군사혁명위원회를 조직한다!
+subtitle: 모든 적들로부터 혁명을 수호하기 위해 노동자 민병대를 체계적으로 조직합니다. (자원 -2)
+unavailable-subtitle: [? if b_resources < 2: 자원이 부족합니다. ?][? if not b_in_exco: 소비에트 집행위원회를 장악해야 합니다. ?]
 view-if: player_party = "b" and mrc = 0
 choose-if: b_resources >= 2 and b_in_exco
 on-arrival: soldiers_b += 15; workers_militia_b_loyalty += 25; mrc = 1; rev_progress += 1
 max-visits: 1
 
-The Petrograd Soviet has formed the Military-Revolutionary Committee, a committee to organize the workers' militias and garrison troops for the defense of the revolution. This ties together the workers' militias, the soldiers, and the Bolshevik party.
+페트로그라드 소비에트는 노동자 민병대와 주둔군 병력을 통합 지휘하여 혁명을 수호할 '군사혁명위원회'를 창설하였습니다. 이로써 민병대, 병사, 그리고 볼셰비키당이 하나의 강력한 대오를 형성하게 되었습니다.
 
 @preparing
-title: Preparing for Revolution
-subtitle: The Provisional Government is weak; we must prepare for the uprising...
+title: 혁명을 위한 구체적인 준비에 착수한다.
+subtitle: 임시정부는 빈사 상태입니다. 이제 봉기를 위한 실질적인 준비를 해야 합니다...
 view-if: player_party = "b" and mrc = 1 and b_in_exco and rev_progress < 4
 on-arrival: rev_progress += 1
 
-We make sure our party cadres are placed within the garrison and the workers' militias. We scout out key locations in the city that we might need to capture.
+당의 핵심 간부들을 주둔군과 민병대 내 주요 보직에 배치합니다. 또한 거사 시 점령해야 할 도시 내 주요 전략 요충지들에 대한 정찰을 마쳤습니다.
 
 @revolution
-title: It is time to launch the revolution!
+title: 마침내 혁명의 때가 왔다!
 view-if: player_party = "b" and mrc = 1 and b_in_exco and rev_progress >= 3
 go-to: b_revolution
 

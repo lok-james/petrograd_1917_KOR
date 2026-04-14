@@ -1,4 +1,4 @@
-title: Media and Propaganda
+title: 언론 및 선전 활동
 new-page: true
 view-if: b_media_timer <= 0
 on-arrival: b_media_timer += 4; week_actions += 1
@@ -7,9 +7,9 @@ is-card: true
 card-image: img/newspapers.jpg
 tags: b_party
 
-= Media and Propaganda
+= 언론 및 선전 활동
 
-What should be our strategy for our newspapers and party organs?
+당 기관지와 언론 매체를 통해 어떤 선전 전략을 펼쳐야 합니까?
 
 # media strategies: support prov gov, support soviet policies, support Menshevik campaigning, support revolutionary defensism
 
@@ -17,55 +17,55 @@ What should be our strategy for our newspapers and party organs?
 - @oppose_prov_gov
 - @support_b
 - @support_radicalism
-- @root: We do not need more propaganda.
+- @root: 추가적인 선전 활동은 필요 없다.
 - @easy_discard
 - @cancel_advisor_action
 
 @support_socialist_unity
-title: Support socialist unity.
-subtitle: -1 resource - Support a united front of all the socialist parties against the bourgeoisie.
+title: 사회주의 세력의 단결을 호소한다.
+subtitle: 자원 -1 소모 - 부르주아지에 맞서 모든 사회주의 정당이 통일 전선을 구축할 것을 주장합니다.
 choose-if: b_resources >= 1
 on-arrival: b_resources -= 1; internationalist_strength += 8; left_sr_strength += 8; defensist_dissent += 5; internationalist_dissent += 5; left_sr_dissent += 5; right_sr_dissent += 5
 
-Our propaganda campaign is aimed at supporting a united front of all socialist parties against the bourgeoisie. This is embarrassing for the socialists who cooperate with the Provisional Government, and encouraged left-leaning factions within them.
+우리의 선전 캠페인은 부르주아 세력에 대항하는 사회주의 통일 전선 형성에 초점을 맞춥니다. 이는 임시정부에 협력하는 사회주의자들을 곤혹스럽게 만들며, 그들 내부의 좌파 분파를 자극하는 효과가 있습니다.
 
 @oppose_prov_gov
-title: Oppose the Provisional Government.
-subtitle: -1 resource - Attack the legitimacy of the Provisional Government and the Soviet's cooperation.
+title: 임시정부에 정면으로 반대한다.
+subtitle: 자원 -1 소모 - 임시정부의 정통성과 소비에트의 협력 노선을 공격합니다.
 choose-if: b_resources >= 1
 on-arrival: b_resources -= 1; prov_gov_legitimacy -= 6; soviet_cooperation -= 0.05;
 
-Our propaganda is aimed at attacking the Provisional Government, and driving a weege between it and the Soviet.
+우리의 선전 캠페인은 임시정부를 맹렬히 비난하고, 정부와 소비에트 사이의 공조 체제에 균열을 내는 것을 목표로 삼습니다.
 
 @support_b
-title: Support the Bolshevik party.
-subtitle: -1 resource
+title:볼셰비키당에 대한 지지를 호소한다.
+subtitle: 자원 -1 소모
 choose-if: b_resources >= 1
 on-arrival: workers_b += 4*(1-b_dissent); soldiers_b += 4*(1-b_dissent); soldiers_b -= 2 if (war_weariness >= 60 and b_war_policy <= 1); b_resources -= 1
 
-Our propaganda campaign encourages support for the Bolshevik party among the workers and soldiers.
+우리의 선전 캠페인은 노동자와 병사들 사이에서 볼셰비키당에 대한 지지 여론을 확산시킵니다.
 
 @support_radicalism
-title: Support revolution and radicalism.
-subtitle: -1 resource - Support strikes among workers, land seizure among peasants, and anti-war sentiment among soldiers.
-unavailable-subtitle: [? if b_resources < 1: Not enough resources. ?][? if b_leadership = 1: The Bolshevik leadership is not radical enough. ?]
+title: 혁명적 급진주의를 고취한다.
+subtitle: 자원 -1 소모 - 노동자 파업, 농민의 토지 점거, 병사들의 반전 투쟁을 선동합니다.
+unavailable-subtitle: [? if b_resources < 1: 자원이 부족합니다. ?][? if b_leadership = 1: 현재 볼셰비키 지도부가 충분히 급진적이지 않습니다. ?]
 choose-if: b_resources >= 1 and b_leadership = 2
 on-arrival: b_resources -= 1; worker_unrest += 3; peasant_unrest += 3; war_weariness += 8; morale -= 0.04; discipline -= 0.04 
 
-Our newspapers print savage attacks on the entire established order.
+우리의 선전 캠페인은 당 기관지를 통해 기존의 모든 기득권 질서에 대한 무차별적인 공격을 퍼붓습니다.
 
 @support_id
-title: Support the ideology of internationalism - support immediate negotiations for a peace.
-subtitle: -1 resource
+title: 국제주의 이데올로기를 전파한다 - 즉각적인 평화 협상을 주장합니다.
+subtitle: 자원 -1 소모
 choose-if: b_resources >= 1
 on-arrival: internationalist_strength += 6*(1-b_dissent); internationalist_dissent -= 5*(1-b_dissent); social_patriot_dissent += 5; defensist_dissent += 4; soldiers_m += 3*(1-b_dissent); b_resources -= 1
 
-Our newspapers print editorials in support of internationalism, arguing that an immediate peace is necessary. This bolsters the Internationalist faction within the party while upsetting the defensists, and raises our standing with the soldiers.
+즉각적인 종전의 필요성을 역설하는 국제주의 사설을 게재합니다. 이는 당내 방위주의자들을 자극하는 동시에 국제주의 분파를 강화하며, 병사들 사이에서 당의 위상을 높여줍니다.
 
 @support_pat
-title: Support the war effort from a social-patriot standpoint.
-subtitle: -1 resource
+title: 사회애국주의적 관점에서 전쟁 수행을 지지한다.
+subtitle: 자원 -1 소모
 choose-if: b_resources >= 1
 on-arrival: social_patriot_strength += 6*(1-b_dissent); social_patriot_dissent -= 5*(1-b_dissent); internationalist_dissent += 5; war_weariness -= 3*(1-b_dissent); b_resources -= 1
 
-Our newspapers print editorials in support of the war effort, without any of the revolutionary defensist conditions. This bolsters the Social Patriot faction.
+혁명적 방위주의의 전제 조건 없이 전쟁 수행을 적극 지지하는 사설을 게재합니다. 이는 당내 사회애국주의 분파의 입지를 강화합니다.
