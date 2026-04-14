@@ -1,4 +1,4 @@
-title: Mensheviks leave the Provisional Government.
+title: 멘셰비키가 임시정부를 떠나다
 on-arrival: {!
 Q.m_in_gov = 0;
 if (Q.agriculture_minister_party = "Menshevik") {

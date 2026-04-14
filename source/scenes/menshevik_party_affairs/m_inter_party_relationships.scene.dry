@@ -1,4 +1,4 @@
-title: Inter-Party Relationships
+title: 정당 간 관계
 new-page: true
 view-if: m_inter_party_relationships_timer <= 0
 is-card: true
@@ -7,40 +7,40 @@ card-image: img/rsdlp.jpg
 max-visits: 12
 tags: m_party
 
-= Inter-Party Relationships
+= 정당 간 관계
 
-We can improve our relations with the other democratic or socialist parties.
+다른 민주주의 정당이나 사회주의 정당들과의 관계를 개선할 수 있습니다.
 
-According to the theory of dialectical materialism, it is the historic role of the bourgeoisie and middle class to lead the revolution and develop a liberal democracy. It is our task to assist the bourgeoisie parties, or at most oversee them along their historic path.
+변증법적 유물론 이론에 따르면, 혁명을 주도하고 자유 민주주의를 발전시키는 것은 부르주아지와 중산층의 역사적 소명입니다. 우리의 과업은 부르주아 정당들을 보조하거나, 기껏해야 그들이 역사적 경로를 이탈하지 않도록 감시하는 것입니다.
 
 - @sr
 - @k
 - @b
-- @root: We do not need to improve our relations.
+- @root: 현재로썬 관계 개선이 필요하지 않다.
 - @easy_discard
 - @cancel_advisor_action
 
 
 @sr
-title: Improve our relations with the Socialist-Revolutionaries.
+title: 사회혁명당과의 관계를 개선한다.
 on-arrival: m_sr_relation += ipr_change*(1-m_dissent); m_resources -= 1;
 choose-if: m_resources >= 1
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 
-We have improved our relations with the Party of Socialist-Revolutionaries.
+사회혁명당과의 유대 관계를 강화하였습니다.
 
 @k
-title: Improve our relations with the Kadets, the middle class liberal party.
+title: 중산층 자유주의 정당인 카데트와의 관계를 개선한다.
 on-arrival: m_k_relation += ipr_change*(1-m_dissent); m_k_relation -= (ipr_change/2)*(1-m_dissent) if internationalist_strength >= defensist_strength + social_patriot_strength or m_prov_gov_policy >= 2 or m_war_policy >= 2; m_resources -= 1;
 choose-if: m_resources >= 1
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 
-We are building our ties with the Kadets. [? if internationalist_strength >= defensist_strength + social_patriot_strength or m_war_policy >= 2 : Our support of Internationalism makes it more difficult to build relationships, as they consider our anti-war ideas to be treasonous. ?][? if m_prov_gov_policy >= 2: Our opposition to the Provisional Government makes improving relations difficult. ?]
+카데트와의 협력 체계를 구축하고 있습니다. [? if internationalist_strength >= defensist_strength + social_patriot_strength or m_war_policy >= 2 : 당의 국제주의적 성향 때문에 관계 구축에 난항을 겪고 있습니다. 그들은 우리의 반전 사상을 반역 행위로 간주하기 때문입니다. ?][? if m_prov_gov_policy >= 2: 임시정부에 대한 우리의 반대 입장이 관계 개선을 어렵게 만들고 있습니다. ?]
 
 @b
-title: Can we repair our relations with the Bolsheviks?
+title: 볼셰비키와의 관계를 수복할 수 있는가?
 on-arrival: m_b_relation += (ipr_change - 1)*(1-m_dissent); m_b_relation -= (ipr_change/2)*(1-m_dissent) if leninist_strength >= moderate_strength or m_war_policy <= 1 or m_prov_gov_policy <= 1; m_resources -= 1;
 choose-if: m_resources >= 1
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 
-We have attempted to build closer ties with the Bolsheviks, our wayward cousins in the RSDLP. [? if leninist_strength >= moderate_strength : The influence of Lenin makes it difficult for us to build these relationships. ?][? if m_war_policy <= 1 : Our defensist war policy makes it difficult to improve relations. ?][? if m_prov_gov_policy <= 1: Our support of the Provisional Government makes it difficult to improve relations. ?]
+러시아 사회민주노동당의 방황하는 형제들인 볼셰비키와 더 긴밀한 유대를 맺고자 시도했습니다. [? if leninist_strength >= moderate_strength : 레닌의 강력한 영향력 때문에 관계 구축이 쉽지 않습니다. ?][? if m_war_policy <= 1 : 당의 방위주의적 전쟁 정책이 관계 개선에 걸림돌이 되고 있습니다. ?][? if m_prov_gov_policy <= 1: 임시정부에 대한 우리의 지지 태도가 관계 개선을 어렵게 만들고 있습니다. ?]

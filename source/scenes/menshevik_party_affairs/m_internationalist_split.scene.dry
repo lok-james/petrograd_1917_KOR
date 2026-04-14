@@ -1,4 +1,4 @@
-title: Internationalist Split
+title: 국제주의 분파의 분열
 view-if: internationalist_dissent > m_split_threshold and not internationalist_split
 max-visits: 1
 on-arrival: {!
@@ -46,8 +46,8 @@ if (Q.axelrod_advisor) {
 }
 !}
 
-The internationalists are splitting to form a new party, the Menshevik-Internationalists. Internationalist leaders have resigned from the party's leadership.
+국제주의자들이 멘셰비키-국제주의자라는 신당을 창당하며 당을 떠납니다. 국제주의 분파 지도자들은 당 지도부에서 사임했습니다.
 
-This will result in a new election for Petrograd Soviet leadership.
+이로 인해 페트로그라드 소비에트 지도부 선출을 위한 재선거가 실시될 것입니다.
 
-- @soviet_leadership_election: Conduct the Soviet leadership election.
+- @soviet_leadership_election: 소비에트 지도부 선거를 실시한다.

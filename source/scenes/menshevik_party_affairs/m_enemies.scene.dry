@@ -1,4 +1,4 @@
-title: Choosing Our Enemies
+title: 우리의 적 선택하기
 new-page: true
 view-if: m_enemies_timer <= 0 and month < 9
 on-arrival: m_enemies_timer = 6; week_actions += 1
@@ -6,9 +6,9 @@ is-card: true
 card-image: img/menshevik_2.jpg
 tags: m_party
 
-= Choosing Our Enemies
+= 우리의 적 선택하기
 
-In our media and campaign materials, who should we consider our primary enemies?
+우리 당의 언론 매체와 캠페인 자료에서, 누구를 주적으로 설정해야 합니까?
 
 - @bourgeois
 - @counterrevolutionaries
@@ -18,25 +18,25 @@ In our media and campaign materials, who should we consider our primary enemies?
 - @cancel_advisor_action
 
 @counterrevolutionaries
-title: Counterrevolutionary forces, Black Hundreds, [? if kornilov_affair_seen : Kornilovites, ?] and the like.
+title: 반혁명 세력, 검은 백인조, [? if kornilov_affair_seen : 코르닐로프 일파, ?] 그리고 그와 유사한 자들.
 on-arrival: workers_m += 3*(1-m_dissent); m_b_relation += 3*(1-m_dissent); internationalist_dissent -= 2; defensist_dissent -= 2;
 
-Attacking counterrevolutionary forces is a longstanding theme in Social Democratic propaganda.
+반혁명 세력을 공격하는 것은 사회민주주의 선전의 유서 깊은 전통입니다.
 
 @bourgeois
-title: The Kadets and other bourgeois parties.
+title: 카데트(입헌민주당)와 기타 부르주아 정당들.
 on-arrival: m_k_relation -= 8; internationalist_dissent -= 4; internationalist_strength += 5*(1-m_dissent); social_patriot_dissent += 5; defensist_dissent += 4; m_b_relation += 5*(1-m_dissent); soviet_cooperation -= 0.05;
 
-Attacking the Kadets is popular among the left-wing Internationalists, but it might implede the cooperation between the Soviet and the Provisional Government.
+카데트를 공격하는 것은 좌파 국제주의자들 사이에서 인기가 높으나, 소비에트와 임시정부 간의 협력을 저해할 위험이 있습니다.
 
 @bolsheviks
-title: Bolsheviks and anarchists, who seek to subvert the revolution from within.
+title: 볼셰비키와 아나키스트들, 그들은 내부로부터 혁명을 전복시키려 획책한다.
 on-arrival: m_b_relation -= 8; m_k_relation += 4*(1-m_dissent); internationalist_dissent += 4; b_threat += 1
 
-Attacking our former Bolshevik comrades is unpopular with the Internationalists, but raises our relations with the Kadets.
+과거의 동지였던 볼셰비키를 공격하는 것은 국제주의자들의 반발을 사겠지만, 카데트와의 관계는 개선될 것입니다.
 
 @germany
-title: The only enemies should be the Germans!
+title: 우리의 유일한 적은 독일뿐이다!
 on-arrival: defensist_strength += 5*(1-m_dissent); defensist_dissent -= 3; social_patriot_strength += 10*(10-m_dissent); social_patriot_dissent -= 5; internationalist_dissent += 7; m_k_relation += 4*(1-m_dissent); m_b_relation -= 4; soldiers_m -= 2; soviet_cooperation += 0.05*(1-m_dissent);
 
-Nationalistic propaganda is highly unpopular among the Internationalists, and among the soldiers who wish to stop the war. However, it raises our standing with the Kadets, and improves the position of the Defensists within the party.
+민족주의적 선전은 국제주의자들과 전쟁 종식을 원하는 병사들 사이에서 매우 인기가 없습니다. 그러나 카데트와의 관계를 돈독히 하고 당내 방위주의 분파의 입지를 강화해 줍니다.

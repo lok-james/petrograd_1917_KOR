@@ -1,4 +1,4 @@
-title: Questions of Ideology
+title: 이데올로기 논쟁
 new-page: true
 view-if: m_ideology_timer <= 0
 on-arrival: m_ideology_timer += 1; week_actions += 1
@@ -7,17 +7,17 @@ is-card: true
 card-image: img/rsdlp_2.jpg
 tags: m_party
 
-= Questions of Ideology
+= 이데올로기 논쟁
 
-The revolution has opened up a space for raucous debate on the future of the country. Within the Social Democrats, many questions are hotly contested.
+혁명은 국가의 미래를 둘러싼 격렬한 논쟁의 장을 열었습니다. 사회민주주의자 내부에서도 수많은 현안이 뜨거운 감자로 떠오르고 있습니다.
 
-Should we change the party's position on any of these issues?
+당의 공식 입장을 수정해야 할 항목이 있습니까?
 
-- @m_war_policy: War policy
-- @m_prov_gov_policy: The Provisional Government
-- @m_industrial_policy: Industrial policy
-- @m_rural_policy: Rural policy
-- @m_nationalities: The nationalities
-- @root: No, we will not change any of our ideological positions.
+- @m_war_policy: 전쟁 정책
+- @m_prov_gov_policy: 임시정부
+- @m_industrial_policy: 산업 정책
+- @m_rural_policy: 농촌 정책
+- @m_nationalities: 소수 민족 문제
+- @root: 아니, 현재의 이데올로기적 입장을 고수하겠다.
 - @easy_discard
 
