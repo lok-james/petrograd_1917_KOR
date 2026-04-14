@@ -33,7 +33,7 @@ view-if: food_minister_party != "Menshevik"
 on-arrival: m_influence -= 10; food_minister = "Groman"; food_minister_party = "Menshevik"
 go-to: menu
 
-멘셰비키 계열 경제학자인 블라디미르 그로만이 식량부 [+ government_form : minister +]]에 임명되었습니다.
+멘셰비키 계열 경제학자인 블라디미르 그로만이 식량부 [+ government_form : minister +]에 임명되었습니다.
 
 @justice
 title: 법무부
@@ -43,7 +43,7 @@ view-if: justice_minister_party != "Menshevik"
 go-to: menu
 on-arrival: m_influence -= 10; justice_minister = "Malyantovich"; justice_minister_party = "Menshevik"
 
-파벨 말랸토비치가 법무부 [+ government_form : minister +]]에 임명되었습니다.
+파벨 말랸토비치가 법무부 [+ government_form : minister +]에 임명되었습니다.
 
 @labor
 title: 노동부
@@ -54,7 +54,7 @@ view-if: labor_minister_party != "Menshevik"
 on-arrival: m_influence -= 10; labor_minister = "Skobelev"; labor_minister_party = "Menshevik"
 go-to: menu
 
-멘셰비키 소속 두마 의원인 마트베이 스코벨레프가 노동부 [+ government_form : minister +]]에 임명되었습니다.
+멘셰비키 소속 두마 의원인 마트베이 스코벨레프가 노동부 [+ government_form : minister +]에 임명되었습니다.
 
 @interior
 title: 내무부
@@ -65,7 +65,7 @@ view-if: interior_minister_party != "Menshevik"
 go-to: menu
 on-arrival: m_influence -= 15; interior_minister = "Tsereteli"; interior_minister_party = "Menshevik"
 
-이라클리 체레텔리가 내무부 [+ government_form : minister +]]에 임명되었습니다.
+이라클리 체레텔리가 내무부 [+ government_form : minister +]에 임명되었습니다.
 
 @finance
 title: 재무부
@@ -76,7 +76,7 @@ view-if: finance_minister_party != "Menshevik"
 go-to: menu
 on-arrival: m_influence -= 15; finance_minister = "Voitinsky"; finance_minister_party = "Menshevik"
 
-블라디미르 보이틴스키가 재무부 [+ government_form : minister +]]에 임명되었습니다.
+블라디미르 보이틴스키가 재무부 [+ government_form : minister +]에 임명되었습니다.
 
 @war
 title: 전쟁부
@@ -87,7 +87,7 @@ view-if: war_minister_party != "Menshevik"
 go-to: menu
 on-arrival: m_influence -= 15; war_minister = "Tsereteli"; war_minister_party = "Menshevik"
 
-이라클리 체레텔리가 전쟁부 [+ government_form : minister +]]에 임명되었습니다.
+이라클리 체레텔리가 전쟁부 [+ government_form : minister +]에 임명되었습니다.
 
 
 
@@ -100,7 +100,7 @@ view-if: foreign_minister_party != "Menshevik"
 go-to: menu
 on-arrival: m_influence -= 15; foreign_minister = "Tsereteli" if not defensist_split; foreign_minister = "Martov" if defensist_split; foreign_minister_party = "Menshevik"
 
-[? if not defensist_split : 이라클리 체레텔리 ?][? if defensist_split: 율리우스 마르토프 ?]가 외무부 [+ government_form : minister +]]에 임명되었습니다.
+[? if not defensist_split : 이라클리 체레텔리 ?][? if defensist_split: 율리우스 마르토프 ?]가 외무부 [+ government_form : minister +]에 임명되었습니다.
 
 
 @transport
@@ -112,7 +112,7 @@ view-if: transport_minister_party != "Menshevik"
 go-to: menu
 on-arrival: m_influence -= 10; transport_minister = "Plekhanov"; transport_minister_party = "Menshevik"
 
-게오르기 플레하노프가 교통부 [+ government_form : minister +]]에 임명되었습니다.
+게오르기 플레하노프가 교통부 [+ government_form : minister +]에 임명되었습니다.
 
 
 @trade
@@ -124,7 +124,7 @@ view-if: trade_minister_party != "Menshevik"
 go-to: menu
 on-arrival: m_influence -= 10; trade_minister = "Groman"; trade_minister_party = "Menshevik"
 
-블라디미르 그로만이 통상산업부 [+ government_form : minister +]]에 임명되었습니다.
+블라디미르 그로만이 통상산업부 [+ government_form : minister +]에 임명되었습니다.
 
 
 

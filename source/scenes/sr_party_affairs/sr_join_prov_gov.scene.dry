@@ -18,7 +18,7 @@ subtitle: [? if sr_influence >= 10: 장관직을 추가로 확보할 수 있는 
 
 
 @agriculture
-title: 농무부 장관
+title: 농무부
 tags: sr_mins
 choose-if: sr_influence >= 10
 view-if: agriculture_minister_party != "SR"
@@ -28,8 +28,8 @@ go-to: menu
 빅토르 체르노프가 농무부 [+ government_form : minister +]에 임명되었습니다.
 
 @food
-title: Food Ministry
-subtitle: The Food ministry deals with food procurement.
+title: 식량부
+subtitle: 식량부는 식량 조달 및 배급 업무를 관장합니다.
 tags: sr_mins
 choose-if: sr_influence >= 10
 view-if: food_minister_party != "SR"
