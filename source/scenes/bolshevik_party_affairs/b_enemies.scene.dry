@@ -39,4 +39,4 @@ on-arrival: m_b_relation -= 8; b_sr_relation -= 8; workers_m -= (5+b_workers_org
 title: 제국주의 강대국들 - 주로 영국과 프랑스.
 on-arrival: b_k_relation -= 10; war_weariness += 5; prov_gov_legitimacy -= 5; leninist_strength += 8;
 
-"연합국"을 공격함으로써 임시정부의 외교 정책에 의구심을 갖게 하고, 정부의 정당성을 훼손합니다.
+"협상국"을 공격함으로써 임시정부의 외교 정책에 의구심을 갖게 하고, 정부의 정당성을 훼손합니다.

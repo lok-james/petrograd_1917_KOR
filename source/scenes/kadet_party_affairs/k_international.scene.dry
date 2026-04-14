@@ -1,4 +1,4 @@
-title: International Relations
+title: 국제 관계
 new-page: true
 view-if: k_international_timer <= 0 and player_party = "k"
 is-card: true
@@ -6,21 +6,21 @@ on-arrival: k_international_timer += 4; week_actions += 1
 card-image: img/kadet_2.jpg
 max-visits: 12
 
-= International Relations
+= 국제 관계
 
-The Kadets are well-connected internationally, and many members have connections with diplomats and foreign dignitaries. We can use these connections for the new government's benefit.
+카데트는 국제적으로 넓은 인맥을 보유하고 있으며, 많은 당원이 외교관 및 외국의 주요 인사들과 긴밀히 연결되어 있습니다. 우리는 이러한 네트워크를 신정부의 국익을 위해 활용할 수 있습니다.
 
 - @improve_west
-- @root: No action is needed.
+- @root: 추가적인 조치는 필요하지 않다.
 - @easy_discard
 - @cancel_advisor_action
 
 
 @improve_west
-title: Improve our relations with France and Germany.
+title: 프랑스 및 독일과의 관계를 개선한다.
 on-arrival: west_relation += 6*(1-k_dissent); k_resources -= 1;
 choose-if: k_resources >= 1
 subtitle: -1 resource
 
-Our party members are working to convince foreign diplomats of the goodness of Russia's Provisional Government.
+우리 당원들은 외국 외교관들에게 러시아 임시정부의 정당성과 선의를 설득하기 위해 노력하고 있습니다.
 

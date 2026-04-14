@@ -1,4 +1,4 @@
-title: Campaigning
+title: 캠페인 활동
 new-page: true
 view-if: k_organizing_timer <= 0
 on-arrival: k_organizing_timer += 1; week_actions += 1
@@ -7,46 +7,46 @@ is-card: true
 card-image: img/march.jpg
 tags: k_party
 
-= Campaigning
+= 캠페인 활동
 
-If Russia is to become a democracy, there must be elections in the future. Which group should we campaign among?
+러시아가 진정한 민주주의 국가로 거듭나려면 향후 선거를 치러야 합니다. 우리는 어떤 집단을 집중적으로 공략해야 합니까?
 
-- @middle_class: The middle class.
-- @soldiers: Soldiers.
-- @workers: The urban workers.
-- @rural: The peasantry?
-- @root: We don't need to organize right now.
+- @middle_class: 중산층.
+- @soldiers: 병사들.
+- @workers: 도시 노동자들.
+- @rural: 농민층?
+- @root: 지금은 조직화 활동이 필요하지 않다.
 - @easy_discard
 
 @soldiers
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 choose-if: k_resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 자원이 부족합니다.
 on-arrival: k_resources -= 1; soldiers_k += 4*(1-k_dissent); soldiers_k -= 2 if war_weariness >= 40 and k_war_policy <= 0; soldiers_k -= 2 if war_weariness >= 50 and k_war_policy <= 1; k_soldiers_org += 1 if war_weariness <= 50 or k_war_policy > 1
 
-We have increased our campaigning among the soldiers. [? if (war_weariness >= 50 and k_war_policy <= 0) or (war_weariness >= 60 and k_war_policy <= 1): Our policy is viewed as too pro-war, and makes it harder to organize among the soldiers. ?]
+병사들 사이에서 캠페인 활동을 강화하였습니다. [? if (war_weariness >= 50 and k_war_policy <= 0) or (war_weariness >= 60 and k_war_policy <= 1): 당의 정책이 지나치게 주전론적으로 비춰져 장병 포섭에 어려움을 겪고 있습니다. ?]
 
 @workers
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 choose-if: k_resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 자원이 부족합니다.
 on-arrival: k_resources -= 1; workers_k += 3*(1-k_dissent); k_workers_org += 1; workers_k -= 2 if k_in_gov and prov_gov_legitimacy <= 50;
 
-We have increased our campaigning among the workers. [? if k_in_gov and prov_gov_legitimacy <= 50 : Our participation in the unpopular Provisional Government limits our support. ?]
+노동자 계층 내에서 캠페인 활동을 강화하였습니다. [? if k_in_gov and prov_gov_legitimacy <= 50 : 대중적 지지가 낮은 임시정부에 참여하고 있는 탓에 지지 확대에 난항을 겪고 있습니다. ?]
 
 @middle_class
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 choose-if: k_resources >= 1
-unavailable-subtitle: Not enough resources.
+unavailable-subtitle: 자원이 부족합니다.
 on-arrival: k_resources -= 1; k_kiddle_class += 7*(1-k_dissent); k_middle_class_org += 1
 
-While the Kadets are a non-class party, the middle class are our primary support base.
+입헌민주당은 초계급 정당을 표방하지만, 중산층은 여전히 우리의 핵심 지지 기반입니다.
 
 
 @rural
-subtitle: -1 resource - this will be very difficult, as we do not have a traditional base among the peasantry.
+subtitle: 자원 -1 소모 - 농민층 내에 기반이 전무하므로 매우 어려운 작업이 될 것입니다.
 choose-if: k_resources >= 1 and k_rural_policy > 0
-unavailable-subtitle: [? if k_resources < 1 : Not enough resources. ?][? if k_rural_policy = 0 : We do not have a rural policy. ?]
+unavailable-subtitle: [? if k_resources < 1 : 자원이 부족합니다. ?][? if k_rural_policy = 0 : 아직 농촌 정책이 수립되지 않았습니다. ?]
 on-arrival: k_resources -= 1; k_peasants += 2*(1-k_dissent); k_peasants_org += 1
 
-We have increased our campaigning among the peasantry.
+농민들을 대상으로 한 캠페인 활동을 전개하였습니다.

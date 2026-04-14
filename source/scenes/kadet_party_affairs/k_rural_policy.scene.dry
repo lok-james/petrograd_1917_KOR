@@ -1,32 +1,32 @@
-title: Rural Policy
+title: 농촌 정책
 choose-if: k_rural_policy_available = 1
 
-= Rural Policy
+= 농촌 정책
 
-The Mensheviks have not had a well-defined rural or agrarian policy platform. We have always been a party of the urban proletariat, not the peasantry. Now, with the revolution, our campaigns and government policies must address this area.
+그동안 멘셰비키는 명확한 농촌 및 농업 정책 강령을 수립하지 못했습니다. 우리는 항상 농민이 아닌 도시 프롤레타리아를 대변하는 정당이었기 때문입니다. 그러나 혁명의 파고 속에서 이제는 이 문제를 외면할 수 없습니다.
 
 # land redistribution -> privatization
 # land redistribution -> communization
 # state ownership
 
-- @privatize: Continue the Stolypin program of privatizing land, allowing for private farms farms to grow.
-- @voluntary: Allow peasants to choose whether to privatize land or continue communal farming.
-- @state_owned: Create large state-owned farms from large estates.
-- @redistribute: Redistribute large estates to the peasants based on how much individual households are able to farm.
-- @communes: Farming should be done communally.
+- @privatize: 스톨리핀 개혁을 계승하여 토지를 사유화하고 자영농을 육성한다.
+- @voluntary: 토지 사유화와 공동체 농업 유지 중 농민이 스스로 선택하게 한다.
+- @state_owned: 대지주들의 토지를 몰수하여 대규모 국유 농장을 조성한다.
+- @redistribute: 각 가구의 경작 능력에 따라 대지주의 토지를 농민들에게 재분배한다.
+- @communes: 모든 농업 경영을 공동체 방식으로 전환한다.
 
 @privatize
-subtitle: The poor peasants are generally opposed.
+subtitle: 빈농층의 거센 반발이 예상됩니다.
 
 @voluntary
-subtitle: This is the Kadet policy.
+subtitle: 이는 카데트의 핵심 노선입니다.
 
 # this is the kadet policy.
 
 @state_owned
 
 @redistribute
-subtitle: This is the SR policy.
+subtitle: 이는 사회혁명당의 핵심 노선입니다.
 
 # this is the moderate SR policy.
 

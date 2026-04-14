@@ -1,4 +1,4 @@
-title: Media
+title: 언론 활동
 new-page: true
 view-if: k_media_timer <= 0 and not k_media_banned
 on-arrival: k_media_timer += 3; week_actions += 1
@@ -7,39 +7,39 @@ is-card: true
 card-image: img/kadet_3.jpg
 tags: k_party
 
-= Media and Propaganda
+= 언론 및 선전 활동
 
-What should be our strategy for newspapers and media?
+신문과 언론 매체를 통해 어떤 전략을 펼쳐야 합니까?
 
 # media strategies: support prov gov, support soviet policies, support Kadet campaigning, support revolutionary defensism
 
 - @support_prov_gov
 - @support_k
 - @support_war
-- @root: We do not need more media campaigns.
+- @root: 현재로썬 추가적인 언론 캠페인은 필요하지 않다.
 - @easy_discard
 - @cancel_advisor_action
 
 @support_prov_gov
-title: Support the Provisional Government.
-subtitle: -1 resource
+title: 임시정부를 지지한다.
+subtitle: 자원 -1 소모
 choose-if: k_resources >= 1
 on-arrival: prov_gov_legitimacy += 5*(1-k_dissent); k_resources -= 1
 
-Our media campaign urges support for the Provisional Government, hopefully increasing the government's perceived legitimacy.
+언론 캠페인을 통해 임시정부에 대한 지지를 호소하며, 정부의 대중적 정당성을 높이고자 합니다.
 
 @support_k
-title: Support the Kadet party.
-subtitle: -1 resource
+title: 입헌민주당을 홍보한다.
+subtitle: 자원 -1 소모
 choose-if: k_resources >= 1
 on-arrival: middle_k += 5*(1-k_dissent); k_resources -= 1
 
-Our media campaign encourages support for the Constitutional Democrat party among the middle class.
+중산층을 대상으로 입헌민주당에 대한 지지 여론을 확산시키는 캠페인을 전개합니다.
 
 @support_war
-title: Support the war effort.
-subtitle: -1 resource
+title: 전쟁 수행을 독려한다.
+subtitle: 자원 -1 소모
 choose-if: k_resources >= 1
 on-arrival: war_weariness -= 4*(1-k_dissent); soldier_unrest -= 2*(1-k_dissent); morale += 0.01*(1-k_dissent);  k_resources -= 1
 
-Our newspapers print editorials in support of the war effort, hoping to reduce the war weariness.
+당 기관지에 전쟁 수행을 독려하는 사설을 게재하여, 만연한 전쟁 피로감을 불식시키고자 노력합니다.

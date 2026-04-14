@@ -1,13 +1,13 @@
-title: Industrial policy
+title: 산업 정책
 choose-if: k_industrial_policy_timer = 0
-unavailable-subtitle: It is too early to change this policy again.
+unavailable-subtitle: 정책을 다시 변경하기에는 시기가 너무 이릅니다.
 on-arrival: k_industrial_policy_timer = 6;
 
-= Industrial Policy
+= 산업 정책
 
 # options: maintain current ownership structures but with trade unions, supervision by worker's councils, worker's councils as owners, state ownership
 
-What should our policy be with respect to labor and industries?
+노동 및 산업 분야에서 우리의 정책은 무엇이어야 합니까?
 
 - @lf
 - @unions
@@ -16,41 +16,41 @@ What should our policy be with respect to labor and industries?
 - @nationalization
 
 @lf
-title: There should be no state intervention in labor affairs. 
-subtitle: [? if k_industrial_policy = -1 : This is our current position. ?]
+title: 노동 문제에 대한 국가의 개입에 반대한다. 
+subtitle: [? if k_industrial_policy = -1 : 현재 당의 공식 입장입니다. ?]
 on-arrival: k_industrial_policy = -1;
 
-Our policy is to support free markets for labor.
+우리의 정책은 노동 시장의 자율성을 지지하는 것입니다.
 
 @unions
-title: Maintain the current ownership and management structure, but with freedom for trade unions to organize.
-subtitle: [? if k_industrial_policy = 0 : This is our current position. ?]
+title: 현행 소유 및 경영 구조를 유지하되, 노동조합 조직의 자유를 보장한다.
+subtitle: [? if k_industrial_policy = 0 : 현재 당의 공식 입장입니다. ?]
 on-arrival: k_industrial_policy = 0; right_sr_dissent += 8;
 
-Our policy is to maintain a capitalist ownership and management structure for now, but that workers should have the right to organize and strike.
+우리의 정책은 당분간 자본주의적 소유 및 경영 구조를 유지하되, 노동자들에게 단결권과 단체행동권을 부여하는 것입니다.
 
 @supervision
-title: Workers' councils should supervise management.
+title: 노동자 평의회가 경영을 감독해야 한다.
 choose-if: k_industrial_policy <= 0 and left_sr_strength >= 90
-subtitle: [? if k_industrial_policy = 1 : This is our current position. ?]
+subtitle: [? if k_industrial_policy = 1 : 현재 당의 공식 입장입니다. ?]
 on-arrival: right_sr_dissent += 15 if k_industrial_policy = 0; k_industrial_policy = 1;
 
-Our policy is that workers' councils should have the right to supervise management decisions.
+우리의 정책은 노동자 평의회가 경영진의 의사결정을 감독할 권한을 가져야 한다는 것입니다.
 
 @syndicalism
-title: Workers' councils should take over management and ownership.
+title: 노동자 평의회가 경영권과 소유권을 인수해야 한다.
 choose-if: k_industrial_policy >= 1 and left_sr_strength > 100
-subtitle: [? if k_industrial_policy = 2 : This is our current position. ?]
-unavailable-subtitle: This position is currently too radical for our party.
+subtitle: [? if k_industrial_policy = 2 : 현재 당의 공식 입장입니다. ?]
+unavailable-subtitle: 이 입장은 현재 우리 당의 노선으로는 지나치게 급진적입니다.
 on-arrival: social_patriot_dissent += 5 if k_industrial_policy < 2; k_industrial_policy = 2;
 
-Our policy is that workers' councils should take over enterprise management and ownership directly. This is a syndicalist position, which is popular among the worker grassroots but less popular among our intellectual leadership.
+우리의 정책은 노동자 평의회가 기업의 경영과 소유를 직접 도맡아야 한다는 것입니다. 이는 생디칼리즘적 입장으로, 노동자 기층에서는 인기가 높으나 당의 지식인 지도부 사이에서는 지지받지 못하고 있습니다.
 
 @nationalization
 title: The state should nationalize all major industries.
 choose-if: k_industrial_policy >= 1 and left_sr_strength > 100
-subtitle: [? if k_industrial_policy = 1 : This is our current position. ?]
-unavailable-subtitle: This position is currently too radical for our party.
+subtitle: [? if k_industrial_policy = 1 : 현재 당의 공식 입장입니다. ?]
+unavailable-subtitle: 이 입장은 현재 우리 당의 노선으로는 지나치게 급진적입니다.
 on-arrival: social_patriot_dissent += 5 if k_industrial_policy < 2; k_industrial_policy = 3;
 
-Our policy is that the state should nationalize all major industries.
+우리의 정책은 국가가 모든 주요 산업을 국유화하여 관리해야 한다는 것입니다.

@@ -1,4 +1,4 @@
-title: Inter-Party Relationships
+title: 정당 간 관계
 new-page: true
 view-if: k_inter_party_relationships_timer <= 0 and player_party = "k"
 is-card: true
@@ -7,38 +7,38 @@ card-image: img/rsdlp.jpg
 max-visits: 12
 tags: k_party
 
-= Inter-Party Relationships
+= 정당 간 관계
 
-We can improve our relations with the parties on our left or the right.
+좌파 혹은 우파 정당들과의 관계 개선을 도모할 수 있습니다.
 
 - @sr
 - @m
 - @con
-- @root: We do not need to improve our relations.
+- @root: 현재로썬 관계 개선이 필요하지 않다.
 - @easy_discard
 - @cancel_advisor_action
 
 
 @sr
-title: Improve our relations with the Socialist-Revolutionaries.
+title: 사회혁명당과의 관계를 개선한다.
 on-arrival: sr_k_relation += ipr_change*(1-k_dissent); k_resources -= 1; sr_k_relation -= ipr_change/2 if left_sr_strength > right_sr_strength;
 choose-if: k_resources >= 1
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 
-We have improved our relations with the Party of Socialist-Revolutionaries. [? if left_sr_strength > right_sr_strength: The left-wing alignment of the SRs makes it difficult to improve relations. ?]
+사회혁명당과의 유대 관계를 강화하였습니다. [? if left_sr_strength > right_sr_strength: 사회혁명당 내 좌파 세력의 득세로 인해 관계 개선에 난항을 겪고 있습니다. ?]
 
 @m
-title: Improve our relations with the Mensheviks.
+title: 멘셰비키와의 관계를 개선한다.
 on-arrival: m_k_relation += ipr_change*(1-k_dissent); m_k_relation -= ipr_change/2 if internationalist_strength >= defensist_strength + social_patriot_strength; k_resources -= 1;
 choose-if: k_resources >= 1
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 
-We are building our ties with the Mensheviks. [? if internationalist_strength >= defensist_strength + social_patriot_strength: The internationalist alignment of the Mensheviks makes it difficult to improve relations. ?]
+멘셰비키와의 협력 체계를 구축하고 있습니다. [? if internationalist_strength >= defensist_strength + social_patriot_strength: 멘셰비키 내 국제주의 분파의 영향력 때문에 관계 개선이 쉽지 않습니다. ?]
 
 @con
-title: Improve our relations with the conservative factions to our right.
+title: 우익 보수 파벌들과의 관계를 개선한다.
 on-arrival: k_conservative_relation += (ipr_change+5)*(1-k_dissent); k_conservative_relation -= (ipr_change/2) if left_kadet_strength > right_kadet_strength; k_resources -= 1;
 choose-if: k_resources >= 1
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 
-The conservative and monarchist right has largely been marginalized since the revolution, but they still have important contacts within the military, church, and upper-level bureaucracy. We attempt to build our relations with them.
+보수 및 군주주의 우파는 혁명 이후 주류에서 밀려났으나, 여전히 군부와 교회, 그리고 고위 관료층 내에 강력한 인맥을 보유하고 있습니다. 우리는 이들과의 관계 회복을 시도합니다.

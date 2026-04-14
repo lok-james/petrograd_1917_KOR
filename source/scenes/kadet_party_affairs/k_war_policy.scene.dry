@@ -1,13 +1,13 @@
-title: War Policy
+title: 전쟁 정책
 choose-if: k_war_policy_timer = 0
 unavailable-subtitle: It is too early to change this policy again.
 on-arrival: k_war_policy_timer = 6;
 
 # maybe this should be a subset of questions of ideology
 
-= War Policy
+= 전쟁 정책
 
-The Kadets have always been Russian patriots who support the war effort. Will that change in the name of cooperation with the left?
+입헌민주당원들은 항상 전쟁 수행을 지지해 온 러시아의 애국자들이었습니다. 좌파와의 협력을 위해 이러한 기조에 변화를 줘야 할까요?
 
 - @im
 - @im_2
@@ -18,60 +18,60 @@ The Kadets have always been Russian patriots who support the war effort. Will th
 - @rd_2
 
 @support_left
-title: Try to move the Kadets to the left on the war.
-subtitle: Support a policy that is more anti-war than our current one.
+title: 전쟁 문제에 있어 당의 노선을 좌클릭시킨다.
+subtitle: 현재보다 더 강력한 반전 정책을 지지합니다.
 view-if: k_war_policy < 1
 on-arrival: left_kadet_strength += 4;
 
-We have supported more left-wing war policy.
+전쟁 문제에 있어 보다 진보적인 입장을 취하기로 했습니다.
 
 
 @im
-title: Continue a policy of expansionism.
-subtitle: Support a policy of expanding Russia through war, until we reach Constantinople. [? if k_war_policy = -1: This is our current position. ?]
+title: 팽창주의 정책을 고수한다.
+subtitle: 콘스탄티노플을 확보할 때까지 전쟁을 통한 영토 확장을 지지합니다. [? if k_war_policy = -1: 현재 당의 공식 입장입니다. ?]
 view-if: k_war_policy = -1
 
-We are continuing to support a policy of expansionism.
+우리는 팽창주의 정책을 변함없이 지지합니다.
 
 @im_2
-title: Adopt a policy of expansionism.
-subtitle: Support a policy of expanding Russia through war, until we reach Constantinople. [? if k_war_policy = -1: This is our current position. ?]
+title: 팽창주의 정책을 공식 채택한다.
+subtitle: 콘스탄티노플을 확보할 때까지 전쟁을 통한 영토 확장을 지지합니다. [? if k_war_policy = -1: 현재 당의 공식 입장입니다. ?]
 view-if: k_war_policy != -1
 on-arrival: k_war_policy = -1
 
-We have adopted a policy of expansionism.
+팽창주의 정책을 당의 공식 노선으로 채택하였습니다.
 
 @sp_1
-title: Adopt a social patriot position.
-subtitle: We must fight the war until we win.
-unavailable-subtitle: There is not enough support for this position within the party.
+title: 사회애국주의 노선을 공식 채택한다.
+subtitle: 승리할 때까지 전쟁을 지속해야 한다고 주장합니다.
+unavailable-subtitle: 당내 지지 기반이 충분하지 않습니다.
 view-if: k_war_policy != 0 
 choose-if: left_kadet_strength >= right_kadet_strength
 on-arrival: k_war_policy = 0
 
-We have adopted a social patriot position, calling for the victory of the Allies without territorial ambitions.
+영토적 야욕은 배제하되 협상국의 완전한 승리를 목표로 하는 사회애국주의 노선을 채택하였습니다.
 
 @sp_2
-title: Continue to support a social patriot position.
-subtitle: We must fight the war until we win.
+title: 사회애국주의 노선을 지속적으로 견지한다.
+subtitle: 승리할 때까지 전쟁을 지속해야 한다고 주장합니다.
 view-if: k_war_policy = 0
 
-We are continuing a a social patriot position, calling for the victory of the Allies without territorial ambitions.
+영토적 야욕 없는 협상군의 승리를 목표로 하는 사회애국주의 노선을 유지합니다.
 
 
 @rd
-title: Continue a policy of revolutionary defensism.
-subtitle: Support an international peace without annexations or indemnities, but fight to defend the revolution in the meantime. [? if k_war_policy = 1: This is our current position. ?]
+title:  혁명적 방위주의 노선을 고수한다.
+subtitle: 무병합·무배상의 평화를 추구하되, 평화가 올 때까지 혁명을 수호하기 위해 싸웁니다. [? if k_war_policy = 1: 현재 당의 공식 입장입니다. ?]
 view-if: k_war_policy = 1
 
-We are continuing to support a policy of revolutionary defensism.
+혁명적 방위주의 노선을 변함없이 지지합니다.
 
 @rd_2
-title: Adopt a policy of revolutionary defensism.
-subtitle: Support an international peace without annexations or indemnities, but fight to defend the revolution in the meantime.
-unavailable-subtitle: There is not enough support for this position within the party.
+title:  혁명적 방위주의 노선을 공식 채택한다.
+subtitle: 무병합·무배상의 평화를 추구하되, 평화가 올 때까지 혁명을 수호하기 위해 싸웁니다.
+unavailable-subtitle: 당내 지지 기반이 충분하지 않습니다.
 view-if: k_war_policy != 1
 choose-if: left_kadet_strength >= 80
 on-arrival: k_war_policy = 1; right_kadet_dissent += 50; middle_k -= 5; elites_k -= 5;
 
-We have adopted a revolutionary defensist position, calling on continued support of the war effort while negotiating for a general peace. This position is closer to the socialists, but very unpopular with the middle-class nationalists who make up our base.
+보편적 평화 협상을 추진하는 동시에 전쟁 수행을 지속하는 혁명적 방위주의 노선을 채택하였습니다. 이 입장은 사회주의 세력의 주장과 유사하지만, 당의 핵심 기반인 중산층 민족주의자들에게는 극심한 반발을 사고 있습니다.
