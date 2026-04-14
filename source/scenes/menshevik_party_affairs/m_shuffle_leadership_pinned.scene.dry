@@ -1,4 +1,4 @@
-title: Shuffle Leadership
+title: 지도부 개편
 view-if: difficulty <= 0 and player_party = "m"
 new-page: true
 is-card: true

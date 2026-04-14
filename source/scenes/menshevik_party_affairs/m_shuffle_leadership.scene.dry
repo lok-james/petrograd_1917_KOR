@@ -1,4 +1,4 @@
-title: Shuffle Leadership
+title: 지도부 개편
 new-page: true
 view-if: m_shuffle_leadership_timer <= 0 and m_siberians_return_seen = 1 and player_party = "m" and difficulty > 0
 on-arrival: m_shuffle_leadership_timer += 4; week_actions += 1 if difficulty > 0
@@ -7,47 +7,47 @@ is-card: true
 card-image: img/soviet_leaders.jpg
 tags: m_party
 
-= Shuffle Leadership
+= 지도부 개편
 
-changing the leadership of the party might be necessary to adapt to the changing circumstances.
+급변하는 정세에 대응하기 위해 당 지도부의 인적 쇄신이 필요할 수 있습니다.
 
-Removing advisors will increase dissent from their faction of the party, while selecting advisors will increase a faction's strength.
+고문을 해임하면 해당 파벌의 반발이 거세지겠지만, 새로운 고문을 임명하면 그 파벌의 당내 영향력이 강화될 것입니다.
 
-- @rm_main: Remove advisors.
-- @add_advisors: Add advisors.
-- @root: Don't change the party leadership.
+- @rm_main: 고문을 해임한다.
+- @add_advisors: 고문을 임명한다.
+- @root: 지도부 구성을 유지한다.
 - @easy_discard
 
 @rm_main
-title: Remove advisors.
+title: 고문을 해임한다.
 tags: m_defensist, m_internationalist, m_social_patriot, m_nonfactional
 frequency: 1
 
 - #m_rm_advisor
-- @add_advisors: Add advisors.
+- @add_advisors: 고문을 임명한다.
 
 @remove_none
-title: Stop changing advisors.
+title: 고문 변경을 중단한다.
 go-to: root
 tags: m_rm_advisor
 
 
 @add_advisors
-title: Add advisors
-unavailable-subtitle: Maximum of [+ max_advisors +] advisors.
+title: 고문 임명
+unavailable-subtitle: 최대 [+ max_advisors +] 명까지 임명 가능합니다.
 choose-if: m_n_advisors < max_advisors
 go-to: advisor_menu
 
 @advisor_menu
-title: Add other advisors.
+title: 다른 고문들을 임명한다.
 tags: m_defensist, m_internationalist, m_social_patriot, m_nonfactional
 frequency: 1
 
-- @defensist: Add Revolutionary Defensist advisors.
-- @internationalist: Add Internationalist advisors.
-- @social_patriot: Add Social Patriot advisors.
-- @rm_main: Remove advisors instead.
-- @remove_none: Stop changing advisors.
+- @defensist: 혁명적 방위주의자 고문을 임명한다.
+- @internationalist: 국제주의자 고문을 임명한다.
+- @social_patriot: 사회애국주의자 고문을 임명한다.
+- @rm_main: 대신 고문을 해임한다.
+- @remove_none: 고문 변경을 중단한다.
 
 @defensist
 view-if: m_n_advisors < max_advisors and defensist_split = 0
@@ -69,256 +69,256 @@ view-if: m_n_advisors < max_advisors and defensist_split = 0
 # revolutionary defensists
 
 @add_tsereteli
-title: Irakli Tsereteli
-subtitle: Revolutionary Defensist
+title: 이라클리 체레텔리
+subtitle: 혁명적 방위주의자
 view-if: tsereteli_advisor = 0 and m_n_advisors < max_advisors and defensist_split = 0 and tsereteli_available = 1
 on-arrival: tsereteli_advisor = 1; m_n_advisors += 1; 
 tags: m_advisor, m_defensist
 go-to: advisor_menu
 
-Tsereteli has been added as an advisor.
+이라클리 체레텔리를 고문으로 임명했습니다.
 
 @add_chkheidze
-title: Nikolai Chkheidze
-subtitle: A Menshevik member of the Duma and one of the founding members of the Petrograd Soviet.
+title: 니콜라이 치헤이제
+subtitle: 멘셰비키 소속 두마 의원이자 페트로그라드 소비에트의 창립 주역 중 한 명입니다.
 view-if: chkheidze_advisor = 0 and m_n_advisors < max_advisors and defensist_split = 0
 on-arrival: chkheidze_advisor = 1; m_n_advisors += 1; 
 tags: m_advisor, m_defensist
 go-to: advisor_menu
 
-Chkheidze has been added as an advisor.
+니콜라이 치헤이제를 고문으로 임명했습니다.
 
 @add_skobelev
-title: Matvei Skobelev
-subtitle: A Menshevik member of the Duma.
+title: 마트베이 스코벨레프
+subtitle: 멘셰비키 소속 두마 의원입니다.
 view-if: skobelev_advisor = 0 and m_n_advisors < max_advisors and defensist_split = 0
 on-arrival: skobelev_advisor = 1; m_n_advisors += 1; 
 tags: m_advisor, m_defensist
 go-to: advisor_menu
 
-Matvei Skobelev has been added as an advisor.
+마트베이 스코벨레프를 고문으로 임명했습니다.
 
 
 @add_voitinsky
-title: Vladimir Voitinsky
-subtitle: An economist who has just returned from Siberian exile.
+title: 블라디미르 보이틴스키
+subtitle: 시베리아 유배 생활을 마치고 갓 복귀한 경제학자입니다.
 view-if: voitinsky_advisor = 0 and m_n_advisors < max_advisors and defensist_split = 0 and voitinsky_available = 1
 on-arrival: voitinsky_advisor = 1; m_n_advisors += 1; 
 tags: m_advisor, m_defensist
 go-to: advisor_menu
 
-Vladimir Voitinsky has been added as an advisor.
+블라디미르 보이틴스키를 고문으로 임명했습니다.
 
-# internationalists
+# 국제주의자들
 
 @add_martov
-title: Julius Martov
-subtitle: Martov is a long-time Menshevik leader who has led the Internationalists, and is known for his principled position in factional debates.
+title: 율리우스 마르토프
+subtitle: 국제주의 파벌을 이끌어 온 멘셰비키의 원로 지도자로, 파벌 간 논쟁에서 원칙을 고수하는 것으로 정평이 나 있습니다.
 view-if: martov_advisor = 0 and m_n_advisors < max_advisors and internationalist_split = 0 and martov_available = 1
 on-arrival: martov_advisor = 1; m_n_advisors += 1; 
 tags: m_advisor, m_internationalist
 go-to: advisor_menu
 
-Julius Martov has been added as an advisor.
+율리우스 마르토프를 고문으로 임명했습니다.
 
-# sukhanov
+# 수하노프
 
 @add_sukhanov
-title: Nikolai Sukhanov
-subtitle: Sukhanov worked as a bureaucrat in the Tsarist government, while supporting the Social Democratic cause.
+title: 니콜라이 수하노프
+subtitle: 사회민주주의 운동을 지원하는 동시에 차르 정부의 관료로도 활동했습니다.
 view-if: sukhanov_advisor = 0 and m_n_advisors < max_advisors and internationalist_split = 0
 on-arrival: sukhanov_advisor = 1; m_n_advisors += 1; 
 tags: m_advisor, m_internationalist
 go-to: advisor_menu
 
-Nikolai Sukhanov has been added as an advisor.
+니콜라이 수하노프를 고문으로 임명했습니다.
 
 @add_groman
-title: Vladimir Groman
-subtitle: Groman is a Menshevik-aligned economist.
+title: 블라디미르 그로만
+subtitle: 멘셰비키 계열의 경제학자입니다.
 view-if: groman_advisor = 0 and m_n_advisors < max_advisors and internationalist_split = 0
 on-arrival: groman_advisor = 1; m_n_advisors += 1; 
 tags: m_advisor, m_internationalist
 go-to: advisor_menu
 
-Vladimir Groman has been added as an advisor.
+블라디미르 그로만을 고문으로 임명했습니다.
 
 
 
-# axelrod
+# 악셀로드
 
 @add_axelrod
-title: Pavel Axelrod
-subtitle: One of the earliest Russian Marxists, he was a companion of Martov in exile.
+title: 파벨 악셀로드
+subtitle: 러시아 초기 마르크스주의자 중 한 명으로, 유배 시절 마르토프의 동지였습니다.
 view-if: axelrod_advisor = 0 and m_n_advisors < max_advisors and internationalist_split = 0 and axelrod_available = 1
 on-arrival: axelrod_advisor = 1; m_n_advisors += 1; 
 tags: m_advisor, m_internationalist
 go-to: advisor_menu
 
-Pavel Axelrod has been added as an advisor.
+파벨 악셀로드를 고문으로 임명했습니다.
 
 
-# martynov - temporarily disable for now
+# 마르티노프 - 현재 일시적으로 비활성화
 
 @add_martynov
-title: Alexander Martynov
-subtitle: Martynov is a Menshevik-Internationalist.
+title: 알렉산드르 마르티노프
+subtitle: 멘셰비키-국제주의자입니다.
 view-if: martynov_advisor = 0 and m_n_advisors < max_advisors and internationalist_split = 0 and martynov_available = 1
 on-arrival: martynov_advisor = 1; m_n_advisors += 1; 
 go-to: advisor_menu
 #tags: m_advisor, m_internationalist
 
-Alexander Martynov has been added as an advisor.
+알렉산드르 마르티노프를 고문으로 임명했습니다.
 
 
-# patriots
+# 애국주의자들
 
 @add_plekhanov
-title: Georgi Plekhanov
-subtitle: Plekhanov is the venerable founder of Russian Marxism, who has taken a pro-war turn.
+title: 게오르기 플레하노프
+subtitle: 러시아 마르크스주의의 대부이나, 현재는 주전론으로 전향한 상태입니다.
 view-if: plekhanov_advisor = 0 and m_n_advisors < max_advisors and defensist_split = 0 and plekhanov_available = 1
 on-arrival: plekhanov_advisor = 1; m_n_advisors += 1; 
 tags: m_advisor, m_social_patriot
 go-to: advisor_menu
 
-Plekhanov has been added as an advisor.
+게오르기 플레하노프를 고문으로 임명했습니다.
 
 
 @add_potresov
-title: Alexander Potresov
-subtitle: Potresov is a long-time Menshevik leader.
+title: 알렉산드르 포트레소프
+subtitle: 멘셰비키의 오랜 지도자입니다.
 view-if: potresov_advisor = 0 and m_n_advisors < max_advisors and defensist_split = 0 and potresov_available = 1
 on-arrival: potresov_advisor = 1; m_n_advisors += 1; 
 tags: m_advisor, m_social_patriot
 go-to: advisor_menu
 
-Potresov has been added as an advisor.
+알렉산드르 포트레소프를 고문으로 임명했습니다.
 
-# potresov, zasulich
+# 포트레소프, 자술리치
 
 @add_zasulich
-title: Vera Zasulich
-subtitle: Zasulich is a former revolutionary terrorist who came to a political position similar to Plekhanov over the years.
+title: 베라 자술리치
+subtitle: 과거 혁명적 테러리스트였으나, 세월이 흐르며 플레하노프와 궤를 같이하는 정치적 입장을 갖게 되었습니다.
 view-if: zasulich_advisor = 0 and m_n_advisors < max_advisors and defensist_split = 0 and zasulich_available = 1
 on-arrival: zasulich_advisor = 1; m_n_advisors += 1; 
 tags: m_advisor, m_social_patriot
 go-to: advisor_menu
 
-Zasulich has been added as an advisor.
+베라 자술리치를 고문으로 임명했습니다.
 
 
 
 
-#################################### removing advisors
+#################################### 고문 해임하기
 
 @remove_tsereteli
-title: Remove Tsereteli
+title: 체레텔리를 해임한다
 view-if: tsereteli_advisor = 1
 choose-if: defensist_strength < 50
-unavailable-subtitle: The Defensist faction is too strong.
+unavailable-subtitle: 방위주의 파벌의 세력이 너무 강력합니다.
 on-arrival: tsereteli_advisor = 0; defensist_dissent += 10; m_n_advisors -= 1
 tags: m_rm_advisor
 go-to: rm_main
 
-Tsereteli is no longer an advisor. The Revolutionary Defensists are not pleased.
+이라클리 체레텔리가 고문직에서 물러났습니다. 혁명적 방위주의자들이 이 결정에 강한 불만을 표시합니다.
 
 @remove_chkheidze
-title: Remove Chkheidze
+title: 치헤이제를 해임한다
 view-if: chkheidze_advisor = 1
 choose-if: defensist_strength < 50
-unavailable-subtitle: The Defensist faction is too strong.
+unavailable-subtitle: 방위주의 파벌의 세력이 너무 강력합니다.
 on-arrival: chkheidze_advisor = 0; defensist_dissent += 10; m_n_advisors -= 1
 tags: m_rm_advisor
 go-to: rm_main
 
-Chkheidze is no longer an advisor. The Revolutionary Defensists are not pleased.
+니콜라이 치헤이제가 고문직에서 물러났습니다. 혁명적 방위주의자들이 이 결정에 강한 불만을 표시합니다.
 
 @remove_skobelev
-title: Remove Skobelev
+title: 스코벨레프를 해임한다
 view-if: skobelev_advisor = 1
 on-arrival: skobelev_advisor = 0; defensist_dissent += 5; m_n_advisors -= 1
 tags: m_rm_advisor
 go-to: rm_main
 
-Skobelev is no longer an advisor. The Revolutionary Defensists are not pleased.
+마트베이 스코벨레프가 고문직에서 물러났습니다. 혁명적 방위주의자들이 이 결정에 불만을 표시합니다.
 
 @remove_voitinsky
-title: Remove Voitinsky
+title: 보이틴스키를 해임한다
 view-if: voitinsky_advisor = 1
 on-arrival: voitinsky_advisor = 0; defensist_dissent += 5; m_n_advisors -= 1
 tags: m_rm_advisor
 go-to: rm_main
 
-Voitinsky is no longer an advisor. The Revolutionary Defensists are not pleased.
+블라디미르 보이틴스키가 고문직에서 물러났습니다. 혁명적 방위주의자들이 이 결정에 불만을 표시합니다.
 
 @remove_martov
-title: Remove Martov
+title: 마르토프를 해임한다
 view-if: martov_advisor = 1
 choose-if: internationalist_strength < 50
-unavailable-subtitle: The Internationalist faction is too strong.
+unavailable-subtitle: 국제주의 파벌의 세력이 너무 강력합니다.
 on-arrival: martov_advisor = 0; internationalist_dissent += 10; m_n_advisors -= 1
 tags: m_rm_advisor
 go-to: rm_main
 
-Martov is no longer an advisor. The Internationalists are not pleased.
+율리우스 마르토프가 고문직에서 물러났습니다. 국제주의자들이 이 결정에 강한 불만을 표시합니다.
 
 @remove_sukhanov
-title: Remove Sukhanov
+title: 수하노프를 해임한다
 view-if: sukhanov_advisor = 1
 on-arrival: sukhanov_advisor = 0; internationalist_dissent += 5; m_n_advisors -= 1
 tags: m_rm_advisor
 go-to: rm_main
 
-Sukhanov is no longer an advisor. The Internationalists are not pleased.
+니콜라이 수하노프가 고문직에서 물러났습니다. 국제주의자들이 이 결정에 불만을 표시합니다.
 
 @remove_groman
-title: Remove Groman
+title: 그로만을 해임한다
 view-if: groman_advisor = 1
 on-arrival: groman_advisor = 0; internationalist_dissent += 5; m_n_advisors -= 1
 tags: m_rm_advisor
 go-to: rm_main
 
-Groman is no longer an advisor. The Internationalists are not pleased.
+블라디미르 그로만이 고문직에서 물러났습니다. 국제주의자들이 이 결정에 불만을 표시합니다.
 
 
 @remove_axelrod
-title: Remove Axelrod
+title: 악셀로드를 해임한다
 view-if: axelrod_advisor = 1
 on-arrival: axelrod_advisor = 0; internationalist_dissent += 5; m_n_advisors -= 1
 tags: m_rm_advisor
 go-to: rm_main
 
-Axelrod is no longer an advisor. The Internationalists are not pleased.
+파벨 악셀로드가 고문직에서 물러났습니다. 국제주의자들이 이 결정에 불만을 표시합니다.
 
 @remove_plekhanov
-title: Remove Plekhanov
+title: 플레하노프를 해임한다
 view-if: plekhanov_advisor = 1
 choose-if: defensist_strength < 50
-unavailable-subtitle: The Defensist faction is too strong.
+unavailable-subtitle: 방위주의 파벌의 세력이 너무 강력합니다.
 on-arrival: plekhanov_advisor = 0; defensist_dissent += 10; m_n_advisors -= 1
 tags: m_rm_advisor
 go-to: rm_main
 
-Plekhanov is no longer an advisor. The Defensists are not pleased.
+게오르기 플레하노프가 고문직에서 물러났습니다. 방위주의자들이 이 결정에 강한 불만을 표시합니다.
 
 @remove_potresov
-title: Remove Potresov
+title: 포트레소프를 해임한다
 view-if: potresov_advisor = 1
 choose-if: defensist_strength < 50
-unavailable-subtitle: The Defensist faction is too strong.
+unavailable-subtitle: 방위주의 파벌의 세력이 너무 강력합니다.
 on-arrival: potresov_advisor = 0; defensist_dissent += 10; m_n_advisors -= 1
 tags: m_rm_advisor
 go-to: rm_main
 
-Potresov is no longer an advisor. The Defensists are not pleased.
+알렉산드르 포트레소프가 고문직에서 물러났습니다. 방위주의자들이 이 결정에 강한 불만을 표시합니다.
 
 @remove_zasulich
-title: Remove Zasulich
+title: 자술리치를 해임한다
 view-if: zasulich_advisor = 1
 choose-if: defensist_strength < 50
-unavailable-subtitle: The Defensist faction is too strong.
+unavailable-subtitle: 방위주의 파벌의 세력이 너무 강력합니다.
 on-arrival: zasulich_advisor = 0; defensist_dissent += 10; m_n_advisors -= 1
 tags: m_rm_advisor
 go-to: rm_main
 
-Zasulich is no longer an advisor. The Defensists are not pleased.
+베라 자술리치가 고문직에서 물러났습니다. 방위주의자들이 이 결정에 강한 불만을 표시합니다.

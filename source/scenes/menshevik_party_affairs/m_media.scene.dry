@@ -1,4 +1,4 @@
-title: Media and Propaganda
+title: 언론 및 선전 활동
 new-page: true
 view-if: m_media_timer <= 0
 on-arrival: m_media_timer += 4; week_actions += 1
@@ -7,9 +7,9 @@ is-card: true
 card-image: img/newspapers.jpg
 tags: m_party
 
-= Media and Propaganda
+= 언론 및 선전 활동
 
-What should be our strategy for our newspapers and party organs?
+당 기관지와 신문 매체를 통해 어떤 홍보 전략을 펼쳐야 합니까?
 
 # media strategies: support prov gov, support soviet policies, support Menshevik campaigning, support revolutionary defensism
 
@@ -18,47 +18,47 @@ What should be our strategy for our newspapers and party organs?
 - @support_rd
 - @support_id
 - @support_pat
-- @root: We do not need more propaganda.
+- @root: 현재로썬 추가적인 선전 활동은 필요하지 않다.
 - @easy_discard
 - @cancel_advisor_action
 
 @support_prov_gov
-title: Support the Provisional Government.
-subtitle: -1 resource
+title: 임시정부를 지지한다.
+subtitle: 자원 -1 소모
 choose-if: m_resources >= 1
 on-arrival: m_k_relation += 6*(1-m_dissent); soviet_cooperation += 0.04*(1-m_dissent); prov_gov_legitimacy += 5*(1-m_dissent); m_resources -= 1
 
-Our propaganda campaign is aimed at supporting the Provisional Government and Soviet cooperation with the Provisional Government. This raises our relations with the Kadets.
+우리의 선전 활동은 임시정부를 옹호하고 소비에트와 임시정부 간의 긴밀한 협력을 독려하는 데 목적이 있습니다. 이는 카데트의 관계 개선으로 이어집니다.
 
 @support_m
-title: Support the Menshevik party.
-subtitle: -1 resource
+title: 멘셰비키당을 지지한다.
+subtitle: 자원 -1 소모
 choose-if: m_resources >= 1
 on-arrival: workers_m += 5*(1-m_dissent); soldiers_m += 5*(1-m_dissent); soldiers_m -= 2 if (war_weariness >= 60 and m_war_policy <= 1); workers_m -= 2 if prov_gov_legitimacy <= 40 and m_industrial_policy <= 0; m_resources -= 1
 
-Our propaganda campaign encourages support for the Menshevik party among the workers and soldiers. [? if prov_gov_legitimacy <= 40 and m_industrial_policy <= 0 : The workers demand a more radical industrial policy than what we are able to provide, limiting our appeal. ?] [? if (war_weariness >= 60 and m_war_policy <= 1): Our policy is viewed as too pro-war, and makes it harder to organize among the soldiers. ?]
+우리의 선전 활동은 노동자와 병사들 사이에서 멘셰비키당에 대한 지지를 확산시키는 캠페인을 전개합니다. [? if prov_gov_legitimacy <= 40 and m_industrial_policy <= 0 : 노동자들이 당의 노선보다 훨씬 급진적인 산업 정책을 요구하고 있어 지지 확대에 한계가 있습니다. ?] [? if (war_weariness >= 60 and m_war_policy <= 1): 당의 정책이 지나치게 주전론적으로 비춰져 장병 포섭에 어려움을 겪고 있습니다. ?]
 
 @support_rd
-title: Support the ideology of revolutionary defensism - support a defensive war effort as necessary for peace.
-subtitle: -1 resource
+title: 혁명적 방위주의 노선을 선전한다 - 평화 쟁취를 위한 방어적 전쟁 수행의 정당성을 강조한다.
+subtitle: 자원 -1 소모
 choose-if: m_resources >= 1
 on-arrival: defensist_strength += (m_support_change+2)*(1-m_dissent); defensist_dissent -= 8; m_resources -= 1; soldier_unrest -= 2*(1-m_dissent) if defensist_strength > internationalist_strength; morale += 0.02*(1-m_dissent) if defensist_strength > internationalist_strength
 
-Our newspapers print editorials in support of revolutionary defensism, arguing that a defensive war is necessary for a peace without annexations and indemnities. This bolsters the defensists in the party, while also promoting a more defensist attitude towards the war among the soldiers.
+당 기관지에 혁명적 방위주의를 옹호하는 사설을 게재하여, 무병합·무배상의 평화를 쟁취하기 위해서는 방어적 전쟁 수행이 불가피함을 역설합니다. 이는 당내 방위주의 분파를 강화하고 병사들 사이에서 방위주의적 태도를 고취시킵니다.
 
 @support_id
-title: Support the ideology of internationalism - support immediate negotiations for a peace.
-subtitle: -1 resource
+title: 국제주의 노선을 선전한다 - 즉각적인 평화 협상 개시를 촉구한다.
+subtitle: 자원 -1 소모
 choose-if: m_resources >= 1
 on-arrival: internationalist_strength += (m_support_change+2)*(1-m_dissent); internationalist_dissent -= 8*(1-m_dissent); social_patriot_dissent += 5; defensist_dissent += 4; soldiers_m += 3*(1-m_dissent); m_resources -= 1
 
-Our newspapers print editorials in support of internationalism, arguing that an immediate peace is necessary. This bolsters the Internationalist faction within the party while upsetting the defensists, and raises our standing with the soldiers.
+당 기관지에 국제주의를 옹호하는 사설을 게재하여 즉각적인 평화 협상의 필요성을 주장합니다. 이는 당내 국제주의 분파를 강화하고 병사들 사이에서 당의 위상을 높이지만, 방위주의자들의 반발을 삽니다.
 
 @support_pat
-title: Support the war effort from a social-patriot standpoint.
-unavailable-subtitle: [? if m_resources < 1: Not enough resources. ?][? if social_patriot_strength <= internationalist_strength: The Social Patriots are not strong enough. ?]
-subtitle: -1 resource
+title: 사회애국주의 관점에서 전쟁 수행을 독려한다.
+unavailable-subtitle: [? if m_resources < 1: 자원이 부족합니다. ?][? if social_patriot_strength <= internationalist_strength: 사회애국주의 세력의 기반이 약합니다. ?]
+subtitle: 자원 -1 소모
 choose-if: m_resources >= 1 and social_patriot_strength > internationalist_strength
 on-arrival: social_patriot_strength += (m_support_change+2)*(1-m_dissent); social_patriot_dissent -= 8*(1-m_dissent); internationalist_dissent += 5; war_weariness -= 3*(1-m_dissent); m_resources -= 1; soldier_unrest -= 3*(1-m_dissent) if defensist_strength > internationalist_strength; morale += 0.02*(1-m_dissent) if defensist_strength > internationalist_strength
 
-Our newspapers print editorials in support of the war effort, without any of the revolutionary defensist conditions. This bolsters the Social Patriot faction.
+혁명적 방위주의의 전제 조건들을 배제하고 순수하게 전쟁 수행을 독려하는 사설을 게재합니다. 이는 당내 사회애국주의 분파의 입지를 강화합니다.

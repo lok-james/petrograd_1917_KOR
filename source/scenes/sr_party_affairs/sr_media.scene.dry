@@ -21,7 +21,7 @@ What should be our strategy for our newspapers and party organs?
 
 @support_prov_gov
 title: Support the Provisional Government.
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 choose-if: sr_resources >= 1
 on-arrival: sr_k_relation += 6*(1-sr_dissent); soviet_cooperation += 0.04*(1-sr_dissent) if sr_in_exco; prov_gov_legitimacy += 4*(1-sr_dissent); sr_resources -= 1
 
@@ -29,7 +29,7 @@ Our propaganda campaign is aimed at supporting the Provisional Government and So
 
 @support_sr
 title: Support the SR party.
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 choose-if: sr_resources >= 1
 on-arrival: workers_sr += 4*(1-sr_dissent); peasants_sr += 3*(1-sr_dissent); soldiers_sr += 4*(1-sr_dissent); soldiers_sr -= 2 if (war_weariness >= 60 and sr_war_policy <= 1); sr_resources -= 1
 
@@ -37,7 +37,7 @@ Our propaganda campaign encourages support for the SR party among the workers, s
 
 @support_rd
 title: Support the ideology of revolutionary defensism - support a defensive war effort as necessary for peace.
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 choose-if: sr_resources >= 1
 on-arrival: right_sr_strength += (sr_support_change+1)*(1-sr_dissent); sr_resources -= 1; right_sr_dissent -= 4; soldier_unrest -= 2*(1-sr_dissent) if right_sr_strength > left_sr_strength; morale += 0.02*(1-sr_dissent) if right_sr_strength > left_sr_strength
 
@@ -45,7 +45,7 @@ Our newspapers print editorials in support of revolutionary defensism, arguing t
 
 @support_id
 title: Support the ideology of internationalism - support immediate negotiations for a peace.
-subtitle: -1 resource
+subtitle: 자원 -1 소모
 choose-if: sr_resources >= 1
 on-arrival: left_sr_strength += (sr_support_change+1)*(1-sr_dissent); left_sr_dissent -= 4; right_sr_dissent += 4; soldiers_sr += 3*(1-sr_dissent); sr_resources -= 1
 

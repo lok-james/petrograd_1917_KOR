@@ -1,4 +1,4 @@
-title: Party Disunity
+title: 당내 분열
 new-page: true
 view-if: m_party_disunity_timer <= 0 and (m_dissent >= 0.3 or ((internationalist_dissent > 30 and not internationalist_split) or (defensist_dissent > 30 and not defensist_split)))
 on-arrival: m_party_disunity_timer += 3; week_actions += 1
@@ -7,15 +7,15 @@ is-card: true
 card-image: img/rsdlp_2.jpg
 tags: m_party
 
-= Party Disunity
+= 당내 분열
 
-The Menshevik party is being torn apart by internal dissent. Upset at the leadership and general direction of the party, factions are openly discussing splitting or purging rivals. This hampers the effectiveness of all of our policies.
+멘셰비키당이 내부 갈등으로 인해 분열되고 있습니다. 지도부와 당의 전반적인 노선에 반발하는 파벌들이 공공연하게 분당이나 정적 숙청을 거론하고 있습니다. 이는 모든 당 정책의 효율성을 저해하고 있습니다.
 
-[? if internationalist_dissent > 30 : The Internationalists are upset at the direction of the party, arguing that it is too right-wing and pro-war, and too cozy with the liberals. ?]
+[? if internationalist_dissent > 30 : 국제주의자들은 당의 노선이 지나치게 우경화되었으며, 주전론적이고 자유주의자들에게 영합하고 있다며 강력히 반발하고 있습니다. ?]
 
-[? if defensist_dissent > 30 : The Revolutionary Defensists are upset at the direction of the party, arguing that it is too radical. ?]
+[? if defensist_dissent > 30 : 혁명적 방위주의자들은 당의 노선이 지나치게 급진적이라며 불만을 토로하고 있습니다. ?]
 
-[? if social_patriot_dissent > 30 : The Social Patriots are upset that we are insufficiently supportive of the war. ?]
+[? if social_patriot_dissent > 30 : 사회애국주의자들은 당이 전쟁 수행을 충분히 지지하지 않는다는 점에 분개하고 있습니다. ?]
 
 - @party_discipline
 - @concessions_internationalists
@@ -26,49 +26,49 @@ The Menshevik party is being torn apart by internal dissent. Upset at the leader
 - @easy_discard
 
 @party_discipline
-title: Enforce party discipline.
+title: 당의 규율을 강화한다.
 on-arrival: internationalist_dissent -= m_discipline_change; defensist_dissent -= m_discipline_change; social_patriot_dissent -= 5; workers_m -= 4; soldiers_m -= 4
 
-Enforcing party discipline reduces dissent, but it leads to demoralization among our base.
+강압적인 당 규율 집행으로 분란을 잠재웠으나, 이는 지지 기반의 사기 저하로 이어졌습니다.
 
 @concessions_internationalists
-title: Give concessions to the Internationalists.
+title: 국제주의자들에게 양보한다.
 view-if: internationalist_dissent > 30 and not internationalist_split
 on-arrival: internationalist_dissent -= 6; defensist_dissent += 6; social_patriot_dissent += 6; internationalist_strength += m_support_change/2;
 
-We have responded by adopting a more Internationalist posture. The Defensists are somewhat displeased.
+더욱 국제주의적인 태도를 취함으로써 갈등에 대응하였습니다. 방위주의자들은 이에 불만을 품었습니다.
 
 @concessions_defensists
-title: Give concessions to the Defensists.
+title: 방위주의자들에게 양보한다.
 view-if: defensist_dissent > 30 and not defensist_split
 on-arrival: defensist_dissent -= 6; internationalist_dissent += 6; defensist_strength += m_support_change/2;
 
-We have responded by adopting a more Defensist posture. The Internationalists are somewhat displeased.
+더욱 방위주의적인 태도를 취함으로써 갈등에 대응하였습니다. 국제주의자들은 이에 불만을 품었습니다.
 
 @expel_internationalists
-title: Expel the Internationalists.
+title: 국제주의자들을 제명한다.
 view-if: internationalist_dissent > 40 and not internationalist_split
 choose-if: internationalist_strength <= defensist_strength
-unavailable-subtitle: The Internationalists are too strong.
+unavailable-subtitle: 국제주의 세력이 너무 강력합니다.
 on-arrival: internationalist_split = 1;
 go-to: m_internationalist_split
 
-We have expelled most of the dissenting Internationalists! They respond by forming their own "Menshevik-Internationalist" party. This costs us a great deal of support...
+불만을 품은 국제주의자 대부분을 제명 처리했습니다! 그들은 즉각 "멘셰비키-국제주의자"라는 별도의 정당을 창당하며 맞섰습니다. 이로 인해 당은 막대한 지지 기반을 잃게 되었습니다...
 
 
 @expel_defensists
-title: Expel the Defensists.
+title: 방위주의자들을 제명한다.
 view-if: defensist_dissent > 40 and not defensist_split
 choose-if: defensist_strength <= internationalist_strength
-unavailable-subtitle: The Defensists are too strong.
+unavailable-subtitle: 방위주의 세력이 너무 강력합니다.
 on-arrival: defensist_split = 1;
 go-to: m_defensist_split
 
-We have expelled most of the dissenting Defensists and Social-Patriot! They respond by forming their own "Menshevik-Defensist" party. This costs us a great deal of support...
+불만을 품은 방위주의자들과 사회애국주의자 대부분을 제명 처리했습니다! 그들은 즉각 "멘셰비키-방위주의자"라는 별도의 정당을 창당하며 맞섰습니다. 이로 인해 당은 막대한 지지 기반을 잃게 되었습니다...
 
 
 @do_nothing
-title: Let the factions argue with themselves.
+title: 파벌들이 알아서 싸우게 둔다.
 on-arrival: defensist_dissent += 3; internationalist_dissent += 3; social_patriot_dissent += 3;
 
-Let the factions bicker; perhaps dissent is healthy for the party.
+파벌들끼리 다투게 내버려 둡니다. 어쩌면 이러한 논쟁이 당의 건강함에 도움이 될지도 모릅니다.

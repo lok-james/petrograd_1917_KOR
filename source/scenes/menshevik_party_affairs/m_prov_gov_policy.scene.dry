@@ -1,11 +1,11 @@
-title: The Provisional Government
+title: 임시정부
 choose-if: m_prov_gov_policy_timer = 0
 unavailable-subtitle: It is too early to change this policy again.
 on-arrival: m_prov_gov_policy_timer = 6;
 
-= Provisional Government Policy
+= 임시정부 정책
 
-What should our policy be with respect to the Provisional Government?
+임시정부에 대해 어떤 정책 기조를 유지해야 합니까?
 
 # options: join prov gov, don't join prov gov
 
@@ -15,31 +15,31 @@ What should our policy be with respect to the Provisional Government?
 - @opposition_2
 
 @external_support
-title: We should provide external support to the Provisional Government, but will not take part in it.
-subtitle: [? if m_prov_gov_policy = 1 : This is our current position. ?]
+title: 임시정부에 외부적 지원은 제공하되, 내각에는 참여하지 않는다.
+subtitle: [? if m_prov_gov_policy = 1 : 현재 당의 공식 입장입니다. ?]
 on-arrival: internationalist_dissent += 4 if m_prov_gov_policy > 1 and not m_in_gov; m_prov_gov_policy = 1;
 
-Our policy is that we should provide external support to the Provisional Government, but will not take part in it.
+임시정부를 외부에서 지원하되 직접적인 입각은 하지 않는 것이 우리의 방침입니다.
 
 @take_part
-title: We should join the Provisional Government as part of a broad coalition.
-subtitle: [? if m_prov_gov_policy = 0 : This is our current position. ?][? if m_in_gov and k_in_gov: This is already our de facto policy. ?]
+title: 광범위한 연립 정부의 일원으로 임시정부에 참여한다.
+subtitle: [? if m_prov_gov_policy = 0 : 현재 당의 공식 입장입니다. ?][? if m_in_gov and k_in_gov: 이미 사실상의 정책으로 굳어진 상태입니다. ?]
 on-arrival: internationalist_dissent += 5 if m_prov_gov_policy != 0 and not m_in_gov; m_prov_gov_policy = 0;
 
-Our policy is to join the Provisional Government as part of a coalition government that may include liberals. This policy is opposed by our left wing, who would favor an all-socialist government.
+자유주의 세력까지 포함하는 연립 정부의 일원으로 임시정부에 참여하는 것이 우리의 방침입니다. 이 노선은 순수 사회주의 정부 구성을 원하는 당내 좌파 세력의 반발을 사고 있습니다.
 
 @opposition
-title: We should be in opposition to the Provisional Government.
-subtitle: [? if m_prov_gov_policy = 2 : This is our current position. ?]
+title: 임시정부에 대한 반대 세력으로 남는다.
+subtitle: [? if m_prov_gov_policy = 2 : 현재 당의 공식 입장입니다. ?]
 on-arrival: social_patriot_dissent += 4 if m_prov_gov_policy < 2; defensist_dissent += 4 if m_prov_gov_policy < 2; internationalist_strength += 4 if m_prov_gov_policy < 2; m_prov_gov_policy = 2;
 
-Our policy is to act as an external opposition to the bourgeois Provisional Government, critiquing its policies.
+부르주아 임시정부에 대한 원외 반대 세력으로서 정부 정책을 비판하는 것이 우리의 방침입니다.
 
 @opposition_2
-title: We should seek the formation of an all-socialist government to replace the Provisional Government.
+title: 임시정부를 대체할 순수 사회주의 정부 구성을 추진한다.
 choose-if: internationalist_strength >= defensist_strength
-unavailable-subtitle: The Internationalist faction is not strong enough.
-subtitle: [? if m_prov_gov_policy = 3 : This is our current position. ?]
+unavailable-subtitle: 국제주의 분파의 세력이 충분하지 않습니다.
+subtitle: [? if m_prov_gov_policy = 3 : 현재 당의 공식 입장입니다. ?]
 on-arrival: defensist_dissent += 4 if m_prov_gov_policy != 3; social_patriot_dissent += 6 if m_prov_gov_policy != 3; internationalist_strength += 4 if m_prov_gov_policy < 3; internationalist_dissent -= 3 if m_prov_gov_policy < 3; m_prov_gov_policy = 3;
 
-Our policy is to aim for the replacement of the bourgeois Provisional Government by a coalition of socialist parties.
+부르주아 임시정부를 사회주의 정당들의 연합 정부로 대체하는 것을 목표로 삼는 것이 우리의 방침입니다.

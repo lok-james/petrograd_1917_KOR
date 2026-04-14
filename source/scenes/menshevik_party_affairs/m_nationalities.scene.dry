@@ -1,10 +1,10 @@
-title: Nationalities policy
+title: 민족 정책
 
 # options: russian unity, federal state with local autonomy, personal but not territorial autonomy, self-determination
 
-What should our policy be regarding the minority nationalities?
+소수 민족 문제에 관한 우리의 정책 기조는 무엇이어야 합니까?
 
-Current position: [+ m_nationality_policy : nationality_policy +]
+현재 정책: [+ m_nationality_policy : nationality_policy +]
 
 - @russian_unity
 - @personal_autonomy
@@ -12,22 +12,22 @@ Current position: [+ m_nationality_policy : nationality_policy +]
 - @self_determination
 
 @russian_unity
-title: Maintain the integrity of the Russian Empire.
-subtitle: This is extremely unpopular among our base.
-unavailable-subtitle: The Social Patriots are not strong enough.
+title: 러시아 제국의 영토적 일체성을 고수한다.
+subtitle: 이는 우리 지지 기반 내에서 극도로 인기가 없는 정책입니다.
+unavailable-subtitle: 사회애국주의 세력의 기반이 약합니다.
 choose-if: social_patriot_strength > internationalist_strength + defensist_strength
 
 @federal_state
-title: Create a federal state in which nationalities will have local autonomy.
-subtitle: [? if m_nationality_policy == 2 : This is our current policy. ?]
+title: 각 민족에게 지역적 자치권을 부여하는 연방제를 도입한다.
+subtitle: [? if m_nationality_policy == 2 : 현재 당의 공식 정책입니다. ?]
 on-arrival: m_nationality_policy = 2;
 
 @personal_autonomy
-title: Every individual will have personal autonomy with regards to nationality and culture, but the nationalities will not have territorial autonomy.
-subtitle: "National Personal Autonomy" is a position developed by the Austromarxists and adopted by the Jewish Labor Bund. [? if m_nationality_policy == 1 : This is our current policy. ?]
+title: 민족적·문화적 개인 자치는 인정하되, 민족 단위의 영토적 자치는 허용하지 않는다.
+subtitle: "민족적 개인 자치"는 오스트로-마르크스주의자들이 정립하고 유대인 노동자 연맹(분트)이 채택한 노선입니다. [? if m_nationality_policy == 1 : 현재 당의 공식 정책입니다. ?]
 on-arrival: m_nationality_policy = 1;
 
 @self_determination
-title: The nationalities will have self-determination, including national personal autonomy, federalism, or independence if they so choose.
-subtitle: [? if m_nationality_policy == 3 : This is our current policy. ?]
+title: 각 민족에게 민족적 개인 자치, 연방제 가입, 또는 독립을 선택할 수 있는 자결권을 부여한다.
+subtitle: [? if m_nationality_policy == 3 : 현재 당의 공식 정책입니다. ?]
 on-arrival: m_nationality_policy = 3;

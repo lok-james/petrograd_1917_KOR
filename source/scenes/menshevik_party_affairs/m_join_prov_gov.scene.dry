@@ -1,8 +1,8 @@
-title: Join the Provisional Government!
+title: 임시정부에 참여하기!
 view-if: player_party = "m"
 go-to: menu
 
-Which ministerial positions should we take?
+우리는 어떤 장관직을 맡아야 합니까?
 
 @menu
 
@@ -11,125 +11,125 @@ Which ministerial positions should we take?
 - @no_more
 
 @no_more
-title: No more ministries
-subtitle: [? if m_influence >= 10: We still have some more influence to gain ministries. ?][? if m_influence < 10 : We do not have much influence left. ?]
+title: 추가 장관직 수임 안 함
+subtitle: [? if m_influence >= 10: 장관직을 추가로 확보할 수 있는 영향력이 아직 남아 있습니다. ?][? if m_influence < 10 : 남은 영향력이 거의 없습니다. ?]
 
-This coalition arrangement is tolerable to all the parties.
+현재의 연립 정부 구성은 모든 정당이 수긍할 수 있는 수준입니다.
 
 
 @agriculture
-title: Agriculture Ministry
+title: 농무부
 tags: m_mins
 choose-if: m_rural_policy != 0 and m_influence >= 10 and not sr_in_gov
-unavailable-subtitle: [? if m_rural_policy = 0 : We do not have a rural policy. ?][? if sr_in_gov: Viktor Chernov of the SRs is expected to take this position. ?]
+unavailable-subtitle: [? if m_rural_policy = 0 : 아직 농촌 정책이 수립되지 않았습니다. ?][? if sr_in_gov: 사회혁명당의 빅토르 체르노프가 이 직책을 맡을 예정입니다. ?]
 go-to: menu
 
 @food
-title: Food Ministry
-subtitle: The Food ministry deals with food procurement.
+title: 식량부
+subtitle: 식량부는 식량 조달 및 배급 업무를 담당합니다.
 tags: m_mins
 choose-if: m_influence >= 10
 view-if: food_minister_party != "Menshevik"
 on-arrival: m_influence -= 10; food_minister = "Groman"; food_minister_party = "Menshevik"
 go-to: menu
 
-Vladimir Groman, a Menshevik-affiliated economist, has been appointed Food [+ government_form : minister +].
+멘셰비키 계열 경제학자인 블라디미르 그로만이 식량 [+ government_form : 장관 +]에 임명되었습니다.
 
 @justice
-title: Justice Ministry
+title: 법무부
 tags: m_mins
 choose-if: m_influence >= 10
 view-if: justice_minister_party != "Menshevik"
 go-to: menu
 on-arrival: m_influence -= 10; justice_minister = "Malyantovich"; justice_minister_party = "Menshevik"
 
-Pavel Malyantovich has been appointed Justice [+ government_form : minister +].
+파벨 말랸토비치가 법무 [+ government_form : 장관 +]에 임명되었습니다.
 
 @labor
-title: Labor Ministry
-subtitle: We are expected to take this position.
+title: 노동부
+subtitle: 우리 당이 맡기로 예정된 핵심 보직입니다.
 tags: m_mins
 choose-if: m_influence >= 10
 view-if: labor_minister_party != "Menshevik"
 on-arrival: m_influence -= 10; labor_minister = "Skobelev"; labor_minister_party = "Menshevik"
 go-to: menu
 
-Matvey Skobelev, a Menshevik Duma member, has been appointed Labor [+ government_form : minister +].
+멘셰비키 소속 두마 의원인 마트베이 스코벨레프가 노동 [+ government_form : 장관 +]에 임명되었습니다.
 
 @interior
-title: Interior Ministry
-subtitle: The Interior Ministry deals with internal security.
+title: 내무부
+subtitle: 내무부는 치안 및 내부 안보를 책임집니다.
 tags: m_mins
 choose-if: m_influence >= 15
 view-if: interior_minister_party != "Menshevik"
 go-to: menu
 on-arrival: m_influence -= 15; interior_minister = "Tsereteli"; interior_minister_party = "Menshevik"
 
-Irakli Tsereteli has been appointed Interior [+ government_form : minister +].
+이라클리 체레텔리가 내무 [+ government_form : 장관 +]에 임명되었습니다.
 
 @finance
-title: Finance Ministry
-subtitle: The Finance Ministry controls taxation and spending.
+title: 재무부
+subtitle: 재무부는 국가의 조세와 지출 전반을 관장합니다.
 tags: m_mins
 choose-if: m_influence >= 15
 view-if: finance_minister_party != "Menshevik"
 go-to: menu
 on-arrival: m_influence -= 15; finance_minister = "Voitinsky"; finance_minister_party = "Menshevik"
 
-Vladimir Voitinsky has been appointed Finance [+ government_form : minister +].
+블라디미르 보이틴스키가 재무 [+ government_form : 장관 +]에 임명되었습니다.
 
 @war
-title: War Ministry
-subtitle: The War Ministry controls military affairs and directs the war.
+title: 전쟁부
+subtitle: 전쟁부는 군정권과 전쟁 수행 전반을 지휘합니다.
 tags: m_mins
 choose-if: m_influence >= 15
 view-if: war_minister_party != "Menshevik"
 go-to: menu
 on-arrival: m_influence -= 15; war_minister = "Tsereteli"; war_minister_party = "Menshevik"
 
-Irakli Tsereteli has been appointed War [+ government_form : minister +].
+이라클리 체레텔리가 전쟁 [+ government_form : 장관 +]에 임명되었습니다.
 
 
 
 @foreign
-title: Foreign Ministry
-subtitle: The Foreign Ministry controls our relations with both our allies and enemies.
+title: 외무부
+subtitle: 외무부는 동맹국 및 적국과의 외교 관계를 총괄합니다.
 tags: m_mins
 choose-if: m_influence >= 15
 view-if: foreign_minister_party != "Menshevik"
 go-to: menu
 on-arrival: m_influence -= 15; foreign_minister = "Tsereteli" if not defensist_split; foreign_minister = "Martov" if defensist_split; foreign_minister_party = "Menshevik"
 
-[? if not defensist_split : Irakli Tsereteli ?][? if defensist_split: Julius Martov ?] has been appointed Foreign [+ government_form : minister +].
+[? if not defensist_split : 이라클리 체레텔리 ?][? if defensist_split: 율리우스 마르토프 ?]가 외무 [+ government_form : 장관 +]에 임명되었습니다.
 
 
 @transport
-title: Transportation Ministry
-subtitle: The Transportation Ministry manages the railroads.
+title: 교통부
+subtitle: 교통부는 국가 철도망의 관리와 운영을 담당합니다.
 tags: m_mins
 choose-if: m_influence >= 10
 view-if: transport_minister_party != "Menshevik"
 go-to: menu
 on-arrival: m_influence -= 10; transport_minister = "Plekhanov"; transport_minister_party = "Menshevik"
 
-Georgi Plekhanov has been appointed Transportation [+ government_form : minister +].
+게오르기 플레하노프가 교통 [+ government_form : 장관 +]에 임명되었습니다.
 
 
 @trade
-title: Industry and Trade Ministry
-subtitle: This ministry manages industrial production.
+title: 산업통상부
+subtitle: 이 부처는 국가 산업 생산 및 무역을 관리합니다.
 tags: m_mins
 choose-if: m_influence >= 10
 view-if: trade_minister_party != "Menshevik"
 go-to: menu
 on-arrival: m_influence -= 10; trade_minister = "Groman"; trade_minister_party = "Menshevik"
 
-Vladimir Groman has been appointed Trade and Industry [+ government_form : minister +].
+블라디미르 그로만이 통상산업 [+ government_form : 장관 +]에 임명되었습니다.
 
 
 
 @drop_agriculture
-title: Drop the Agriculture Ministry.
+title: 농무부 장관직을 반납한다.
 view-if: agriculture_minister_party = "Menshevik"
 tags: m_drop_mins
 go-to: menu
@@ -144,10 +144,10 @@ if (Q.sr_in_gov) {
 Q.m_influence += 10;
 !}
 
-We have dropped the Agriculture Ministry, and the position has been assigned to [+ agriculture_minister +], the [+ agriculture_minister_party +].
+농무부 장관직을 반납하였으며, 해당 보직은 [+ agriculture_minister_party +] 소속의 [+ agriculture_minister +]에게 인계되었습니다.
 
 @drop_food
-title: Drop the Food Ministry.
+title: 식량부 장관직을 반납한다.
 view-if: food_minister_party = "Menshevik"
 tags: m_drop_mins
 go-to: menu
@@ -157,12 +157,12 @@ Q.food_minister_party = "Popular Socialist";
 Q.m_influence += 10;
 !}
 
-We have dropped the Food Ministry, and the position has been assigned to [+ food_minister +], the [+ food_minister_party +].
+식량부 장관직을 반납하였으며, 해당 보직은 [+ food_minister_party +] 소속의 [+ food_minister +]에게 인계되었습니다.
 
 
 
 @drop_justice
-title: Drop the Justice Ministry.
+title: 법무부 장관직을 반납한다.
 view-if: justice_minister_party = "Menshevik"
 tags: m_drop_mins
 go-to: menu
@@ -172,11 +172,11 @@ Q.justice_minister_party = "SR";
 Q.m_influence += 10;
 !}
 
-We have dropped the Justice Ministry, and the position has been assigned to [+ justice_minister +], the [+ justice_minister_party +].
+법무부 장관직을 반납하였으며, 해당 보직은 [+ justice_minister_party +] 소속의 [+ justice_minister +]에게 인계되었습니다.
 
 
 @drop_labor
-title: Drop the Labor Ministry.
+title: 노동부 장관직을 반납한다.
 view-if: labor_minister_party = "Menshevik"
 tags: m_drop_mins
 go-to: menu
@@ -191,12 +191,12 @@ if (!Q.in_socialist_coalition) {
 Q.m_influence += 10;
 !}
 
-We have dropped the Labor Ministry, and the position has been assigned to [+ labor_minister +], the [+ labor_minister_party +].
+노동부 장관직을 반납하였으며, 해당 보직은 [+ labor_minister_party +] 소속의 [+ labor_minister +]에게 인계되었습니다.
 
 
 
 @drop_interior
-title: Drop the Interior Ministry.
+title: 내무부 장관직을 반납한다.
 view-if: interior_minister_party = "Menshevik"
 tags: m_drop_mins
 go-to: menu
@@ -211,11 +211,11 @@ if (Q.kadets_resigned || Q.in_socialist_coalition) {
 Q.m_influence += 15;
 !}
 
-We have dropped the Interior Ministry, and the position has been assigned to [+ interior_minister +], the [+ interior_minister_party +].
+내무부 장관직을 반납하였으며, 해당 보직은 [+ interior_minister_party +] 소속의 [+ interior_minister +]에게 인계되었습니다.
 
 
 @drop_finance
-title: Drop the Finance Ministry.
+title: 재무부 장관직을 반납한다.
 view-if: finance_minister_party = "Menshevik"
 tags: m_drop_mins
 go-to: menu
@@ -230,12 +230,12 @@ if (Q.kadets_resigned || Q.in_socialist_coalition) {
 Q.m_influence += 15;
 !}
 
-We have dropped the Finance Ministry, and the position has been assigned to [+ finance_minister +], the [+ finance_minister_party +].
+재무부 장관직을 반납하였으며, 해당 보직은 [+ finance_minister_party +] 소속의 [+ finance_minister +]에게 인계되었습니다.
 
 
 
 @drop_war
-title: Drop the War Ministry.
+title: 전쟁부 장관직을 반납한다.
 view-if: war_minister_party = "Menshevik"
 tags: m_drop_mins
 go-to: menu
@@ -250,12 +250,12 @@ if (Q.kadets_resigned) {
 Q.m_influence += 15;
 !}
 
-We have dropped the War Ministry, and the position has been assigned to [+ war_minister +], the [+ war_minister_party +].
+전쟁부 장관직을 반납하였으며, 해당 보직은 [+ war_minister_party +] 소속의 [+ war_minister +]에게 인계되었습니다.
 
 
 
 @drop_foreign
-title: Drop the Foreign Ministry.
+title: 외무부 장관직을 반납한다.
 view-if: foreign_minister_party = "Menshevik"
 tags: m_drop_mins
 go-to: menu
@@ -265,12 +265,12 @@ Q.foreign_minister_party = "Independent";
 Q.m_influence += 15;
 !}
 
-We have dropped the Foreign Ministry, and the position has been assigned to [+ foreign_minister +], the [+ foreign_minister_party +].
+외무부 장관직을 반납하였으며, 해당 보직은 [+ foreign_minister_party +] 소속의 [+ foreign_minister +]에게 인계되었습니다.
 
 
 
 @drop_transport
-title: Drop the Transport Ministry.
+title: 교통부 장관직을 반납한다.
 view-if: transport_minister_party = "Menshevik"
 tags: m_drop_mins
 go-to: menu
@@ -285,12 +285,12 @@ if (!Q.in_socialist_coalition) {
 Q.m_influence += 10;
 !}
 
-We have dropped the Transport Ministry, and the position has been assigned to [+ transport_minister +], the [+ transport_minister_party +].
+교통부 장관직을 반납하였으며, 해당 보직은 [+ transport_minister_party +] 소속의 [+ transport_minister +]에게 인계되었습니다.
 
 
 
 @drop_trade
-title: Drop the Trade and Industry Ministry.
+title: 산업통상부 장관직을 반납한다.
 view-if: trade_minister_party = "Menshevik"
 tags: m_drop_mins
 go-to: menu
@@ -305,5 +305,5 @@ if (!Q.in_socialist_coalition) {
 Q.m_influence += 10;
 !}
 
-We have dropped the Trade Ministry, and the position has been assigned to [+ trade_minister +], the [+ trade_minister_party +].
+통상부 장관직을 반납하였으며, 해당 보직은 [+ trade_minister_party +] 소속의 [+ trade_minister +]에게 인계되었습니다.
 
