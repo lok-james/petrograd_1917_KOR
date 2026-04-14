@@ -1,4 +1,4 @@
-title: SRs leave the Provisional Government.
+title: 사회혁명당의 임시정부 탈퇴
 on-arrival: {!
 Q.sr_in_gov = 0;
 if (Q.agriculture_minister_party = "SR") {

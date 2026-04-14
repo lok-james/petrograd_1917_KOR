@@ -7,32 +7,32 @@ is-card: true
 card-image: img/sr_poster.jpg
 tags: sr_party
 
-= Fundraising
+= 자금 조달
 
-For better or for worse, the party cannot exist without money.
+좋든 싫든, 정당이 유지되기 위해서는 자금이 필수적입니다.
 
-- @maintain: Maintain our current dues.
-- @reduce: Reduce dues.
-- @increase: Increase dues.
+- @maintain: 현재 당비 수준을 유지한다.
+- @reduce: 당비를 인하한다.
+- @increase: 당비를 인상한다.
 
 @maintain
-subtitle: [+ sr_dues +] resources gained.
+subtitle: [+ sr_dues +]만큼의 자원을 확보합니다.
 on-arrival: sr_resources += sr_dues;
 
-We maintain our current dues.
+현재의 당비 수준을 유지하기로 했습니다.
 
 @reduce
-subtitle: [+ sr_dues - 1 +] resources gained.
+subtitle: [+ sr_dues - 1 +]만큼의 자원을 확보합니다.
 choose-if: sr_dues > 1
 on-arrival: sr_dues -= 1; sr_resources += sr_dues; right_sr_dissent -= 10; center_sr_dissent -= 8; left_sr_dissent -= 10;
 
-Our current members appreciate this, but no one decides to join a party because of the low dues.
+기존 당원들은 반기고 있으나, 당비가 저렴하다는 이유만으로 당에 가입하려는 사람은 없습니다.
 
 @increase
-subtitle: [+ sr_dues + 1 +] resources gained. [? if hunger >= 15 : Given the present economic situation, this may be painful. ?][? if sr_dues >= 4 : Dues are already rather high; increasing them might reduce our membership. ?]
+subtitle: [+ sr_dues + 1 +]만큼의 자원을 확보합니다. [? if hunger >= 15 : 현재의 경제난을 고려할 때, 이는 당원들에게 큰 부담이 될 수 있습니다. ?][? if sr_dues >= 4 : 당비가 이미 상당히 높은 수준입니다. 추가 인상은 당원 수 감소로 이어질 수 있습니다. ?]
 on-arrival: sr_dues += 1; sr_resources += sr_dues; workers_sr -= 3; underclass_sr -= 3; workers_sr -= 10 if hunger >= 15; underclass_sr -= 10 if hunger >= 15; workers_sr -= 3*sr_dues if sr_dues >= 5; underclass_sr -= 3*sr_dues if sr_dues >= 5
 view-if: sr_dues <= 4
 
-Our members grumble at this, and some of the less committed members leave. But now, we have access to additional resources.
+당원들의 불만이 터져 나오고 있으며, 충성도가 낮은 일부 당원들은 탈당을 선택했습니다. 하지만 덕분에 당은 추가적인 자금을 확보할 수 있게 되었습니다.
 
-[? if hunger >= 15: Given the present levels of poverty and hunger, raising dues may be a bad idea. ?]
+[? if hunger >= 15: 현재의 빈곤과 기아 수준을 감안할 때, 당비 인상은 악수가 될 수 있습니다. ?]

@@ -1,4 +1,4 @@
-title: 우리의 적 선택하기
+title: 주적 설정하기
 new-page: true
 view-if: b_enemies_timer <= 0 and month < 9
 on-arrival: b_enemies_timer = 6; week_actions += 1
@@ -6,7 +6,7 @@ is-card: true
 card-image: img/soviet_leaders.jpg
 tags: b_party
 
-= 우리의 적 선택하기
+= 주적 설정하기
 
 우리 당의 언론 매체와 캠페인 자료에서, 누구를 주적으로 설정해야 합니까?
 

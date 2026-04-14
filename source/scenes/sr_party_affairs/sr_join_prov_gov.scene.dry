@@ -1,8 +1,8 @@
-title: Join the Provisional Government!
+title: 임시정부 입각!
 view-if: player_party = "sr"
 go-to: menu
 
-Which ministerial positions should we take?
+우리는 어떤 장관직을 맡아야 합니까?
 
 @menu
 
@@ -11,14 +11,14 @@ Which ministerial positions should we take?
 - @no_more
 
 @no_more
-title: No more ministries
-subtitle: [? if sr_influence >= 10: We still have some more influence to gain ministries. ?][? if sr_influence < 10 : We do not have much influence left. ?]
+title:추가 장관직 수임 중단
+subtitle: [? if sr_influence >= 10: 장관직을 추가로 확보할 수 있는 영향력이 아직 남아 있습니다. ?][? if sr_influence < 10 : 가용할 수 있는 영향력이 거의 소진되었습니다. ?]
 
-This coalition arrangement is tolerable to all the parties.
+현재의 연립 정부 구성은 모든 정당이 수용할 수 있는 수준입니다.
 
 
 @agriculture
-title: Agriculture Ministry
+title: 농무부 장관
 tags: sr_mins
 choose-if: sr_influence >= 10
 view-if: agriculture_minister_party != "SR"

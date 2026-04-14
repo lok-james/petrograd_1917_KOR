@@ -1,4 +1,4 @@
-title: Inter-Party Relationships
+title: 정당 간 관계
 new-page: true
 view-if: sr_inter_party_relationships_timer <= 0 and player_party = "sr"
 is-card: true
@@ -7,45 +7,45 @@ card-image: img/sr_poster_4.jpg
 max-visits: 12
 tags: sr_party
 
-= Inter-Party Relationships
+= 정당 간 관계
 
-We can improve our relations with the other democratic or socialist parties.
+다른 민주주의 정당이나 사회주의 정당들과의 관계를 개선할 수 있습니다.
 
 - @m
 - @k
 - @b
 #- @influence_m
-- @root: We do not need to improve our relations.
+- @root: 지금으로썬 관계 개선이 필요하지 않다.
 - @easy_discard
 - @cancel_advisor_action
 
 
 @m
-title: Improve our relations with the Mensheviks.
+title: 멘셰비키와의 관계를 개선한다.
 on-arrival: m_sr_relation += ipr_change*(1-sr_dissent); sr_resources -= 1;
 choose-if: sr_resources >= 1
 subtitle: 자원 -1 소모
 
-We have improved our relations with the Mensheviks.
+멘셰비키와의 우호 관계를 증진하였습니다.
 
 @influence_m
-title: Influence the Mensheviks to be closer to our ideological alignment.
+title: 멘셰비키가 우리의 이념적 노선에 동참하도록 영향력을 행사한다.
 view-if: sr_leadership = 1 and m_leadership = 0
 
 # TODO
 
 @k
-title: Improve our relations with the Kadets, the middle class liberal party.
+title: 중산층 자유주의 정당인 카데트와의 관계를 개선한다.
 on-arrival: sr_k_relation += ipr_change*(1-sr_dissent); sr_k_relation -= (ipr_change/2)*(1-sr_dissent) if internationalist_strength >= defensist_strength + social_patriot_strength or sr_prov_gov_policy >= 2 or sr_war_policy >= 2; sr_resources -= 1;
 choose-if: sr_resources >= 1
 subtitle: 자원 -1 소모
 
-We are building our ties with the Kadets. [? if internationalist_strength >= defensist_strength + social_patriot_strength or sr_war_policy >= 2 : Our support of Internationalism makes it more difficult to build relationships, as they consider our anti-war ideas to be treasonous. ?][? if sr_prov_gov_policy >= 2: Our opposition to the Provisional Government makes improving relations difficult. ?]
+입헌민주당과의 협력 관계를 구축하고 있습니다. [? if internationalist_strength >= defensist_strength + social_patriot_strength or sr_war_policy >= 2 : 당의 국제주의적 성향으로 인해 관계 구축에 난항을 겪고 있습니다. 그들은 우리의 반전 사상을 반역 행위로 간주하기 때문입니다. ?][? if sr_prov_gov_policy >= 2: 임시정부에 대한 당의 비판적 태도가 관계 개선의 걸림돌이 되고 있습니다. ?]
 
 @b
-title: Can we repair our relations with the Bolsheviks?
+title: 볼셰비키와의 관계를 회복할 방안을 모색한다.
 on-arrival: b_sr_relation += (ipr_change - 1)*(1-sr_dissent); b_sr_relation -= (ipr_change/2)*(1-sr_dissent) if leninist_strength >= moderate_strength or sr_war_policy <= 1 or sr_prov_gov_policy <= 1; sr_resources -= 1;
 choose-if: sr_resources >= 1
 subtitle: 자원 -1 소모
 
-We have attempted to build closer ties with the Bolsheviks, our wayward cousins in the RSDLP. [? if leninist_strength >= moderate_strength : The influence of Lenin makes it difficult for us to build these relationships. ?][? if sr_war_policy <= 1 : Our defensist war policy makes it difficult to improve relations. ?][? if sr_prov_gov_policy <= 1: Our support of the Provisional Government makes it difficult to improve relations. ?]
+러시아 사회민주노동당 내의 까다로운 친척 격인 볼셰비키와 더 긴밀한 유대를 맺으려 시도했습니다. [? if leninist_strength >= moderate_strength : 레닌의 강력한 영향력으로 인해 관계 진전이 쉽지 않은 상황입니다. ?][? if sr_war_policy <= 1 : 당의 방위주의적 전쟁 정책이 관계 개선을 가로막고 있습니다. ?][? if sr_prov_gov_policy <= 1: 임시정부에 대한 당의 지지 입장이 관계 회복의 장애물이 되고 있습니다. ?]

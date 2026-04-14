@@ -1,4 +1,4 @@
-title: 임시정부에 참여하기!
+title: 임시정부 입각!
 view-if: player_party = "m"
 go-to: menu
 

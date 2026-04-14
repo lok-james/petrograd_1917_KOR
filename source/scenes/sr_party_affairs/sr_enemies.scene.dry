@@ -1,4 +1,4 @@
-title: Choosing Our Enemies
+title: 주적 설정하기
 new-page: true
 view-if: sr_enemies_timer <= 0 and month < 9
 on-arrival: sr_enemies_timer = 6; week_actions += 1
@@ -6,9 +6,9 @@ is-card: true
 card-image: img/sr_poster_3.jpg
 tags: sr_party
 
-= Choosing Our Enemies
+= 주적 설정하기
 
-In our media and campaign materials, who should we consider our primary enemies?
+우리 당의 언론 매체와 캠페인 자료에서, 누구를 주적으로 설정해야 합니까?
 
 - @bourgeois
 - @counterrevolutionaries
@@ -18,25 +18,25 @@ In our media and campaign materials, who should we consider our primary enemies?
 - @cancel_advisor_action
 
 @counterrevolutionaries
-title: Counterrevolutionary forces, Black Hundreds, [? if kornilov_affair_seen : Kornilovites, ?] and the like.
+title: 반혁명 세력, 검은 백인조, [? if kornilov_affair_seen : 코르닐로프 일파, ?] 그리고 그와 유사한 자들.
 on-arrival: workers_sr += 3*(1-sr_dissent); b_sr_relation += 3*(1-sr_dissent); m_sr_relation += 3*(1-sr_dissent); left_sr_dissent -= 2; right_sr_dissent -= 2;
 
-Attacking counterrevolutionary forces is popular among all factions of the SRs.
+반혁명 세력을 공격하는 노선은 사회혁명당 내 모든 정파로부터 폭넓은 지지를 받습니다.
 
 @bourgeois
-title: The Kadets and other bourgeois parties.
+title: 카데트와 기타 부르주아 정당들
 on-arrival: sr_k_relation -= 8; left_sr_dissent -= 4; left_sr_strength += 5*(1-sr_dissent); right_sr_dissent += 4; b_sr_relation += 5*(1-sr_dissent); soviet_cooperation -= 0.05;
 
-Attacking the Kadets is popular among the Left-SRs, but it might implede the cooperation between the Soviet and the Provisional Government.
+입헌민주당을 공격하는 것은 좌파 사회혁명당원들에게는 환영받으나, 소비에트와 임시정부 사이의 협력 관계를 저해할 우려가 있습니다.
 
 @bolsheviks
-title: Bolsheviks and anarchists, who seek to subvert the revolution from within.
+title: 내부에서 혁명을 전복시키려 획책하는 볼셰비키와 아나키스트들.
 on-arrival: b_sr_relation -= 8; sr_k_relation += 4*(1-sr_dissent); left_sr_dissent += 4; right_sr_dissent -= 4; b_threat += 1
 
-Attacking the Bolsheviks is unpopular with the Left-SRs, but popular among the right.
+볼셰비키를 공격하는 노선은 좌파 사회혁명당원들 사이에서는 인기가 없으나, 우파 세력은 이를 반깁니다.
 
 @germany
-title: The only enemies should be the Germans!
+title: 우리의 유일한 적은 독일군뿐이어야 한다!
 on-arrival: right_sr_strength += 5*(1-sr_dissent); right_sr_dissent -= 3; left_sr_dissent += 7; sr_k_relation += 4*(1-sr_dissent); b_sr_relation -= 4; soldiers_sr -= 2; soviet_cooperation += 0.05*(1-sr_dissent);
 
-Nationalistic propaganda is highly unpopular among the Left-SRs, and among the soldiers who wish to stop the war. However, it raises our standing with the Kadets, and improves the position of the defensist Right-SRs within the party.
+민족주의적 선전은 좌파 사회혁명당원들과 전쟁 종결을 원하는 병사들 사이에서 매우 인기가 없습니다. 하지만 이를 통해 카데트와의 관계에서 우위를 점할 수 있으며, 당내 방위주의 우파 세력의 입지를 강화할 수 있습니다.
