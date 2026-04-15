@@ -1,4 +1,4 @@
-title: Shuffle Leadership
+title: 지도부 개편
 new-page: true
 view-if: sr_shuffle_leadership_timer <= 0 and sr_siberians_return_seen = 1 and player_party = "sr" and difficulty > 0
 on-arrival: sr_shuffle_leadership_timer += 4; week_actions += 1 if difficulty > 0
@@ -7,47 +7,47 @@ is-card: true
 card-image: img/sr_poster_2.jpg
 tags: sr_party
 
-= Shuffle Leadership
+= 지도부 개편
 
-changing the leadership of the party might be necessary to adapt to the changing circumstances.
+급변하는 정세에 대응하기 위해 당 지도부를 개편하는 것이 필요할 수 있습니다.
 
-Removing advisors will increase dissent from their faction of the party, while selecting advisors will increase a faction's strength.
+고문을 해임하면 해당 파벌의 불만이 고조되지만, 고문을 새로 임명하면 해당 파벌의 영향력이 강화됩니다.
 
-- @rm_main: Remove advisors.
-- @add_advisors: Add advisors.
-- @root: Don't change the party leadership.
+- @rm_main: 고문을 해임한다.
+- @add_advisors: 고문을 임명한다.
+- @root: 당 지도부를 변경하지 않는다.
 - @easy_discard
 
 @rm_main
-title: Remove advisors.
+title: 고문을 해임한다.
 tags: right_sr, left_sr, center_sr
 frequency: 1
 
 - #sr_rm_advisor
-- @add_advisors: Add advisors.
+- @add_advisors: 고문을 임명한다.
 
 @remove_none
-title: Stop changing advisors.
+title: 고문 개편을 종료한다.
 go-to: root
 tags: sr_rm_advisor
 
 
 @add_advisors
-title: Add advisors
-unavailable-subtitle: Maximum of [+ max_advisors +] advisors.
+title: 고문을 임명한다
+unavailable-subtitle: 최대 고문 인원: [+ max_advisors +]명.
 choose-if: sr_n_advisors < max_advisors
 go-to: advisor_menu
 
 @advisor_menu
-title: Add other advisors.
+title: 다른 고문을 추가로 임명한다.
 tags: left_sr, right_sr, center_sr
 frequency: 1
 
-- @right_sr: Add Right-SR advisors.
-- @left_sr: Add Left-SR advisors.
-- @center_sr: Add Center-SR advisors.
-- @rm_main: Remove advisors instead.
-- @remove_none: Stop changing advisors.
+- @right_sr: 우익 사회혁명당 고문을 임명한다.
+- @left_sr: 좌익 사회혁명당 고문을 임명한다.
+- @center_sr: 중앙 사회혁명당 고문을 임명한다.
+- @rm_main: 대신 기존 고문을 해임한다.
+- @remove_none: 고문 개편을 종료한다.
 
 @right_sr
 view-if: sr_n_advisors < max_advisors and right_sr_split = 0
@@ -64,236 +64,236 @@ view-if: sr_n_advisors < max_advisors
 
 - #center_sr
 
-########################################## adding advisors
+########################################## 고문 임명
 
-# right-sr
+# 우익 사회혁명당 (Right-SR)
 
 @add_kerensky
-title: Alexander Kerensky
-subtitle: Longtime Duma member, revolutionary lawyer.
+title: 알렉산드르 케렌스키
+subtitle: 오랜 경력의 두마 의원이자 혁명가 출신 변호사입니다.
 view-if: kerensky_advisor = 0 and sr_n_advisors < max_advisors and right_sr_split = 0
 on-arrival: kerensky_advisor = 1; sr_n_advisors += 1; 
 tags: sr_advisor, right_sr
 go-to: advisor_menu
 
-Kerensky has been added as an advisor.
+케렌스키가 고문으로 임명되었습니다.
 
 @add_avksentiev
-title: Nikolai Avksentiev
-subtitle: A Right-SR leader.
+title: 니콜라이 아브크센티예프
+subtitle: 우익 사회혁명당의 주요 지도자입니다.
 view-if: avksentiev_advisor = 0 and sr_n_advisors < max_advisors and right_sr_split = 0 and avksentiev_available = 1
 on-arrival: avksentiev_advisor = 1; sr_n_advisors += 1; 
 tags: sr_advisor, right_sr
 go-to: advisor_menu
 
-Avksentiev has been added as an advisor.
+아브크센티예프가 고문으로 임명되었습니다.
 
 @add_zenzinov
-title: Vladimir Zenzinov
-subtitle: A Menshevik member of the Duma.
+title: 블라디미르 젠지노프
+subtitle: 두마 내 멘셰비키 정파 소속 의원입니다.
 view-if: zenzinov_advisor = 0 and sr_n_advisors < max_advisors and right_sr_split = 0 and zenzinov_available = 0
 on-arrival: zenzinov_advisor = 1; sr_n_advisors += 1; 
 tags: sr_advisor, right_sr
 go-to: advisor_menu
 
-Vladimir Zenzinov has been added as an advisor.
+블라디미르 젠지노프가 고문으로 임명되었습니다.
 
 
 @add_savinkov
-title: Boris Savinkov
-subtitle: A former SR terrorist and leader of the SR Combat Organization, he has become a strong defensist following the war.
+title: 보리스 사빈코프
+subtitle: 전직 사회혁명당 테러리스트이자 전투 기구의 수장이었으나, 전쟁 발발 이후 강력한 방위주의자로 변모했습니다.
 view-if: savinkov_advisor = 0 and sr_n_advisors < max_advisors and right_sr_split = 0 and savinkov_available = 1
 on-arrival: savinkov_advisor = 1; sr_n_advisors += 1; 
 go-to: advisor_menu
 #tags: sr_advisor, right_sr
 
-Boris Savinkov has been added as an advisor.
+보리스 사빈코프가 고문으로 임명되었습니다.
 
 @add_breshkovskaya
-title: Catherine Breshko-Breshkovskaya
-subtitle: Sometimes called the "Grandmother of the Revolution", she has been working for the SR cause for decades in Russia and in exile.
+title: 예카테리나 브레슈코-브레슈코프스카야
+subtitle: "러시아 혁명의 할머니"로 불리며, 러시아 본토와 망명지를 오가며 수십 년간 사회혁명주의를 위해 헌신해 왔습니다.
 view-if: breshkovskaya_advisor = 0 and sr_n_advisors < max_advisors and right_sr_split = 0 and breshkovskaya_available = 1
 on-arrival: breshkovskaya_advisor = 1; sr_n_advisors += 1; 
 tags: sr_advisor, right_sr
 go-to: advisor_menu
 
-Catherine Breshko-Breshkovskaya has been added as an advisor.
+예카테리나 브레슈코-브레슈코프스카야가 고문으로 임명되었습니다.
 
 @add_kondratiev
-title: Nikolai Kondratiev
-subtitle: Kondratiev is a young SR economist.
+title: 니콜라이 콘드라티예프
+subtitle: 사회혁명당 소속의 유망한 젊은 경제학자입니다.
 view-if: kondratiev_advisor = 0 and sr_n_advisors < max_advisors and right_sr_split = 0 and kondratiev_available = 1
 on-arrival: kondratiev_advisor = 1; sr_n_advisors += 1; 
 tags: sr_advisor, right_sr
 go-to: advisor_menu
 
-Kondratiev has been added as an advisor.
+콘드라티예프가 고문으로 임명되었습니다.
 
 
 
 
-# left_srs
+# 좌익 사회혁명당 (Left-SR)
 
 @add_spiridonova
-title: Maria Spiridonova
-subtitle: Spiridonova is a former assassin who was imprisoned in Siberia for decades, and has now become a Left-SR leader.
+title: 마리아 스피리도노바
+subtitle: 과거 암살 거사 이후 시베리아에서 수십 년간 옥고를 치렀으며, 현재는 좌익 사회혁명당의 지도자로 활동하고 있습니다.
 view-if: spiridonova_advisor = 0 and sr_n_advisors < max_advisors and left_sr_split = 0 and spiridonova_available = 1
 on-arrival: spiridonova_advisor = 1; sr_n_advisors += 1; 
 tags: sr_advisor, left_sr
 go-to: advisor_menu
 
-Maria Spiridonova has been added as an advisor.
+마리아 스피리도노바가 고문으로 임명되었습니다.
 
-# kamkov
+# 캄코프
 
 @add_kamkov
-title: Boris Kamkov
-subtitle: Kamkov is a Left-SR leader.
+title: 보리스 캄코프
+subtitle: 좌익 사회혁명당의 핵심 지도자입니다.
 view-if: kamkov_advisor = 0 and sr_n_advisors < max_advisors and left_sr_split = 0 and kamkov_available = 1
 on-arrival: kamkov_advisor = 1; sr_n_advisors += 1; 
 go-to: advisor_menu
 #tags: sr_advisor, left_sr
 
-Boris Kamkov has been added as an advisor.
+보리스 캄코프가 고문으로 임명되었습니다.
 
 
-# natanson
+# 나탄손
 
 @add_natanson
-title: Mark Natanson
-subtitle: Natanson is a venerable Narodnik and Left-SR leader.
+title: 마르크 나탄손
+subtitle: 존경받는 나로드니키 원로이자 좌익 사회혁명당의 지도자입니다.
 view-if: natanson_advisor = 0 and sr_n_advisors < max_advisors and left_sr_split = 0 and natanson_available = 1
 on-arrival: natanson_advisor = 1; sr_n_advisors += 1; 
 go-to: advisor_menu
 #tags: sr_advisor, left_sr
 
-Mark Natanson has been added as an advisor.
+마르크 나탄손이 고문으로 임명되었습니다.
 
 
-# verkhovsky - temporarily disable for now
+# 베르홉스키
 
 @add_verkhovsky
-title: Alexander Verkhovsky
-subtitle: Verkhovsky is an SR-affiliated military officer who leans towards internationalism.
+title: 알렉산드르 베르홉스키
+subtitle: 사회혁명당 계열의 군 장교로, 국제주의 노선에 우호적인 입장을 보입니다.
 view-if: verkhovsky_advisor = 0 and sr_n_advisors < max_advisors and left_sr_split = 0 and verkhovsky_available = 1
 on-arrival: verkhovsky_advisor = 1; sr_n_advisors += 1; 
 go-to: advisor_menu
 #tags: sr_advisor, left_sr
 
-Alexander Verkhovsky has been added as an advisor.
+알렉산드르 베르홉스키가 고문으로 임명되었습니다.
 
 
-# center-SRs
+# 중앙 사회혁명당 (Center-SR)
 
 @add_chernov
-title: Viktor Chernov
-subtitle: Chernov is a founder and lead theoretician of the SRs.
+title: 빅토르 체르노프
+subtitle: 사회혁명당의 창립자 중 한 명이자 당의 수석 이론가입니다.
 view-if: chernov_advisor = 0 and sr_n_advisors < max_advisors and right_sr_split = 0 and chernov_available = 1
 on-arrival: chernov_advisor = 1; sr_n_advisors += 1; 
 tags: sr_advisor, center_sr
 go-to: advisor_menu
 
-Chernov has been added as an advisor.
+체르노프가 고문으로 임명되었습니다.
 
 
-#################################### removing advisors
+#################################### 고문 해임
 
 @remove_kerensky
-title: Remove Kerensky
+title: 케렌스키를 해임한다
 view-if: kerensky = 1
 choose-if: right_sr_strength < 50
-unavailable-subtitle: The Right-SR faction is too strong.
+unavailable-subtitle: 우익 파벌의 세력이 너무 강력하여 해임할 수 없습니다.
 on-arrival: kerensky = 0; right_sr_dissent += 10; sr_n_advisors -= 1
 tags: sr_rm_advisor
 go-to: rm_main
 
-Kerensky is no longer an advisor. The Right-SRs are not pleased.
+케렌스키가 고문직에서 물러났습니다. 우익 사회혁명당원들이 강한 불만을 표출합니다.
 
 @remove_avksentiev
-title: Remove Avksentiev
+title: 아브크센티예프를 해임한다
 view-if: avksentiev_advisor = 1
 choose-if: right_sr_strength < 50
-unavailable-subtitle: The Right-SR faction is too strong.
+unavailable-subtitle: 우익 파벌의 세력이 너무 강력하여 해임할 수 없습니다.
 on-arrival: avksentiev_advisor = 0; right_sr_dissent += 10; sr_n_advisors -= 1
 tags: sr_rm_advisor
 go-to: rm_main
 
-Avksentiev is no longer an advisor. The Right-SRs are not pleased.
+아브크센티예프가 고문직에서 물러났습니다. 우익 사회혁명당원들이 강한 불만을 표출합니다.
 
 @remove_zenzinov
-title: Remove Zenzinov
+title: 젠지노프를 해임한다
 view-if: zenzinov_advisor = 1
 on-arrival: zenzinov_advisor = 0; right_sr_dissent += 5; sr_n_advisors -= 1
 tags: sr_rm_advisor
 go-to: rm_main
 
-Zenzinov is no longer an advisor. The Right-SRs are not pleased.
+젠지노프가 고문직에서 물러났습니다. 우익 사회혁명당원들이 불만을 표출합니다.
 
 @remove_savinkov
-title: Remove Savinkov
+title: 사빈코프를 해임한다
 view-if: savinkov_advisor = 1
 on-arrival: savinkov_advisor = 0; right_sr_dissent += 5; sr_n_advisors -= 1
 tags: sr_rm_advisor
 go-to: rm_main
 
-Savinkov is no longer an advisor. The Right-SRs are not pleased.
+사빈코프가 고문직에서 물러났습니다. 우익 사회혁명당원들이 불만을 표출합니다.
 
 @remove_breshkovskaya
-title: Remove Breshkovskaya
+title: 브레슈코프스카야를 해임한다
 view-if: breshkovskaya_advisor = 1
 on-arrival: breshkovskaya_advisor = 0; right_sr_dissent += 5; sr_n_advisors -= 1
 tags: sr_rm_advisor
 go-to: rm_main
 
-Breshkovskaya is no longer an advisor. The Right-SRs are not pleased.
+브레슈코프스카야가 고문직에서 물러났습니다. 우익 사회혁명당원들이 불만을 표출합니다.
 
 
 @remove_spiridonova
-title: Remove Spiridonova
+title: 스피리도노바를 해임한다
 view-if: spiridonova_advisor = 1
 choose-if: left_sr_strength < 50
-unavailable-subtitle: The Internationalist faction is too strong.
+unavailable-subtitle: 국제주의 파벌의 세력이 너무 강력하여 해임할 수 없습니다.
 on-arrival: spiridonova_advisor = 0; left_sr_dissent += 10; sr_n_advisors -= 1
 tags: sr_rm_advisor
 go-to: rm_main
 
-Spiridonova is no longer an advisor. The Left-SRs are not pleased.
+스피리도노바가 고문직에서 물러났습니다. 좌익 사회혁명당원들이 강한 불만을 표출합니다.
 
 @remove_kamkov
-title: Remove Kamkov
+title: 캄코프를 해임한다
 view-if: kamkov_advisor = 1
 on-arrival: kamkov_advisor = 0; left_sr_dissent += 5; sr_n_advisors -= 1
 tags: sr_rm_advisor
 go-to: rm_main
 
-Kamkov is no longer an advisor. The Left-SRs are not pleased.
+캄코프가 고문직에서 물러났습니다. 좌익 사회혁명당원들이 불만을 표출합니다.
 
 @remove_natanson
-title: Remove Natanson
+title: 나탄손을 해임한다
 view-if: natanson_advisor = 1
 on-arrival: natanson_advisor = 0; left_sr_dissent += 5; sr_n_advisors -= 1
 tags: sr_rm_advisor
 go-to: rm_main
 
-Natanson is no longer an advisor. The Left-SRs are not pleased.
+나탄손이 고문직에서 물러났습니다. 좌익 사회혁명당원들이 불만을 표출합니다.
 
 @remove_chernov
-title: Remove Chernov
+title: 체르노프를 해임한다
 view-if: chernov_advisor = 1
 choose-if: 1 = 0
-unavailable-subtitle: We cannot simply remove Chernov!
+unavailable-subtitle: 체르노프를 해임하는 것은 불가능합니다!
 on-arrival: chernov_advisor = 0; right_sr_dissent += 10; sr_n_advisors -= 1
 tags: sr_rm_advisor
 go-to: rm_main
 
-Chernov is no longer an advisor.
+체르노프가 고문직에서 물러났습니다.
 
 @remove_kondratiev
-title: Remove Kondratiev
+title: 콘드라티예프를 해임한다
 view-if: kondratiev_advisor = 1
 on-arrival: kondratiev_advisor = 0; right_sr_dissent += 10; sr_n_advisors -= 1
 tags: sr_rm_advisor
 go-to: rm_main
 
-Kondratiev is no longer an advisor. The Right-SRs are not pleased.
+콘드라티예프가 고문직에서 물러났습니다. 우익 사회혁명당원들이 강한 불만을 표출합니다
 

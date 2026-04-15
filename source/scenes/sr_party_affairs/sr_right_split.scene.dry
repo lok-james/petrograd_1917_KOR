@@ -1,4 +1,4 @@
-title: Right-SR Split
+title: 사회혁명당 우파 분당
 view-if: right_sr_dissent > sr_split_threshold
 max-visits: 1
 on-arrival: {!
@@ -111,8 +111,8 @@ if (Q.savinkov_advisor) {
 }
 !}
 
-The Right-SRs are splitting to form a new party. Right-SR leaders have resigned from the party's leadership, and their supporters will follow them. [? if sr_drop_gov: Most of the SR-affiliated ministers in the Provisional Government are no longer affiliated with the party. ?]
+우익 사회혁명당원들이 탈당하여 신당을 창당하고 있습니다. 사회혁명당 우파 지도자들이 당직을 사임했으며, 지지자들도 그들을 따라 당을 떠나고 있습니다. [? if sr_drop_gov: 임시정부 내 사회혁명당 출신 장관들 대다수가 더 이상 당적을 유지하지 않게 되었습니다. ?]
 
-This will result in a new election for the Petrograd Soviet leadership.
+이로 인해 페트로그라드 소비에트 지도부 선출을 위한 재선거가 실시될 것입니다.
 
-- @soviet_leadership_election: Conduct the Soviet leadership election.
+- @soviet_leadership_election: 소비에트 지도부 선거를 실시한다.

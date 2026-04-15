@@ -1,4 +1,4 @@
-title: Party Disunity
+title: 당내 분열
 new-page: true
 view-if: sr_party_disunity_timer <= 0 and (sr_dissent >= 0.3 or ((left_sr_dissent > 30 and not left_sr_split) or (right_sr_dissent > 30 and not right_sr_split)))
 on-arrival: sr_party_disunity_timer += 3; week_actions += 1
@@ -7,13 +7,13 @@ is-card: true
 card-image: img/soviet_leaders.jpg
 tags: sr_party
 
-= Party Disunity
+= 당내 분열
 
-The Socialist-Revolutionary Party is being torn apart by internal dissent. Upset at the leadership and general direction of the party, factions are openly discussing splitting or purging rivals. This hampers the effectiveness of all of our policies.
+사회혁명당이 내부 계파 갈등으로 몸살을 앓고 있습니다. 지도부의 결정과 당의 노선에 불만을 품은 파벌들이 공개적으로 분당이나 경쟁 파벌 숙청을 거론하고 있습니다. 이러한 내분은 당 정책의 집행력을 심각하게 약화시키고 있습니다.
 
-[? if left_sr_dissent > 30 : The Left-SRs are upset at the direction of the party, arguing that it is too right-wing and pro-war, and too cozy with the liberals. ?]
+[? if left_sr_dissent > 30 : 좌익 사회혁명당원들은 당이 지나치게 우경화되어 전쟁을 옹호하고 자유주의 세력과 결탁하고 있다며 분개하고 있습니다. ?]
 
-[? if right_sr_dissent > 30 : The Right-SRs are upset at the direction of the party, arguing that it is too radical. ?]
+[? if right_sr_dissent > 30 : 우익 사회혁명당원들은 당의 노선이 지나치게 급진적이라며 우려를 표하고 있습니다. ?]
 
 - @party_discipline
 - @concessions_left_srs
@@ -24,46 +24,46 @@ The Socialist-Revolutionary Party is being torn apart by internal dissent. Upset
 - @easy_discard
 
 @party_discipline
-title: Enforce party discipline.
+title: 당의 규율을 강화한다.
 on-arrival: left_sr_dissent -= sr_discipline_change; right_sr_dissent -= sr_discipline_change; workers_sr -= 4; soldiers_sr -= 4
 
-Enforcing party discipline reduces dissent, but it leads to demoralization among our base.
+강력한 당 규율 확립을 통해 내분을 억제했으나, 이는 지지 기반의 사기 저하로 이어졌습니다.
 
 @concessions_left_srs
-title: Give concessions to the Left-SRs.
+title: 사회혁명당 좌파 파벌의 요구를 수용한다.
 view-if: left_sr_dissent > 30 and not left_sr_split
 on-arrival: left_sr_dissent -= 6; right_sr_dissent += 6; left_sr_strength += sr_support_change/2
 
-We have responded by adopting more Left-SR positions. The right wing is somewhat displeased.
+사회혁명당 좌파의 주장을 대폭 수용하는 방향으로 선회했습니다. 이에 우파 파벌이 상당한 불만을 드러내고 있습니다.
 
 
 @concessions_right_srs
-title: Give concessions to the Right-SRs.
+title: 사회혁명당 우파 파벌의 요구를 수용한다.
 view-if: right_sr_dissent > 30 and not right_sr_split
 on-arrival: right_sr_dissent -= 6; left_sr_dissent += 6; right_sr_strength += sr_support_change/2
 
-We have responded by adopting more Right-SR positions. The left wing are somewhat displeased.
+사회혁명당 우파의 주장을 대폭 수용하는 방향으로 선회했습니다. 이에 좌파 파벌이 상당한 불만을 드러내고 있습니다.
 
 
 @expel_left_srs
-title: Expel the Left-SRs.
+title: 사회혁명당 좌파를 제명한다.
 view-if: left_sr_dissent > 40 and not left_sr_split
 choose-if: left_sr_strength <= right_sr_strength
-unavailable-subtitle: The Left-SRs are too strong.
+unavailable-subtitle: 좌파의 세력이 너무 강력하여 제명이 불가능합니다.
 on-arrival: left_sr_split = 1;
 go-to: sr_left_split
 
 @expel_right_srs
-title: Expel the Right-SRs.
+title: 사회혁명당 우파를 제명한다.
 view-if: right_sr_dissent > 30 and not right_sr_split
 choose-if: right_sr_strength <= left_sr_strength
-unavailable-subtitle: The Right-SRs are too strong.
+unavailable-subtitle: 우파의 세력이 너무 강력하여 제명이 불가능합니다.
 on-arrival: right_sr_split = 1;
 go-to: sr_right_split
 
 
 @do_nothing
-title: Let the factions argue with themselves.
+title: 파벌들이 스스로 해결하도록 방치한다.
 on-arrival: right_sr_dissent += 4; left_sr_dissent += 4;
 
-Let the factions bicker; perhaps dissent is healthy for the party.
+파벌 간의 다툼을 그대로 내버려 둡니다. 어쩌면 이러한 논쟁이 당의 민주적 건강함을 증명하는 것일지도 모릅니다.

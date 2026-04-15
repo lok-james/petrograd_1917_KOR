@@ -1,17 +1,17 @@
-title: Rural Policy
+title: 농촌 정책
 choose-if: sr_rural_policy_timer = 0
 on-arrival: sr_rural_policy_timer += 4
-unavailable-subtitle: It is too early to change this policy again.
+unavailable-subtitle: I정책을 다시 변경하기에는 시기가 너무 이릅니다.
 
-= Rural Policy
+= 농촌 정책
 
-There are two components of our land reform policy: how we acquire land to redistribute, and how we redistribute that land.
+당의 토지 개혁 정책은 크게 두 가지 축으로 구성됩니다. 재분배할 토지를 어떻게 확보할 것인지, 그리고 확보한 토지를 어떤 방식으로 분배할 것인지에 관한 문제입니다.
 
-Historically, the SRs have supported uncompensated redistribution, but that may change in light of the present hunger crisis and our coalition with liberal elements. In terms of redistribution, the SRs historically supported giving land to peasants based on need and labor ability, with each household being allocated the amount it can farm without hired labor.
+전통적으로 사회혁명당은 무상 몰수 및 무상 분배를 지지해 왔으나, 현재의 극심한 식량 위기와 자유주의 세력과의 연대 관계를 고려할 때 노선의 변화가 필요할 수 있습니다. 분배 방식에 있어서는, 각 가구가 고용 노동 없이 자력으로 경작할 수 있는 면적을 기준으로 필요와 노동 능력에 따라 토지를 배분하는 방식을 지지해 왔습니다.
 
-Current land policy: [+ sr_land_policy : land_policy +]
+현재 토지 확보 정책: [+ sr_land_policy : land_policy +]
 
-Current agricultural policy: [+ sr_agricultural_policy : agricultural_policy +]
+현재 토지 분배 정책: [+ sr_agricultural_policy : agricultural_policy +]
 
 - @voluntary_sales
 - @compensated
@@ -21,55 +21,55 @@ Current agricultural policy: [+ sr_agricultural_policy : agricultural_policy +]
 - @collective_farming
 
 @voluntary_sales
-title: Support voluntary sales of land.
-subtitle: Land will not be confiscated at all, but only sold voluntarily for redistribution. [? if sr_land_policy = 0 : This is our current policy. ?]
-unavailable-subtitle: The party's left and center are too strong to support this policy.
+title: 토지의 자발적 매매를 지지한다.
+subtitle: 토지를 강제로 몰수하지 않으며, 오직 자발적으로 매물로 나온 토지만을 매입하여 재분배합니다. [? if sr_land_policy = 0 : 현재 당의 공식 정책입니다. ?]
+unavailable-subtitle: 당내 좌파와 중앙파의 세력이 너무 강하여 이 정책을 채택할 수 없습니다.
 view-if: sr_land_policy <= 1
 choose-if: right_sr_strength > left_sr_strength + center_sr_strength
 on-arrival: left_sr_dissent += 5 if sr_land_policy >= 1; right_sr_strength += 5 if sr_land_policy >= 1; peasants_sr -= 5 if sr_land_policy >= 1; sr_k_relation += 6*(1-sr_dissent) if sr_land_policy >= 1; sr_land_policy = 0
 
-We have abandoned the platform of land seizures, and moved to a model of fully voluntary land sales. This is anathema to our peasant base and the Left-SRs, but it pleases the liberal Kadets..
+토지 강제 점거 강령을 폐기하고 전면적인 자발적 매매 모델로 선회했습니다. 이는 농민 지지층과 좌익 사회혁명당원들에게는 용납될 수 없는 배신행위이나, 자유주의 성향의 입헌민주당(카데트)은 이를 크게 반깁니다.
 
 @compensated
-title: Support compensated seizures.
-subtitle: We should compensate landowners for their seized property. [? if sr_land_policy = 1: This is our current policy. ?]
+title: 유상 몰수를 지지한다.
+subtitle: 몰수 대상 토지 소유주들에게 적절한 보상을 지급해야 합니다. [? if sr_land_policy = 1: 현재 당의 공식 정책입니다. ?]
 on-arrival: left_sr_dissent += 5 if sr_land_policy > 1; right_sr_strength += 5 if sr_land_policy > 1; peasants_sr -= 5 if sr_land_policy > 1; sr_k_relation += 6*(1-sr_dissent) if sr_land_policy > 1; sr_land_policy = 1
 
-We have adopted a policy of supporting compensated land seizures. The Left-SRs and our peasant supporters disagree with this policy, preferring uncompensated seizures from large landlords.
+지주들에게 보상금을 지급하고 토지를 몰수하는 정책을 채택했습니다. 좌익 사회혁명당원들과 농민 지지자들은 대지주들에 대한 무상 몰수를 주장하며 이 결정에 반대하고 있습니다.
 
 
 @uncompensated
-title: Support uncompensated land seizures.
-subtitle: We should not compensate landowners for their seized property. [? if sr_land_policy = 2: This is our current policy. ?]
+title: 무상 몰수를 지지한다.
+subtitle: 지주들에게 별도의 보상을 지급하지 않고 토지를 몰수해야 합니다. [? if sr_land_policy = 2: 현재 당의 공식 정책입니다. ?]
 on-arrival: sr_land_policy = 2
 
-We have adopted a policy of uncompensated land seizures. This is the historical *narodnik* and Socialist-Revolutionary position, but now that we have responsibility for government, it may be time to move to a more moderate position.
+무상 몰수 정책을 채택했습니다. 이는 전통적인 나로드니키와 사회혁명당의 정통 입장이지만, 국정을 책임지는 집권 여당으로서 이제는 보다 온건한 입장으로 선회해야 할 때일지도 모릅니다.
 
 @voluntary
-title: Support voluntary privatization of land.
-subtitle: Farmers should be able to buy and sell land and leave the commune. [? if sr_agricultural_policy == 1: This is our current policy. ?]
-unavailable-subtitle: The Left-SRs are too strong, and will not support this policy.
+title: 토지의 자발적 사유화를 지지한다.
+subtitle: 농민 개인이 토지를 자유롭게 매매할 수 있어야 하며, 농촌 공동체로부터 탈퇴할 권리를 보장해야 합니다. [? if sr_agricultural_policy == 1: 현재 당의 공식 정책입니다. ?]
+unavailable-subtitle: 좌익 사회혁명당원들의 세력이 너무 강력하여 이 정책을 지지하지 않을 것입니다.
 choose-if: right_sr_strength > left_sr_strength + center_sr_strength
 on-arrival: right_sr_strength += 5 if sr_agricultural_policy > 1; left_sr_dissent += 5 if sr_agricultural_policy > 1;  sr_agricultural_policy = 1
 
-In a continuation of Stolypin's land reform program, the traditional rural communes will be broken up, and farmers will be allowed to buy and sell land.
+스톨리핀의 토지 개혁 노선을 계승하여 전통적인 농촌 공동체를 해체하고 농민의 토지 소유 및 매매를 허용합니다.
 
-This is a shift towards rural capitalism and away from the historical SR position. The peasantry tend to prefer a more egalitarian policy.
+이는 농촌 자본주의로의 이행을 의미하며 사회혁명당의 전통적 가치관과는 거리가 먼 결정입니다. 대다수 농민은 보다 평등주의적인 분배 정책을 선호합니다.
 
 
 @communes
-title: Support redistributing land based on household labor and need.
-subtitle: Land should be socialized and redistributed to the peasants. [? if sr_agricultural_policy = 2 : This is our current policy. ?]
+title: 가구별 노동력과 필요에 따른 토지 재분배를 지지한다.
+subtitle: 토지를 사회화하여 실제 경작하는 농민들에게 재분배해야 합니다. [? if sr_agricultural_policy = 2 : 현재 당의 공식 정책입니다. ?]
 on-arrival: sr_agricultural_policy = 2
 
-The SR land program has historically called for the socialization of land. Land should not be private property to be bought and sold, but instead peasant households should be allocated as much as they are able to farm.
+사회혁명당은 창당 이래 토지의 사회화를 주장해 왔습니다. 토지는 사고파는 사유 재산이 되어서는 안 되며, 각 농민 가구가 자력으로 경작할 수 있는 만큼만 국가로부터 할당받아 사용해야 한다는 것이 우리의 확고한 원칙입니다.
 
 
 @collective_farming
-title: Support collective farming.
-subtitle: We should support 
+title: 집단 농장 체제를 지지한다.
+subtitle: 우리는 지지해야 합니다 
 choose-if: left_sr_strength > right_sr_strength
-unavailable-subtitle: The Right-SRs are too strong, and will not support this policy.
+unavailable-subtitle: 우익 사회혁명당원들의 세력이 너무 강력하여 이 정책을 지지하지 않을 것입니다.
 
 # land redistribution -> privatization
 # land redistribution -> communization
