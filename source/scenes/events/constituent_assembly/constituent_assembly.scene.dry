@@ -1,5 +1,5 @@
-title: The Constituent Assembly
-subtitle: Finally, the new Russian government can begin to form...
+title: 제헌 의회 소집
+subtitle: 마침내 새로운 러시아 정부가 그 기틀을 갖추기 시작합니다...
 new-page: true
 view-if: ca_election_held = 1 and constituent_assembly_timer = 0 and ca_held = 0
 on-arrival: {!
@@ -11,113 +11,113 @@ on-display: {!
 // do the graphs
 var data = [
 {"id": "b",
- "legend": "Bolshevik",
- "name": "Bolshevik",
+ "legend": "볼셰비키",
+ "name": "볼셰비키",
  "seats": Q.b_r},
 ];
 if (Q.internationalist_assembly_votes_dec) {
     data.push({
             "id": "internationalist",
-            "legend": "Menshevik-Internationalist",
-            "name": "Menshevik-Internationalist",
+            "legend": "멘셰비키-국제주의파",
+            "name": "멘셰비키-국제주의파",
             "seats": Q.internationalist_r
             });
 }
 data.push({
     "id": "m",
-    "legend": "Menshevik",
-    "name": "Menshevik",
+    "legend": "멘셰비키",
+    "name": "멘셰비키",
     "seats": Q.m_r
 });
 if (Q.defensist_assembly_votes_dec) {
     data.push({
             "id": "defensist",
-            "legend": "Menshevik-Defensist",
-            "name": "Menshevik-Defensist",
+            "legend": "멘셰비키-방위주의파",
+            "name": "멘셰비키-방위주의파",
             "seats": Q.defensist_r
             });
 }
 if (Q.left_sr_assembly_votes_dec) {
     data.push({
             "id": "left_sr",
-            "legend": "Left-SR",
-            "name": "Left-SR",
+            "legend": "사회혁명당 좌파",
+            "name": "사회혁명당 좌파",
             "seats": Q.left_sr_r
             });
 }
 data.push({
     "id": "sr",
-    "legend": "SR",
-    "name": "SR",
+    "legend": "사회혁명당",
+    "name": "사회혁명당",
     "seats": Q.sr_r
 });
 if (Q.right_sr_assembly_votes_dec) {
     data.push({
             "id": "right_sr",
-            "legend": "Right-SR",
-            "name": "Right-SR",
+            "legend": "사회혁명당 우파",
+            "name": "사회혁명당 우파",
             "seats": Q.right_sr_r
             });
 }
 data = data.concat([
 {
   "id": "ukrainian_sr",
-  "legend": "Ukrainian SR",
-  "name": "Ukrainian SR",
+  "legend": "우크라이나 사회혁명당",
+  "name": "우크라이나 사회혁명당",
   "seats": Q.ukrainian_sr_r
 },
 {
   "id": "popular_socialist",
-  "legend": "Popular Socialist",
-  "name": "Popular Socialist",
+  "legend": "인민사회주의자",
+  "name": "인민사회주의자",
   "seats": Q.popular_socialist_r
 },
 {
   "id": "muslim_socialist",
-  "legend": "Muslim Socialist",
-  "name": "Muslim Socialist",
+  "legend": "무슬림 사회주의자",
+  "name": "무슬림 사회주의자",
   "seats": Q.muslim_socialists_r
 },
 {
   "id": "dashnak",
-  "legend": "Dashnak",
-  "name": "Dashnak",
+  "legend": "다슈나크",
+  "name": "다슈나크",
   "seats": Q.dashnak_r
 },
 {
   "id": "jewish_national",
-  "legend": "Jewish National",
-  "name": "Jewish National",
+  "legend": "유대 민족 명부",
+  "name": "유대 민족 명부",
   "seats": Q.jewish_national_r
 },
 {
   "id": "muslim_national",
-  "legend": "Muslim National",
-  "name": "Muslim National",
+  "legend": "무슬림 민족 정당",
+  "name": "무슬림 민족 정당",
   "seats": Q.muslim_national_r
 },
 {
   "id": "k",
-  "legend": "Kadet",
-  "name": "Kadet",
+  "legend": "카데트 (입헌민주당)",
+  "name": "카데트 (입헌민주당)",
   "seats": Q.k_r
 },
 {
   "id": "other",
-  "legend": "Others",
-  "name": "Others",
+  "legend": "기타",
+  "name": "기타",
   "seats": Q.other_r
 },
 {
   "id": "conservative",
-  "legend": "Conservative",
-  "name": "Conservative",
+  "legend": "보수파",
+  "name": "보수파",
   "seats": Q.conservative_r
 },
 {
   "id": "cossack",
-  "legend": "Cossack",
-  "name": "Cossack",
+  "legend": "코사크",
+  "name": "코사크",
   "seats": Q.cossacks_r
 },
 ]);
@@ -139,51 +139,51 @@ if (window && d3) {
 }
 !}
 
-= The Constituent Assembly
+= 제헌 의회
 
 {!<svg id="constituent_assembly" style="width: 500px; height: 250px;"> </svg>!}
 
-Finally, the long-awaited Constituent Assembly can be held! Representatives from all across Russia will write a new constitution, and decide crucial questions regarding the organization of the new society and economy.
+마침내 오랫동안 고대하던 제헌 의회가 소집되었습니다! 러시아 전역에서 모인 대표들은 새로운 헌법을 제정하고, 새로운 사회와 경제 체제 구축을 위한 중대한 사안들을 결정할 것입니다.
 
-However, this is a different chapter of Russia's history. The days of the Revolution are behind us. The future is yet to be determined.
+하지만 이것은 러시아 역사의 새로운 장입니다. 혁명의 격동기는 이제 과거가 되었습니다. 미래는 아직 그 누구도 알 수 없습니다.
 
-- @game_over
+- @game_over: 게임 오버
 
-# TODO: disable for now - we will decide this stuff later!!!
+# TODO: 현재는 비활성화됨 - 추후 이 사안들을 결정할 수 있게 될 것입니다!!!
 
 @form_assembly
 
 
-# step 1: forming a governing coalition
+# 1단계: 통치 연합 형성
 
-The goal of the Constituent Assembly is to write a new constitution for Russia. First, there must be the election of a new speaker.
+제헌 의회의 목표는 러시아의 새로운 헌법을 제정하는 것입니다. 우선 새로운 의장을 선출해야 합니다.
 
-Possible coalitions:
+가능한 연합 구성:
 
-# defensists only
-Moderate socialist coalition (Mensheviks + SRs + Minority Socialists):
+# 방어주의파 전용
+온건 사회주의 연합 (멘셰비키 + 사회혁명당 + 소수 사회주의 정당):
 
-Internationalist socialist coalition:
+국제주의 사회주의 연합:
 
-Democratic coalition (Kadets + Mensheviks + SRs + Minority Socialists + Minority Nationalists):
+민주주의 연합 (카데트 + 멘셰비키 + 사회혁명당 + 소수 사회주의 정당 + 소수 민족 정당):
 
-Bourgeois-Nationalist coalition (Kadets + Minority Nationalists):
+부르주아-민족주의 연합 (카데트 + 소수 민족 정당):
 
-Who should we support as the speaker of the Constituent Assembly?
+제헌 의회 의장으로 누구를 지지해야 할까요?
 
-# each party has a default speaker choice.
+# 각 정당은 기본적으로 선호하는 의장 후보가 있습니다.
 
-# then we should form a new government.
+# 그 후 새 정부를 구성해야 합니다.
 
 @chernov
-title: Viktor Chernov (SR)
+title: 빅토르 체르노프 (사회혁명당)
 
 @tsereteli
-title: Irakli Tsereteli (Menshevik)
+title: 이라클리 체레텔리 (멘셰비키)
 
 
 @disband
-title: Disband this Constituent Assembly!
-subtitle: The Soviets are the true organs of democracy.
+title: 제헌 의회를 해산하라!
+subtitle: 소비에트야말로 진정한 민주주의 기관이다.
 view-if: ((player_party = "b" or (player_party = "sr")) and government_form = 1)
 

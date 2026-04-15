@@ -1,5 +1,5 @@
-title: Constituent Assembly Elections
-subtitle: Finally, the elections are held, and the results are arriving...
+title: 제헌 의회 선거
+subtitle: 마침내 선거가 치러졌고, 결과가 속속 도착하고 있습니다...
 new-page: true
 view-if: ((month = next_election_month and week >= next_election_week) or month > next_election_month) and ca_scheduled = 1
 on-arrival: ca_election_held = 1
@@ -7,11 +7,11 @@ set-jump: ca_election.election_results
 max-visits: 1
 tags: event
 
-= Constituent Assembly Elections
+= 제헌 의회 선거
 
-Finally, the long-awaited Constituent Assembly elections are being held!
+마침내 오랫동안 기다려온 제헌 의회 선거가 실시됩니다!
 
-- @election_algorithm: May we do our best...
+- @election_algorithm: 우리가 최선을 다했길...
 
 @election_results
 on-arrival: {!
@@ -84,113 +84,113 @@ on-display: {!
 // do the graphs
 var data = [
 {"id": "b",
- "legend": "Bolshevik",
- "name": "Bolshevik",
+ "legend": "볼셰비키",
+ "name": "볼셰비키",
  "seats": Q.b_r},
 ];
 if (Q.internationalist_assembly_votes_dec) {
     data.push({
             "id": "internationalist",
-            "legend": "Menshevik-Internationalist",
-            "name": "Menshevik-Internationalist",
+            "legend": "멘셰비키-국제주의파",
+            "name": "멘셰비키-국제주의파",
             "seats": Q.internationalist_r
             });
 }
 data.push({
     "id": "m",
-    "legend": "Menshevik",
-    "name": "Menshevik",
+    "legend": "멘셰비키",
+    "name": "멘셰비키",
     "seats": Q.m_r
 });
 if (Q.defensist_assembly_votes_dec) {
     data.push({
             "id": "defensist",
-            "legend": "Menshevik-Defensist",
-            "name": "Menshevik-Defensist",
+            "legend": "멘셰비키-방위주의파",
+            "name": "멘셰비키-방위주의파",
             "seats": Q.defensist_r
             });
 }
 if (Q.left_sr_assembly_votes_dec) {
     data.push({
             "id": "left_sr",
-            "legend": "Left-SR",
-            "name": "Left-SR",
+            "legend": "사회혁명당 좌파",
+            "name": "사회혁명당 좌파",
             "seats": Q.left_sr_r
             });
 }
 data.push({
     "id": "sr",
-    "legend": "SR",
-    "name": "SR",
+    "legend": "사회혁명당",
+    "name": "사회혁명당",
     "seats": Q.sr_r
 });
 if (Q.right_sr_assembly_votes_dec) {
     data.push({
             "id": "right_sr",
-            "legend": "Right-SR",
-            "name": "Right-SR",
+            "legend": "사회혁명당 우파",
+            "name": "사회혁명당 우파",
             "seats": Q.right_sr_r
             });
 }
 data = data.concat([
 {
   "id": "ukrainian_sr",
-  "legend": "Ukrainian SR",
-  "name": "Ukrainian SR",
+  "legend": "우크라이나 사회혁명당",
+  "name": "우크라이나 사회혁명당",
   "seats": Q.ukrainian_sr_r
 },
 {
   "id": "popular_socialist",
-  "legend": "Popular Socialist",
-  "name": "Popular Socialist",
+  "legend": "인민사회주의자",
+  "name": "인민사회주의자",
   "seats": Q.popular_socialist_r
 },
 {
   "id": "muslim_socialist",
-  "legend": "Muslim Socialist",
-  "name": "Muslim Socialist",
+  "legend": "무슬림 사회주의자",
+  "name": "무슬림 사회주의자",
   "seats": Q.muslim_socialists_r
 },
 {
   "id": "dashnak",
-  "legend": "Dashnak",
-  "name": "Dashnak",
+  "legend": "다슈나크",
+  "name": "다슈나크",
   "seats": Q.dashnak_r
 },
 {
   "id": "jewish_national",
-  "legend": "Jewish National",
-  "name": "Jewish National",
+  "legend": "유대 민족 명부",
+  "name": "유대 민족 명부",
   "seats": Q.jewish_national_r
 },
 {
   "id": "muslim_national",
-  "legend": "Muslim National",
-  "name": "Muslim National",
+  "legend": "무슬림 민족 정당",
+  "name": "무슬림 민족 정당",
   "seats": Q.muslim_national_r
 },
 {
   "id": "k",
-  "legend": "Kadet",
-  "name": "Kadet",
+  "legend": "카데트",
+  "name": "카데트",
   "seats": Q.k_r
 },
 {
   "id": "other",
-  "legend": "Others",
-  "name": "Others",
+  "legend": "기타",
+  "name": "기타",
   "seats": Q.other_r
 },
 {
   "id": "conservative",
-  "legend": "Conservative",
-  "name": "Conservative",
+  "legend": "보수파",
+  "name": "보수파",
   "seats": Q.conservative_r
 },
 {
   "id": "cossack",
-  "legend": "Cossack",
-  "name": "Cossack",
+  "legend": "코사크",
+  "name": "코사크",
   "seats": Q.cossacks_r
 },
 ]);
@@ -214,51 +214,51 @@ if (window && d3) {
 
 # Yes I know the distribution of seats was not at all proportional on a national level but let's pretend they are. Maybe sometime later we'll have all of the districts.
 
-= Constituent Assembly Results
+= 제헌 의회 결과
 
 {!<svg id="constituent_assembly" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td>Party</td><td>Vote share</td></tr>!}
+{!<tr><td>정당</td><td>득표율</td></tr>!}
 
-{!<tr><td><div class="box b"> </div> !} Bolsheviks: {!</td><td>!} [+ b_r_dec +]% {!</td>!}
+{!<tr><td><div class="box b"> </div> !} 볼셰비키: {!</td><td>!} [+ b_r_dec +]% {!</td>!}
 
-[? if internationalist_r_dec : {!<tr><td><div class="box internationalist"></div> Menshevik-Internationalists: </td><td>!} [+ internationalist_r_dec +]% {!</td>!} ?]
+[? if internationalist_r_dec : {!<tr><td><div class="box internationalist"></div> 멘셰비키-국제주의파: </td><td>!} [+ internationalist_r_dec +]% {!</td>!} ?]
 
-{!<tr><td><div class="box m"> </div> !} Mensheviks: {!</td><td>!} [+ m_r_dec +]% {!</td>!}
+{!<tr><td><div class="box m"> </div> !} 멘셰비키: {!</td><td>!} [+ m_r_dec +]% {!</td>!}
 
-[? if defensist_r_dec : {!<tr><td><div class="box defensist"></div> Menshevik-Defensists: </td><td>!} [+ defensist_r_dec +]% {!</td>!} ?]
+[? if defensist_r_dec : {!<tr><td><div class="box defensist"></div> 멘셰비키-방위주의파: </td><td>!} [+ defensist_r_dec +]% {!</td>!} ?]
 
-[? if left_sr_r_dec : {!<tr><td><div class="box left_sr"></div> !}Left-SRs: {!</td><td>!} [+ left_sr_r_dec +]% {!</td>!} ?]
+[? if left_sr_r_dec : {!<tr><td><div class="box left_sr"></div> !} 사회혁명당 좌파: {!</td><td>!} [+ left_sr_r_dec +]% {!</td>!} ?]
 
-{!<tr><td><div class="box sr"> </div> !} SRs: {!</td><td>!} [+ sr_r_dec +]% {!</td>!}
+{!<tr><td><div class="box sr"> </div> !} 사회혁명당: {!</td><td>!} [+ sr_r_dec +]% {!</td>!}
 
-[? if right_sr_r_dec : {!<tr><td><div class="box right_sr"></div> !}Right-SRs: {!</td><td>!} [+ right_sr_r_dec +]% {!</td>!} ?]
+[? if right_sr_r_dec : {!<tr><td><div class="box right_sr"></div> !} 사회혁명당 우파: {!</td><td>!} [+ right_sr_r_dec +]% {!</td>!} ?]
 
-{!<tr><td><div class="box ukrainian_sr"> </div> !} Ukrainian SRs: {!</td><td>!} [+ ukrainian_sr_r_dec +]% {!</td>!}
+{!<tr><td><div class="box ukrainian_sr"> </div> !} 우크라이나 사회혁명당: {!</td><td>!} [+ ukrainian_sr_r_dec +]% {!</td>!}
 
-{!<tr><td><div class="box popular_socialist"> </div> !} Popular Socialists: {!</td><td>!} [+ popular_socialist_r_dec +]% {!</td>!}
+{!<tr><td><div class="box popular_socialist"> </div> !} 인민사회주의자: {!</td><td>!} [+ popular_socialist_r_dec +]% {!</td>!}
 
-{!<tr><td><div class="box muslim_socialist"> </div> !} Muslim Socialists: {!</td><td>!} [+ muslim_socialists_r_dec +]% {!</td>!}
+{!<tr><td><div class="box muslim_socialist"> </div> !} 무슬림 사회주의자: {!</td><td>!} [+ muslim_socialists_r_dec +]% {!</td>!}
 
-{!<tr><td><div class="box dashnak"> </div> !} Armenian Revolutionary Federation (Dashnaks): {!</td><td>!} [+ dashnak_r_dec +]% {!</td>!}
+{!<tr><td><div class="box dashnak"> </div> !} 아르메니아 혁명 연맹 (다슈나크): {!</td><td>!} [+ dashnak_r_dec +]% {!</td>!}
 
-{!<tr><td><div class="box jewish_national"> </div> !} Jewish National List: {!</td><td>!} [+ jewish_national_r_dec +]% {!</td>!}
+{!<tr><td><div class="box jewish_national"> </div> !} 유대 민족 명부: {!</td><td>!} [+ jewish_national_r_dec +]% {!</td>!}
 
-{!<tr><td><div class="box muslim_national"> </div> !} Muslim national parties (Alash, Musavat, others): {!</td><td>!} [+ muslim_national_r_dec +]% {!</td>!}
+{!<tr><td><div class="box muslim_national"> </div> !} 무슬림 민족 정당 (알라시, 무사바트 등): {!</td><td>!} [+ muslim_national_r_dec +]% {!</td>!}
 
-{!<tr><td><div class="box k"> </div> !} Kadets: {!</td><td>!} [+ k_r_dec +]% {!</td>!}
+{!<tr><td><div class="box k"> </div> !} 카데트 (입헌민주당): {!</td><td>!} [+ k_r_dec +]% {!</td>!}
 
-{!<tr><td><div class="box other"> </div> !} Others: {!</td><td>!} [+ other_r_dec +]% {!</td>!}
+{!<tr><td><div class="box other"> </div> !} 기타: {!</td><td>!} [+ other_r_dec +]% {!</td>!}
 
-{!<tr><td><div class="box conservative"> </div> !} Conservatives: {!</td><td>!} [+ conservative_r_dec +]% {!</td>!}
+{!<tr><td><div class="box conservative"> </div> !} 보수파: {!</td><td>!} [+ conservative_r_dec +]% {!</td>!}
 
-{!<tr><td><div class="box cossack"> </div> !} Cossacks: {!</td><td>!} [+ cossacks_r_dec +]% {!</td>!}
+{!<tr><td><div class="box cossack"> </div> !} 코사크: {!</td><td>!} [+ cossacks_r_dec +]% {!</td>!}
 {!</table>!}
 
-Now, the newly elected members of the Constituent Assembly must travel from the far reaches of the country to gather in Petrograd. In two months, the Constituent Assembly will finally convene in order to write a new constitution for Russia, and begin a new government.
+이제 새로 선출된 제헌 의회 의원들은 페트로그라드에 집결하기 위해 광활한 러시아 전역에서 길을 떠나야 합니다. 마침내 두 달 후, 제헌 의회는 러시아의 새로운 헌법을 제정하고 새 정부를 출범시키기 위해 소집될 것입니다.
 
-- @root: The Constituent Assembly will convene in two months.
+- @root: 제헌 의회는 두 달 후에 소집될 것이다.
 
-# - @game_over: Game Over
+# - @game_over: 게임 오버
 
