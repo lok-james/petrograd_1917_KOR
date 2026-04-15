@@ -1,4 +1,4 @@
-title: Soviet Food Policy
+title: 소비에트 식량 정책
 new-page: true
 view-if: food_soviet_timer = 0 and ((player_party = "b" and b_in_exco) or (player_party = "m" and m_in_exco) or (player_party = "sr" and sr_in_exco) or (player_party = "k" and kadet_in_exco)) and hunger >= 20
 on-arrival: week_actions += 1; food_soviet_timer += 3
@@ -6,15 +6,15 @@ tags: soviet
 is-card: true
 card-image: img/breadline.jpg
 
-= Food Policy
+= 식량 정책
 
-Hunger remains a major problem in the cities. The Provisional Government is unable or unwilling to fully deliver on the promises of bread; perhaps the Soviet could take control here?
+도시의 식량난은 여전히 심각한 문제입니다. 임시정부는 시민들에게 약속한 빵을 공급할 능력이 없거나 그럴 의지가 없어 보입니다. 아마도 소비에트가 직접 이 문제를 주도해야 할 때일지도 모릅니다.
 
-Urban food demand: [+ food_demand_urban +] million kg/year
+도시 식량 수요: [+ food_demand_urban +] 백만 kg/년
 
-Urban food supply: [+ food_supply_urban +] million kg/year
+도시 식량 공급: [+ food_supply_urban +] 백만 kg/년
 
-Food shortage: [+ hunger +]%
+식량 부족률: [+ hunger +]%
 
 # crack down on black markets
 # send teams to the countryside to acquire food
@@ -28,24 +28,24 @@ Food shortage: [+ hunger +]%
 - @cancel_advisor_action
 
 @crackdown
-title: Crack down on black markets.
+title: 암시장을 단속한다.
 on-arrival: workers_m += 3*(1-m_dissent)*soviet_efficacy if m_in_exco; workers_sr += 3*(1-sr_dissent)*soviet_efficacy if sr_in_exco; workers_b += 2*(1-b_dissent)*soviet_efficacy if b_in_exco
 
-Cracking down on black markets, hoarders, and profiteers is politically popular, but it does not actually substantially improve the food situation.
+암시장과 매점매석꾼, 폭리 취득자들을 단속하는 것은 정치적으로 대중의 호응을 얻기 좋으나, 실제 식량 수급 상황을 근본적으로 개선하지는 못합니다.
 
 @coops
-title: Work with the cooperatives to organize food acquisition and distribution.
-unavailable-subtitle: The Soviet does not have the efficacy to do this.
+title: 협동조합과 협력하여 식량 조달 및 분배 체계를 조직한다.
+unavailable-subtitle: 현재 소비에트의 행정 역량으로는 이 조치를 시행할 수 없습니다.
 choose-if: soviet_organization >= 1 or soviet_efficacy >= 0.6
 on-arrival: food_coops += 1; food_sold += 0.01; workers_m += 2*soviet_efficacy if m_in_exco; workers_sr += 2*soviet_efficacy if sr_in_exco; workers_b += 2*soviet_efficacy if b_in_exco
 
-We are working with the cooperatives to improve the food purchasing and distribution process.
+식량 구매 및 분배 과정을 개선하기 위해 여러 협동조합과 긴밀히 협력하고 있습니다.
 
 @acquire
-title: Send teams into the countryside to acquire food.
-subtitle: -1 resource
-unavailable-subtitle: [? if soviet_organization < 2 and soviet_efficacy < 0.7 : The Soviet does not have the efficacy to do this. ?][? if (player_party = "sr" and sr_resources < 1) or (player_party = "m" and m_resources < 1) or (player_party = "b" and b_resources < 1) : Not enough resources. ?]
+title: 식량 징발을 위해 농촌으로 파견대를 보낸다.
+subtitle: 자원 -1 소모
+unavailable-subtitle: [? if soviet_organization < 2 and soviet_efficacy < 0.7 : 현재 소비에트의 행정 역량으로는 이 조치를 시행할 수 없습니다. ?][? if (player_party = "sr" and sr_resources < 1) or (player_party = "m" and m_resources < 1) or (player_party = "b" and b_resources < 1) : 자원이 부족합니다. ?]
 choose-if: (soviet_organization >= 2 or soviet_efficacy >= 0.7) and ((player_party = "sr" and sr_resources >= 1) or (player_party = "m" and m_resources >= 1) or (player_party = "b" and b_resources >= 1))
 on-arrival: food_teams += 1; b_resources -= 1 if player_party = "b"; m_resources -= 1 if player_party = "m"; sr_resources -= 1 if player_party = "sr"; food_sold += 0.02*soviet_efficacy; workers_m += 4*soviet_efficacy if m_in_exco; workers_sr += 4*soviet_efficacy if sr_in_exco; workers_b += 4*soviet_efficacy if b_in_exco
 
-We have sent teams into the countryside to acquire food. These teams are received with hostility by the peasantry, leading to tensions between the Soviets and the countryside.
+식량 확보를 위해 농촌으로 징발 파견대를 보냈습니다. 그러나 이들은 농민들의 거센 적대감에 직면했으며, 이는 소비에트와 농촌 사회 사이의 심각한 갈등을 초래하고 있습니다.

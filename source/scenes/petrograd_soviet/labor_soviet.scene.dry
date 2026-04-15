@@ -1,4 +1,4 @@
-title: Soviet Labor Affairs
+title: 소비에트 노동 정책
 new-page: true
 view-if: labor_soviet_timer = 0 and ((player_party = "b" and b_in_exco) or (player_party = "m" and m_in_exco) or (player_party = "sr" and sr_in_exco) or (player_party = "k" and k_in_exco))
 on-arrival: week_actions += 1; labor_soviet_timer += 4
@@ -6,9 +6,9 @@ tags: soviet
 is-card: true
 card-image: img/industry.jpg
 
-= Labor Affairs
+= 노동 정책
 
-Workers across Petrograd and the cities of Russia are striking and forming ad-hoc workers' councils, calling for higher wages and control over management decisions. What should the Soviet policy be towards the workers?
+페트로그라드를 비롯한 러시아 전역의 도시에서 노동자들이 파업을 일으키고 자발적인 노동자 평의회를 구성하고 있습니다. 이들은 임금 인상과 경영권 참여를 강력히 요구하고 있습니다. 소비에트는 노동자들의 이러한 움직임에 어떻게 대응해야 합니까?
 
 # support higher wages
 # support councils, and individual decisions.
@@ -17,47 +17,47 @@ Workers across Petrograd and the cities of Russia are striking and forming ad-ho
 - @councils
 - @takeover
 - @back_to_work
-- @root: No action is needed.
+- @root: 추가적인 조치가 필요하지 않다.
 - @easy_discard
 - @cancel_advisor_action
 
 @conditions
-title: Support the workers' demands for higher wages and improved working conditions.
+title: 임금 인상 및 노동 조건 개선 요구를 지지한다.
 on-arrival: monthly_inflation += 0.2; capital_flight_progress += 1; workers_m += 5*(1-m_dissent) if m_in_exco; workers_sr += 5*(1-sr_dissent) if sr_in_exco; workers_b += 5*(1-b_dissent) if b_in_exco; m_k_relation -= 4 if m_in_exco; sr_k_relation -= 4 if sr_in_exco; prov_gov_soviet_cooperation -= 0.02; income += 1; labor_unrest -= 5*unrest_modifier;
 
-We have supported the workers in their economic demands and their struggles with their employers. Strikes are ended with agreements favorable to workers. The employers are somewhat displeased, and higher wages without increased production can lead to more inflation.
+노동자들의 경제적 요구와 고용주에 맞선 투쟁을 전폭적으로 지지했습니다. 파업은 노동자들에게 유리한 조건으로 타결되어 종료되었습니다. 고용주들은 이에 강한 불만을 품고 있으며, 생산량 증대 없는 임금 인상은 인플레이션을 심화시킬 우려가 있습니다.
 
 
 @councils
-title: Support the workers' councils' supervision over management.
+title: 노동자 평의회의 경영 감독권 행사를 지지한다.
 choose-if: (player_party = "m" and m_industrial_policy >= 1) or (player_party = "sr" and sr_industrial_policy >= 1) or (player_party = "b")
-unavailable-subtitle: Our party does not support this.
+unavailable-subtitle: 우리 당의 공식 입장과 배치됩니다.
 on-arrival: workers_councils += 1; monthly_inflation += 0.1; capital_flight_progress += 2; workers_m += 7*(1-m_dissent) if m_in_exco; m_k_relation -= 5 if m_in_exco; workers_sr += 7*(1-sr_dissent) if sr_in_exco; sr_k_relation -= 5 if sr_in_exco; prov_gov_soviet_cooperation -= 0.04; labor_unrest -= 10*unrest_modifier; industry += 1;
 
-We support the workers' councils taking supervision over management - the councils must be allowed to read management's documents and have justifications for management decisions. The employers are not pleased with this policy. However, for the most part the councils are genuinely interested in maintaining or expanding production.
+노동자 평의회가 경영 전반을 감독하는 것을 지지합니다. 평의회는 경영 관련 문서를 열람할 권한을 가져야 하며, 경영진은 모든 결정에 대해 평의회의 납득을 얻어야 합니다. 자본가들은 이 정책에 반발하고 있으나, 대다수 평의회는 생산 유지와 확대를 위해 진지하게 노력하고 있습니다.
 
 @takeover
-title: Support workers' councils seizing control over factories.
+title: 노동자 평의회의 공장 점거 및 직접 경영을 지지한다.
 choose-if: (player_party = "m" and m_internationalist_strength > m_defensist_strength and m_industrial_policy >= 2) or (player_party = "sr" and left_sr_strength >= right_sr_strength and sr_industrial_policy >= 2) or (player_party = "b" and b_industrial_policy >= 2)
-unavailable-subtitle: Our party does not support this.
+unavailable-subtitle: 우리 당의 공식 입장과 배치됩니다.
 on-arrival: factory_takeovers += 1; monthly_inflation += 0.2; capital_flight_progress += 6; workers_m += 7*(1-m_dissent) if m_in_exco; m_k_relation -= 8 if m_in_exco; workers_sr += 7*(1-sr_dissent) if sr_in_exco; sr_k_relation -= 8 if sr_in_exco; prov_gov_soviet_cooperation -= 0.15; labor_unrest -= 20*unrest_modifier; industry *= 0.95;
 
-We have encouraged the workers to take over factories directly, kicking out their capitalist overseers! In the short term, this is bad for industrial production, although hopefully we can reorganize production to rebuild.
+노동자들이 공장을 직접 점거하고 자본가 관리자들을 축출하도록 독려했습니다! 단기적으로는 산업 생산에 차질이 불가피하겠으나, 생산 체계를 재편하여 기반을 다시 다질 수 있기를 기대합니다.
 
 @back_to_work
-title: Call for striking workers to go back to work.
-unavailable-subtitle: We cannot do this after starting the process of factory takeovers.
+title: 파업 중인 노동자들의 현업 복귀를 촉구한다.
+unavailable-subtitle: 공장 점거 절차가 시작된 이후에는 이 조치를 취할 수 없습니다.
 choose-if: factory_takeovers = 0
 on-arrival: workers_m -= 5 if m_in_exco; workers_sr -= 5 if sr_in_exco; m_k_relation += 3 if m_in_exco; sr_k_relation += 3 if sr_in_exco; soviet_cooperation += 0.03; industry *= (1 + 0.02*soviet_efficacy);
 
-We have called the workers to cease striking and go back to work. This hurts our prestige among the workers, and it is unclear if they will heed our calls in the long run.
+노동자들에게 파업을 중단하고 현업으로 복귀할 것을 요청했습니다. 이 조치는 노동자들 사이에서 당의 위신을 떨어뜨렸으며, 장기적으로 그들이 우리의 권고를 계속 따를지는 미지수입니다.
 
 @efficiency
-title: Use the Soviet's connections to improve production.
-subtitle: -1 resources
+title: 소비에트의 네트워크를 활용해 생산성을 제고한다.
+subtitle: 자원 -1 소모
 choose-if: soviet_efficacy >= 0.6 and soviet_organization >= 1 and ((player_party = "m" and m_resources > 0) or (player_party = "sr" and sr_resources > 0) or (player_party = "b" and b_resources > 0) or (player_party = "k" and k_resources > 0))
 view-if: workers_councils >= 1 or factory_takeovers >= 1
-unavailable-subtitle: [? if soviet_efficacy < 0.6 : We do not have enough administrative capacity in the Soviet. ?][? if not ((player_party = "m" and m_resources > 0) or (player_party = "sr" and sr_resources > 0) or (player_party = "b" and b_resources > 0) or (player_party = "k" and k_resources > 0)) : We do not have enough resources. ?]
+unavailable-subtitle: [? if soviet_efficacy < 0.6 : 소비에트의 행정 역량이 부족합니다. ?][? if not ((player_party = "m" and m_resources > 0) or (player_party = "sr" and sr_resources > 0) or (player_party = "b" and b_resources > 0) or (player_party = "k" and k_resources > 0)) : 자원이 부족합니다. ?]
 on-arrival: industry *= (1+0.05*soviet_efficacy) if industry <= 100; industry *= (1 + 0.01*soviet_efficacy) if industry > 100; m_resources -= 1 if player_party = "m"; sr_resources -= 1 if player_party = "sr"; b_resources -= 1 if player_party = "b"; k_resources -= 1 if player_party = "k"
 
-We are attempting to use the Soviet's administrative apparatus and the connections forged among the workers' councils to find ways to improve production. It is a difficult task.
+소비에트의 행정 기구와 노동자 평의회 간에 구축된 네트워크를 활용하여 생산성을 높일 방안을 강구하고 있습니다. 이는 결코 쉽지 않은 과제입니다.

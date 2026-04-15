@@ -1,4 +1,4 @@
-title: Workers' Militias
+title: 노동자 민병대
 new-page: true
 view-if: militias_timer = 0 and ((player_party = "b" and b_in_exco) or (player_party = "m" and m_in_exco) or (player_party = "sr" and sr_in_exco) or (player_party = "k" and kadet_in_exco))
 on-arrival: week_actions += 1; militias_timer += 3
@@ -6,9 +6,9 @@ tags: soviet
 is-card: true
 card-image: img/red_guard_1.jpg
 
-= Workers' Militias
+= 노동자 민병대
 
-During the February Revolution, the workers of Petrograd organized militias for self-defense. Now, they will listen to the Soviet for further direction.
+2월 혁명 당시 페트로그라드 노동자들은 자위권을 행사하기 위해 스스로 민병대를 조직했습니다. 이제 이들은 소비에트의 지침에 따라 움직일 준비가 되어 있습니다.
 
 # should this use party resources?
 
@@ -24,59 +24,58 @@ During the February Revolution, the workers of Petrograd organized militias for 
 - @cancel_advisor_action
 
 @loyalty
-title: Increase militia cooperation with the Soviet.
+title: 소비에트와 민병대 간의 협력 체계를 강화한다.
 on-arrival: workers_militia_m_loyalty += 10*soviet_efficacy if m_in_exco; workers_militia_sr_loyalty += 10*soviet_efficacy if sr_in_exco; workers_militia_b_loyalty += 10*soviet_efficacy if b_in_exco
 
-We have increased the direction of the Soviet parties over the workers' militias.
+노동자 민병대에 대한 소비에트 소속 정당들의 통제력과 지휘권을 강화했습니다.
 
 # TODO: max recruitment depends on support
 
 @recruitment
-title: Recruit more workers into the militias.
+title: 민병대에 더 많은 노동자를 모집한다.
 choose-if: workers_militia_strength <= 100 
-unavailable-subtitle: There are not enough willing workers to recruit.
+unavailable-subtitle: 모집에 응할 의사가 있는 노동자가 부족합니다.
 on-arrival: workers_militia_strength += 8;
 
-We have increased recruitment into the workers' militias.
+노동자 민병대의 신규 대원 모집 규모를 확대했습니다.
 
 @arming
-title: Increase armaments for the militias.
-subtitle: -1 resource
+title: 민병대의 무장을 강화한다.
+subtitle: 자원 -1 소모
 choose-if: workers_militia_militancy <= 1 and ((player_party = "m" and m_resources >= 1) or (player_party = "sr" and sr_resources >= 1) or (player_party = "b" and b_resources >= 1))
 unavailable-subtitle: [? if ((player_party = "m" and m_resources < 1) or (player_party = "sr" and sr_resources < 1) or (player_party = "b" and b_resources < 1)): We do not have enough resources. ?][? if workers_militia_militancy > 1 : We cannot arm them any further. ?]
 on-arrival: workers_militia_militancy += 0.1; sr_resources -= 1 if player_party = "sr"; b_resources -= 1 if player_party = "b"; m_resources -= 1 if player_party = "m";
 
-We have spent resources on purchasing more armaments for the workers' militias.
+당의 자원을 투입하여 노동자 민병대를 위한 추가 무기를 확보했습니다.
 
 @mrc
-title: Form a Military-Revolutionary Committee!
-subtitle: We will organize the workers' militias for the defense of the revolution against all enemies. -2 resources
-unavailable-subtitle: -2 resources 
+title: 군사혁명위원회를 구성한다!
+subtitle: 모든 적으로부터 혁명을 수호하기 위해 노동자 민병대를 조직합니다. 자원 -2 소모
+unavailable-subtitle: 자원 -2 소모 
 view-if: player_party = "b" and mrc = 0
 choose-if: b_resources >= 2
 on-arrival: soldiers_b += 15; workers_militia_b_loyalty += 25; mrc = 1; b_resources -= 2
 max-visits: 1
 
-The Petrograd Soviet has formed the Military-Revolutionary Committee, a committee to organize the workers' militias and garrison troops for the defense of the revolution. This ties togethe
-r the workers' militias, the soldiers, and the Bolshevik party. 
+페트로그라드 소비에트는 혁명을 수호하기 위해 노동자 민병대와 주둔군 부대를 통합 지휘할 군사혁명위원회를 창설했습니다. 이를 통해 노동자 민병대와 병사들, 그리고 볼셰비키당이 강력한 결속력을 갖게 되었습니다. 
 
 @preparing
-title: Preparing for Revolution
-subtitle: The Provisional Government is weak; we must prepare for the uprising...
+title: 혁명 준비
+subtitle: 임시정부는 무력합니다. 이제 봉기를 준비해야 할 때입니다...
 view-if: player_party = "b" and mrc = 1 and b_in_exco and rev_progress < 4
 on-arrival: rev_progress += 1
 
-We make sure our party cadres are placed within the garrison and the workers' militias. We scout out key locations in the city that we might need to capture.
+당의 핵심 간부들을 주둔군과 노동자 민병대 내부에 배치했습니다. 또한 봉기 시 점거해야 할 도시 내 주요 전략 요충지들에 대한 정찰을 마쳤습니다.
 
 @revolution
-title: It is time to launch the revolution!
+title: 혁명을 결행할 시간이다!
 view-if: player_party = "b" and mrc = 1 and b_in_exco and rev_progress >= 3
 go-to: b_revolution
 
 @anti_crime
-title: Use the workers' militias to combat crime.
+title: 노동자 민병대를 투입해 범죄를 소탕한다.
 view-if: crime > 30
 on-arrival: crime -= workers_militia_strength/3*workers_militia_militancy; workers_m += 5*(1-m_dissent) if player_party == "m"; workers_sr += 5*(1-sr_dissent) if player_party == "sr"; workers_b += 5*(1-b_dissent) if player_party == "b"; prov_gov_legitimacy += 5 if government_form == 1;
 
-We have deployed the workers' militias to increase security and combat crime in Petrograd.
+페트로그라드의 치안을 강화하고 범죄에 대응하기 위해 노동자 민병대를 시내 곳곳에 배치했습니다.
 

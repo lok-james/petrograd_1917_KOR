@@ -1,4 +1,4 @@
-title: Soviet Leadership Election
+title: 소비에트 지도부 선거
 go-to: election_algorithm.petrograd_soviet
 set-jump: soviet_leadership_election.post_election
 new-page: true
@@ -138,143 +138,143 @@ if (window && d3) {
 }
 !}
 
-= Soviet Leadership Election
+= 소비에트 지도부 선거
 
 {!<svg id="soviet" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!}
-{!<tr><td>Party</td><td>Vote share</td></tr>!}
+{!<tr><td>정당</td><td>의석 점유율</td></tr>!}
 
-{!<tr><td><div class="box b"> </div> !} Bolsheviks: {!</td><td>!} [+ b_soviet +]% {!</td>!}
+{!<tr><td><div class="box b"> </div> !} 볼셰비키: {!</td><td>!} [+ b_soviet +]% {!</td>!}
 
-[? if internationalist_soviet_votes_dec : {!<tr><td><div class="box internationalist"></div> Menshevik-Internationalists: </td><td>!} [+ internationalist_soviet_votes_dec +]% {!</td>!} ?]
+[? if internationalist_soviet_votes_dec : {!<tr><td><div class="box internationalist"></div> 멘셰비키-국제주의자: </td><td>!} [+ internationalist_soviet_votes_dec +]% {!</td>!} ?]
 
-{!<tr><td><div class="box m"> </div> !} Mensheviks: {!</td><td>!} [+ m_soviet +]% {!</td>!}
+{!<tr><td><div class="box m"> </div> !} 멘셰비키: {!</td><td>!} [+ m_soviet +]% {!</td>!}
 
-[? if defensist_soviet_votes_dec : {!<tr><td><div class="box defensist"></div> Menshevik-Defensists: </td><td>!} [+ defensist_soviet_votes_dec +]% {!</td>!} ?]
+[? if defensist_soviet_votes_dec : {!<tr><td><div class="box defensist"></div> 멘셰비키-방위주의자: </td><td>!} [+ defensist_soviet_votes_dec +]% {!</td>!} ?]
 
-[? if left_sr_soviet_votes_dec : {!<tr><td><div class="box left_sr"></div> !}Left-SRs: {!</td><td>!} [+ left_sr_soviet_votes_dec +]% {!</td>!} ?]
+[? if left_sr_soviet_votes_dec : {!<tr><td><div class="box left_sr"></div> !}좌익 사회혁명당: {!</td><td>!} [+ left_sr_soviet_votes_dec +]% {!</td>!} ?]
 
-{!<tr><td><div class="box sr"> </div> !} SRs: {!</td><td>!} [+ sr_soviet +]% {!</td>!}
+{!<tr><td><div class="box sr"> </div> !} 사회혁명당: {!</td><td>!} [+ sr_soviet +]% {!</td>!}
 
-[? if right_sr_soviet_votes_dec : {!<tr><td><div class="box right_sr"></div> !}Right-SRs: {!</td><td>!} [+ right_sr_soviet_votes_dec +]% {!</td>!} ?]
+[? if right_sr_soviet_votes_dec : {!<tr><td><div class="box right_sr"></div> !}우익 사회혁명당: {!</td><td>!} [+ right_sr_soviet_votes_dec +]% {!</td>!} ?]
 
-{!<tr><td><div class="box a"> </div> !} Anarchists: {!</td><td>!} [+ anarchist_soviet +]% {!</td>!}
+{!<tr><td><div class="box a"> </div> !} 아나키스트: {!</td><td>!} [+ anarchist_soviet +]% {!</td>!}
 
-{!<tr><td><div class="box other"> </div> !} Others: {!</td><td>!} [+ other_soviet +]% {!</td>!}
+{!<tr><td><div class="box other"> </div> !} 기타 세력: {!</td><td>!} [+ other_soviet +]% {!</td>!}
 {!</table>!}
 
-**Blocs:**
+**정파 블록:**
 
-Internationalist bloc - Bolsheviks + Anarchists [? if m_leadership = 1 and not m_independent : + Mensheviks ?][? if sr_leadership = 1 and not sr_independent : + SRs ?][? if left_sr_soviet_votes_dec: + Left-SRs ?][? if internationalist_soviet_votes_dec: + Menshevik-Internationalists ?] : [+ internationalist_bloc +]%
+국제주의자 블록 - 볼셰비키 + 아나키스트 [? if m_leadership = 1 and not m_independent : + 멘셰비키 ?][? if sr_leadership = 1 and not sr_independent : + 사회혁명당 ?][? if left_sr_soviet_votes_dec: + 좌익 사회혁명당 ?][? if internationalist_soviet_votes_dec: + 멘셰비키-국제주의자 ?] : [+ internationalist_bloc +]%
 
-Defensist bloc - [? if m_leadership = 0 and sr_leadership = 0 and not m_independent and not sr_independent : Mensheviks + SRs ?][? if m_leadership = 0 and sr_leadership = 1 and not m_independent : Mensheviks ?][? if m_leadership = 1 and sr_leadership = 0 and not sr_independent : SRs ?][? if right_sr_soviet_votes_dec: + Right-SRs ?][? if defensist_soviet_votes_dec: + Menshevik-Defensists ?] : [+ defensist_bloc +]%
+방위주의자 블록 - [? if m_leadership = 0 and sr_leadership = 0 and not m_independent and not sr_independent : 멘셰비키 + 사회혁명당 ?][? if m_leadership = 0 and sr_leadership = 1 and not m_independent : 멘셰비키 ?][? if m_leadership = 1 and sr_leadership = 0 and not sr_independent : 사회혁명당 ?][? if right_sr_soviet_votes_dec: + 우익 사회혁명당 ?][? if defensist_soviet_votes_dec: + 멘셰비키-방위주의자 ?] : [+ defensist_bloc +]%
 
-# note - this is not an autonomous scene; it's used as a redirect from other events.
+# 이 장면은 다른 이벤트에서의 리다이렉트를 통해 실행됩니다.
 
-[? if internationalist_bloc > defensist_bloc : The internationalists have a plurality, and can thus choose leadership. ?]
+[? if internationalist_bloc > defensist_bloc : 국제주의자 블록이 상대 다수 의석을 확보하여 지도부 구성권을 가집니다. ?]
 
-[? if defensist_bloc >= internationalist_bloc : The defensists have a plurality, and can thus choose leadership. ?]
+[? if defensist_bloc >= internationalist_bloc : 방위주의자 블록이 상대 다수 의석을 확보하여 지도부 구성권을 가집니다. ?]
 
-- @revolutionary_leadership
-- @defensist_leadership
-- @internationalist_leadership
-- @internationalist_bloc_no_bolsheviks
-- @anti_bolshevik_coalition
-- @walk_out
-- @switch_positions
+- @revolutionary_leadership: 볼셰비키와 그 우호 세력만으로 구성된 "혁명 블록"을 구성한다.
+- @defensist_leadership: 방위주의자 블록이 주도권을 잡는다.
+- @internationalist_leadership: 국제주의자 블록이 주도권을 잡는다.
+- @internationalist_bloc_no_bolsheviks: 볼셰비키와 아나키스트를 배제한 "온건 국제주의" 블록을 구성할 수 있는가?
+- @anti_bolshevik_coalition: 모든 비볼셰비키 세력을 통합한 반볼셰비키 "연합"을 구성할 수 있는가?
+- @walk_out: 볼셰비키가 집행위원회를 장악하게 두느니 차라리 소비에트에서 퇴장한다!
+- @switch_positions: 당의 노선을 변경할 수 있는가?
 
 @walk_out
-title: We must walk out of the Soviet rather than letting the Bolsheviks form their executive committee!
+title: 볼셰비키가 집행위원회를 장악하게 두느니 차라리 소비에트에서 퇴장한다!
 view-if: revolutionary_bloc > 50 and (player_party = "m" or (player_party = "sr" and not right_sr_split))
 on-arrival: soviet_chair = "Trotsky" if trotsky_available else soviet_chair = "Kamenev"; soviet_chair_party = "Bolshevik"; in_revolutionary_coalition = 1; b_in_exco = 1; left_sr_in_exco = 1 if left_sr_split; b_threat += 1; m_b_relation -= 7 if player_party = "m"; b_sr_relation -= 7 if player_party = "sr"; m_k_relation += 5 if player_party = "m"; sr_k_relation += 5 if player_party = "sr"
 
-After we walk out of the Soviet, the Bolsheviks form an executive committee anyway, backed by the anarchists and some splinter leftists. [+ soviet_chair +] has been elected chairman of the Soviet.
+우리가 소비에트 회의장에서 퇴장한 후, 볼셰비키는 아나키스트들과 일부 이탈한 좌파 세력의 지지를 얻어 독자적으로 집행위원회를 구성했습니다. [+ soviet_chair +]가 소비에트 의장으로 선출되었습니다.
 
 - @bolshevik_soviet_government
 
 
 @revolutionary_leadership
-title: There can be a "Revolutionary Bloc" consisting solely of the Bolsheviks and their allies.
+title: 볼셰비키와 그 우호 세력만으로 구성된 "혁명 블록"을 구성한다.
 view-if: revolutionary_bloc > 50
 on-arrival: soviet_chair = "Trotsky" if trotsky_available else soviet_chair = "Kamenev"; soviet_chair_party = "Bolshevik"; in_revolutionary_coalition = 1; b_in_exco = 1; left_sr_in_exco = 1 if left_sr_split
 
-[? if player_party = "b": We have formed an executive committee based on a revolutionary bloc of Bolsheviks and anarchists. [+ soviet_chair +] has been elected chairman of the Soviet. ?]
-[? if player_party != "b": The Bolsheviks have formed an executive committee backed by the anarchists and some splinter leftists. [+ soviet_chair +] has been elected chairman of the Soviet. ?]
+[? if player_party = "b": 우리는 볼셰비키와 아나키스트 간의 혁명 블록을 기반으로 집행위원회를 구성했습니다. [+ soviet_chair +]가 소비에트 의장으로 선출되었습니다. ?]
+[? if player_party != "b": 볼셰비키가 아나키스트 및 일부 이탈 좌파 세력의 지지를 바탕으로 집행위원회를 구성했습니다. [+ soviet_chair +]가 소비에트 의장으로 선출되었습니다. ?]
 
 - @bolshevik_soviet_government
 
 
 @defensist_leadership
-title: The Defensists will lead.
+title: 방위주의자 블록이 주도권을 잡는다.
 view-if: defensist_bloc >= internationalist_bloc
 on-arrival: soviet_chair = "Chkheidze"; soviet_chair_party = "Menshevik" if m_leadership = 0 else soviet_chair_party = "Menshevik-Defensist"; m_in_exco = 1 if m_leadership = 0 and not m_independent; sr_in_exco = 1 if sr_leadership = 0 and not sr_independent; defensist_in_exco = 1 if defensist_split; right_sr_in_exco = 1 if right_sr_split; in_defensist_coalition = 1
 
-The Defensist bloc will be the leaders of the Soviet. Who should be appointed the Chair of the Soviet?
+방위주의자 블록이 소비에트 지도부를 장악하게 되었습니다. 누구를 소비에트 의장으로 추대하겠습니까?
 
-- @tsereteli_chair
-- @chkheidze_chair
-- @kerensky_chair
+- @tsereteli_chair: 멘셰비키 방위주의자, 이라클리 체레텔리.
+- @chkheidze_chair: 멘셰비키 방위주의자, 니콜라이 치헤이제.
+- @kerensky_chair: 우익 사회혁명당, 알렉산드르 케렌스키.
 
 
 @internationalist_leadership
-title: The Internationalists will lead.
+title: 국제주의자 블록이 주도권을 잡는다.
 view-if: internationalist_bloc > defensist_bloc
 on-arrival: m_in_exco = 1 if m_leadership = 1 and not m_independent; sr_in_exco = 1 if sr_leadership = 1 and not m_independent; b_in_exco = 1; mrc_timer = 4 if mrc = 0; left_sr_in_exco = 1 if left_sr_split; internationalist_in_exco = 1 if internationalist_split; in_internationalist_coalition = 1
 go-to: trotsky_chair if ((player_party = "m" and m_leadership = 0) or (player_party = "sr" and sr_leadership = 0) or player_party = "k"); choose_i_chair if ((player_party = "m" and m_leadership = 1) or (player_party = "sr" and sr_leadership = 1) or player_party = "b")
 
-The Internationalist bloc will be the leaders of the Soviet.
+국제주의자 블록이 소비에트 지도부를 장악하게 되었습니다.
 
 @internationalist_bloc_no_bolsheviks
-title: Can we form a "moderate Internationalist" bloc without the Bolsheviks and anarchists?
-unavailable-subtitle: This bloc is not large enough.
+title: 볼셰비키와 아나키스트를 배제한 "온건 국제주의" 블록을 구성할 수 있는가?
+unavailable-subtitle: 해당 블록의 세력이 충분하지 않습니다.
 view-if: (player_party = "m" and m_leadership = 1) or (player_party = "sr" and sr_leadership = 1)
 choose-if: moderate_internationalist_bloc >= defensist_bloc and moderate_internationalist_bloc >= b_soviet
 on-arrival: m_in_exco = 1 if m_leadership = 1 and not m_independent; sr_in_exco = 1 if sr_leadership = 1 and not m_independent; internationalist_in_exco = 1 if internationalist_split; left_sr_in_exco = 1 if left_sr_split; in_anti_bolshevik_coalition = 1
 go-to: choose_i_chair
 
-We have formed a "moderate Internationalist" executive committee of the Petrograd Soviet, consisting of the [? if m_leadership = 1 and sr_leadership = 1 : Mensheviks and SRs ?][? if m_leadership = 0 and sr_leadership = 1 : SRs ?][? if m_leadership = 1 and sr_leadership = 0 : Mensheviks ?] but not the Bolsheviks or anarchists.
+우리는 [? if m_leadership = 1 and sr_leadership = 1 : 멘셰비키와 사회혁명당 ?][? if m_leadership = 0 and sr_leadership = 1 : 사회혁명당 ?][? if m_leadership = 1 and sr_leadership = 0 : 멘셰비키 ?]을 중심으로 하되 볼셰비키와 아나키스트는 배제한 페트로그라드 소비에트 "온건 국제주의" 집행위원회를 구성했습니다.
 
 @anti_bolshevik_coalition
-title: Can we form an anti-Bolshevik "coalition" of all the non-Bolshevik-aligned groups?
-subtitle: Mensheviks [? if not right_sr_split: + SRs ?][? if right_sr_split: + Right-SRs ?][? if defensist_split: + Menshevik-Defensists ?][? if internationalist_split: + Menshevik-Internationalists ?] + Others
+title: 모든 비볼셰비키 세력을 통합한 반볼셰비키 "연합"을 구성할 수 있는가?
+subtitle: 멘셰비키 [? if not right_sr_split: + 사회혁명당 ?][? if right_sr_split: + 우익 사회혁명당 ?][? if defensist_split: + 멘셰비키-방위주의자 ?][? if internationalist_split: + 멘셰비키-국제주의자 ?] + 기타 세력
 view-if: (player_party = "m" or player_party = "sr") 
 choose-if: (m_sr_relation >= 55) and (b_threat >= 1) and anti_bolshevik_bloc >= revolutionary_bloc and anti_bolshevik_bloc >= defensist_bloc and (not player_party = "sr" or not right_sr_split)
-unavailable-subtitle: [? if m_sr_relation < 55: [? if player_party = "m": Our relations with the SRs are not good enough. ?][? if player_party = "sr": Our relations with the Mensheviks are not good enough. ?]?][? if b_threat < 1 : The parties of the Soviet do not see the Bolsheviks as a threat. ?][? if anti_bolshevik_bloc < revolutionary_bloc or anti_bolshevik_bloc < defensist_bloc: The anti-Bolshevik bloc is not large enough. ?][? if player_party = "sr" and right_sr_split : The Left-SR leadership has no interest in this sort of coalition. ?]
+unavailable-subtitle: [? if m_sr_relation < 55: [? if player_party = "m": 사회혁명당과의 관계가 충분히 우호적이지 않습니다. ?][? if player_party = "sr": 멘셰비키와의 관계가 충분히 우호적이지 않습니다. ?]?][? if b_threat < 1 : 소비에트 내 정당들이 볼셰비키를 실질적인 위협으로 간주하지 않습니다. ?][? if anti_bolshevik_bloc < revolutionary_bloc or anti_bolshevik_bloc < defensist_bloc: 반볼셰비키 블록의 세력이 충분하지 않습니다. ?][? if player_party = "sr" and right_sr_split : 좌익 사회혁명당 지도부는 이러한 형태의 연합에 관심이 없습니다. ?]
 on-arrival: m_in_exco = 1; sr_in_exco = 1 if not right_sr_split; defensist_in_exco = 1 if defensist_split; internationalist_in_exco = 1 if internationalist_split; in_anti_bolshevik_coalition = 1;
 
-We have formed a "grand coalition" of all the non-Bolshevik-aligned forces in the Soviet! Who should be appointed the Soviet chair?
+우리는 소비에트 내의 모든 비볼셰비키 정렬 세력을 아우르는 "대연합"을 결성했습니다! 누구를 소비에트 의장으로 추대하겠습니까?
 
-- @tsereteli_chair
-- @chkheidze_chair
-- @martov_chair
-- @sukhanov_chair
+- @tsereteli_chair: 멘셰비키 방위주의자, 이라클리 체레텔리.
+- @chkheidze_chair: 멘셰비키 방위주의자, 니콜라이 치헤이제.
+- @martov_chair: 멘셰비키 국제주의자, 율리 마르토프.
+- @sukhanov_chair: 사회민주주의 국제주의자, 니콜라이 수하노프.
 
 @tsereteli_chair
-title: Irakli Tsereteli, the Menshevik Defensist.
+title: 멘셰비키 방위주의자, 이라클리 체레텔리.
 on-arrival: soviet_chair = "Tsereteli"; soviet_chair_party = "Menshevik" if not defensist_split else soviet_chair_party = "Menshevik-Defensist"
 view-if: in_soviet_government = 1
 
-Irakli Tsereteli, a Menshevik, has been elected as the chair of the Petrograd Soviet.
+멘셰비키 소속의 이라클리 체레텔리가 페트로그라드 소비에트 의장으로 선출되었습니다.
 
 - @soviet_government_formation
 
 
 
 @chkheidze_chair
-title: Nikolai Chkheidze, the Menshevik Defensist.
+title: 멘셰비키 방위주의자, 니콜라이 치헤이제.
 on-arrival: soviet_chair = "Chkheidze"; soviet_chair_party = "Menshevik" if not defensist_split else soviet_chair_party = "Menshevik-Defensist"
 
-Nikolai Chkheidze, a Menshevik, has been elected as the chair of the Petrograd Soviet.
+멘셰비키 소속의 니콜라이 치헤이제가 페트로그라드 소비에트 의장으로 선출되었습니다.
 
 - @soviet_government_formation
 
 @kerensky_chair
-title: Alexander Kerensky, the Right-SR.
+title: 우익 사회혁명당, 알렉산드르 케렌스키.
 on-arrival: soviet_chair = "Kerensky"; soviet_chair_party = "SR" if not right_sr_split else soviet_chair_party = "Right-SR"
 view-if: in_soviet_government = 1
 
-Alexander Kerensky has been elected as the chair of the Petrograd Soviet.
+알렉산드르 케렌스키가 페트로그라드 소비에트 의장으로 선출되었습니다.
 
 - @soviet_government_formation
 
@@ -282,118 +282,119 @@ Alexander Kerensky has been elected as the chair of the Petrograd Soviet.
 
 @choose_i_chair
 
-Who should be the Soviet chair?
+누구를 소비에트 의장으로 선출하겠습니까?
 
-- @trotsky_chair: Leon Trotsky, the Bolshevik.
-- @martov_chair: Julius Martov, the Menshevik Internationalist.
-- @sukhanov_chair: Nikolai Sukhanov, the Social Democratic Internationalist.
-- @spiridonova_chair: Maria Spiridonova, the Left-SR.
+- @trotsky_chair: 볼셰비키, 레프 트로츠키.
+- @martov_chair: 멘셰비키 국제주의자, 율리 마르토프.
+- @sukhanov_chair: 사회민주주의 국제주의자, 니콜라이 수하노프.
+- @spiridonova_chair: 좌익 사회혁명당, 마리아 스피리도노바.
 
-# TODO: if government_form = 1, we should also re-organize the government, choose ministries and so on.
+# TODO: 만약 government_form = 1 이라면, 정부 재조직 및 각료 선임 등의 절차를 진행해야 합니다.
 
 @trotsky_chair
-title: Leon Trotsky, the Bolshevik.
+title: 볼셰비키, 레프 트로츠키.
 view-if: b_in_exco = 1 and trotsky_available = 1
 on-arrival: soviet_chair = "Trotsky"; soviet_chair_party = "Bolshevik";
 
-Leon Trotsky, a Bolshevik, has been elected as chair of the Petrograd Soviet.
+볼셰비키 소속의 레프 트로츠키가 페트로그라드 소비에트 의장으로 선출되었습니다.
 
 - @soviet_government_formation
 - @bolshevik_soviet_government
 
 
 @martov_chair
-title: Julius Martov, the Menshevik Internationalist
+title: 멘셰비키 국제주의자, 율리 마르토프
 view-if: martov_available = 1
 on-arrival: soviet_chair = "Martov"; soviet_chair_party = "Menshevik"; soviet_chair_party = "Menshevik-Internationalist" if m_leadership = 0
 
-Julius Martov, a Menshevik Internationalist, has been elected as chair of the Petrograd Soviet.
+멘셰비키 국제주의자 정파 소속의 율리 마르토프가 페트로그라드 소비에트 의장으로 선출되었습니다.
 
 - @soviet_government_formation
 
 @sukhanov_chair
-title: Nikolai Sukhanov, the Social Democratic Internationalist.
+title: 사회민주주의 국제주의자, 니콜라이 수하노프.
 on-arrival: soviet_chair = "Sukhanov"; soviet_chair_party = "Menshevik"; soviet_chair_party = "Menshevik-Internationalist" if m_leadership = 0
 
-Nikolai Sukhanov, a Menshevik-aligned Social Democratic Internationalist, has been elected as chair of the Petrograd Soviet.
+멘셰비키 성향의 사회민주주의 국제주의자인 니콜라이 수하노프가 페트로그라드 소비에트 의장으로 선출되었습니다.
 
 - @soviet_government_formation
 
 @spiridonova_chair
+title: 좌익 사회혁명당, 마리아 스피리도노바.
 view-if: spiridonova_available = 1
 on-arrival: soviet_chair = "Spiridonova"; soviet_chair_party = "SR"; soviet_chair_party = "Left-SR" if sr_leadership = 0
 
-Maria Spiridonova, a Left-SR, has been elected as chair of the Petrograd Soviet.
+좌익 사회혁명당 소속의 마리아 스피리도노바가 페트로그라드 소비에트 의장으로 선출되었습니다.
 
 - @soviet_government_formation
 
 
 @switch_positions
-title: Can we switch our party's positions?
+title: 당의 노선을 변경할 수 있는가?
 view-if: (player_party = "m") or (player_party = "sr")
 
-Can we switch our party's alignment on the defensist-internationalist axis?
+방위주의와 국제주의 노선 사이에서 우리 당의 입장을 변경하시겠습니까?
 
-- @m_switch_defensist
+- @m_switch_defensist: 방위주의 노선으로 전환한다.
 #- @m_switch_nonaligned
-- @m_switch_internationalist
-- @sr_switch_defensist
+- @m_switch_internationalist: 국제주의 노선으로 전환한다.
+- @sr_switch_defensist: 방위주의 노선으로 전환한다.
 #- @sr_switch_nonaligned
-- @sr_switch_internationalist
-- @defensist_leadership
-- @internationalist_leadership
-- @internationalist_bloc_no_bolsheviks
-- @anti_bolshevik_coalition
+- @sr_switch_internationalist: 국제주의 노선으로 전환한다.
+- @defensist_leadership: 방위주의자 블록이 주도권을 잡는다.
+- @internationalist_leadership: 국제주의자 블록이 주도권을 잡는다.
+- @internationalist_bloc_no_bolsheviks: 볼셰비키와 아나키스트를 배제한 "온건 국제주의" 블록을 구성할 수 있는가?
+- @anti_bolshevik_coalition: 모든 비볼셰비키 세력을 통합한 반볼셰비키 "연합"을 구성할 수 있는가?
 
 @m_switch_defensist
-title: Switch to a defensist position.
+title: 방위주의 노선으로 전환한다.
 view-if: player_party = "m" and m_leadership = 1
 choose-if: m_internationalist_strength <= m_defensist_strength
-unavailable-subtitle: The defensists are not strong enough.
+unavailable-subtitle: 당내 방위주의 세력이 충분하지 않습니다.
 on-arrival: m_leadership = 0; m_internationalist_dissent += 20; m_defensist_dissent -= 10; m_defensist_strength += 10
 
-We have switched our party to a defensist position.
+당의 공식 노선을 방위주의로 전환했습니다.
 
-- @soviet_leadership_election: Re-do the leadership vote?
+- @soviet_leadership_election: 지도부 선거를 다시 진행하시겠습니까?
 
 @m_switch_nonaligned
-title: Switch to a nonaligned position.
-subtitle: We will not participate in either coalition.
+title: 비정렬 중립 노선으로 전환한다.
+subtitle: 우리는 그 어떤 연합에도 참여하지 않을 것입니다.
 view-if: player_party = "m"
 on-arrival:  m_internationalist_dissent += 10 if m_leadership = 1; m_defensist_dissent += 10 if m_leadership = 0; internationalist_bloc -= m_soviet if m_leadership = 1; defensist_bloc -= m_soviet if m_leadership = 0; m_independent = 1
 
-We have switched to a non-aligned position.
+어느 정파에도 속하지 않는 중립 노선으로 전환했습니다.
 
-- @soviet_leadership_election: Re-do the leadership vote?
+- @soviet_leadership_election: 지도부 선거를 다시 진행하시겠습니까?
 
 @m_switch_internationalist
-title: Switch to an internationalist position.
+title: 국제주의 노선으로 전환한다.
 view-if: player_party = "m" and m_leadership = 0
 choose-if: m_internationalist_strength >= m_defensist_strength
-unavailable-subtitle: The internationalists are not strong enough.
+unavailable-subtitle: 당내 국제주의 세력이 충분하지 않습니다.
 on-arrival: m_leadership = 1; m_internationalist_strength += 10; m_internationalist_dissent -= 10; m_defensist_dissent += 20;
 go-to: m_defensist_split if m_defensist_dissent > 50
 
-We have switched our party to an internationalist position.
+당의 공식 노선을 국제주의로 전환했습니다.
 
-- @soviet_leadership_election: Re-do the leadership vote?
+- @soviet_leadership_election: 지도부 선거를 다시 진행하시겠습니까?
 
 
 
 @sr_switch_defensist
-title: Switch to a defensist position.
+title: 방위주의 노선으로 전환한다.
 view-if: player_party = "sr" and sr_leadership = 1
 choose-if: right_sr_strength >= left_sr_strength
-unavailable-subtitle: The Right-SRs are not strong enough.
+unavailable-subtitle: 당내 우익 사회혁명당 세력이 충분하지 않습니다.
 on-arrival: sr_leadership = 0; right_sr_strength += 10; right_sr_dissent -= 10; left_sr_dissent += 20;
 
-- @soviet_leadership_election: Re-do the leadership vote?
+- @soviet_leadership_election: 지도부 선거를 다시 진행하시겠습니까?
 
 @sr_switch_internationalist
-title: Switch to an internationalist position.
+title: 국제주의 노선으로 전환한다.
 view-if: player_party = "sr" and sr_leadership = 0
 choose-if: left_sr_strength >= right_sr_strength
-unavailable-subtitle: The Left-SRs are not strong enough.
+unavailable-subtitle: 당내 좌익 사회혁명당 세력이 충분하지 않습니다.
 on-arrival: sr_leadership = 1; left_sr_strength += 10; left_sr_dissent -= 10; right_sr_dissent += 20;
 
-- @soviet_leadership_election: Re-do the leadership vote?
+- @soviet_leadership_election: 지도부 선거를 다시 진행하시겠습니까?

@@ -1,4 +1,4 @@
-title: The War and the Soldiers
+title: 전쟁과 병사들
 new-page: true
 view-if: war_soviet_timer = 0 and ((player_party = "b" and b_in_exco) or (player_party = "m" and m_in_exco) or (player_party = "sr" and sr_in_exco) or (player_party = "k" and kadet_in_exco))
 on-arrival: week_actions += 1; war_soviet_timer += 4
@@ -6,31 +6,31 @@ tags: soviet
 is-card: true
 card-image: img/ww1.jpg
 
-= The War and the Soldiers
+= 전쟁과 병사들
 
-The soldiers see the Soviet as the guarantor of their rights, and they see us as a counterbalance to the pro-war policies of the Provisional Government.
+병사들은 소비에트를 자신들의 권리를 지켜줄 최후의 보루로 여기며, 임시정부의 호전적인 정책을 견제해 주기를 기대하고 있습니다.
 
 # issue a general call for peace. (1 visit)
 # continue to enforce Order Number 1 against reactionary attempts to impose discipline.
 
 - @discipline
 - @order1
-- @root: No action is needed.
+- @root: 추가적인 조치가 필요하지 않다.
 - @easy_discard
 - @cancel_advisor_action
 
 @soviet_peace
-title: Issue a call for international peace.
+title: 국제 평화를 위한 성명을 발표한다.
 max-visits: 1
 
 @discipline
-title: Support discipline in the military.
+title: 군 내부의 기강 확립을 지지한다.
 on-arrival: discipline += 0.05*soviet_efficacy; morale -= 0.01; soldiers_m -= 4 if m_in_exco; soldiers_sr -= 4 if sr_in_exco; soldiers_b -= 4 if b_in_exco; soldier_unrest -= 5*unrest_modifier;
 
-Despite our support for soldiers' rights, there must be a balance for the functioning of the army. Thus, we are allowing the reinstatement of some forms of military discipline. The soldiers are displeased about this, of course.
+병사들의 권리를 존중하는 것도 중요하지만, 군대가 제 기능을 하기 위해서는 최소한의 규율이 유지되어야 합니다. 이에 따라 일부 군기 확립 조치의 복원을 허용했습니다. 당연하게도 병사들은 이 조치에 강한 불만을 품고 있습니다.
 
 @order1
-title: Work on preventing abuses by officers.
+title: 장교들의 권력 남용을 방지하기 위해 노력한다.
 on-arrival: morale += 0.05*soviet_efficacy; discipline -= 0.01; soldiers_m += 4*(1-m_dissent)*soviet_efficacy if m_in_exco; soldiers_sr += 5*(1-sr_dissent)*soviet_efficacy if sr_in_exco; soldiers_b += 5*(1-b_dissent)*soviet_efficacy if b_in_exco; soldier_unrest -= 5*unrest_modifier;
 
-We must continue to enforce Order No. 1, our order aimed at giving the soldiers equal rights. This might reduce discipline, but increase morale and support of the soldiers for the Soviet.
+병사들에게 시민으로서의 평등한 권리를 보장하는 '명령 제1호'를 철저히 준수해야 합니다. 이로 인해 군 기강이 다소 해이해질 수는 있으나, 병사들의 사기가 진작되고 소비에트에 대한 그들의 지지는 더욱 공고해질 것입니다.
