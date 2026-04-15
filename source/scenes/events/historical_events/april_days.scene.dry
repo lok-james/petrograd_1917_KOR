@@ -1,5 +1,5 @@
-title: [+ month : month +] Crisis
-subtitle: The people are outraged about the Provisional Government's war policy...
+title: [+ month : month +] 위기
+subtitle: 인민들이 임시 정부의 전쟁 지속 정책에 분노하고 있습니다...
 new-page: true
 view-if: ((allied_demands_seen = 1 and not allied_demands_rejected) or k_is_player = 0) and april_days_seen = 0 and ((month = 4 and week >= 3) or month > 4)
 on-arrival: april_days_seen += 1; b_k_relation -= 10; b_threat += 1; workers_b += 5*(1-b_dissent); soldiers_b += 5*(1-b_dissent);
@@ -8,9 +8,9 @@ face-image: img/womens_day.jpg
 tags: event
 go-to: april_days_k if player_party = "k"; april_days_m if player_party = "m"; april_days_sr if player_party = "sr"; april_days_b if player_party = "b"
 
-= [+ month : month +] Crisis
+= [+ month : month +] 위기
 
-Mass protests in Petrograd! News has spread of Foreign Minister Milyukov's secret letter to the Allies assuring them of the redoubling of our war effort. This has radicalized the workers and the soldiers of the Petrograd garrison, and now they are marching against the imperialist war, and are demanding the ouster of Milyukov.
+페트로그라드에서 대규모 시위가 발생했습니다! 밀류코프 외무장관이 연합국에 보낸 비밀 서신이 폭로되었습니다. 서신에는 전쟁 노력을 배가하겠다는 확약이 담겨 있었습니다. 이 소식은 노동자들과 페트로그라드 주둔군 병사들을 급진화시켰습니다. 이제 그들은 제국주의 전쟁에 반대하며 행진하고 있으며, 밀류코프의 퇴진을 강력히 요구하고 있습니다.
 
 @april_days_m
 go-to: enter_govt if m_k_relation >= 30; tensions if m_k_relation < 30
@@ -20,12 +20,12 @@ go-to: enter_govt if sr_k_relation >= 30; tensions if sr_k_relation < 30
 
 @enter_govt
 
-The Kadets in the Provisional Government are ready to be rid of Milyukov and allow more socialists to join the government, if it would ease the tensions with the workers and soldiers.
+임시 정부 내의 카데트(입헌민주당)들은 노동자 및 병사들과의 긴장을 완화할 수만 있다면, 밀류코프를 내보내고 더 많은 사회주의자들을 내각에 받아들일 준비가 되어 있습니다.
 
-- @join_govt_m: Yes, we will join the Provisional Government!
-- @join_govt_sr: Yes, we will join the Provisional Government!
-- @no_join_govt_m: No, we will not join the government.
-- @no_join_govt_sr: No, we will not join the government.
+- @join_govt_m: 그래, 임시 정부에 합류하겠다!
+- @join_govt_sr: 그래, 임시 정부에 합류하겠다!
+- @no_join_govt_m: 아니, 정부에 합류하지 않겠다.
+- @no_join_govt_sr: 아니, 정부에 합류하지 않겠다.
 
 @join_govt_m
 view-if: player_party = "m"
@@ -33,90 +33,90 @@ on-arrival: m_influence = m_k_relation/2 + 5; m_in_gov = 1; sr_in_gov = 1; agric
 
 # TODO: event to join cabinet
 
-We have accepted the Kadets' offer to join the Provisional Government, as have the SRs. Among the SRs, Viktor Chernov is now Minister of Agriculture, and Alexander Kerensky is now Minister of War. Milyukov has resigned, replaced by Tereshchenko, also Kadet-aligned. The Menshevik leader Irakli Tsereteli has been given the Ministry of Posts and Telegraph, a position created specifically to allow him to join the cabinet.
+우리는 카데트의 연립 정부 구성 제안을 수락했으며, 사회혁명당 또한 합류했습니다. 사회혁명당에서는 빅토르 체르노프가 농업부 장관을, 알렉산드르 케렌스키가 전쟁부 장관을 맡게 되었습니다. 밀류코프는 사임했고, 그 자리는 카데트 성향의 테레셴코가 이어받았습니다. 멘셰비키 지도자 이라클리 체레텔리는 그의 입각을 위해 신설된 보직인 우편전신부 장관직을 맡았습니다.
 
-- @m_join_prov_gov: We should choose our ministries.
+- @m_join_prov_gov: 담당 부처를 선택해야 합니다.
 
 @m_demand
-title: We will only join if socialists can have a leading role - we must have the position of Prime Minister!
+title: 사회주의자들이 주도적인 역할을 할 수 있을 때만 합류하겠습니다. 총리직을 요구합니다!
 choose-if: m_k_relation >= 60
-unavailable-subtitle: They are unwilling to give us the role.
+unavailable-subtitle: 저들은 우리에게 총리직을 내줄 생각이 없습니다.
 on-arrival: prime_minister = "Tsereteli"; prime_minister_party = "Menshevik"; m_influence = m_k_relation; m_in_gov = 1; sr_in_gov = 1; agriculture_minister = "Chernov"; agriculture_minister_party = "SR"; war_minister = "Kerensky"; war_minister_party = "SR"; post_minister = "Tsereteli"; post_minister_party = "Menshevik"; foreign_minister = "Tereshchenko";
 
-- @m_join_prov_gov: We should choose our ministries.
+- @m_join_prov_gov: 담당 부처를 선택해야 한다.
 
 @join_govt_sr
 view-if: player_party = "sr"
 on-arrival: sr_influence = sr_k_relation/2 + 5; sr_in_gov = 1; m_in_gov = 1; labor_minister = "Skobelev"; labor_minister_party = "Menshevik"; post_minister = "Tsereteli"; post_minister_party = "Menshevik"; foreign_minister = "Tereshchenko"; sr_prov_gov_policy = 0; left_sr_dissent += 8;
 
-We have accepted the Kadets' offer to join the Provisional Government, as have the Mensheviks. Milyukov has resigned, replaced by Tereshchenko, also Kadet-aligned. The Menshevik leader Irakli Tsereteli has been given the Ministry of Posts and Telegraph.
+우리는 카데트의 연립 정부 구성 제안을 수락했으며, 멘셰비키 또한 합류했습니다. 밀류코프는 사임했고, 그 자리는 카데트 성향의 테레셴코가 이어받았습니다. 멘셰비키 지도자 이라클리 체레텔리는 우편전신부 장관직을 맡았습니다.
 
-There is great demand to place Viktor Chernov as Minister of Agriculture, while Alexander Kerensky wants the War Ministry.
+당내에서는 빅토르 체르노프를 농업부 장관으로 임명해야 한다는 목소리가 높으며, 알렉산드르 케렌스키는 전쟁부 장관직을 원하고 있습니다.
 
-- @sr_join_prov_gov: We should choose our ministries.
+- @sr_join_prov_gov: 담당 부처를 선택해야 한다.
 
 @no_join_govt_m
 view-if: player_party = "m"
 
-Are we sure about this? Is this the best choice for the revolution?
+정말 확실합니까? 이것이 혁명을 위한 최선의 선택일까요?
 
-- @join_govt_m: On second thought, we will join the Provisional Government!
-- @no_join_m_2: Yes, we are sure.
+- @join_govt_m: 다시 생각해보니, 임시 정부에 합류하는 것이 좋겠다!
+- @no_join_m_2: 그래, 확신한다.
 
 @no_join_m_2
 on-arrival: defensist_dissent += 8; social_patriot_dissent += 8; m_k_relation -= 10; prov_gov_legitimacy -= 5; sr_in_gov = 1; m_sr_relation -= 6; m_b_relation += 6; internationalist_dissent -= 5; internationalist_strength += 5; sr_in_gov = 1; agriculture_minister = "Chernov"; agriculture_minister_party = "SR"; war_minister = "Kerensky"; war_minister_party = "SR"; foreign_minister = "Tereshchenko";
 
-We have decided against joining the Provisional Government. This increases dissent among the defensist factions of our party, hurts our relations with the Kadets, and reduces the legitimacy of the Provisional Government.
+우리는 임시 정부에 합류하지 않기로 결정했습니다. 이 결정은 당내 방위주의 분파의 불만을 샀고, 카데트와의 관계를 악화시켰으며, 임시 정부의 정당성을 떨어뜨렸습니다.
 
-The Socialist Revolutionaries, on the other hand, have decided to take a greater part in the Provisional Government. The ambitious Alexander Kerensky is now Minister of War, and Viktor Chernov is Minister of Agriculture.
+반면 사회혁명당은 임시 정부에서 더 큰 역할을 맡기로 했습니다. 야심만만한 알렉산드르 케렌스키가 전쟁부 장관이 되었고, 빅토르 체르노프가 농업부 장관이 되었습니다.
 
 @no_join_govt_sr
 view-if: player_party = "sr"
 
-Are we sure about this? Is this the best choice for the revolution?
+정말 확실합니까? 이것이 혁명을 위한 최선의 선택일까요?
 
-- @join_govt_sr: On second thought, we will join the Provisional Government!
-- @no_join_sr_2: Yes, we are sure.
+- @join_govt_sr: 다시 생각해보니, 임시 정부에 합류하는 것이 좋겠다!
+- @no_join_sr_2: 그래, 확신한다.
 
 @no_join_sr_2
 on-arrival: right_sr_dissent += 8; sr_k_relation -= 10; left_sr_strength += 8; left_sr_dissent -= 6; prov_gov_legitimacy -= 5; m_in_gov = 1; post_minister = "Tsereteli"; post_minister_party = "Menshevik"; labor_minister = "Skobelev"; labor_minister_party = "Menshevik";
 
-We have decided against joining the Provisional Government. This increases dissent among the defensist factions of our party, hurts our relations with the Kadets, and reduces the legitimacy of the Provisional Government.
+우리는 임시 정부에 합류하지 않기로 결정했습니다. 이 결정은 당내 방위주의 분파의 불만을 샀고, 카데트와의 관계를 악화시켰으며, 임시 정부의 정당성을 떨어뜨렸습니다.
 
-The Mensheviks, on the other hand, have decided to take a greater part in the Provisional Government. Irakli Tsereteli has been appointed Minister of Posts and Telegraphs, and Matvey Skobelev is Minister of Labor.
+반면 멘셰비키는 임시 정부에서 더 큰 역할을 맡기로 했습니다. 이라클리 체레텔리가 체신부 장관으로 임명되었고, 마트베이 스코벨레프가 노동부 장관이 되었습니다.
 
 
 @tensions
 on-arrival: soviet_cooperation *= 0.9; prov_gov_legitimacy -= 10; left_sr_strength += 8; internationalist_strength += 8; labor_unrest += 2; peasant_unrest += 2; soldiers_b += 5; workers_b += 5;
 
-Despite the demands of the streets, the Provisional Government might not budge from its course. The Kadets seem intent on keeping the socialists away from government.
+거리의 거센 요구에도 불구하고, 임시 정부는 기존의 노선을 굽히지 않을 수도 있습니다. 카데트들은 사회주의자들을 정부 요직에서 배제하려는 의도가 확고해 보입니다.
 
-Eventually, the protests die down on their own, but the Provisional Government's legitimacy may have been permanently damaged, as has support for the socialists who supported government cooperation.
+결국 시위는 자연스럽게 잦아들었지만, 임시 정부의 정통성은 영구적인 타격을 입었습니다. 정부와의 협력을 지지했던 온건 사회주의자들에 대한 민중의 신뢰 또한 마찬가지입니다.
 
 
 @april_days_k
 
-Some in the Kadets are ready to be rid of Milyukov, if it would ease the tension with the socialists. Many in the party are willing to let the moderate socialists (Mensheviks and SRs) join the Provisional Government.
+카데트 내부에서도 사회주의자들과의 긴장을 완화할 수 있다면 밀류코프를 내보내야 한다는 의견이 나오고 있습니다. 당내의 많은 이들이 온건 사회주의 세력(멘셰비키 및 사회혁명당)의 입각을 허용할 의향이 있습니다.
 
-- @let_join: Let the socialists join!
-- @refuse: Do not let the socialists join the government.
+- @let_join: 사회주의자들의 입각을 허용한다!
+- @refuse: 사회주의자들의 입각을 거부한다.
 
 @let_join
 on-arrival: right_kadet_dissent += 8; left_kadet_strength += 8; left_kadet_dissent -= 2; defensist_strength += 5; right_sr_strength += 5; sr_in_gov = 1; m_in_gov = 1; war_minister = "Kerensky"; war_minister_party = "SR"; labor_minister = "Skobelev"; labor_minister_party = "Menshevik"; agriculture_minister = "Chernov"; agriculture_minister_party = "SR"; post_minister = "Tsereteli"; post_minister_party = "Menshevik"; foreign_minister = "Tereshchenko"; finance_minister = "Shingarev"; finance_minister_party = "Kadet"; k_conservative_relation -= 10
 
-The Mensheviks and Socialist-Revolutionaries have joined the Provisional Government! For the SRs, Viktor Chernov is Minister of Agriculture and Alexander Kerensky is Minister of War. For the Mensheviks, Irakli Tsereteli is Minister of Posts and Telegraph and Matvey Skobelev is Minister of Labor. Milyukov has resigned, and the position of Foreign Minister is filled by Mikhail Tereshchenko.
+멘셰비키와 사회혁명당이 임시 정부에 합류했습니다! 사회혁명당에서는 빅토르 체르노프가 농업부 장관을, 알렉산드르 케렌스키가 전쟁부 장관을 맡았습니다. 멘셰비키에서는 이라클리 체레텔리가 우편전신부 장관을, 마트베이 스코벨레프가 노동부 장관을 맡았습니다. 밀류코프는 사임했으며, 후임 외무장관으로는 미하일 테레셴코가 임명되었습니다.
 
 @refuse
 on-arrival: left_sr_strength += 20; internationalist_strength += 20; defensist_strength -= 20; right_sr_strength -= 20; labor_unrest += 5; peasant_unrest += 5; prov_gov_legitimacy -= 10; soldiers_b += 5; workers_b += 5; m_k_relation -= 10; sr_k_relation -= 10
 
-We have refused to let the socialists join the government.
+우리는 사회주의자들의 입각 제안을 거부했습니다.
 
-Eventually, the protests die down on their own, but the Provisional Government's legitimacy may have been permanently damaged, as has support for the socialists who supported government cooperation. Radicals among the SRs and the social democrats are gaining support.
+결국 시위는 자연스럽게 잦아들었지만, 임시 정부의 정통성은 영구적인 타격을 입었습니다. 정부와의 협력을 지지했던 온건 사회주의자들에 대한 신뢰 또한 무너졌으며, 사회혁명당과 사회민주주의 세력 내의 급진파들이 세력을 얻고 있습니다.
 
 
 @april_days_b
 on-arrival: defensist_strength += 5; right_sr_strength += 5; sr_in_gov = 1; m_in_gov = 1; war_minister = "Kerensky"; war_minister_party = "SR"; labor_minister = "Skobelev"; labor_minister_party = "Menshevik"; agriculture_minister = "Chernov"; agriculture_minister_party = "SR"; post_minister = "Tsereteli"; post_minister_party = "Menshevik"; foreign_minister = "Tereshchenko"; finance_minister = "Shingarev"; finance_minister_party = "Kadet";
 
-In response to the protests, the Kadets have let the bourgeois socialists, the Mensheviks and SRs, join the government. For the SRs, Viktor Chernov is Minister of Agriculture and Alexander Kerensky is Minister of War. For the Mensheviks, Irakli Tsereteli is Minister of Posts and Telegraph and Matvey Skobelev is Minister of Labor. Milyukov has resigned, and the position of Foreign Minister is filled by Mikhail Tereshchenko.
+시위에 밀린 카데트들은 부르주아 사회주의자들인 멘셰비키와 사회혁명당의 입각을 허용했습니다. 사회혁명당에서는 빅토르 체르노프가 농업부 장관을, 알렉산드르 케렌스키가 전쟁부 장관을 맡았습니다. 멘셰비키에서는 이라클리 체레텔리가 우편전신부 장관을, 마트베이 스코벨레프가 노동부 장관을 맡았습니다. 밀류코프는 사임했고, 미하일 테레셴코가 외무장관 자리를 채웠습니다.
 
-This is an opportunity for the Bolsheviks to recruit and organize among the workers, who might become disillusioned by the failure of the moderate socialists.
+이는 볼셰비키에게 절호의 기회입니다. 온건 사회주의자들에게 실망한 노동자들을 포섭하고 조직할 수 있기 때문입니다.
