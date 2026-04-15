@@ -1,4 +1,4 @@
-title: Coalition Affairs
+title: 연립 정부 다루기
 new-page: true
 is-card: true
 on-arrival: week_actions += 1; coalition_affairs_timer += 4
@@ -6,9 +6,9 @@ view-if: (player_party == "m" or player_party == "sr") and player_in_gov and gov
 card-image: img/portraits/TaburinChildrens.jpg
 tags: prov_gov
 
-= Coalition Affairs
+= 연립 정부 다루기
 
-Changes in the Provisional Government might increase political instability and popular discontent with the government.
+임시 정부 내의 권력 구도 변화는 정치적 불안정을 초래하거나 정부에 대한 대중의 불만을 야기할 위험이 있습니다.
 
 - @m_increase
 - @m_demand_premier
@@ -19,47 +19,47 @@ Changes in the Provisional Government might increase political instability and p
 - @easy_discard
 
 @m_increase
-title: Increase our influence in the government.
-subtitle: We can reshuffle the cabinet and add an additional cabinet member. This might hurt our relations with other parties.
-unavailable-subtitle: [? if m_k_relation < 45 and prime_minister == "Lvov": Our relation with the Kadets are not good enough. ?][? if m_sr_relation < 45 and prime_minister == "Kerensky": Our relation with the SRs are not good enough. ?][? if m_influence > 65: Our coalition partners believe that we have enough influence in government. ?]
+title: 정부 내 당의 영향력을 확대한다.
+subtitle: 내각 개편을 통해 당 소속 장관을 추가로 입각시킬 수 있습니다. 이는 다른 연정 파트너들과의 관계를 악화시킬 수 있습니다.
+unavailable-subtitle: [? if m_k_relation < 45 and prime_minister == "Lvov": 카데트와의 관계가 충분히 우호적이지 않습니다. ?][? if m_sr_relation < 45 and prime_minister == "Kerensky": 사회혁명당과의 관계가 충분히 우호적이지 않습니다. ?][? if m_influence > 65: 연정 파트너들은 우리 당이 이미 충분한 정부 내 영향력을 행사하고 있다고 판단합니다. ?]
 view-if: player_party == "m" and prime_minister_party != "Menshevik"
 choose-if: ((m_k_relation >= 45 and prime_minister == "Lvov") or (m_sr_relation >= 45 and prime_minister == "Kerensky")) and (m_influence <= 65)
 on-arrival: m_k_relation -= 5 if prime_minister == "Lvov"; m_sr_relation -= 5 if prime_minister == "Kerensky"; m_influence += 15; prov_gov_legitimacy -= 4
 go-to: m_join_prov_gov
 
-We demand more Menshevik representation in the cabinet, and our demand have been grudgingly granted by the other government participants.
+우리는 내각 내 멘셰비키 지분의 확대를 요구했고, 다른 연정 참여당들은 마지못해 이를 수용했습니다.
 
 @sr_increase
-title: Increase our influence in the government.
-subtitle: We can reshuffle the cabinet and add an additional cabinet member. This might hurt our relations with other parties.
-unavailable-subtitle: [? if sr_k_relation < 45 and prime_minister == "Lvov": Our relation with the Kadets are not good enough. ?][? if m_sr_relation < 45 and prime_minister == "Tsereteli": Our relation with the Mensheviks are not good enough. ?][? if sr_influence > 65: Our coalition partners believe that we have enough influence in government. ?]
+title: 정부 내 당의 영향력을 확대한다.
+subtitle: 내각 개편을 통해 당 소속 장관을 추가로 입각시킬 수 있습니다. 이는 다른 연정 파트너들과의 관계를 악화시킬 수 있습니다.
+unavailable-subtitle: [? if sr_k_relation < 45 and prime_minister == "Lvov": 카데트와의 관계가 충분히 우호적이지 않습니다. ?][? if m_sr_relation < 45 and prime_minister == "Tsereteli": 멘셰비키와의 관계가 충분히 우호적이지 않습니다. ?][? if sr_influence > 65: 연정 파트너들은 우리 당이 이미 충분한 정부 내 영향력을 행사하고 있다고 판단합니다. ?]
 view-if: player_party == "sr" and prime_minister_party != "SR" and prime_minister != "Kerensky"
 choose-if: ((sr_k_relation >= 45 and prime_minister == "Lvov") or (m_sr_relation >= 45 and prime_minister == "Tsereteli")) and sr_influence <= 65
 on-arrival: sr_k_relation -= 5 if prime_minister == "Lvov"; m_sr_relation -= 5 if prime_minister == "Tsereteli"; sr_influence += 15; prov_gov_legitimacy -= 4
 go-to: m_join_prov_gov
 
-We demand more SR representation in the cabinet, and our demand have been grudgingly granted by the other government participants.
+우리는 내각 내 사회혁명당 지분의 확대를 요구했고, 다른 연정 참여당들은 마지못해 이를 수용했습니다.
 
 @m_demand_premier
-title: Demand the appointment of Irakli Tsereteli as prime minister!
-unavailable-subtitle: [? if m_k_relation < 55 and prime_minister == "Lvov": Our relation with the Kadets are not good enough. ?][? if m_sr_relation < 55 and prime_minister == "Kerensky": Our relation with the SRs are not good enough. ?][? if prime_minister == "Lvov" and k_coalition_dissent >= dissent_threshold - 1 : Our coalition is too fragile for such a move. ?][? if prime_minister == "Kerensky" and socialist_coalition_dissent >= dissent_threshold - 1 : Our coalition is too fragile for such a move. ?]
+title: 이라클리 체레텔리를 총리로 추대할 것을 요구한다!
+unavailable-subtitle: [? if m_k_relation < 55 and prime_minister == "Lvov": 카데트와의 관계가 충분히 우호적이지 않습니다. ?][? if m_sr_relation < 55 and prime_minister == "Kerensky": 사회혁명당과의 관계가 충분히 우호적이지 않습니다. ?][? if prime_minister == "Lvov" and k_coalition_dissent >= dissent_threshold - 1 : 현재 연립 정부의 결속력이 너무 약해 이러한 요구를 관철하기 어렵습니다. ?][? if prime_minister == "Kerensky" and socialist_coalition_dissent >= dissent_threshold - 1 : 현재 연립 정부의 결속력이 너무 약해 이러한 요구를 관철하기 어렵습니다. ?]
 view-if: player_party == "m" and prime_minister != "Tsereteli" and prime_minister_party != "Menshevik"
 choose-if: ((m_k_relation >= 55 and prime_minister == "Lvov" and k_coalition_dissent < dissent_threshold - 1) or (m_sr_relation >= 55 and prime_minister == "Kerensky" and socialist_coalition_dissent < dissent_threshold - 1))
 on-arrival: prime_minister = "Tsereteli"; prime_minister_party = "Menshevik"; k_coalition_dissent += 1
 
-Our coalition partners have accepted our demands. Irakli Tsereteli is now prime minister of the Provisional Government.
+연정 파트너들이 우리의 요구를 받아들였습니다. 이제 이라클리 체레텔리가 임시 정부의 총리직을 수행합니다.
 
 @sr_demand_premier
-title: Demand the appointment of Alexander Kerensky as prime minister!
-unavailable-subtitle: [? if sr_k_relation < 55 and prime_minister == "Lvov": Our relation with the Kadets are not good enough. ?][? if m_sr_relation < 55 and prime_minister == "Kerensky": Our relation with the SRs are not good enough. ?]
+title: 알렉산드르 케렌스키를 총리로 추대할 것을 요구한다!
+unavailable-subtitle: [? if sr_k_relation < 55 and prime_minister == "Lvov": 카데트와의 관계가 충분히 우호적이지 않습니다. ?][? if m_sr_relation < 55 and prime_minister == "Kerensky": 사회혁명당과의 관계가 충분히 우호적이지 않습니다. ?]
 view-if: player_party == "sr" and prime_minister != "Kerensky" and prime_minister_party != "SR"
 choose-if: ((m_k_relation >= 55 and prime_minister == "Lvov") or (m_sr_relation >= 55 and prime_minister == "Tsereteli"))
 on-arrival: prime_minister = "Kerensky"; prime_minister_party = "SR";
 
 @establish_soviet
-title: Establish a Soviet government!
-subtitle: It is time to form a government based in the Soviets!
-unavailable-subtitle: [? if (player_party = "m" and m_prov_gov_policy < 3) or (player_party = "sr" and sr_prov_gov_policy < 3): The party does not support the formation of an all-socialist government. ?][? if (player_party = "m" and m_k_relation < 40) or (player_party = "sr" and sr_k_relation < 40) : Our relations with the Kadets are not good enough. ?][? if (player_party = "m" and m_sr_relation < 55) : Our relations with the SRs are not good enough. ?][? if (player_party = "sr" and m_sr_relation < 55) : Our relations with the Mensheviks are not good enough. ?][? if not player_in_exco: We must be in the Soviet Executive Committee. ?]
+title: 소비에트 기반의 정부를 수립한다!
+subtitle: 이제 소비에트에 뿌리를 둔 정부를 구성해야 할 때입니다!
+unavailable-subtitle: [? if (player_party = "m" and m_prov_gov_policy < 3) or (player_party = "sr" and sr_prov_gov_policy < 3): 당내에서 사회주의자 단독 정부 구성에 대한 지지가 부족합니다. ?][? if (player_party = "m" and m_k_relation < 40) or (player_party = "sr" and sr_k_relation < 40) : 카데트와의 관계가 충분히 우호적이지 않습니다. ?][? if (player_party = "m" and m_sr_relation < 55) : 사회혁명당과의 관계가 충분히 우호적이지 않습니다. ?][? if (player_party = "sr" and m_sr_relation < 55) : 멘셰비키와의 관계가 충분히 우호적이지 않습니다. ?][? if not player_in_exco: 우리 당이 소비에트 집행위원회에 참여하고 있어야 합니다. ?]
 view-if:((player_party = "m" and not m_defensist_split) or (player_party = "sr" and not right_sr_split)) and not in_socialist_coalition and government_form != 1
 choose-if: (player_party = "m" and m_prov_gov_policy >= 3 and m_sr_relation >= 55 and m_k_relation >= 40 and m_in_exco) or (player_party = "sr" and sr_prov_gov_policy >= 3 and m_sr_relation >= 55 and sr_k_relation >= 40 and sr_in_exco)
 on-arrival: k_in_gov = 0; sr_in_gov = 1; m_in_gov = 1; in_socialist_coalition = 1; prime_minister = "Kerensky"; prime_minister_party = "SR"; agriculture_minister = "Chernov"; agriculture_minister_party = "SR"; justice_minister = "Kerensky"; justice_minister_party = "SR"; interior_minister = "Tsereteli"; interior_minister_party = "Menshevik"; finance_minister = "Voitinsky"; finance_minister_party = "Menshevik"; war_minister = "Verkhovsky"; war_minister_party = "SR"; foreign_minister = "Tereshchenko"; foreign_minister_party = "Independent"; transport_minister = "Plekhanov"; transport_minister_party = "Menshevik"; trade_minister = "Groman"; trade_minister_party = "Menshevik"; food_minister = "Kondratiev"; food_minister_party = "SR"; m_influence = m_sr_relation - 35; sr_influence = m_sr_relation - 45; m_k_relation -= 10; sr_k_relation -= 10; prov_gov_legitimacy += 30; workers_sr += 15*(1-sr_dissent); soldiers_sr += 15*(1-sr_dissent); workers_m += 15*(1-m_dissent); soldiers_m += 15*(1-m_dissent); government_form = 1; m_k_relation -= 10; sr_k_relation -= 10; m_b_relation += 5; b_sr_relation += 5;
@@ -72,17 +72,17 @@ go-to: soviet_government_formation
 
 
 @m_leave_govt
-title: Resign from the government.
+title: 정부에서 사퇴한다.
 
 @sr_leave_govt
 
 @m_shuffle_cabinet
-title: Shuffle the cabinet, and increase our representation in government.
-subtitle: Our coalition partners might be upset...
+title: 내각을 개편하여 정부 내 당의 지분을 확대한다.
+subtitle: 연정 파트너들의 반발을 살 수 있습니다...
 view-if: player_party == "m" and prime_minister_party == "Menshevik" and sr_influence <= 80
 
 @sr_shuffle_cabinet
-title: Shuffle the cabinet, and increase our representation in government.
-subtitle: Our coalition partners might be upset...
+title: 내각을 개편하여 정부 내 당의 지분을 확대한다.
+subtitle: 연정 파트너들의 반발을 살 수 있습니다...
 view-if: player_party == "sr" and (prime_minister_party == "SR" or prime_minister_party == "Right-SR") and sr_influence <= 80
 

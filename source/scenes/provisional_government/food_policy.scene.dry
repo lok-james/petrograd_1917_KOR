@@ -1,4 +1,4 @@
-title: Food Policy
+title: 식량 정책
 new-page: true
 is-card: true
 on-arrival: food_policy_timer += 3; week_actions += 1
@@ -6,60 +6,60 @@ view-if: food_policy_timer == 0 and ((player_party = "k" and k_in_gov and (food_
 card-image: img/market.jpg
 tags: prov_gov
 
-= Food Policy
+= 식량 정책
 
 # state buyer
 # rationing - impose rationing, reduce rations, increase rations
 # impose food taxes in kind
 
-The revolution occurred because of the shortages of bread, and the people are desperately demanding relief for their hunger.
+혁명은 만성적인 식량 부족에서 비롯되었으며, 민중은 굶주림을 해결해 줄 대책을 간절히 요구하고 있습니다.
 
-Urban food demand: [+ food_demand_urban +] million kg/year
+도시 식량 수요: [+ food_demand_urban +] 백만 kg/년
 
-Urban food supply: [+ food_supply_urban +] million kg/year
+도시 식량 공급: [+ food_supply_urban +] 백만 kg/년
 
-Food shortage: [+ hunger +]% 
+식량 부족률: [+ hunger +]% 
 
 #- @demilitarization
 - @state_buyer
 - @increase_price
-- @root: No action is needed.
+- @root: 추가적인 조치가 필요하지 않다.
 - @easy_discard
 - @cancel_advisor_action
 
 @state_buyer
-title: Create a state monopoly for grain purchasing.
-subtitle: -2 budget
+title: 곡물 수매를 위한 국가 전매 기구를 창설한다.
+subtitle: 예산 -2
 on-arrival: budget -= 2; grain_price += 1; food_sold += 0.015*prov_gov_efficacy; grain_monopoly = 1; monthly_inflation += 0.01; workers_m += 4*(1-m_dissent)*prov_gov_efficacy if m_in_gov; workers_sr += 4*(1-sr_dissent)*prov_gov_efficacy if sr_in_gov; workers_k += 1 if k_in_gov;
 view-if: grain_monopoly = 0
 
-We have created a state monopoly for grain purchasing. The goal is to provide both good prices for farmers as well as acquire enough food to feed the cities, and to sell the food at affordable prices.
+곡물 수매를 전담할 국가 전매 기구를 설치했습니다. 농민들에게는 정당한 가격을 보장하고, 도시에는 충분한 식량을 공급하며, 최종적으로는 소비자에게 저렴한 가격으로 식량을 판매하는 것이 목표입니다.
 
 @increase_price
-title: Increase the price of grain paid out to farmers.
-subtitle: -2 budget
+title: 농민들에게 지급하는 곡물 수매가를 인상한다.
+subtitle: 예산 -2
 on-arrival: budget -= 2; grain_price += 1; food_sold += 0.015*prov_gov_efficacy; monthly_inflation += 0.1; workers_m += 4*(1-m_dissent)*prov_gov_efficacy if m_in_gov; workers_sr += 4*(1-sr_dissent)*prov_gov_efficacy if sr_in_gov; workers_k += 1 if k_in_gov;
 view-if: grain_monopoly = 1
 
-We have increased the price of grain paid out to farmers. This is a strain on our budget, but it could induce more farmers to sell.
+농민들에게 지급하는 곡물 수매 가격을 인상했습니다. 재정에는 부담이 되겠지만, 이를 통해 농민들이 시장에 더 많은 곡물을 내놓도록 유도할 수 있을 것입니다.
 
 # demilitarization is not implemented here because the same things are done in military_policy
 
 @demilitarization
-title: End military requisitioning of grain.
-subtitle: Now that we are at peace, we can return food to the cities.
+title: 곡물에 대한 군사적 징발을 중단한다.
+subtitle: 평화 상태에 접어들었으므로, 이제 식량을 도시로 돌릴 수 있습니다.
 view-if: is_armistice or is_peace or allied_victory
 choose-if: southwestern_front_soldiers < 50 and northern_front_soldiers < 50 and western_front_soldiers < 50 and romanian_front_soldiers < 50 and caucasus_front_soldiers < 50
-unavailable-subtitle: There are still too many soldiers in the field.
+unavailable-subtitle: 전선에 여전히 너무 많은 병력이 남아 있습니다.
 max-visits: 1
 on-arrival: food_sold += food_requisitioned/2; food_requisitioned = 0;
 
 
 @reduce_rations
-title: Reduce food rations.
+title: 식량 배급량을 축소한다.
 
 @tax_in_kind
-title: Impose a tax-in-kind of grain on farmers.
+title: 농민들에게 곡물 현물세를 부과한다.
 view-if: grain_tax_available = 1
 
 # this is a NEP idea I think

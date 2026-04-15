@@ -1,4 +1,4 @@
-title: Education Policy
+title: 교육 정책
 new-page: true
 is-card: true
 on-arrival: education_policy_timer += 4; week_actions += 1
