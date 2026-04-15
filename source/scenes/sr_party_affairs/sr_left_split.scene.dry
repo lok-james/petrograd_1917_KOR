@@ -1,4 +1,4 @@
-title: Left-SR Split
+title: 사회혁명당 좌파 분열
 view-if: left_sr_dissent > sr_split_threshold
 max-visits: 1
 on-arrival: {!
@@ -48,8 +48,8 @@ if (Q.natanson_advisor) {
 }
 !}
 
-The Left-SRs are splitting into a new party. Most of the Left-SR leadership has resigned, and their supporters will follow them.
+좌익 사회혁명당원들이 탈당하여 신당을 창당하고 있습니다. 좌익 사회혁명당 지도부 대다수가 사임했으며, 그들의 지지자들도 그 뒤를 따를 것입니다.
 
-This will result in a new election for Petrograd Soviet leadership.
+이로 인해 페트로그라드 소비에트 지도부 선출을 위한 재선거가 실시될 것입니다.
 
-- @soviet_leadership_election: Conduct the Soviet leadership election.
+- @soviet_leadership_election: 소비에트 지도부 선거를 실시한다.

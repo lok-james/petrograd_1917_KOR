@@ -1,8 +1,8 @@
-title: Nationalities policy
+title: 민족 정책
 
 # options: russian unity, federal state with local autonomy, personal but not territorial autonomy, self-determination
 
-What should our policy be regarding the nationalities?
+제국 내 여러 민족에 대해 어떤 정책을 수립해야 하겠습니까?
 
 - @russian_unity
 - @federal_state
@@ -10,15 +10,15 @@ What should our policy be regarding the nationalities?
 - @self_determination
 
 @russian_unity
-title: Maintain the integrity of the Russian Empire.
-subtitle: This is extremely unpopular among our base.
+title: 러시아 제국의 영토적 일체성을 유지한다.
+subtitle: 이 정책은 당의 지지 기반 사이에서 극도로 인기가 없습니다.
 choose-if: social_patriot_strength > internationalist_strength + defensist_strength
 
 @federal_state
-title: Create a federal state in which nationalities will have local autonomy.
+title: 각 민족에게 지방 자치권을 부여하는 연방제를 도입한다.
 
 @personal_autonomy
-title: Every individual will have personal autonomy with regards to nationality, but the nationalities will not have territorial autonomy.
+title: 개인의 민족적 정체성에 따른 자치는 허용하되, 영토적 자치권은 부여하지 않는다.
 
 @self_determination
-title: The nationalities will have self-determination, including independence if they so choose.
+title: 각 민족에게 독립을 포함한 완전한 민족 자결권을 보장한다.

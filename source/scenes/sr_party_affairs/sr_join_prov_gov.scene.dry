@@ -36,104 +36,104 @@ view-if: food_minister_party != "SR"
 on-arrival: sr_influence -= 10; food_minister = "Kondratiev"; food_minister_party = "SR"
 go-to: menu
 
-Nikolai Kondratiev has been appointed Food [+ government_form : minister +].
+니콜라이 콘드라티예프가 식량부 [+ government_form : minister +]에 임명되었습니다.
 
 @justice
-title: Justice Ministry
+title: 법무부
 tags: sr_mins
 choose-if: sr_influence >= 10
 view-if: justice_minister_party != "SR"
 go-to: menu
 on-arrival: sr_influence -= 10; justice_minister = "Kerensky"; justice_minister_party = "SR"
 
-Alexander Kerensky has been appointed Justice [+ government_form : minister +].
+알렉산드르 케렌스키가 법무부 [+ government_form : minister +]에 임명되었습니다.
 
 @labor
-title: Labor Ministry
+title: 노동부
 tags: sr_mins
 choose-if: sr_influence >= 10
 view-if: labor_minister_party != "SR"
 on-arrival: sr_influence -= 10; labor_minister = "Gots"; labor_minister_party = "SR"
 go-to: menu
 
-Abram Gots has been appointed Labor [+ government_form : minister +].
+아브람 고츠가 노동부 [+ government_form : minister +]에 임명되었습니다.
 
 @interior
-title: Interior Ministry
-subtitle: The Interior Ministry deals with internal security.
+title: 내무부
+subtitle: 내무부는 치안 및 국내 안보 업무를 관장합니다.
 tags: sr_mins
 choose-if: sr_influence >= 15
 view-if: interior_minister_party != "SR"
 go-to: menu
 on-arrival: sr_influence -= 15; interior_minister = "Avksentiev"; interior_minister_party = "SR"
 
-Nikolai Avksentiev has been appointed Interior [+ government_form : minister +].
+니콜라이 아브크센티예프가 내무부 [+ government_form : minister +]에 임명되었습니다.
 
 @finance
-title: Finance Ministry
+title: 재무부
 tags: sr_mins
 choose-if: sr_influence >= 15
 view-if: finance_minister_party != "SR"
 go-to: menu
 on-arrival: sr_influence -= 15; finance_minister = "Kondratiev"; finance_minister_party = "SR"
 
-Nikolai Kondratiev has been appointed Finance [+ government_form : minister +].
+니콜라이 콘드라티예프가 재무부 [+ government_form : minister +]에 임명되었습니다.
 
 # lol basically I don't have suitable ministers so it's just Kerensky appointing himself to everything
 
 @war
-title: War Ministry
+title: 전쟁부
 tags: sr_mins
 choose-if: sr_influence >= 15
 view-if: war_minister_party != "SR"
 go-to: menu
 on-arrival: sr_influence -= 15; war_minister = "Kerensky"; war_minister_party = "SR"
 
-Alexander Kerensky has been appointed War [+ government_form : minister +].
+알렉산드르 케렌스키가 전쟁부 [+ government_form : minister +]에 임명되었습니다.
 
 # TODO: Verkhovsky should have this under circumstances
 
 
 @foreign
-title: Foreign Ministry
+title: 외무부
 tags: sr_mins
 choose-if: sr_influence >= 15
 view-if: foreign_minister_party != "SR"
 go-to: menu
 on-arrival: sr_influence -= 15; foreign_minister = "Kerensky"; foreign_minister_party = "SR"
 
-Alexander Kerensky has been appointed Foreign [+ government_form : minister +].
+알렉산드르 케렌스키가 외무부 [+ government_form : minister +]에 임명되었습니다.
 
 
 @transport
-title: Transportation Ministry
-subtitle: This ministry manages the railroads.
+title: 교통부 장관
+subtitle: 철도 및 교통망 관리 업무를 관장합니다.
 tags: sr_mins
 choose-if: sr_influence >= 10
 view-if: transport_minister_party != "SR"
 go-to: menu
 on-arrival: sr_influence -= 10; transport_minister = "Kerensky"; transport_minister_party = "SR"
 
-Alexander Kerensky has been appointed Transportation [+ government_form : minister +].
+알렉산드르 케렌스키가 교통부 [+ government_form : minister +]에 임명되었습니다.
 
 
 @trade
-title: Industry and Trade Ministry
-unavailable-subtitle: Not enough influence.
-subtitle: This ministry manages industrial production.
+title: 상공부 장관
+unavailable-subtitle: 영향력이 부족합니다.
+subtitle: 산업 생산 및 통상 업무를 관장합니다.
 view-if: trade_minister_party != "SR"
 tags: sr_mins
 choose-if: sr_influence >= 10
 go-to: menu
 on-arrival: sr_influence -= 10; trade_minister = "Kondratiev"; trade_minister_party = "SR"
 
-Nikolai Kondratiev been appointed Trade and Industry [+ government_form : minister +].
+니콜라이 콘드라티예프가 상공부 [+ government_form : minister +]에 임명되었습니다.
 
 
 
 @drop_agriculture
-title: Drop the Agriculture Ministry.
-unavailable-subtitle: As SRs, we must hold the Agriculture Ministry.
+title: 농무부 장관직을 사임한다.
+unavailable-subtitle: 사회혁명당의 정체성을 고려할 때, 농무부 장관직은 반드시 유지해야 합니다.
 view-if: agriculture_minister_party = "SR"
 choose-if: m_rural_policy > 0
 tags: sr_drop_mins
@@ -144,10 +144,10 @@ Q.agriculture_minister_party = "Kadet";
 Q.sr_influence += 10;
 !}
 
-We have dropped the Agriculture Ministry, and the position has been assigned to [+ agriculture_minister +], the [+ agriculture_minister_party +].
+농무부 장관직에서 물러났습니다. 해당 직위는 [+ agriculture_minister_party +] 소속의 [+ agriculture_minister +]에게 인계되었습니다.
 
 @drop_food
-title: Drop the Food Ministry.
+title: 식량부 장관직을 사임한다.
 view-if: food_minister_party = "SR"
 tags: sr_drop_mins
 go-to: menu
@@ -157,12 +157,12 @@ Q.food_minister_party = "Popular Socialist";
 Q.sr_influence += 10;
 !}
 
-We have dropped the Food Ministry, and the position has been assigned to [+ food_minister +], the [+ food_minister_party +].
+식량부 장관직에서 물러났습니다. 해당 직위는 [+ food_minister_party +] 소속의 [+ food_minister +]에게 인계되었습니다.
 
 
 
 @drop_justice
-title: Drop the Justice Ministry.
+title: 법무부 장관직을 사임한다.
 view-if: justice_minister_party = "SR"
 tags: sr_drop_mins
 go-to: menu
@@ -177,11 +177,11 @@ if (!Q.in_socialist_coalition) {
 Q.sr_influence += 10;
 !}
 
-We have dropped the Justice Ministry, and the position has been assigned to [+ justice_minister +], the [+ justice_minister_party +].
+법무부 장관직에서 물러났습니다. 해당 직위는 [+ justice_minister_party +] 소속의 [+ justice_minister +]에게 인계되었습니다.
 
 
 @drop_labor
-title: Drop the Labor Ministry.
+title: 노동부 장관직을 사임한다.
 view-if: labor_minister_party = "SR"
 tags: sr_drop_mins
 go-to: menu
@@ -196,12 +196,12 @@ if (!Q.in_socialist_coalition) {
 Q.sr_influence += 10;
 !}
 
-We have dropped the Labor Ministry, and the position has been assigned to [+ labor_minister +], the [+ labor_minister_party +].
+노동부 장관직에서 물러났습니다. 해당 직위는 [+ labor_minister_party +] 소속의 [+ labor_minister +]에게 인계되었습니다.
 
 
 
 @drop_interior
-title: Drop the Interior Ministry.
+title: 내무부 장관직을 사임한다.
 view-if: interior_minister_party = "SR"
 tags: sr_drop_mins
 go-to: menu
@@ -219,11 +219,11 @@ if (Q.kadets_resigned) {
 Q.sr_influence += 15;
 !}
 
-We have dropped the Interior Ministry, and the position has been assigned to [+ interior_minister +], the [+ interior_minister_party +].
+내무부 장관직에서 물러났습니다. 해당 직위는 [+ interior_minister_party +] 소속의 [+ interior_minister +]에게 인계되었습니다.
 
 
 @drop_finance
-title: Drop the Finance Ministry.
+title: 재무부 장관직을 사임한다.
 view-if: finance_minister_party = "SR"
 tags: sr_drop_mins
 go-to: menu
@@ -238,12 +238,12 @@ if (Q.kadets_resigned) {
 Q.sr_influence += 15;
 !}
 
-We have dropped the Finance Ministry, and the position has been assigned to [+ finance_minister +], the [+ finance_minister_party +].
+재무부 장관직에서 물러났습니다. 해당 직위는 [+ finance_minister_party +] 소속의 [+ finance_minister +]에게 인계되었습니다.
 
 
 
 @drop_war
-title: Drop the War Ministry.
+title: 전쟁부 장관직을 사임한다.
 view-if: war_minister_party = "SR"
 tags: sr_drop_mins
 go-to: menu
@@ -258,12 +258,12 @@ if (Q.kadets_resigned || Q.in_socialist_coalition) {
 Q.sr_influence += 15;
 !}
 
-We have dropped the War Ministry, and the position has been assigned to [+ war_minister +], the [+ war_minister_party +].
+전쟁부 장관직에서 물러났습니다. 해당 직위는 [+ war_minister_party +] 소속의 [+ war_minister +]에게 인계되었습니다.
 
 
 
 @drop_foreign
-title: Drop the Foreign Ministry.
+title: 외무부 장관직을 사임한다.
 view-if: foreign_minister_party = "SR"
 tags: sr_drop_mins
 go-to: menu
@@ -273,12 +273,12 @@ Q.foreign_minister_party = "Independent";
 Q.sr_influence += 15;
 !}
 
-We have dropped the Foreign Ministry, and the position has been assigned to [+ foreign_minister +], the [+ foreign_minister_party +].
+외무부 장관직에서 물러났습니다. 해당 직위는 [+ foreign_minister_party +] 소속의 [+ foreign_minister +]에게 인계되었습니다.
 
 
 
 @drop_transport
-title: Drop the Transport Ministry.
+title: 교통부 장관직을 사임한다.
 view-if: transport_minister_party = "SR"
 tags: sr_drop_mins
 go-to: menu
@@ -293,12 +293,12 @@ if (!Q.in_socialist_coalition) {
 Q.sr_influence += 10;
 !}
 
-We have dropped the Transport Ministry, and the position has been assigned to [+ transport_minister +], the [+ transport_minister_party +].
+교통부 장관직에서 물러났습니다. 해당 직위는 [+ transport_minister_party +] 소속의 [+ transport_minister +]에게 인계되었습니다.
 
 
 
 @drop_trade
-title: Drop the Trade and Industry Ministry.
+title: 상공부 장관직을 사임한다.
 view-if: trade_minister_party = "SR"
 tags: sr_drop_mins
 go-to: menu
@@ -313,5 +313,5 @@ if (!Q.in_socialist_coalition) {
 Q.sr_influence += 10;
 !}
 
-We have dropped the Trade Ministry, and the position has been assigned to [+ trade_minister +], the [+ trade_minister_party +].
+상공부 장관직에서 물러났습니다. 해당 직위는 [+ trade_minister_party +] 소속의 [+ trade_minister +]에게 인계되었습니다.
 
