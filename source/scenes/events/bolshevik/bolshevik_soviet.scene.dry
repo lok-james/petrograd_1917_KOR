@@ -1,23 +1,23 @@
-title: Bolshevik Vote in the Soviet
-subtitle: The Bolsheviks are calling for elections for new leadership in the Petrograd Soviet.
+title: 소비에트 내 볼셰비키 투표
+subtitle: 볼셰비키가 페트로그라드 소비에트의 새로운 지도부 선출을 요구하고 있습니다.
 new-page: True
 view-if: player_party != "b" and month >= 8 and week >= 1 and not b_in_exco and b_soviet + left_sr_strength*sr_soviet/100 >= m_soviet + right_sr_strength*sr_soviet/100 and bolshevik_soviet_timer = 0
 on-arrival: bolshevik_soviet_timer += 4; mrc_timer += 4
 tags: event
 
-= Bolshevik Vote in the Soviet
+= 소비에트 내 볼셰비키 투표
 
-The Bolsheviks are calling for a vote in the Soviet to approve one of their propositions, essentially calling for the existing executive committee to step down and a new one to be elected from the membership. Since March, the Executive Committee has largely been static, even as the composition of the Soviet has shifted drastically, so that the Bolsheviks might be the largest party.
+볼셰비키가 자신들의 제안을 통과시키기 위해 소비에트 내 투표를 요구하고 있습니다. 이는 사실상 기존 집행위원회의 총사퇴와 새로운 위원회 선출을 압박하는 것입니다. 지난 3월 이후 소비에트의 구성은 볼셰비키가 제1당이 될 정도로 급격히 변했음에도 불구하고, 집행위원회는 그 변화를 반영하지 못한 채 정체되어 있었습니다.
 
-- @vote: Let the vote go ahead.
+- @vote: 투표를 진행한다.
 - @b_k
 
 @vote
 go-to: soviet_leadership_election
 
 @b_k
-title: This is none of our business...
+title: 우리와는 상관없는 일이다...
 view-if: player_party = "k"
 on-arrival: b_in_exco = 1; left_sr_in_exco = 1; m_in_exco = 0; sr_in_exco = 0; workers_milita_b_loyalty += 15; soldiers_b += 10; workers_b += 10; soviet_chair = "Trotsky"; soviet_chair_party = "Bolshevik"; b_threat += 1
 
-Whether or not the Bolsheviks take the Soviet is none of our business. But the Bolsheviks eventually do take control of the Executive Committee. This is a consequence of the Bolsheviks' rise in popularity, and a harbinger of their future growth.
+볼셰비키가 소비에트를 장악하든 말든 우리가 상관할 바는 아닙니다. 그러나 결국 볼셰비키는 집행위원회의 통제권을 손에 넣었습니다. 이는 볼셰비키의 지지율 상승이 가져온 결과이며, 앞으로 그들이 더욱 세력을 키울 것임을 암시하는 징조입니다.

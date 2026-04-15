@@ -1,11 +1,11 @@
-title: Military-Revolutionary Committee
-subtitle: The Bolsheviks are organizing for an uprising...
+title: 군사 혁명 위원회
+subtitle: 볼셰비키가 봉기를 준비하고 있습니다...
 new-page: True
 view-if: b_in_exco and prov_gov_legitimacy <= 50 and mrc_timer = 0 and player_party != "b" and government_form != 1 and government_form != 5 and not b_in_gov
 on-arrival: soldiers_b += 15; workers_militia_b_loyalty += 25; mrc = 1; bolshevik_coup_timer = 4; rev_progress += 3; soviet_cooperation = 0; b_threat += 1
 tags: event
 max-visits: 1
 
-= Military-Revolutionary Committee
+= 군사 혁명 위원회
 
-The Bolshevik-led Petrograd Soviet has formed the Military-Revolutionary Committee, a committee to organize the workers' militias and garrison troops for the defense of the revolution. Many regard this as preparation for the Bolsheviks launching a revolution to finally overthrow the Provisional Government.
+볼셰비키가 주도하는 페트로그라드 소비에트가 '군사 혁명 위원회'를 구성했습니다. 이는 혁명 수호를 명분으로 노동자 민병대와 주둔군 병력을 조직하기 위한 기구입니다. 많은 이들은 이를 볼셰비키가 마침내 임시 정부를 전복시키기 위한 혁명을 일으키려는 사전 준비 단계로 보고 있습니다.
