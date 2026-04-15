@@ -1,4 +1,4 @@
-title: Labor Policy
+title: 노동 정책
 new-page: true
 is-card: true
 on-arrival: labor_policy_timer += 4; week_actions += 1

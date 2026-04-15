@@ -1,4 +1,4 @@
-title: Foreign Policy
+title: 외교 정책
 new-page: true
 is-card: true
 on-arrival: foreign_policy_timer += 4; week_actions += 1
@@ -6,9 +6,9 @@ view-if: foreign_policy_timer == 0 and ((player_party = "k" and k_in_gov and (fo
 card-image: img/america.jpg
 tags: prov_gov
 
-= Foreign Policy
+= 외교 정책
 
-What should our foreign policy priority be?
+우리의 외교 정책에서 최우선으로 삼아야 할 과제는 무엇입니까?
 
 # negotiate for a general peace with all powers
 # negotiate separate ceasefire with central powers
@@ -24,78 +24,78 @@ What should our foreign policy priority be?
 - @peace_negotiate_2
 - @peace_negotiate_3
 - @sign_peace
-- @root: No new policy is needed.
+- @root: 추가적인 외교 정책이 필요하지 않다.
 - @easy_discard
 
 @improve_west
-title: Improve our relations with our allies in the Entente, France and Britain.
+title: 협상국 동맹인 프랑스 및 영국과의 관계를 개선한다.
 on-arrival: west_relation += 7*prov_gov_efficacy; west_relation -= 5*prov_gov_efficacy if central_negotiations > 0 or is_armistice
 
-We are working to improve relations with France and Britain. [? if central_negotiations > 0 or is_armistice: Unfortunately, given our seeking of a separate peace, the Allies are much less inclined to treat us favorably. ?]
+프랑스 및 영국과의 관계를 개선하기 위해 노력하고 있습니다. [? if central_negotiations > 0 or is_armistice: 불행히도 우리가 단독 강화를 추진하고 있다는 점 때문에, 협상국 측은 우리를 호의적으로 대할 의사가 거의 없는 상태입니다. ?]
 
 @improve_us
-title: Improve relations with the United States.
+title: 미국과의 관계를 개선한다.
 
 @loans
-title: Negotiate for new loans.
-subtitle: +2 budget; this will lower relations with the West.
-unavailable-subtitle: We do not have good enough relations with the Allies.
+title: 신규 차관 도입을 협상한다.
+subtitle: 예산 +2; 서방과의 관계가 악화될 것입니다.
+unavailable-subtitle: 협상국과의 관계가 충분히 우호적이지 않습니다.
 choose-if: west_relation >= 55
 on-arrival: west_relation -= 8; budget += 2;
 
-We have gotten new loans from the allies.
+동맹들로부터 새로운 차관을 확보했습니다.
 
 @technical_assistance
-title: Negotiate for more technical assistance.
-unavailable-subtitle: We do not have good enough relations with the Allies.
+title: 기술 지원 확대를 협상한다.
+unavailable-subtitle: 협상국과의 관계가 충분히 우호적이지 않습니다.
 choose-if: west_relation >= 55
 
-Unfortunately, all foreign shipments must go through either Vladivostok in the Far East, where it has to be transported via the rickety Trans-Siberian Railroad, or Arkhangel'sk in the far north, where there is only a single train line leading to central Russia.
+안타깝게도 모든 해외 물자는 극동의 블라디보스토크(노후화된 시베리아 횡단 철도를 통해 운송해야 함)나 극북의 아르한겔스크(러시아 중부로 연결되는 단일 선로만 존재함)를 거쳐야만 들어올 수 있습니다.
 
 @trains
-title: Purchase train cars.
+title: 철도 차량을 도입한다.
 
 @industry
-title: Purchase industrial equipment.
+title: 산업 설비를 도입한다.
 
 @peace_negotiate
-title: Negotiate for a ceasefire with the Central Powers.
+title: 동맹국과 휴전 협상을 개시한다.
 choose-if: (player_party = "m" and m_war_policy >= 2) or (player_party = "sr" and sr_war_policy >= 2) or (player_party = "k" and k_war_policy >= 1)
-unavailable-subtitle: Our party does not support this.
+unavailable-subtitle: 우리 당의 공식 입장과 배치됩니다.
 view-if: armistice_progress = 0 and not is_armistice and not is_peace and not allied_victory
 on-arrival: armistice_progress += 1; west_relation -= 10; left_sr_strength += sr_support_change if player_party != sr; internationalist_strength += m_support_change if player_party != "m"; right_sr_dissent += 5; defensist_dissent += 5
 
-We have opened ceasefire negotiations with the Central Powers. We should be able to sign a ceasefire soon...
+동맹국과 휴전 협상을 시작했습니다. 조만간 휴전 협정에 서명할 수 있을 것으로 보입니다...
 
 @peace_negotiate_2
-title: Sign a ceasefire with the Central Powers.
+title: 동맹국과 휴전 협정을 체결한다.
 choose-if: (player_party = "m" and m_war_policy >= 2) or (player_party = "sr" and sr_war_policy >= 2) or (player_party = "k" and k_war_policy >= 1) or (player_party = "b")
-unavailable-subtitle: Our party does not support this.
+unavailable-subtitle: 우리 당의 공식 입장과 배치됩니다.
 view-if: armistice_progress = 1 and is_armistice = 0 and not is_peace and not allied_victory
 on-arrival: armistice_progress += 1; west_relation -= 30; is_armistice = 1; prov_gov_legitimacy += 25; war_or_peace_timer = 8; soldiers_b -= 8 if player_party != "b" and not b_in_gov; soldiers_m += 10*(1-m_dissent) if m_in_gov; soldiers_sr += 10*(1-sr_dissent) if sr_in_gov; soldiers_k += 6*(1-k_dissent) if k_in_gov; workers_m += 10*(1-m_dissent) if m_in_gov; workers_sr += 10*(1-sr_dissent) if sr_in_gov; peasants_sr += 10*(1-sr_dissent) if sr_in_gov; workers_b +=  10*(1-b_dissent) if b_in_gov; soldiers_b += 10*(1-b_dissent) if b_in_gov; central_negotiations = 1; discipline *= 0.8; morale *= 0.8; war_weariness -= 25; left_sr_strength += sr_support_change if player_party != sr; internationalist_strength += m_support_change if player_party != "m"; right_sr_dissent += 5; defensist_dissent += 5; soldier_unrest -= 20
 achievement: peace
 
 # begin timers - war or peace: either peace treaty or war begins anew.
 
-We have signed an armistice with the Central Powers! It is only a temprary measure; we still must negotiate a permanent peace treaty. If we do not negotiate a peace treaty in time, the Germans might resume their attack.
+동맹국과 휴전 협정에 서명했습니다! 이는 임시 조치일 뿐이며, 여전히 정식 평화 조약을 협상해야 합니다. 기한 내에 평화 조약을 체결하지 못한다면 독일군이 공격을 재개할 수도 있습니다.
 
-Our relations with the West might be irreparable after this.
+이 조치로 인해 서방과의 관계는 돌이킬 수 없을 정도로 악화될 수 있습니다.
 
 @peace_negotiate_3
-title: Negotiate for a permanent peace treaty.
+title: 영구적인 평화 조약 체결을 협상한다.
 view-if: is_armistice and central_negotiations < 2 and not is_peace and not allied_victory
 on-arrival: central_negotiations += 1; war_or_peace_timer += 2;
 
-We are continuing with the negotiations for a permanent peace.
+영구적인 평화 체제 구축을 위한 협상을 이어가고 있습니다.
 
-[? if war_progress >= -2 and war_progress <= 0 : The war has had a mix of outcomes so far, with advances along some fronts and retreats along others, but with more defeats than victories for Russia. We will have to make territorial concessions for a peace. ?]
-[? if war_progress < -2 and war_progress > -5 : Given our defeats in the war, we will likely have to make major territorial concessions in the peace. ?]
-[? if war_progress <= -5 : Given our severe defeats in the war, there will be major territorial concessions in any peace treaty.  ?]
-[? if war_progress > 0 : On the whole, we have an advantageous position in the negotiations, given our victories in the war. ?]
+[? if war_progress >= -2 and war_progress <= 0 : 지금까지의 전황은 승패가 엇갈리고 있습니다. 일부 전선에서는 전진했으나 다른 곳에서는 후퇴했으며, 전반적으로 러시아는 승리보다 패배가 더 많았습니다. 평화 조약을 맺으려면 어느 정도 영토 할양이 불가피할 것입니다. ?]
+[? if war_progress < -2 and war_progress > -5 : 전쟁에서의 패배를 고려할 때, 평화 조약 체결 시 대규모 영토 할양을 감수해야 할 것으로 보입니다. ?]
+[? if war_progress <= -5 : 전쟁에서 궤멸적인 패배를 당했기에, 어떠한 평화 조약에서도 막대한 영토 할양을 피할 수 없을 것입니다.  ?]
+[? if war_progress > 0 : 전반적으로 우리가 승기를 잡고 있는 상황이므로, 협상에서 매우 유리한 고지를 점하고 있습니다. ?]
 
 
 @sign_peace
-title: We are ready for a peace treaty.
+title: 평화 조약을 체결할 준비가 되었습니다.
 view-if: central_negotiations >= 2 and not is_peace
 go-to: treaty_good if war_progress > 0; treaty_neutral if war_progress = 0; treaty_bad if war_progress < 0 and war_progress >= -2; treaty_harsh if war_progress < -2 and war_progress >= -4; treaty_severe if war_progress < -4
 
@@ -104,50 +104,50 @@ go-to: treaty_good if war_progress > 0; treaty_neutral if war_progress = 0; trea
 @treaty_good
 on-arrival: peace_terms = 1
 
-= A good treaty
+= 유리한 조약
 
-The treaty is largely on good terms for us. There are no indemnities on either side. [? if caucasus_progress > 0 : There will be some beneficial border adjustments with the Ottoman Empire in the Caucasus region. ?] [? if southwestern_progress > 0 : We will make some gains in the Galician (Southwestern) Front. ?]
+조약 조건은 대체로 우리에게 유리합니다. 양측 모두 배상금은 지불하지 않습니다. [? if caucasus_progress > 0 : 코카서스 지역에서 오스만 제국과의 국경이 우리에게 이로운 방향으로 조정될 것입니다. ?] [? if southwestern_progress > 0 : 갈리시아(남서부) 전선에서 영토를 획득할 것입니다. ?]
 
 - @sign_treaty_good
 - @renegotiate
 
 @sign_treaty_good
-title: Sign the peace treaty!
+title: 평화 조약에 서명한다!
 on-arrival: is_peace = 1; prov_gov_legitimacy += 20; middle_m += 5*(1-m_dissent) if m_in_gov; middle_sr += 5*(1-sr_dissent) if sr_in_gov; middle_k += 10*(1-k_dissent) if k_in_gov; workers_m += 8*(1-m_dissent) if m_in_gov; workers_sr += 8*(1-sr_dissent) if sr_in_gov; workers_b += 10*(1-b_dissent) if b_in_gov; soldiers_m += 10*(1-m_dissent) if m_in_gov; soldiers_sr += 10*(1-sr_dissent) if sr_in_gov; soldiers_b += 15*(1-b_dissent) if b_in_gov; war_weariness -= 30; soldier_unrest -= 30
 achievement: peace_2
 
-We have officially signed a separate peace with the Central Powers!
+동맹국과 단독 평화 조약을 공식 체결했습니다!
 
 
 @treaty_neutral
 on-arrival: peace_terms = 0;
 
-= A relatively neutral treaty
+= 중립적인 조약
 
-There are no indemnities in the treaty. Poland and Finland will become independent states, but there are few other territorial changes. [? if caucasus_progress > 0 : There will be some beneficial border adjustments with the Ottoman Empire in the Caucasus region. ?]
+조약에 배상금 조항은 포함되지 않았습니다. 폴란드와 핀란드는 독립 국가가 되겠지만, 그 외의 영토 변화는 거의 없습니다. [? if caucasus_progress > 0 : 코카서스 지역에서 오스만 제국과의 국경이 우리에게 이로운 방향으로 일부 조정될 것입니다. ?]
 
-- @sign_treaty_neutral: Sign the peace treaty!
-- @renegotiate: Can we renegotiate the peace treaty?
+- @sign_treaty_neutral: 평화 조약에 서명한다!
+- @renegotiate: 조약 조건을 재협상할 수 있나?
 
 @sign_treaty_neutral
-title: Sign the peace treaty!
+title: 평화 조약에 서명한다!
 on-arrival: is_peace = 1; prov_gov_legitimacy += 10; middle_m += 5*(1-m_dissent) if m_in_gov; middle_sr += 5*(1-sr_dissent) if sr_in_gov; middle_k += 5*(1-k_dissent) if k_in_gov; workers_m += 8*(1-m_dissent) if m_in_gov; workers_sr += 8*(1-sr_dissent) if sr_in_gov; workers_b += 8*(1-b_dissent) if b_in_gov; soldiers_m += 8*(1-m_dissent) if m_in_gov; soldiers_sr += 8*(1-sr_dissent) if sr_in_gov; soldiers_b += 8*(1-b_dissent) if b_in_gov; war_weariness -= 30; soldier_unrest -= 30
 achievement: peace_2
 
-We have officially signed a separate peace with the Central Powers!
+동맹국과 단독 평화 조약을 공식 체결했습니다!
 
 @treaty_bad
 on-arrival: peace_terms = -1
 
-= A difficult treaty
+= 불리한 조약
 
-The treaty involves a loss of territory to the Central Powers, but no indemnities. Finland will become an independent state.
-[? if northern_progress < 0 : The Baltic states of Lithuania, Latvia, and Estonia will become independent, likely under the German sphere of influence. ?]
-[? if western_progress < 0: Poland will be an independent state, and will be part of the German sphere of influence. ?]
+조약에 따라 동맹국에 영토를 할양해야 하지만, 배상금은 지불하지 않습니다. 핀란드는 독립 국가가 될 것입니다.
+[? if northern_progress < 0 : 리투아니아, 라트비아, 에스토니아 등 발트 3국은 독일의 영향권 아래에서 독립하게 될 것입니다. ?]
+[? if western_progress < 0: 폴란드는 독립 국가가 되어 독일의 영향권에 편입될 것입니다. ?]
 
-[? if southwestern_progress > 0 : We will give up our gains in the Galician (Southwestern) Front. ?]
+[? if southwestern_progress > 0 : 갈리시아(남서부) 전선에서 획득한 영토를 포기해야 합니다. ?]
 
-[? if caucasus_progress > 0 : There will be some beneficial border adjustments with the Ottoman Empire in the Caucasus region. ?]
+[? if caucasus_progress > 0 : 코카서스 지역에서 오스만 제국과의 국경이 우리에게 이로운 방향으로 일부 조정될 것입니다. ?]
 
 - @sign_treaty_bad
 - @renegotiate
@@ -155,28 +155,28 @@ The treaty involves a loss of territory to the Central Powers, but no indemnitie
 
 
 @sign_treaty_bad
-title: Sign the peace treaty!
+title: 평화 조약에 서명한다!
 on-arrival: is_peace = 1; west_relation -= 10; prov_gov_legitimacy -= 5; m_k_relation -= 10 if m_in_gov; sr_k_relation -= 10 if k_in_gov; b_k_relation -= 20 if b_in_gov; industry -= 5; train_capacity *= 0.95; war_weariness -= 25; workers_m += 5*(1-m_dissent) if m_in_gov; workers_sr += 5*(1-sr_dissent) if sr_in_gov; soldiers_m += 5*(1-m_dissent) if m_in_gov; soldiers_sr += 5*(1-sr_dissent) if sr_in_gov; workers_b += 5*(1-b_dissent) if b_in_gov; soldiers_b += 5*(1-b_dissent) if b_in_gov; soldier_unrest -= 20
 achievement: peace_2
 
-We have officially signed a separate peace with the Central Powers! The treaty is viewed negatively by the Kadets and those who sympathize most with the Allies, but it is generally accepted.
+동맹국과 단독 평화 조약을 공식 체결했습니다! 카데트와 협상국 지지자들은 이 조약을 부정적으로 평가하고 있으나, 대체로 수용되는 분위기입니다.
 
 @treaty_harsh
 on-arrival: peace_terms = -2;
 
-= A harsh treaty
+= 가혹한 조약
 
-The treaty involves a loss of territory to the Central Powers. In addition, there will be some indemnity payments. Finland will become an independent state.
-[? if northern_progress < 0 : The Baltic states of Lithuania, Latvia, and Estonia will become independent, likely under the German sphere of influence. ?]
-[? if western_progress < 0: Poland will be an independent state, and will be part of the German sphere of influence. We will also lose some adjacent territory inhabited mostly by Belarussians and Ukrainians. ?]
+조약에 따라 동맹국에 영토를 할양해야 하며, 추가로 배상금을 지불해야 합니다. 핀란드는 독립 국가가 될 것입니다.
+[? if northern_progress < 0 : 리투아니아, 라트비아, 에스토니아 등 발트 3국은 독일의 영향권 아래에서 독립하게 될 것입니다. ?]
+[? if western_progress < 0: 폴란드는 독립 국가가 되어 독일의 영향권에 편입될 것입니다. 또한 벨라루스인과 우크라이나인이 주로 거주하는 인접 영토 일부를 상실하게 됩니다. ?]
 
-[? if southwestern_progress > 0 : We will give up our gains in the Galician (Southwestern) Front. ?]
-[? if southwestern_progress <= 0 : We will give up some territory in western Ukraine. ?]
+[? if southwestern_progress > 0 : 갈리시아(남서부) 전선에서 획득한 영토를 포기해야 합니다. ?]
+[? if southwestern_progress <= 0 : 우크라이나 서부 영토 일부를 할양해야 합니다. ?]
 
-[? if caucasus_progress > 0 : We will give up our gains in the Caucasus region. ?]
-[? if caucasus_progress <= 0 : We will lose some territory to the Ottoman Empire in the Caucasus region. ?]
+[? if caucasus_progress > 0 : 코카서스 지역에서 확보한 영토를 포기해야 합니다. ?]
+[? if caucasus_progress <= 0 : 코카서스 지역의 영토 일부를 오스만 제국에 할양하게 됩니다. ?]
 
-Many Russians view the treaty as humiliating, but some see it as necessary to achieve a peace. A significant amount of our industrial production, agricultural resources, and population will be given to Germany.
+많은 러시아인이 이 조약을 치욕적으로 여기고 있으나, 평화를 위해서는 어쩔 수 없다는 의견도 존재합니다. 우리의 산업 생산 시설, 농업 자원, 그리고 인구의 상당 부분이 독일의 손에 넘어가게 될 것입니다.
 
 - @sign_treaty_harsh
 - @renegotiate
@@ -184,33 +184,33 @@ Many Russians view the treaty as humiliating, but some see it as necessary to ac
 
 
 @sign_treaty_harsh
-title: Sign the peace treaty!
-subtitle: There is no other option.
+title: 평화 조약에 서명한다!
+subtitle: 다른 대안이 없습니다.
 on-arrival: is_peace = 1; west_relation -= 10; prov_gov_legitimacy -= 10; m_k_relation -= 20 if m_in_gov; sr_k_relation -= 20 if k_in_gov; b_k_relation -= 20 if b_in_gov; budget -= 2; industry -= 10; food_production *= 0.9; urban_population *= 0.9; rural_population *= 0.9; train_capacity *= 0.9; workers_m -= 10 if m_in_gov; workers_sr -= 10 if sr_in_gov; rural_sr -= 10 if sr_in_gov; workers_b -= 10 if b_in_gov; middle_k -= 5 if k_in_gov; middle_m -= 10 if m_in_gov; middle_sr -= 10 if sr_in_gov; war_weariness -= 20; soldier_unrest -= 20
 achievement: peace_2
 
-We have officially signed a separate peace with the Central Powers! The treaty is viewed as harsh and humiliating in many parts of Russia, and the popularity of all of the government parties has declined.
+동맹국과 단독 평화 조약을 공식 체결했습니다! 이 조약은 러시아 전역에서 가혹하고 치욕적인 것으로 받아들여지고 있으며, 모든 정부 참여 정당의 지지율이 급락했습니다.
 
 
 
 @treaty_severe
 on-arrival: peace_terms = -3; prov_gov_legitimacy -= 5;
 
-= A severe treaty
+= 굴욕적인 조약
 
-The mere proposal of the treaty is severe enough to cause a backlash in public opinion. The treaty involves a great deal of loss of territory to the Central Powers, as well as indemnity payments of food and resources.
+이 조약은 제안된 것만으로도 여론의 거센 반발을 불러일으킬 만큼 가혹합니다. 막대한 영토 할양은 물론, 식량과 자원을 배상금으로 지불해야 한다는 내용이 포함되어 있습니다.
 
-Finland will become an independent state.
-[? if northern_progress < 0 : The Baltic states of Lithuania, Latvia, and Estonia will become independent under the German sphere of influence, likely to become German puppet states. ?]
-[? if western_progress < 0: Poland will be an independent state, and will be part of the German sphere of influence. We will also lose some adjacent territory inhabited mostly by Belarussians and Ukrainians, to be controlled by German puppet states. ?]
+핀란드는 독립 국가가 될 것입니다.
+[? if northern_progress < 0 : 리투아니아, 라트비아, 에스토니아 등 발트 3국은 독일의 영향권 아래에서 독립할 것이며, 사실상 독일의 괴뢰국이 될 가능성이 큽니다. ?]
+[? if western_progress < 0: 폴란드는 독립 국가가 되어 독일의 영향권에 편입될 것입니다. 또한 벨라루스인과 우크라이나인이 주로 거주하는 인접 영토 일부를 상실하게 되며, 이 지역들은 독일의 괴뢰국들이 통제하게 될 것입니다. ?]
 
-[? if southwestern_progress > 0 : We will give up our gains in the Galician (Southwestern) Front. ?]
-[? if southwestern_progress <= 0 : Most of Ukrainian territory will become nominally independent under German influence. ?]
+[? if southwestern_progress > 0 : 갈리시아(남서부) 전선에서 확보한 영토를 포기해야 합니다. ?]
+[? if southwestern_progress <= 0 : 우크라이나 영토 대부분이 독일의 영향권 아래에서 명목상의 독립을 유지하게 될 것입니다. ?]
 
-[? if caucasus_progress > 0 : We will give up our gains in the Caucasus region. ?]
-[? if caucasus_progress <= 0 : We will lose some territory to the Ottoman Empire in the Caucasus region. ?]
+[? if caucasus_progress > 0 : 코카서스 지역에서 확보한 영토를 포기해야 합니다. ?]
+[? if caucasus_progress <= 0 : 코카서스 지역의 영토 일부를 오스만 제국에 할양하게 됩니다. ?]
 
-Signing this treaty will likely lead to rebellion, not just among the right. A huge proportion of our industrial production, food production, and population will be given to Germany.
+이 조약에 서명하면 우익뿐만 아니라 각계각층에서 반란이 일어날 가능성이 큽니다. 우리의 산업 및 식량 생산 능력, 그리고 인구의 엄청난 비중이 독일의 지배하에 놓이게 될 것입니다.
 
 - @sign_treaty_severe
 - @renegotiate
@@ -218,28 +218,28 @@ Signing this treaty will likely lead to rebellion, not just among the right. A h
 
 
 @sign_treaty_severe
-title: Sign the peace treaty!
-subtitle: There is no other option.
+title: 평화 조약에 서명한다!
+subtitle: 다른 대안이 없습니다.
 on-arrival: is_peace = 1; west_relation -= 10; prov_gov_legitimacy -= 10; m_k_relation -= 30 if m_in_gov; sr_k_relation -= 30 if k_in_gov; b_k_relation -= 50 if b_in_gov; budget -= 4; industry -= 35; food_production *= 0.7; urban_population *= 0.8; rural_population *= 0.8; train_capacity *= 0.8; workers_m -= 15 if m_in_gov; workers_sr -= 15 if sr_in_gov; rural_sr -= 15 if sr_in_gov; workers_b -= 15 if b_in_gov; middle_k -= 15 if k_in_gov; middle_m -= 15 if m_in_gov; middle_sr -= 15 if sr_in_gov; war_weariness -= 15; soldier_unrest -= 15
 achievement: peace_2
 
-We have officially signed a separate peace with the Central Powers! The treaty is viewed as harsh and humiliating in many parts of Russia, and the popularity of all of the government parties has declined. A significant portion of our land, population, and industrial capacity has been given up.
+동맹국과 단독 평화 조약을 공식 체결했습니다! 이 조약은 러시아 전역에서 가혹하고 치욕적인 것으로 받아들여지고 있으며, 모든 정부 참여 정당의 지지율이 급락했습니다. 국토와 인구, 산업 역량의 상당 부분을 포기해야만 했습니다.
 
 
 @renegotiate
-title: Can we renegotiate?
-subtitle: It is very unlikely that terms will improve; this is a stalling tactic.
-unavailable-subtitle: The Central Powers are refusing to renegotiate.
+title: 재협상을 할 수 있나?
+subtitle: 조건이 개선될 가능성은 희박합니다. 시간을 벌기 위한 전술일 뿐입니다.
+unavailable-subtitle: 동맹국 측에서 재협상을 거부하고 있습니다.
 choose-if: renegotiate = 0 and war_or_peace_seen = 0
 on-arrival: central_negotiations = 1; renegotiate = 1; war_or_peace_timer += 4
 
-We will attempt to renegotiate the peace treaty for better terms, but it is very unlikely that the Central Powers will give us better terms.
+더 나은 조건을 이끌어내기 위해 평화 조약 재협상을 시도하겠으나, 동맹국 측이 양보할 가능성은 매우 낮습니다.
 
 @refuse_treaty
-title: Refuse to sign the peace treaty!
-subtitle: This will cause the resumption of war.
+title: 평화 조약 서명을 거부한다!
+subtitle: 이로 인해 전쟁이 재개될 것입니다.
 view-if: renegotiate > 0 or war_or_peace_seen > 0
 on-arrival: is_peace = 0; is_armistice = 0; central_negotiations = 0; refuse_treaty = 1; german_offensive_timer = 0; armistice_progress = 0; soldier_unrest += 20
 achievement: no_peace_no_war
 
-We have refused to sign the treaty. War has resumed with the Central Powers.
+조약 서명을 거부했습니다. 동맹국과의 전쟁이 다시 시작되었습니다.

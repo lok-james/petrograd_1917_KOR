@@ -1,4 +1,4 @@
-title: Industrial Policy
+title: 산업 정책
 new-page: true
 is-card: true
 on-arrival: industrial_policy_timer += 4; week_actions += 1;
@@ -6,43 +6,43 @@ view-if: industrial_policy_timer == 0 and ((player_party = "k" and k_in_gov and 
 card-image: img/Putilov.jpg
 tags: prov_gov
 
-= Industrial Policy
+= 산업 정책
 
-During the war, the Tsarist government essentially became the coordinator of all industrial production in Russia. The Provisional Government now must do the same. We must balance the needs of the war with the needs of the people.
+전쟁 기간 동안 차르 정부는 사실상 러시아 내 모든 산업 생산의 총괄 조정자 역할을 수행했습니다. 임시 정부 역시 그 역할을 이어받아야 합니다. 우리는 전쟁 수행에 필요한 수요와 민중의 필요 사이에서 적절한 균형을 찾아야 합니다.
 
-Current production allocation:
+현재 생산 비중:
 
-Military: [+ military_industry +]%
+군수 산업: [+ military_industry +]%
 
-Civilian goods: [+ civilian_industry +]%
+소비재: [+ civilian_industry +]%
 
-Agricultural equipment: [+ agricultural_industry +]%
+농기구: [+ agricultural_industry +]%
 
-Transportation equipment: [+ transportation_industry +]%
+운송 설비: [+ transportation_industry +]%
 
-Capital goods: [+ capital_industry +]%
+자본재: [+ capital_industry +]%
 
-- @ind_menu: Change industrial production.
+- @ind_menu: 산업 생산 비중을 조정한다.
 - @improve
-- @demilitarization: Return the industries to civilian footing.
-- @root: No production changes are necessary.
+- @demilitarization: 산업 체계를 민수용으로 전환한다.
+- @root: 현재의 생산 체계를 유지한다.
 - @easy_discard
 - @cancel_advisor_action
 
 
 @ind_menu
 
-Military: [+ military_industry +]%
+군수 산업: [+ military_industry +]%
 
-Civilian goods: [+ civilian_industry +]%
+소비재: [+ civilian_industry +]%
 
-Agricultural equipment: [+ agricultural_industry +]%
+농기구: [+ agricultural_industry +]%
 
-Transportation equipment: [+ transportation_industry +]%
+운송 설비: [+ transportation_industry +]%
 
-Capital goods: [+ capital_industry +]%
+자본재: [+ capital_industry +]%
 
-**Unused production capacity: [+ unused_industry +]**
+**유휴 생산 능력: [+ unused_industry +]**
 
 - @reduce_military
 - @reduce_civilian
@@ -54,104 +54,104 @@ Capital goods: [+ capital_industry +]%
 - @increase_agricultural
 - @increase_transportation
 - @increase_capital
-- @root: No more changes are necessary.
+- @root: 추가적인 조정이 필요하지 않다.
 
 
 
 @reduce_military
-title: Reduce military production.
-subtitle: During the war, the bulk of the industry has been devoted to making guns and ammunition for the army.
-unavailable-subtitle: [? if industrial_changes >= industrial_changes_limit : We can only retool so much production at once. ?] [? if military_industry < 5 : We cannot reduce anymore. ?]
+title: 군수 생산을 축소한다.
+subtitle: 전쟁 기간 동안 산업의 대부분은 군용 총기와 탄약 제조에 집중되어 왔습니다.
+unavailable-subtitle: [? if industrial_changes >= industrial_changes_limit : 한 번에 전환할 수 있는 생산 설비의 양에 한계가 있습니다. ?] [? if military_industry < 5 : 더 이상 축소할 수 없습니다. ?]
 choose-if: industrial_changes < industrial_changes_limit and military_industry >= 5
 on-arrival: military_industry -= 5; unused_industry += 5; industrial_changes += 5
 go-to: ind_menu
 
 @reduce_civilian
-title: Reduce civilian production.
-subtitle: Since the war began, production of consumer goods has shrunk greatly.
-unavailable-subtitle: [? if industrial_changes >= industrial_changes_limit : We can only retool so much production at once. ?] [? if civilian_industry < 5 : We cannot reduce anymore. ?]
+title: 민수품 생산을 축소한다.
+subtitle: 전쟁 발발 이후 생필품 생산은 극도로 위축된 상태입니다.
+unavailable-subtitle: [? if industrial_changes >= industrial_changes_limit : 한 번에 전환할 수 있는 생산 설비의 양에 한계가 있습니다. ?] [? if civilian_industry < 5 : 더 이상 축소할 수 없습니다. ?]
 choose-if: industrial_changes < industrial_changes_limit and civilian_industry >= 5
 on-arrival: civilian_industry -= 5; unused_industry += 5; industrial_changes += 5
 go-to: ind_menu
 
 @reduce_agricultural
-title: Reduce agricultural production.
-subtitle: Since the war began, production of agricultural equipment has shrunk greatly.
-unavailable-subtitle: [? if industrial_changes >= industrial_changes_limit : We can only retool so much production at once. ?] [? if agricultural_industry < 5 : We cannot reduce anymore. ?]
+title: 농기구 생산을 축소한다.
+subtitle: 전쟁 발발 이후 농업용 장비 생산은 크게 줄어들었습니다.
+unavailable-subtitle: [? if industrial_changes >= industrial_changes_limit : 한 번에 전환할 수 있는 생산 설비의 양에 한계가 있습니다. ?] [? if agricultural_industry < 5 : 더 이상 축소할 수 없습니다. ?]
 choose-if: industrial_changes < industrial_changes_limit and agricultural_industry >= 5
 on-arrival: agricultural_industry -= 5; unused_industry += 5; industrial_changes += 5
 go-to: ind_menu
 
 @reduce_transportation
-title: Reduce transportation production.
-subtitle: Train cars, locomotives, and rail tracks are in great demand.
-unavailable-subtitle: [? if industrial_changes >= industrial_changes_limit : We can only retool so much production at once. ?] [? if transportation_industry < 5 : We cannot reduce anymore. ?]
+title: 운송 설비 생산을 축소한다.
+subtitle: 철도 차량, 기관차, 선로에 대한 수요가 매우 높습니다.
+unavailable-subtitle: [? if industrial_changes >= industrial_changes_limit : 한 번에 전환할 수 있는 생산 설비의 양에 한계가 있습니다. ?] [? if transportation_industry < 5 : 더 이상 축소할 수 없습니다. ?]
 choose-if: industrial_changes < industrial_changes_limit and transportation_industry >= 5
 on-arrival: transportation_industry -= 5; unused_industry += 5; industrial_changes += 5
 go-to: ind_menu
 
 @reduce_capital
-title: Reduce capital production.
-subtitle: Production of factory equipment and tools necessary to expand production.
-unavailable-subtitle: [? if industrial_changes >= industrial_changes_limit : We can only retool so much production at once. ?] [? if capital_industry < 5 : We cannot reduce anymore. ?]
+title: 자본재 생산을 축소한다.
+subtitle: 생산 확대를 위해 필요한 공장 설비 및 도구 생산을 줄입니다.
+unavailable-subtitle: [? if industrial_changes >= industrial_changes_limit : 한 번에 전환할 수 있는 생산 설비의 양에 한계가 있습니다. ?] [? if capital_industry < 5 : 더 이상 축소할 수 없습니다. ?]
 choose-if: industrial_changes < industrial_changes_limit and capital_industry >= 5
 on-arrival: capital_industry -= 5; unused_industry += 5; industrial_changes += 5
 go-to: ind_menu
 
 
 @increase_military
-title: Increase military production.
-subtitle: During the war, the bulk of the industry has been devoted to making guns and ammunition for the army.
-unavailable-subtitle: [? if unused_industry < 5 : There is not enough unused industrial capacity. ?] [? if military_industry >= 80 : We cannot increase anymore. ?]
+title: 군수 생산을 확대한다.
+subtitle: 전쟁 기간 동안 산업의 대부분은 군용 총기와 탄약 제조에 집중되어 왔습니다.
+unavailable-subtitle: [? if unused_industry < 5 : 유휴 산업 역량이 부족합니다. ?] [? if military_industry >= 80 : 더 이상 확대할 수 없습니다. ?]
 choose-if: unused_industry >= 5 and military_industry < 80
 on-arrival: military_industry += 5; unused_industry -= 5;
 go-to: ind_menu
 
 @increase_civilian
-title: Increase civilian production.
-subtitle: Since the war began, production of consumer goods has shrunk greatly.
-unavailable-subtitle: [? if unused_industry < 5 : There is not enough unused industrial capacity. ?] [? if civilian_industry >= 80 : We cannot increase anymore. ?]
+title: 민수품 생산을 확대한다.
+subtitle: 전쟁 발발 이후 생필품 생산은 극도로 위축된 상태입니다.
+unavailable-subtitle: [? if unused_industry < 5 : 유휴 산업 역량이 부족합니다. ?] [? if civilian_industry >= 80 : 더 이상 확대할 수 없습니다. ?]
 choose-if: unused_industry >= 5 and civilian_industry < 80
 on-arrival: civilian_industry += 5; unused_industry -= 5
 go-to: ind_menu
 
 @increase_agricultural
-title: Increase agricultural production.
-subtitle: Since the war began, production of agricultural equipment has shrunk greatly.
-unavailable-subtitle: [? if unused_industry < 5 : There is not enough unused industrial capacity. ?] [? if agricultural_industry >= 80 : We cannot increase anymore. ?]
+title:  농기구 생산을 확대한다.
+subtitle: 전쟁 발발 이후 농업용 장비 생산은 크게 줄어들었습니다.
+unavailable-subtitle: [? if unused_industry < 5 : 유휴 산업 역량이 부족합니다. ?] [? if agricultural_industry >= 80 : 더 이상 확대할 수 없습니다. ?]
 choose-if: unused_industry >= 5 and agricultural_industry < 80
 on-arrival: agricultural_industry += 5; unused_industry -= 5
 go-to: ind_menu
 
 @increase_transportation
-title: Increase transportation production.
-subtitle: Train cars, locomotives, and rail tracks are in great demand.
-unavailable-subtitle: [? if unused_industry < 5 : There is not enough unused industrial capacity. ?] [? if transportation_industry >= 80 : We cannot increase anymore. ?]
+title: 송 설비 생산을 확대한다.
+subtitle: 철도 차량, 기관차, 선로에 대한 수요가 매우 높습니다.
+unavailable-subtitle: [? if unused_industry < 5 : 유휴 산업 역량이 부족합니다. ?] [? if transportation_industry >= 80 : 더 이상 확대할 수 없습니다. ?]
 choose-if: unused_industry >= 5 and transportation_industry < 80
 on-arrival: transportation_industry += 5; unused_industry -= 5
 go-to: ind_menu
 
 @increase_capital
-title: Increase capital production.
-subtitle: Production of factory equipment and tools necessary to expand production.
-unavailable-subtitle: [? if unused_industry < 5 : There is not enough unused industrial capacity. ?] [? if capital_industry >= 80 : We cannot increase anymore. ?]
+title: 자본재 생산을 확대한다.
+subtitle: 생산 확대를 위해 필요한 공장 설비 및 도구 생산을 늘립니다.
+unavailable-subtitle: [? if unused_industry < 5 : 유휴 산업 역량이 부족합니다. ?] [? if capital_industry >= 80 : 더 이상 확대할 수 없습니다. ?]
 choose-if: unused_industry >= 5 and capital_industry < 80
 on-arrival: capital_industry += 5; unused_industry -= 5
 go-to: ind_menu
 
 @improve
-title: Improve industrial production with the aid of the Soviet.
-subtitle: Success depends on our level of cooperation with the Soviet and its efficacy.
+title: 소비에트의 협력을 얻어 산업 생산성을 제고한다.
+subtitle: 성공 여부는 소비에트와의 협력 수준 및 소비에트의 행정 역량에 달려 있습니다.
 choose-if: soviet_cooperation >= 0.7 and soviet_efficacy >= 0.7 and improve_production_count <= capital_industry
-unavailable-subtitle: [? if soviet_cooperation <= 0.7: The Provisional Government does not have enough cooperation with the Soviet. ?][? if soviet_efficacy < 0.7 : The Soviet does not have the administrative capacity to help. ?][? if improve_production_count >= capital_industry : There is not much room to improve without more capital production. ?]
+unavailable-subtitle: [? if soviet_cooperation <= 0.7: 임시 정부와 소비에트 간의 협력이 충분하지 않습니다. ?][? if soviet_efficacy < 0.7 : 소비에트의 행정 지원 역량이 부족합니다. ?][? if improve_production_count >= capital_industry : 자본재 생산을 더 늘리지 않으면 개선의 여지가 없습니다. ?]
 on-arrival: improve_production_count += 1; industry += 10*soviet_efficacy*soviet_cooperation*prov_gov_efficacy;
 
-With the cooperation of the Petrograd Soviet, We have embarked on a project to organize industrial production and improve the efficiency of our industry. [? if prov_gov_efficacy < 0.6 : The inefficiency of our own government is a hindrance here. ?]
+페트로그라드 소비에트의 협조를 받아 산업 생산 체계를 정비하고 효율성을 높이기 위한 프로젝트에 착수했습니다. [? if prov_gov_efficacy < 0.6 : 우리 정부 내부의 비효율성이 걸림돌이 되고 있습니다. ?]
 
 
 @demilitarization
-title: Return the industries to civilian footing.
-subtitle: This is a major undertaking - we will shift all of our military industries to various civilian uses.
+title: 산업 체계를 민수용으로 전환한다.
+subtitle: 이는 대규모 사업입니다. 모든 군수 산업을 다양한 민수용 생산 체계로 전환할 것입니다.
 view-if: (is_armistice or is_peace or allied_victory) and not is_demilitarized
 on-arrival: {!
 Q.is_demilitarized = 1;
@@ -171,4 +171,4 @@ Q.military_industry = 0;
 Q.unemployed += 4;
 !}
 
-We are rapidly demilitarizing our industries, shifting everything to various forms of civilian production. There are some inefficiencies involved, and many workers are laid off in the process.
+산업 전반의 비군사화를 신속히 추진하여 모든 설비를 민수용 생산 체계로 전환하고 있습니다. 이 과정에서 어느 정도의 비효율이 발생하고 있으며, 많은 노동자가 일시적으로 일자리를 잃고 있습니다.
