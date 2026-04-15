@@ -1,4 +1,4 @@
-title: Shuffle Cabinet
+title: 내각 개편
 new-page: true
 is-card: true
 on-arrival: shuffle_cabinet_timer += 3; week_actions += 1
@@ -7,6 +7,6 @@ card-image: img/prov_gov_1.jpg
 
 
 @no_shuffle
-title: We do not need to shuffle the cabinet.
+title: 내각을 개편할 필요가 없다.
 on-arrival: week_actions -= 1
 

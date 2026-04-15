@@ -1,4 +1,4 @@
-title: Transportation Policy
+title: 수송 정책
 new-page: true
 is-card: true
 on-arrival: transport_policy_timer += 3; week_actions += 1
@@ -7,9 +7,9 @@ card-image: img/train.jpg
 tags: prov_gov
 go-to: transport_menu
 
-= Transportation Policy
+= 수송 정책
 
-Due to the war, the government has acquired a great deal of power over the railroads. What should our transportation policy be?
+전쟁의 여파로 정부는 철도 운용에 관한 막강한 권한을 갖게 되었습니다. 우리의 수송 정책을 어떻게 설정해야 할까요?
 
 @transport_menu
 
@@ -20,35 +20,35 @@ Current allocation:
 #- @prioritize_food
 #- @prioritize_industry
 - @rail_labor
-- @root: No action needs to be taken.
+- @root: 현재로서는 조치가 필요하지 않다.
 - @easy_discard
 - @cancel_advisor_action
 
 @allocate_military
-title: Allocate more rail capacity for the military.
+title: 군용 철도 수송량을 늘린다.
 choose-if: civilian_trains > 0
-unavailable-subtitle: We have already allocated all rail capacity for civilian usage.
+unavailable-subtitle: 이미 모든 철도 수송량이 민간용으로 배정되어 있습니다.
 on-arrival: military_trains += 5; civilian_trains -= 5
 
-We have allocated more rail capacity for military use.
+군사적 목적을 위해 철도 수송량을 추가로 배정했습니다.
 
 @allocate_civilian
-title: Allocate more rail capacity for civilian uses.
+title: 민간용 철도 수송량을 늘린다.
 choose-if: military_trains > 0
-unavailable-subtitle: We have already allocated all rail capacity for civilian usage.
+unavailable-subtitle: 이미 모든 철도 수송량이 민간용으로 배정되어 있습니다.
 on-arrival: military_trains -= 5; civilian_trains += 5
 
-We have allocated more rail capacity for civilian use.
+민간 이용을 위해 철도 수송량을 추가로 배정했습니다.
 
 @prioritize_food
-title: Prioritize civilian rail capacity for food.
+title: 민간용 수송에서 식량 보급을 우선한다.
 
 @prioritize_industry
-title: Prioritize civilian rail capacity for industry.
+title: 민간용 수송에서 산업 물자를 우선한다.
 
 @rail_labor
-title: Work with the railworkers' union to improve wages and working conditions.
-subtitle: -2 budget
+title: 철도 노조와 협력하여 임금 및 노동 조건을 개선한다.
+subtitle: 예산 -2
 on-arrival: labor_unrest -= 5*unrest_modifier; train_capacity *= 1.002; budget -= 2
 
-Improving labor conditions might encourage rail workers to be better at their jobs, increasing rail capacity.
+노동 환경을 개선하면 철도 노동자들의 업무 효율이 높아져, 전반적인 철도 수송 역량이 증대될 수 있습니다.
