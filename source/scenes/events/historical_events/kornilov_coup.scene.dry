@@ -1,5 +1,5 @@
-title: Kornilov Coup
-subtitle: General Lavr Kornilov and his troops are marching on Petrograd...
+title: 코르닐로프 쿠데타
+subtitle: 라브르 코르닐로프 장군과 그의 부대가 페트로그라드로 진격 중입니다...
 new-page: true
 view-if: (month >= 8 and week >= 3) and coup_progress >= 10 and kornilov_affair_seen = 0
 on-arrival: kornilov_affair_seen += 1
@@ -9,11 +9,11 @@ tags: event
 
 # TODO: fake kornilov affair if coup_progress < 10, real kornilov coup if coup_progress >= 10
 
-= Kornilov Coup
+= 코르닐로프 쿠데타
 
-[? if player_party != "k": A hostile army is approaching Petrograd! Led by General Lavr Kornilov, they are threatening to destroy the Soviet and restore "order". What should we do? ?]
+[? if player_party != "k": 적대적인 군대가 페트로그라드에 접근하고 있습니다! 라브르 코르닐로프 장군이 이끄는 이 부대는 소비에트를 해체하고 "질서"를 회복하겠다며 위협하고 있습니다. 우리는 어떻게 대응해야 할까요? ?]
 
-[? if player_party = "k": General Lavor Kornilov is marching upon Petrograd. He claims that he is coming to destroy the Petrograd Soviet and restore order to Russia. What should we do? ?]
+[? if player_party = "k": 라브르 코르닐로프 장군이 페트로그라드를 향해 진격하고 있습니다. 그는 페트로그라드 소비에트를 궤멸시키고 러시아의 질서를 바로잡기 위해 오고 있다고 선언했습니다. 우리는 어떻게 해야 할까요? ?]
 
 - @defense
 - @nothing
@@ -21,16 +21,16 @@ tags: event
 - @support_coup
 
 @defense
-title: Prepare for the defense of Petrograd and the revolution!
+title: 페트로그라드와 혁명을 수호할 준비를 하라!
 view-if: player_party != "k"
 on-arrival: workers_militia_strength += 10; workers_militia_militancy += 0.2;
 
-All socialist forces are uniting against Kornilov. The railway workers have called a strike to prevent Kornilov's forces from advancing. The democratic section of the Provisional Government is distributing arms to workers' militias.
+모든 사회주의 세력이 코르닐로프에 맞서 단결하고 있습니다. 철도 노동자들은 코르닐로프 군의 진격을 막기 위해 파업에 돌입했습니다. 임시 정부 내 민주파 세력은 노동자 민병대에게 무기를 지급하고 있습니다.
 
-- @battle: There must be a battle...
+- @battle: 이제 전투가 시작될 것입니다...
 
 @battle
-title: There must be a battle...
+title: 이제 전투가 시작될 것입니다...
 go-to: coup
 set-jump: post_battle
 
@@ -41,107 +41,107 @@ go-to: coup_victory if coup_victory = 1 and k_coup = 0; coup_vk if coup_victory 
 on-arrival: prov_gov_legitimacy -= 10; workers_b += 10; soldiers_b += 10; workers_k = 0; soldiers_k = 0;
 achievement: defeat_kornilov
 
-= Soviet Victory
+= 소비에트의 승리
 
-Kornilov's army is stopped without a fight, as railroad workers' strikes prevent their advance, and his loyal troops are not willing to fire upon the masses of armed workers and rebellious soldiers.
+철도 노동자들의 파업으로 진로가 차단되었고, 코르닐로프의 부하들조차 무장한 노동자 대중과 반란군 병사들에게 총을 쏘기를 거부하면서 코르닐로프의 군대는 교전 없이 멈춰 섰습니다.
 
-Kornilov will not be Russia's "savior". The Soviet is victorious, for now.
+코르닐로프는 러시아의 "구원자"가 되지 못했습니다. 소비에트가 일단 승리를 거두었습니다.
 
 
 @soviet_victory_2
 on-arrival: prov_gov_legitimacy -= 10; coup_defeated = 1
 achievement: coup_defeated
 
-= Soviet Victory
+= 소비에트의 승리
 
-Kornilov's army is stopped without a fight, as railroad workers' strikes prevent their advance, and his loyal troops are not willing to fire upon the masses of armed workers.
+철도 노동자들의 파업으로 진격이 가로막혔고, 코르닐로프의 부하들조차 무장한 노동자 대중에게 발포하기를 거부하면서 코르닐로프의 군대는 교전 없이 와해되었습니다.
 
-Kornilov will not be Russia's savior. In addition, our party's obvious involvement in the coup has been discovered. The Kadets will be banned.
+코르닐로프는 러시아의 구원자가 되지 못했습니다. 설상가상으로, 우리 당이 쿠데타에 깊숙이 관여했다는 사실이 드러났습니다. 카데트(입헌민주당)는 이제 활동이 금지될 것입니다.
 
-- @game_over: It is over for us, at least for now.
+- @game_over: 적어도 당분간은, 우리에게 끝이 찾아왔습니다.
 
 
 @coup_victory
 on-arrival: coup_victory = 1
 
-= Kornilov Victory
+= 코르닐로프의 승리
 
-The army has taken over Petrograd! Kornilov's army sweeps over the defenders, disarming the workers' militias and the rebellious garrisons. Troops invade Soviet offices and arrest the members of the Petrograd Soviet.
+군대가 페트로그라드를 장악했습니다! 코르닐로프의 군대는 방어군을 격파하고 노동자 민병대와 반란 주둔군의 무장을 해제했습니다. 군대는 소비에트 사무실을 습격하여 페트로그라드 소비에트 의원들을 체포했습니다.
 
-As news filters outside of the capital, the Soviets and the working class are in revolt. Soldiers are deserting the front. Russia approaches civil war.
+이 소식이 수도 밖으로 퍼져나가자, 전국의 소비에트와 노동자 계급이 봉기하고 있습니다. 전선의 병사들은 무더기로 탈영하고 있습니다. 러시아에 내전의 그림자가 짙게 드리우고 있습니다.
 
-- @game_over: A story for another time.
+- @game_over: 훗날을 기약하자.
 
 
 @coup_vk
 on-arrival: coup_victory = 1
 achievement: kornilovite
 
-= Kornilov Victory
+= 코르닐로프의 승리
 
-Our plans have succeeded; the army has taken over Petrograd! Kornilov's army sweeps over the Soviet defenders, disarming the workers' militias and the rebellious garrisons. Troops invade Soviet offices and arrest the members of the Petrograd Soviet.
+우리의 계획이 성공했습니다. 군대가 페트로그라드를 장악했습니다! 코르닐로프의 군대는 소비에트 방어군을 제압하고 노동자 민병대와 반란 주둔군의 무장을 해제했습니다. 군대는 소비에트 사무실을 습격하여 페트로그라드 소비에트 의원들을 체포했습니다.
 
-As news filters outside of the capital, the Soviets and their supporters are in revolt. Soldiers are deserting the front. Russia approaches civil war.
+이 소식이 수도 밖으로 퍼져나가자, 소비에트와 그 지지자들이 일제히 반란을 일으키고 있습니다. 전선의 병사들은 탈영을 일삼고 있습니다. 러시아는 이제 내전의 소용돌이로 빠져들고 있습니다.
 
-- @game_over: A story for another time.
+- @game_over: 훗날을 기약하자.
 
 
 
 @nothing
-title: This is not our fight.
+title: 우리가 관여할 싸움이 아니다.
 view-if: player_party != "b"
 on-arrival: workers_militia_strength += 10; workers_militia_militancy += 0.1;
 
-[? if player_party != "k": We do not give any instructions to our supporters, but that simply opens a space for the Bolsheviks. The workers are with the Bolsheviks against the threat of Kornilov. A railway strike is called, and arms are being distributed to workers' militias. ?]
+[? if player_party != "k": 우리가 지지자들에게 아무런 지침도 내리지 않는 동안, 볼셰비키가 그 틈을 타 세력을 확장하고 있습니다. 노동자들은 코르닐로프의 위협에 맞서기 위해 볼셰비키와 결집하고 있습니다. 철도 파업이 선포되었고, 노동자 민병대에게 무기가 지급되고 있습니다. ?]
 
-[? if player_party = "k": The socialists are digging in, and even the moderate SRs and Mensheviks are uniting with the Bolsheviks against the threat of Kornilov. They have called a general strike, and are building trenches and stopping trains, while arms are being distributed to workers' militias. ?]
+[? if player_party = "k": 사회주의자들이 방어 태세를 갖추고 있으며, 온건파인 사회혁명당과 멘셰비키조차 코르닐로프의 위협에 맞서 볼셰비키와 단결했습니다. 이들은 총파업을 선포하고 참호를 구축하며 열차를 멈춰 세웠고, 노동자 민병대에게는 무기가 지급되었습니다. ?]
 
 - @battle
 
 @liberator
-title: We will welcome Kornilov as a liberator.
+title: 우리는 코르닐로프를 해방자로 환영할 것이다.
 view-if: player_party = "k" and k_coup = 0
 on-arrival: workers_militia_strength += 10; workers_militia_militancy += 0.1
 
-The socialists are digging in, and even the moderate SRs and Mensheviks are uniting with the Bolsheviks against the threat of Kornilov. They have called a general strike, and are building trenches and stopping trains, while arms are being distributed to workers' militias. 
+사회주의자들이 방어선을 구축하고 있으며, 온건파인 사회혁명당과 멘셰비키조차 코르닐로프의 위협에 대응하기 위해 볼셰비키와 손을 잡았습니다. 이들은 총파업을 선포하고 참호를 파며 열차 운행을 중단시켰고, 노동자 민병대에게는 무기가 지급되었습니다.
 
-While we did not plan for it, we can try to support the coup. Will we do so?
+우리가 계획한 일은 아니었지만, 이 쿠데타를 지원해 볼 수도 있습니다. 그렇게 하시겠습니까?
 
 - @support_coup_1
 
 @support_coup_1
-title: We will actively support Kornilov.
+title: 우리는 적극적으로 코르닐로프를 지원할 것이다.
 on-arrival: prov_gov_advantage = 1; k_coup = 2
 
-The Kadets are unprepared, but we must take action. We attempt to impede the Soviet's preparations however we can.
+카데트는 준비가 부족한 상태지만, 지금은 행동해야 할 때입니다. 우리는 수단과 방법을 가리지 않고 소비에트의 방어 준비를 방해하기 시작했습니다.
 
 - @battle
 
 @no_support_coup
-title: No, we cannot support the coup.
+title: 아니, 우리는 쿠데타를 지원할 수 없다.
 
-No, we cannot support the coup.
+아니요, 우리는 쿠데타를 지원할 수 없습니다.
 
 - @battle
 
 @support_coup
-title: We must enact our plans and support Kornilov's actions.
+title: 계획대로 코르닐로프의 행동을 지원해야 한다.
 view-if: player_party = "k" and k_coup
 on-arrival: prov_gov_advantage = 1; k_coup += 1
 
-The socialists are digging in, and even the moderate SRs and Mensheviks are uniting with the Bolsheviks against the threat of Kornilov. They have called a general strike, and are building trenches and stopping trains, while arms are being distributed to workers' militias. 
+사회주의자들이 방어 태세를 갖추고 있으며, 온건파인 사회혁명당과 멘셰비키조차 코르닐로프의 위협에 맞서 볼셰비키와 단결했습니다. 이들은 총파업을 선포하고 참호를 구축하며 열차를 멈춰 세웠고, 노동자 민병대에게는 무기가 지급되었습니다.
 
-Meanwhile, our allies enact their plan, strategically impeding the Soviet defenders throughout the city, providing Kornilov's loyalists an easy way to attack the city.
+그동안 우리의 동맹 세력은 계획을 실행에 옮겨 도시 곳곳에서 소비에트 방어군을 전략적으로 방해했고, 코르닐로프의 충성파 부대가 도시로 쉽게 진입할 수 있도록 길을 열어주었습니다.
 
-- @battle: There is a battle...
+- @battle: 이제 전투가 시작될 것입니다...
 
 @back_down
-title: Despite our earlier support for a coup, we must back down.
+title: 쿠데타를 지원하기로 했던 이전 결정을 철회하고 물러나야 한다.
 view-if: player_party = "k" and k_coup
 on-arrival: prov_gov_advantage = 0; k_coup = 0; k_prov_gov_policy = -1
 
-For whatever reason, we can no longer support the coup of Kornilov.
+이유가 무엇이든, 우리는 더 이상 코르닐로프의 쿠데타를 지원할 수 없습니다.
 
-The socialists are digging in, and even the moderate SRs and Mensheviks are uniting with the Bolsheviks against the threat of Kornilov. They have called a general strike, and are building trenches and stopping trains, while arms are being distributed to workers' militias. 
+사회주의자들이 방어선을 구축하고 있으며, 온건파인 사회혁명당과 멘셰비키조차 코르닐로프의 위협에 대응하기 위해 볼셰비키와 손을 잡았습니다. 이들은 총파업을 선포하고 참호를 파며 열차 운행을 중단시켰고, 노동자 민병대에게는 무기가 지급되었습니다.
 
-- @battle: There is a battle...
+- @battle: 이제 전투가 시작될 것입니다...

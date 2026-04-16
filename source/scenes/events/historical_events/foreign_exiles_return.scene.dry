@@ -1,13 +1,13 @@
-title: Foreign Exiles Return
-subtitle: More revolutionaries returns from exile.
+title: 해외 망명자들의 귀환
+subtitle: 망명 중이던 혁명가들이 속속 귀국하고 있습니다.
 new-page: true
 view-if: year = 1917 and month = 4 and week = 1 and player_party != "b"
 on-arrival: lenin_available = 1; lenin_advisor = 1; zinoviev_available = 1; chernov_available = 1; savinkov_available = 1; natanson_available = 1; kamkov_available = 1; plekhanov_available = 1; leninist_strength += 30; chernov_advisor = 1; sr_n_advisors += 1
 tags: event
 max-visits: 1
 
-= Foreign Exiles Return
+= 해외 망명자들의 귀환
 
-Perhaps most notable among the wave of returning exiles is Vladimir Lenin, leader of the Bolsheviks, and his close companion Grigory Zinoviev.
+귀국하는 망명자들의 물결 속에서 가장 눈에 띄는 인물은 단연 볼셰비키의 지도자 블라디미르 레닌과 그의 핵심 동지인 그리고리 지노비에프입니다.
 
-Also among the wave are a number of SRs - the party founder Victor Chernov, the former terrorist Boris Savinkov, and the left-SRs Mark Natanson and Boris Kamkov.
+또한 사회혁명당의 주요 인사들도 대거 귀국했습니다. 당의 창립자인 빅토르 체르노프를 비롯하여, 과거 테러 활동에 가담했던 보리스 사빈코프, 그리고 좌파 사회혁명당의 마르크 나탄손과 보리스 캄코프 등이 그들입니다.

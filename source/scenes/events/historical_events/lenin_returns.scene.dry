@@ -1,14 +1,14 @@
-title: Lenin Return
-subtitle: Vladimir Lenin returns from Switzerland.
+title: 레닌의 귀환
+subtitle: 블라디미르 레닌이 스위스에서 돌아왔습니다.
 new-page: true
 view-if: year = 1917 and month = 4 and week = 1 and player_party = "b"
 on-arrival: lenin_available = 1; lenin_advisor = 1; zinoviev_available = 1; leninist_strength += 30
 tags: event
 max-visits: 1
 
-= Lenin Returns
+= 레닌의 귀환
 
-Carried on a sealed train from Switzerland, Vladimir Lenin has returned from exile in Switzerland, along with his close companion Grigory Zinoviev.
+봉인된 열차를 타고 스위스에서의 망명 생활을 마친 블라디미르 레닌이 그의 핵심 동지인 그리고리 지노비에프와 함께 귀국했습니다.
 
-Lenin is revered as the lead theoretician of the Bolsheviks, and he comes bearing his April Theses, a series of essays calling for the overthrow of the bourgeois Provisional Government and its replacement by a Soviet-led government that can finally bring peace, land, and bread to the people.
+볼셰비키의 수석 이론가로 추앙받는 레닌은 부르주아 임시 정부를 타도하고, 인민에게 평화와 토지, 그리고 빵을 가져다줄 소비에트 정부를 수립할 것을 촉구하는 일련의 논설인 '4월 테제'를 들고 왔습니다.
 
