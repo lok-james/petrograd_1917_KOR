@@ -1,5 +1,5 @@
-title: Stockholm Peace Conference
-subtitle: The Socialist parties try to find a peace plan...
+title: 스톡홀름 평화 회의
+subtitle: 사회주의 정당들이 평화 안착을 위한 방안을 모색합니다...
 new-page: true 
 view-if: month = 9 and week = 1 and (player_party != "k") and not is_armistice and not is_peace and not allied_victory
 max-visits: 1
@@ -7,9 +7,9 @@ tags: event
 
 # https://encyclopedia.1914-1918-online.net/article/stockholm-conference/
 
-= Stockholm Peace Conference
+= 스톡홀름 평화 회의
 
-In Stockholm, in the neutral country of Sweden, a collection of socialist parties and peace advocates from different sides of the war have convened a conference on peace. France and Britain have prevented their representatives from attending, limiting the scope of the conference.
+중립국 스웨덴의 스톡홀름에서 전쟁 당사국들의 사회주의 정당들과 평화 운동가들이 모여 평화 회의를 소집했습니다. 그러나 프랑스와 영국 정부가 자국 대표들의 참석을 불허하면서 회의의 영향력은 제한적인 수준에 그쳤습니다.
 
 
 # actions: attempt to come to an agreement with the SPD?

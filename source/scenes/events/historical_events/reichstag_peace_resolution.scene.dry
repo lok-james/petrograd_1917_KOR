@@ -1,15 +1,15 @@
-title: Reichstag Peace Resolution
-subtitle: The majority of the German Reichstag calls for peace...
+title: 제국 의회 평화 결의안
+subtitle: 독일 제국 의회 다수가 평화 협상을 촉구합니다...
 new-page: true 
 view-if: month = 7 and week = 1 and not is_armistice and not is_peace and not allied_victory
 max-visits: 1
 tags: event
 
-= Reichstag Peace Resolution
+= 제국 의회 평화 결의안
 
-In the German Reichstag, a vote has been taken to support the idea of a general peace, without further annexations or indemnities. The Social Democrats, Center Party, and Progressive People's Party have voted in contravention of the military leadership to support the idea of peace negotiations.
+독일 제국 의회에서 영토 합병이나 배상금 없는 보편적 평화안을 지지하는 투표가 통과되었습니다. 사회민주당, 중앙당, 진보인민당은 군부 지도부의 의사에 반하여 평화 협상안에 찬성표를 던졌습니다.
 
-It is unclear whether this improves our chances for a peace; the German High Command does not seem to be subordinate to the civilian government. In addition, the resolution does not disclaim German war goals.
+이것이 평화 협상의 가능성을 높여줄지는 미지수입니다. 독일 최고 사령부는 민간 정부의 통제를 받지 않는 것으로 보이기 때문입니다. 또한, 이 결의안은 독일의 기존 전쟁 목적을 완전히 포기한다는 내용을 담고 있지 않습니다.
 
 # source: https://encyclopedia.1914-1918-online.net/article/peace-initiatives-1-1/
 

@@ -1,11 +1,11 @@
-title: Soviet Call for Peace
-subtitle: The Petrograd Soviet issues a proclamation to the workers of the world.
+title: 소비에트의 평화 호소
+subtitle: 페트로그라드 소비에트가 전 세계 노동자들에게 선언문을 발표합니다.
 new-page: true
 view-if: soviet_call = 0 and (month = 3 and week >= 3)
 on-arrival: soviet_call += 1
 max-visits: 1
 tags: event
 
-= Soviet Call for Peace
+= 소비에트의 평화 호소
 
-The Petrograd Soviet has issued a declaration to the workers of the world, especially to the workers living in the belligerents of the Great War. It calls for a general peace among the nations, without annexations or indemnities.
+페트로그라드 소비에트가 전 세계 노동자들, 특히 대전쟁의 교전국 노동자들을 향해 선언문을 발표했습니다. 선언문은 영토 합병이나 배상금 없는, 국가 간의 보편적인 평화 수립을 촉구하고 있습니다.

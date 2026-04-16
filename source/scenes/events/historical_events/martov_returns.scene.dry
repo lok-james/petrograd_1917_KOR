@@ -1,11 +1,11 @@
-title: Julius Martov Returns
-subtitle: The Menshevik leader returns from Switzerland.
+title: 율리우스 마르토프의 귀환
+subtitle: 멘셰비키의 지도자가 스위스에서 돌아왔습니다.
 new-page: true
 view-if: year = 1917 and month = 5 and week = 1
 tags: event
 max-visits: 1
 on-arrival: martov_available = 1; axelrod_available = 1; martynov_available = 1; internationalist_strength += 5; 
 
-= Martov Returns
+= 마르토프의 귀환
 
-Julius Martov, the long-time Menshevik leader, has returned to Petrograd from Switzerland. He is a prominent member of the Internationalist faction.
+오랜 기간 멘셰비키를 이끌어온 지도자 율리우스 마르토프가 스위스 망명 생활을 마치고 페트로그라드로 귀환했습니다. 그는 당내 국제주의자 분파의 핵심 인물입니다.

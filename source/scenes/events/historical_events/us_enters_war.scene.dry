@@ -1,13 +1,13 @@
-title: America Enters the War!
-subtitle: The United States has entered the Great War on the side of the Entente.
+title: 미국의 참전!
+subtitle: 미국이 연합국 측에 가담하여 대전쟁에 참전했습니다.
 new-page: true 
 view-if: month = 4
 on-arrival: us_enters_war += 1
 max-visits: 1
 tags: event 
 
-= America Enters the War!
+= 미국의 참전!
 
-In response to German submarine attacks on neutral shipping and a purported telegram to Mexico, President Woodrow Wilson has declared war on Germany and the Central Powers. Now, America is an ally of the Entente.
+독일의 무차별적인 잠수함 공격으로 인한 중립국 선박 피해와 멕시코에 보낸 밀서 사건에 대응하여, 우드로 윌슨 대통령이 독일과 동맹국들에 대해 선전포고를 했습니다. 이제 미국은 연합국의 든든한 우방이 되었습니다.
 
-With American involvement, the situation on the Western Front may improve. [? if player_party != "b": It is hoped that American supplies and aid will reach Russia; time will tell if we benefit. ?]
+미국의 참전으로 서부 전선의 전황이 개선될 것으로 보입니다. [? if player_party != "b": 미국의 물자 보급과 원조가 러시아에 도달하기를 고대합니다. 이것이 우리에게 실질적인 도움이 될지는 시간이 지나면 알게 될 것입니다. ?]

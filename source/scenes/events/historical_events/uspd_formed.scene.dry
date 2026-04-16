@@ -1,10 +1,10 @@
-title: Formation of the USPD
-subtitle: German anti-war socialists have finally split off.
+title: USPD의 창당
+subtitle: 독일의 반전 사회주의 세력이 마침내 분당했습니다.
 new-page: true 
 view-if: month = 4 and (player_party = "m" or player_party = "b")
 max-visits: 1
 tags: event
 
-= Formation of the USPD
+= USPD의 창당
 
-The venerable Social Democratic Party of Germany has split, with the anti-war grouping forming the Independent Social Democratic Party of Germany, or USPD. Some in this faction are urging revolutionary action to overthrow the Kaiser and end the war.
+오랜 역사를 자랑하는 독일 사회민주당(SPD)이 분열되었습니다. 전쟁에 반대하는 세력이 결집하여 독일 독립사회민주당(USPD)을 창당했습니다. 이들 중 일부는 카이저를 몰아내고 전쟁을 종식시키기 위한 혁명적 행동을 강력히 주장하고 있습니다.

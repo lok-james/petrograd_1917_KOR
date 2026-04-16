@@ -1,11 +1,11 @@
-title: Trotsky Returns
-subtitle: The Social Democrat leader returns from exile.
+title:트로츠키의 귀환
+subtitle: 사회민주주의 지도자가 망명지에서 돌아옵니다.
 new-page: true
 view-if: year = 1917 and month = 5 and week = 3
 tags: event
 max-visits: 1
 on-arrival: trotsky_available = 1; trotsky_advisor = 1; leninist_strength += 8 if not b_is_player; workers_b += 4 if not b_is_player; soldiers_b += 5 if not b_is_player;
 
-= Trotsky Returns
+= 트로츠키의 귀환
 
-Leon Trotsky, an independent social democrat of the "Mezhraiontsy" faction but close to the Bolsheviks, has returned to Petrograd from exile.
+"메즈라이온치" 분파에 속한 독립적 사회민주주의자이자 볼셰비키와 긴밀한 관계인 레프 트로츠키가 망명 생활을 마치고 페트로그라드로 귀환했습니다.

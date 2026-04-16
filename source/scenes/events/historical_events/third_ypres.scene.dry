@@ -1,5 +1,5 @@
-title: Third Battle of Ypres
-subtitle: A British-led offensive in Belgium
+title: 제3차 이프르 전투
+subtitle: 벨기에에서 전개된 영국 주도의 공세
 new-page: true 
 view-if: month = 7 and week = 4 and not allied_victory
 max-visits: 1
@@ -11,7 +11,7 @@ tags: event
 
 # TODO: maybe this could be affected by your offensives?
 
-There is another offensive on the Western Front, a British offensive in the vicinity of the city of Ypres, already the site of multiple previous battles. The offensive quickly becomes bogged down in attritional warfare, with minor gains for the Allies and heavy casualties on both sides.
+서부 전선에서 또 다른 대규모 공세가 시작되었습니다. 이미 여러 차례 격전이 치러졌던 이프르 시 인근에서 영국군이 주도한 이번 공세는, 연합국 측의 미미한 진전과 양측의 막대한 사상자만을 남긴 채 급격히 소모전의 늪으로 빠져들었습니다.
 
-[? if total_offensives = 0 : The Allied high command rues our lack of offensive initiative on the Eastern Front, and partially blames us for the failure of their offensive. ?]
-[? if total_offensives > 0 : Despite our offensive on the Eastern Front in preparation for the Western action, the Allies have not made the gains they promised. ?]
+[? if total_offensives = 0 : 연합국 최고 사령부는 동부 전선에서 우리가 공세적 주도권을 잡지 못한 것에 대해 강한 유감을 표하며, 이번 공세 실패의 책임을 부분적으로 우리에게 돌리고 있습니다. ?]
+[? if total_offensives > 0 : 서부 전선의 작전을 지원하기 위해 우리가 동부 전선에서 공세를 펼쳤음에도 불구하고, 연합국은 자신들이 장담했던 성과를 거두지 못했습니다. ?]

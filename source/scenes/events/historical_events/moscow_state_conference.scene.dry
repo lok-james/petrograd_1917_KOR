@@ -1,15 +1,15 @@
-title: Conference of Public Figures
+title: 공공 인사 회의
 new-page: True
-subtitle: How can the Provisional Government regain its legitimacy?
+subtitle: 임시 정부가 정당성을 회복할 방안은?
 view-if: month >= 8 and prov_gov_legitimacy <= 50
 tags: event
 max-visits: 1
 
-= Conference of Public Figures
+= 공공 인사 회의
 
-In Moscow, a conference is held to stabilize the Provisional Government by bringing together important individuals from both the left and the right, the proletariat and the bourgeoisie. The goal is to bridge the gap between the upper classes and the lower-class socialists. 
+모스크바에서 임시 정부의 안정을 도모하기 위해 좌우익, 그리고 프롤레타리아트와 부르주아지의 주요 인사들이 한자리에 모이는 회의가 개최되었습니다. 이번 회의의 목적은 상류 계급과 하층 계급 사회주의자들 사이의 깊은 간극을 메우는 데 있습니다.
 
-Immediately, the conference is wracked by dissension as the Moscow trade unions launch a strike.
+그러나 회의가 시작되자마자 모스크바 노동조합들이 파업에 돌입하면서, 장내는 극심한 불화와 갈등에 휩싸였습니다.
 
 - @attack
 - @unity
@@ -17,49 +17,49 @@ Immediately, the conference is wracked by dissension as the Moscow trade unions 
 - @kornilov
 
 @attack
-title: We must attack the bourgeois leadership that got us to this point!
+title: 우리를 이 지경으로 몰아넣은 부르주아 지도부를 강력히 규탄해야 한다!
 view-if: player_party = "b" or (player_party = "m" and m_leadership = 1) or (player_party = "sr" and sr_leadership = 1)
 on-arrival: prov_gov_legitimacy -= 3; m_k_relation -= 5*(1-m_dissent) if player_party = "m"; sr_k_relation -= 5*(1-sr_dissent) if player_party = "sr";
 
-Our representatives at the conference verbally attack the bourgeois representatives.
+회의에 참석한 우리 대표들은 부르주아 측 대표들을 신랄하게 비판했습니다.
 
 @unity
-title: This is an opportunity to show cross-class unity.
+title: 계급 간의 단결을 보여줄 절호의 기회다.
 view-if: player_party = "sr" or player_party = "m"
 on-arrival: m_k_relation += 5*(1-m_dissent) if player_party = "m"; sr_k_relation += 5*(1-sr_dissent) if player_party = "sr"; defensist_strength += 5; defensist_dissent -= 5; right_sr_strength += 5; right_sr_dissent -= 5; prov_gov_legitimacy += 3; m_b_relation -= 4; b_sr_relation -= 4
 
-We attempt to make nice with the bourgeois figures at the conference. Of course, the Bolsheviks accuse us of class collaborationism.
+우리는 회의에 참석한 부르주아 인사들과 우호적인 관계를 맺으려 노력했습니다. 물론 볼셰비키들은 우리를 '계급 협조주의자'라며 맹비난하고 있습니다.
 
 @nice
-title: Perhaps we can reconcile with the socialists...
+title: 사회주의자들과 화해를 시도해 볼 수도 있을 것이다...
 view-if: player_party = "k"
 on-arrival: m_k_relation += 5*(1-k_dissent); sr_k_relation += 5*(1-k_dissent); defensist_strength += 5; defensist_dissent -= 5; right_sr_strength += 5; right_sr_dissent -= 5; prov_gov_legitimacy += 3;
 
-We use the Conference in order to improve our relations with the socialist parties.
+우리는 이번 회의를 사회주의 정당들과의 관계를 개선하는 계기로 삼았습니다.
 
 @kornilov
-title: That General Kornilov is an interesting figure...
-subtitle: There are murmurings of military intervention into politics...
-unavailable-subtitle: [? if k_conservative_relation < 60: We do not have adequate relations with the conservatives. ?][? if left_kadet_strength >= right_kadet_strength : The right-wing Kadets must be leading in the party. ?]
+title: 코르닐로프 장군은 꽤 흥미로운 인물이다...
+subtitle: 군부가 정치에 개입해야 한다는 목소리가 들려오고 있습니다...
+unavailable-subtitle: [? if k_conservative_relation < 60: 보수 세력과의 관계가 충분하지 않습니다. ?][? if left_kadet_strength >= right_kadet_strength : 당의 주도권이 우파 카데트에게 있어야 합니다. ?]
 view-if: player_party = "k"
 choose-if: k_conservative_relation >= 60 and right_kadet_strength > left_kadet_strength
 on-arrival: coup_progress += 1;
 
-General Lavr Kornilov is one of the most popular and energetic generals in the military, and there are rumors that he wants to take drastic measures to preserve Russia against Bolshevism.
+라브르 코르닐로프 장군은 군내에서 가장 신망 두텁고 정력적인 장성 중 한 명입니다. 들리는 소문에 의하면, 그는 볼셰비키로부터 러시아를 구하기 위해 극단적인 조치를 취하고 싶어 한다고 합니다.
 
-Would we support a military coup to restore order to Petrograd and abolish the Soviet, and keep the country together until the Constituent Assembly?
+페트로그라드의 질서를 회복하고 소비에트를 해체하며, 제헌 의회가 소집될 때까지 국가를 지탱하기 위해 군사 쿠데타를 지원하시겠습니까?
 
 - @k_support_coup
 - @k_no_coup
 
 @k_support_coup
-title: Yes, we must do whatever it takes.
+title: 그래, 수단과 방법을 가리지 말아야 한다.
 on-arrival: coup_progress += 10; k_coup = 4; k_prov_gov_policy = -2;
 
-Negotiations are held in the shadows of the conference. There will be an action soon. Let us hope it is not too late.
+회의의 이면에서 은밀한 협상이 진행되었습니다. 곧 행동이 개시될 것입니다. 너무 늦지 않았기를 바랄 뿐입니다.
 
 @k_no_coup
-title: No, this is going too far.
+title: 아니, 너무 지나친 처사다.
 on-arrival: coup_progress -= 1
 
-Despite everything, a coup is going too far. For now, we must continue to support the Provisional Government.
+여러 상황을 고려하더라도 쿠데타는 도를 넘은 행위입니다. 당분간은 임시 정부를 계속 지지해야 합니다.

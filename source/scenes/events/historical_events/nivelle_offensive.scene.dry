@@ -1,12 +1,12 @@
-title: Nivelle Offensive
-subtitle: French offensive on the Western Front
+title: 니벨 공세
+subtitle: 서부 전선에서 전개된 프랑스군의 공세
 new-page: true 
 view-if: month = 4 and week = 3 and not allied_victory
 max-visits: 1
 tags: event
 
-= Nivelle Offensive
+= 니벨 공세
 
-French commander-in-chief Robert Nivelle has ordered a large-scale offensive against German lines in Belgium. The offensive has been a disaster for the Entente, and French troops are on the verge of mutiny.
+프랑스군 총사령관 로베르 니벨이 벨기에의 독일군 전선을 향해 대규모 공세를 명령했습니다. 그러나 이 공세는 연합국에 참담한 재앙으로 끝났고, 프랑스군은 반란 직전의 험악한 상황에 놓였습니다.
 
-[? if player_party != "b": The Allies are ramping up pressure on Russia to launch an offensive against Germany, in order to relieve the pressure on the Western Front. ?]
+[? if player_party != "b": 연합국은 서부 전선의 압박을 분산시키기 위해 러시아가 독일을 상대로 공세를 펼쳐야 한다며 압박 수위를 높이고 있습니다. ?]

@@ -1,4 +1,4 @@
-title: Liberty Loans 
+title: 자유 국채 
 subtitle: The war must be paid for, somehow...
 view-if: month = 3 and week = 4 and ((player_party = "m" and not m_in_gov and m_in_exco) or (player_party = "b" and not b_in_gov and b_in_exco) or (player_party = "sr" and not sr_in_gov and sr_in_exco))
 new-page: true
@@ -7,27 +7,27 @@ max-visits: 1
 face-image: img/freedom_bonds.jpg
 tags: event
 
-= Liberty Loans
+= 자유 국채
 
-The Provisional Government is issuing a new set of war bonds, called the "Liberty Loan", in order to reduce the budget deficit and to reduce inflation by reducing the amount of currency in circulation. They are asking the Soviet to convince the workers to purchase these bonds.
+임시 정부는 예산 적자를 메우고 시중 통화량을 조절하여 인플레이션을 억제하기 위해, "자유 국채"라는 이름의 새로운 전쟁 채권을 발행하고 있습니다. 정부는 소비에트 측에 노동자들이 이 채권을 매입하도록 설득해 줄 것을 요청했습니다.
 
-- @support_loan: Support the Liberty Loans.
-- @neutral_loan: The Soviet will neither endorse nor reject the loan.
-- @oppose_loan: Oppose the Liberty Loan, asking the workers to reject the loan.
+- @support_loan: 자유 국채 발행을 지지한다.
+- @neutral_loan: 소비에트는 국채 발행에 대해 지지도 거부도 하지 않을 것이다.
+- @oppose_loan: 자유 국채 발행에 반대하며, 노동자들에게 매입 거부를 촉구한다.
 
 @support_loan
 on-arrival: budget += 2; monthly_inflation -= 0.3; defensist_strength += 5*(1-m_dissent); right_sr_strength += 5*(1-sr_dissent); internationalist_dissent += 5; left_sr_dissent += 5; soviet_cooperation += 0.05; m_k_relation += 5*(1-m_dissent); sr_k_relation += 5*(1-sr_dissent); bonding_capacity -= 2;
 choose-if: player_party != "b"
-unavailable-subtitle: The Bolsheviks would never support this.
+unavailable-subtitle: 볼셰비키는 결코 이를 지지하지 않을 것입니다.
 
-Through the Soviet Executive Committee, we have supported the loans, and are asking the workers to pay to subscribe to the loan. This relieves the budget situation somewhat, and cuts inflation. In addition, our relations with the Provisional Government and the Kadets has improved. On the other hand, the left wing of the Soviet (the Menshevik-Internationalists and left-SRs) are displeased.
+소비에트 집행위원회를 통해 우리는 국채 발행을 지지했으며, 노동자들에게 채권 매입에 동참할 것을 호소하고 있습니다. 이 조치로 재정 상황이 어느 정도 개선되고 인플레이션이 억제되었습니다. 또한 임시 정부 및 카데트(입헌민주당)와의 관계도 좋아졌습니다. 반면, 소비에트 내 좌익 분파인 멘셰비키-국제주의자들과 좌파 사회혁명당원들은 강한 불만을 표시하고 있습니다.
 
 @neutral_loan
 on-arrival: budget += 2; monthly_inflation -= 0.3; bonding_capacity -= 2;
 
-We have adopted a position of neutrality with regards to the loan.
+우리는 국채 발행 문제에 대해 중립적인 입장을 취하기로 했습니다.
 
 @oppose_loan
 on-arrival: budget += 1; monthly_inflation -= 0.1; defensist_dissent += 5; right_sr_dissent += 5; left_sr_strength += 5*(1-sr_dissent); internationalist_strength += 5*(1-m_dissent); soviet_cooperation -= 0.05; prov_gov_efficacy -= 0.05; prov_gov_legitimacy -= 5; m_k_relation -= 5; sr_k_relation -= 5; bonding_capacity -= 1;
 
-In opposing the Liberty Loans, we have weakened any possible cooperation with the Provisional Government, and increased the strength of the left-wing factions of the Soviet parties (the Menshevik-Internationalists and left-SRs).
+자유 국채 발행에 반대함으로써 임시 정부와의 협력 가능성은 희박해졌으나, 소비에트 내 정당들의 좌익 분파(멘셰비키-국제주의자 및 사회혁명당 좌파)의 영향력은 강화되었습니다.

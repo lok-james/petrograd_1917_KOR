@@ -1,5 +1,5 @@
-title: Siberian Exiles Return
-subtitle: Socialist exiles return from Siberia.
+title: 시베리아 망명자들의 귀환
+subtitle: 사회주의 망명자들이 시베리아에서 돌아옵니다.
 new-page: true
 view-if: year = 1917 and month = 3 and week = 3
 tags: event
@@ -7,26 +7,26 @@ max-visits: 1
 go-to: siberians_return_m if player_party = "m"; siberians_return_b if player_party = "b"; siberians_return_sr if player_party = "sr"
 on-arrival: tsereteli_available = 1; dan_available = 1; voitinsky_available = 1; gots_available = 1; tsereteli_advisor = 1; stalin_available = 1; kamenev_available = 1; muranov_available = 1; spiridonova_available = 1; gots_available = 1; breshkovskaya_available = 1; 
 
-= Siberian Exiles Return
+= 시베리아 망명자들의 귀환
 
-Russia is finally free of autocracy, and political exiles are beginning to return. The first wave of exiles has returned to Petrograd, mostly various internal exiles scattered throughout Siberia.
+러시아가 마침내 전제 정치의 굴레를 벗어던지자, 정치적 망명자들이 속속 복귀하기 시작했습니다. 시베리아 곳곳에 유배되었던 인사들이 첫 번째 귀국 행렬을 이루어 페트로그라드에 도착했습니다.
 
 @siberians_return_m
 on-arrival: m_siberians_return_seen = 1; m_n_advisors += 1;
 
-For the Mensheviks, the most significant is a group from Irkutsk led by Irakli Tsereteli, and including Fyodor Dan and Vladimir Voitinsky. They established the "Siberian Zimmerwaldist" political line, which calls for peace without annexations or indemnities, but active defense of revolutionary Russia until all parties reach a peace. Immediately, Tsereteli's forceful personality and charisma have brought him to a leading position among the Petrograd Mensheviks and the Soviet.
+멘셰비키 측에서 가장 주목할 만한 인물들은 이라클리 체레텔리가 이끄는 이르쿠츠크 출신 인사들로, 표도르 단과 블라디미르 보이틴스키가 포함되어 있습니다. 이들은 영토 합병이나 배상금 없는 평화를 주장하면서도, 모든 당사국이 평화에 합의할 때까지는 혁명 러시아를 적극적으로 수호해야 한다는 "시베리아 치머발트주의" 노선을 정립했습니다. 체레텔리는 특유의 강한 개성과 카리스마를 바탕으로 단숨에 페트로그라드 멘셰비키와 소비에트의 지도적 인물로 부상했습니다.
 
 @siberians_return_b
 on-arrival: b_siberians_return_seen = 1;
 
-For the Bolsheviks, the returned exiles include Josef Stalin, Yakov Sverdlov, and Lev Kamenev. Kamenev follows a moderate line among the Bolsheviks, while Sverdlov and Stalin are ideologically amorphous.
+볼셰비키 측의 귀환 인사로는 이오시프 스탈린, 야코프 스베르들로프, 레프 카메네프 등이 있습니다. 카메네프는 당내에서 온건한 노선을 견지하고 있는 반면, 스베르들로프와 스탈린은 아직 뚜렷한 이념적 색채를 드러내지 않고 있습니다.
 
 @siberians_return_sr
 on-arrival: sr_siberians_return_seen = 1;
 
-For the SRs, the exiles include Maria Spiridonova, the famed assassin and left-SR leader. Others are Abram Gots, a more moderate SR who seeks to work with the Soviets, and Catherine Breshkovskaya, the "babushka" of the revolution who has taking a strong defensist stance.
+사회혁명당에서는 전설적인 암살자이자 좌파 사회혁명당의 지도자인 마리아 스피리도노바가 돌아왔습니다. 또한 소비에트와의 협력을 중시하는 온건파 아브람 고츠와, 강경한 방어주의 입장을 고수하며 '혁명의 할머니'로 불리는 예카테리나 브레슈코프스카야도 귀환했습니다.
 
 @siberians_return_k
 on-arrival: k_siberians_return_seen = 1
 
-Among the returning exiles are the Menshevik group led by Irakli Tsereteli, the SRs Maria Spiridonova, Abram Gots, and Catherine Breshkovskaya, and the Bolsheviks Josef Stalin and Lev Kamenev.
+귀환한 망명자들 중에는 이라클리 체레텔리가 이끄는 멘셰비키 그룹, 사회혁명당의 마리아 스피리도노바, 아브람 고츠, 예카테리나 브레슈코프스카야, 그리고 볼셰비키의 이오시프 스탈린과 레프 카메네프 등이 포함되어 있습니다.

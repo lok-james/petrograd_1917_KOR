@@ -1,16 +1,16 @@
-title: First Universal of the Ukrainian Central Rada
-subtitle: Ukraine is demanding more autonomy within a federal structure.
+title: 우크라이나 중앙 라다의 제1차 유니버설
+subtitle: 우크라이나가 연방 체제 내에서의 자치권 확대를 요구합니다.
 new-page: true
 view-if: month = 6 and week = 4
 max-visits: 1
 face-image: img/universal.jpg
 tags: event
 
-= First Universal of the Ukrainian Central Rada
+= 우크라이나 중앙 라다의 제1차 유니버설
 
-The Central Rada is a council of Ukrainian representatives, elected from various parties and organizations throughout the Ukrainian territory. They have made a statement to the Provisional Government asking for the creation of a semi-autonomous Ukrainian territorial unit within the Russian state, with its own assembly. The Universal also calls for the Ukrainian government to have control over the army in Ukraine.
+중앙 라다는 우크라이나 전역의 다양한 정당과 조직에서 선출된 대표들로 구성된 의회입니다. 이들은 러시아 국가 내에 독자적인 의회를 갖춘 준자치적 우크라이나 영토 단위를 신설해 줄 것을 임시 정부에 요청하는 성명을 발표했습니다. 또한 이 유니버설(선언문)은 우크라이나 내 군대에 대한 통제권을 우크라이나 정부가 가져야 한다고 주장하고 있습니다.
 
-[? if (player_party = "m" and m_in_gov) or (player_party = "k" and k_in_gov) or (player_party = "sr" and sr_in_gov) : Should we accept their declaration? ?]
+[? if (player_party = "m" and m_in_gov) or (player_party = "k" and k_in_gov) or (player_party = "sr" and sr_in_gov) : 이들의 선언을 수용하시겠습니까? ?]
 
 - @support_uk
 - @support_uk_not_army
@@ -18,29 +18,29 @@ The Central Rada is a council of Ukrainian representatives, elected from various
 - @not_in_gov
 
 @support_uk
-title: Support the Central Rada's proposal in its entirety.
+title: 중앙 라다의 제안을 전적으로 수용한다.
 view-if: player_in_gov
 on-arrival: prov_gov_legitimacy += 5; ukrainian_accepted = 2
 
-The Provisional Government endorses the Ukrainian Central Rada's proposal. It is unlikely to be fully implemented before the Constituent Assembly, but there are already steps towards localized administration.
+임시 정부는 우크라이나 중앙 라다의 제안을 공식적으로 지지하기로 했습니다. 제헌 의회 소집 전까지 이 안이 완전히 실행되기는 어렵겠지만, 이미 지역 행정 체계 구축을 위한 실질적인 조치들이 시작되었습니다.
 
 @support_uk_not_army
-title: Partially support the Central Rada's proposal.
+title: 중앙 라다의 제안을 부분적으로 수용한다.
 view-if: player_in_gov
 on-arrival: prov_gov_legitimacy += 5; ukrainian_accepted = 1
 
-The Provisional Government cannot support the entirety of the Universal - the Ukrainization of the army would be unacceptable. However, some level of decentralization is acceptable.
+임시 정부는 선언문의 모든 내용을 수용할 수는 없습니다. 특히 군대의 우크라이나화는 결코 받아들일 수 없는 사안입니다. 다만, 어느 정도 수준의 지방 분권은 허용하기로 했습니다.
 
 @reject_uk
-title: Reject the Central Rada's proposal.
+title: 중앙 라다의 제안을 거부한다.
 view-if: player_in_gov
 on-arrival: prov_gov_legitimacy -= 10; ukrainian_accepted = -1
 
-The Provisional Government cannot accept a proposal that separates the Russian Empire. The Ukrainians are displeased, and are increasingly disillusioned with the revolution, along with other minority groups.
+임시 정부는 러시아 제국을 분열시킬 수 있는 어떠한 제안도 받아들일 수 없습니다. 이에 실망한 우크라이나인들은 다른 소수 민족들과 함께 혁명에 대해 점차 회의적인 태도를 보이고 있습니다.
 
 @not_in_gov
-title: The Provisional Government accepts the Central Rada's proposal, with some dissent.
+title: 임시 정부는 일부 이견이 있었으나 중앙 라다의 제안을 수용하기로 했다.
 view-if: not player_in_gov
 on-arrival: ukrainian_accepted = 1; prov_gov_legitimacy += 5
 
-Many in the Kadets oppose Ukrainian autonomy, but the Provisional Government nevertheless accepts most of the Central Rada's proposal, with the exception of the Ukrainization of the army.
+카데트 내의 거센 반대에도 불구하고, 임시 정부는 군대의 우크라이나화 문제를 제외한 중앙 라다 제안의 대부분을 수용하기로 결정했습니다.
