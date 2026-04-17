@@ -1,5 +1,5 @@
-title: Defensive Battle Outcome
-subtitle: The outcome of our defense...
+title: 방어전 결과
+subtitle: 방어전의 결과가 나왔습니다...
 new-page: true
 set-jump: defense_outcome.post_battle
 view-if: in_defensive_battle
@@ -14,60 +14,60 @@ on-arrival: in_defensive_battle = 0;
 on-arrival: defensist_strength -= 6; social_patriot_strength -= 10; right_sr_strength -= 6; soldiers_sr -= 15 if sr_in_gov; soldiers_m -= 15 if m_in_gov; soldiers_k -= 15; morale *= 0.8; discipline *= 0.7; train_capacity *= 0.999; soldiers_b += 15 if not b_in_gov; military_progress -= 2; coup_progress += 2; german_offensive_timer = 8 if not refuse_treaty else german_offensive_timer = 1; soldier_unrest += 5; prov_gov_legitimacy -= 2;
 go-to: defeat_desc
 
-= Total Defeat
+= T처참한 패배
 
-Our casualties: [+ friendly_casualties +]0,000 troops
+아군 사상자: [+ friendly_casualties +]0,000명
 
-Enemy casualties: [+ hostile_casualties +]0,000 troops
+적군 사상자: [+ hostile_casualties +]0,000명
 
-Our forces have been totally defeated by the Central Powers armies, and are retreating. The people are growing ever more tired of war.
+우리 군은 동맹국 군대에 완전히 패배하여 후퇴하고 있습니다. 국민들은 끝이 보이지 않는 전쟁에 깊이 절망하고 있습니다.
 
 @defeat_1
 on-arrival: defensist_strength -= 6; social_patriot_strength -= 10; right_sr_strength -= 6; soldiers_sr -= 8 if sr_in_gov; soldiers_m -= 8 if m_in_gov; soldiers_k -= 10; morale *= 0.9; discipline *= 0.7; train_capacity *= 0.9999; soldiers_b += 10 if not b_in_gov; military_progress -= 1; coup_progress += 1; german_offensive_timer = 8 if not refuse_treaty else german_offensive_timer = 1; soldier_unrest += 3; prov_gov_legitimacy -= 1;
 go-to: defeat_desc
 
-= Defeat
+= 패배
 
-Our casualties: [+ friendly_casualties +]0,000 troops
+아군 사상자: [+ friendly_casualties +]0,000명
 
-Enemy casualties: [+ hostile_casualties +]0,000 troops
+적군 사상자: [+ hostile_casualties +]0,000명
 
-The Central Powers have inflicted a defeat upon us. Our forces are in retreat. The people are growing ever more tired of war.
+동맹국 군대가 우리에게 패배를 안겨주었습니다. 아군은 전선에서 물러나고 있으며, 민심은 전쟁으로부터 더욱 멀어지고 있습니다.
 
 @defeat_desc
 
-[? if front = "northern" and northern_progress = -2 : The Germans have captured Riga, and are marching ever closer to Petrograd. ?]
-[? if front = "northern" and northern_progress = -3 : The Germans have taken Tallinn in Estonia, and are marching ever closer to Petrograd. ?]
-[? if front = "northern" and northern_progress = -4 : The Germans are at the gates of Petrograd! ?]
-[? if front = "western" and western_progress = -3 : The Germans have made further advances in Belarussia through Minsk, and are threatening central Russia. ?]
-[? if front = "western" and western_progress = -4 : The Germans have entered Russia proper and are in a position to threaten many major cities. ?]
-[? if front = "southwestern" and southwestern_progress >= -1 : The Germans have pushed the front further back in Galicia and western Ukraine. ?]
-[? if front = "southwestern" and southwestern_progress = -2 : The Germans have entered Ukraine and are threatening Kiev. ?]
-[? if front = "southwestern" and southwestern_progress = -3 : The Germans have conquered most of Ukraine. ?]
+[? if front = "northern" and northern_progress = -2 : 독일군이 리가를 점령하고 페트로그라드를 향해 진격 속도를 높이고 있습니다. ?]
+[? if front = "northern" and northern_progress = -3 : 독일군이 에스토니아의 탈린을 함락시켰으며, 이제 페트로그라드가 가시권에 들어왔습니다. ?]
+[? if front = "northern" and northern_progress = -4 : 독일군이 마침내 페트로그라드 관문 앞까지 들이닥쳤습니다! ?]
+[? if front = "western" and western_progress = -3 : 독일군이 민스크를 돌파하여 벨로루시 깊숙이 진전했으며, 이제 러시아 중부 지역을 직접 위협하고 있습니다. ?]
+[? if front = "western" and western_progress = -4 : 독일군이 러시아 본토에 진입하여 주요 대도시들을 타격할 수 있는 위치를 확보했습니다. ?]
+[? if front = "southwestern" and southwestern_progress >= -1 : 독일군이 갈리치아와 서부 우크라이나에서 우리 전선을 크게 밀어냈습니다. ?]
+[? if front = "southwestern" and southwestern_progress = -2 : 독일군이 우크라이나 본토로 진입하여 키예프를 위협하고 있습니다. ?]
+[? if front = "southwestern" and southwestern_progress = -3 : 우크라이나 영토의 대부분이 독일군의 수중에 떨어졌습니다. ?]
 
 
 @victory_1
 on-arrival: defensist_strength += 10; social_patriot_strength += 10; right_sr_strength += 10; morale *= 1.05; discipline *= 0.9; defense_bonus = 0; train_capacity *= 0.9999; military_progress += 1;  german_offensive_timer = 16; soldier_unrest -= 5; prov_gov_legitimacy += 2;
 achievement: victory
 
-= Victory
+= 승리
 
-Our casualties: [+ friendly_casualties +]0,000 troops
+아군 사상자: [+ friendly_casualties +]0,000명
 
-Enemy casualties: [+ hostile_casualties +]0,000 troops
+적군 사상자: [+ hostile_casualties +]0,000명
 
-[? if player_party != "b" : We have achieved a victory over the enemy! The enemy offensive has been stopped in its tracks. ?]
-[? if player_party = "b": The Russian army has defeated the German one. This is somewhat of a setback for the revolution. ?]
+[? if player_party != "b" : 적군을 상대로 승리를 거두었습니다! 적의 공세를 현 지점에서 성공적으로 저지했습니다. ?]
+[? if player_party = "b": 러시아 군이 독일군을 격퇴했습니다. 이는 혁명의 전개 과정에서 다소 뼈아픈 차질입니다. ?]
 
 @victory_2
 on-arrival: defensist_strength += 10; social_patriot_strength += 10; right_sr_strength += 10; morale *= 1.05; discipline *= 0.9; defense_bonus = 0; train_capacity *= 0.9999; military_progress += 2; german_offensive_timer = 16; soldier_unrest -= 8; prov_gov_legitimacy += 3;
 achievement: victory
 
-= Total Victory
+= 압도적인 승리
 
-Our casualties: [+ friendly_casualties +]0,000 troops
+아군 사상자: [+ friendly_casualties +]0,000명
 
-Enemy casualties: [+ hostile_casualties +]0,000 troops
+적군 사상자: [+ hostile_casualties +]0,000명
 
-[? if player_party != "b": We have achieved a total victory over the enemy! The enemy offensive has been stopped in its tracks, and our counterattack has gained some territory. ?]
-[? if player_party = "b": The Russian army has defeated the German one. This is somewhat of a setback for the revolution. ?]
+[? if player_party != "b": 적군을 상대로 완벽한 승리를 거두었습니다! 적의 공세를 완전히 분쇄했을 뿐만 아니라, 역습을 통해 일부 영토까지 탈환했습니다. ?]
+[? if player_party = "b": 러시아 군이 독일 군을 격퇴했습니다. 이는 혁명의 전개 과정에서 다소 뼈아픈 차질입니다. ?]

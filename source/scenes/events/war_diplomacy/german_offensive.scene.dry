@@ -1,16 +1,16 @@
-title: German Offensive
-subtitle: The enemy is making their move...
+title: 독일군의 대공세
+subtitle: 적군이 움직이기 시작했습니다...
 new-page: true
 view-if: ((year = 1917 and month >= 9) or (year >= 1918 and month >= 3) or refuse_treaty or (best_front_ratio >= 15)) and best_front_ratio > 1 and not is_armistice and not is_peace and not allied_victory and german_offensive_timer = 0
 on-arrival: enemy_front = best_enemy_front; front = best_front; attacking = 0; in_defensive_battle = 1; german_offensive_timer += 16; german_offensive_timer = 1 if refuse_treaty
 tags: event
 
-= German Offensive
+= 독일군의 대공세
 
-[? if best_front_ratio < 15 and not refuse_treaty : The Germans have launched an attack on the [+ front +] front! ?]
+[? if best_front_ratio < 15 and not refuse_treaty : 독일군이 [+ front +] 전선에서 대대적인 공격을 개시했습니다! ?]
 
-[? if best_front_ratio >= 15 and not refuse_treaty : The Germans have launched an attack! Our forces on the [+ front +] front are weak enough that the enemy has decided to make an opportunistic offensive here. ?]
+[? if best_front_ratio >= 15 and not refuse_treaty : 독일군이 공세를 시작했습니다! [+ front +] 전선의 아군 방어력이 취약해진 틈을 타, 적군이 이곳을 돌파하기 위해 빈틈을 노린 공세를 결정했습니다. ?]
 
-[? if refuse_treaty : Since we have rejected the German peace offer, they are now pressing the offensive. Our demobilized and demoralized army can hardly resist. ?]
+[? if refuse_treaty : 우리가 독일 측의 평화 제안을 거부함에 따라, 적군은 이제 공세 수위를 높이고 있습니다. 이미 와해되고 사기가 꺾인 아군으로서는 적의 진격을 저지하기가 매우 어렵습니다. ?]
 
-- @defense_outcome: Our army is fighting on the defensive...
+- @defense_outcome: 방어전이 시작된다...

@@ -1,56 +1,56 @@
-title: [+ war_minister +] Offensive
-subtitle: Finally, the long-awaited offensive is near...
+title: [+ war_minister +] 공세
+subtitle: 마침내 고대하던 총공세의 시간이 다가왔습니다...
 new-page: true
 view-if: month = 6 and week >= 2 and offensive_timer = 0 and ((player_party = "m" and war_minister_party != "Menshevik") or (player_party = "k" and war_minister != "Guchkov") or (player_party = "sr" and war_minister_party != "SR") or player_party = "b") and not is_armistice and not is_peace and not allied_victory
 on-arrival: southwestern_front_soldiers += 50; reserve_soldiers -= 50; morale += 0.1; discipline += 0.1; civilian_industry -= 5; military_industry += 5; military_trains += 5; civilian_trains -= 5;
 max-visits: 1
 tags: event
 
-= [+ war_minister +] Offensive
+= [+ war_minister +] 공세
 
-Finally, the long-anticipated offensive is near. War Minister [+ war_minister +] is planning a major offensive against Germany and Austria on the Southwestern Front.
+마침내 오랫동안 준비해 온 총공세의 서막이 올랐습니다. [+ war_minister +] 전쟁부 장관은 남서부 전선에서 독일과 오스트리아군을 궤멸시키기 위한 대규모 공세를 계획하고 있습니다.
 
-In preparation for the offensive, additional industries and transportation capacity has been assigned to military usage, and discipline has been restored in the military.
+공세 준비를 위해 더 많은 산업 시설과 수송 수단이 군수용으로 전환되었으며, 군 내부의 규율을 확립하는 작업이 완료되었습니다.
 
 - @stop
-- @continue: Let's hope for the best...
+- @continue: 행운을 빌어보자...
 
 @stop
-title: Can we stop the offensive somehow?
+title: 어떻게든 이 공세를 막을 방법이 있겠는가?
 choose-if: (player_party = "m" and m_war_policy > 1) or (player_party = "sr" and sr_war_policy > 1) or (player_party = "k" and k_war_policy >= 1) or player_party = "b"
-unavailable-subtitle: Our party supports the war effort.
+unavailable-subtitle: 우리 당은 전쟁 수행을 지지하고 있습니다.
 
-Is there anything we can do to stop the offensive?
+공세를 중단시키기 위해 우리가 취할 수 있는 조치가 있습니까?
 
 - @convince
 - @protest
 - @resign
-- @continue: Never mind; there is nothing we can do.
+- @continue: 그만두자; 우리가 할 수 있는 일은 아무것도 없다.
 
 @convince
-title: Convince the War Minister to cancel the offensive.
+title: 전쟁부 장관을 설득하여 공세 계획을 철회시킨다.
 choose-if: (player_party = "m" and ((war_minister_party = "Kadet" and m_k_relation >= 60) or (war_minister_party = "SR" and m_sr_relation >= 75))) or (player_party = "sr" and ((war_minister_party = "Kadet" and sr_k_relation >= 60) or (war_minister_party = "Menshevik" and m_sr_relation >= 75))) or (player_party = "k" and ((war_minister_party = "SR" and sr_k_relation >= 60) or (war_minister_party = "Menshevik" and m_k_relation >= 60)))
-unavailable-subtitle: Our relations are not good enough.
+unavailable-subtitle: 상대 정당과의 관계가 충분히 우호적이지 않습니다.
 on-arrival: civilian_industry += 5; military_industry -= 5; military_trains -= 5; civilian_trains += 5; internationalist_strength += 10; left_sr_strength += 10; left_kadet_strength += 10;
 
-We have successfully convinced War Minister [+ war_minister +] to cancel the planned offensive! The trains and industrial plants must be given back to civilian usage. This is a major victory for the internationalist factions of all parties.
+[+ war_minister +] 전쟁부 장관을 설득하여 예정된 공세를 취소시키는 데 성공했습니다! 징발되었던 열차와 공장들은 다시 민간용으로 복구될 것입니다. 이는 모든 정당 내 국제주의 파벌들이 거둔 중대한 승리입니다.
 
 @protest
-title: Protest on the streets against the planned offensive.
+title: 공세 계획에 반대하는 가두 시위를 전개한다.
 on-arrival: in_june_offensive = 1; june_offensive_conclusion_timer = 1; offensive_timer += 8; attacking = 1; prov_gov_legitimacy -= 3;
 
-We hold large street demonstrations, but they fail to sway the Provisional Government. The offensive will continue.
+대규모 가두 시위를 벌였으나, 임시 정부의 결정을 되돌리기에는 역부족이었습니다. 공세는 예정대로 강행될 것입니다.
 
 
 @resign
-title: Resign from the Provisional Government in protest.
+title: 항의의 표시로 임시 정부 각료직에서 사퇴한다.
 view-if: (player_party = "m" and m_in_gov) or (player_party = "sr" and sr_in_gov)
 on-arrival:  in_june_offensive = 1; june_offensive_conclusion_timer = 1; m_in_gov = 0 if player_party = "m"; sr_in_gov = 0 if player_party = "sr"; offensive_timer += 8;
 go-to: m_exit_gov if player_party = "m"; sr_exit_gov if player_party = "sr"
 
-We have resigned from the Provisional Government in protest, but nevertheless, the offensive will continue.
+우리는 공세 강행에 항의하며 임시 정부에서 물러났으나, 우리의 사퇴와 무관하게 공세는 계속될 것입니다.
 
 @continue
 on-arrival: in_june_offensive = 1; june_offensive_conclusion_timer = 1; attacking = 1; offensive_timer += 8; total_offensives += 1
 
-Everyone hopes that the offensive will be successful. May God be with us.
+모두가 이번 공세의 성공을 간절히 기원하고 있습니다. 신의 가호가 우리와 함께하기를.

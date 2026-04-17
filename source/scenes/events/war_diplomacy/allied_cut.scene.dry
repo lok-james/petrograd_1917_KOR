@@ -1,11 +1,11 @@
-title: Allied Cuts
-subtitle: The Allies no longer support us.
+title: 협상국의 지원 중단
+subtitle: 협상국이 더 이상 우리를 지원하지 않습니다.
 new-page: true
 view-if: month = 7 and ((player_party = "m" and war_minister_party = "Menshevik") or (player_party = "k" and (war_minister_party = "Kadet" or war_minister == "Guchkov")) or (player_party = "sr" and war_minister_party = "SR")) and battle_count = 0 and not battle_rejected
 on-arrival: battle_rejected = 1; west_relation *= 0.5; usa_relation *= 0.5; m_k_relation -= 10 if player_party = "m"; sr_k_relation -= 10 if player_party = "sr";
 max-visits: 1
 tags: event
 
-= Allied Cuts
+= 협상국의 지원 중단
 
-The Allies have demanded that we launch an offensive, and we have delayed until it was taken as an effective refusal. They are highly displeased, and it is likely that we will not be receiving any more economic assistance.
+협상국은 우리에게 공세를 시작할 것을 강력히 요구해 왔으나, 우리는 이를 사실상의 거부로 간주될 때까지 미루어 왔습니다. 협상국 측은 매우 불쾌해하고 있으며, 앞으로 더 이상의 경제적 원조를 기대하기는 어려울 것으로 보입니다.

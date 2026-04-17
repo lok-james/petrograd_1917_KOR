@@ -1,11 +1,11 @@
-title: Enemy Reinforcements
-subtitle: The Central Powers are strengthening their armies.
+title: 적의 증원군
+subtitle: 동맹국이 군사력을 강화하고 있습니다.
 new-page: true
 view-if: enemy_reinforcements_timer = 0 and (northwestern_enemy_soldiers <= 60 or southwestern_enemy_soldiers <= 60 or (caucasus_enemy_soldiers < 40 and not ottoman_capitulation)) and total_enemy_reinforcements <= 120 and not is_peace and not is_armistice and not allied_victory
 on-arrival: nw_reinf = 1 if northwestern_enemy_soldiers <= 60; total_enemy_reinforcements += 15 if northwestern_enemy_soldiers <= 60; northwestern_enemy_soldiers += 15 if northwestern_enemy_soldiers <= 60; sw_reinf = 1 if southwestern_enemy_soldiers <= 60; total_enemy_reinforcements += 15 if southwestern_enemy_soldiers <= 60; southwestern_enemy_soldiers += 15 if southwestern_enemy_soldiers <= 60; c_reinf = 1 if caucasus_enemy_soldiers < 40; total_enemy_reinforcements += 10 if caucasus_enemy_soldiers < 40; caucasus_enemy_soldiers += 10 if caucasus_enemy_soldiers < 40; enemy_reinforcements_timer += 4
 on-departure: nw_reinf = 0; sw_reinf = 0; c_reinf = 0
 tags: event
 
-= Enemy Reinforcements
+=적의 증원군
 
-After taking losses, the Central Powers are reinforcing their fronts. [? if nw_reinf = 1: Germany has reinforced the armies bordering our Northern and Western fronts. ?][? if sw_reinf = 1: Austria and Germany have reinforced their armies bordering our Southwestern and Romanian fronts. ?][? if c_reinf = 1: The Ottomans have reinforced their Caucasus forces. ?]
+전투 손실을 보충하기 위해 동맹국들이 전선에 병력을 증원하고 있습니다. [? if nw_reinf = 1: 독일이 북부 및 서부 전선 접경 지대에 병력을 보강했습니다. ?][? if sw_reinf = 1: 오스트리아와 독일이 남서부 및 루마니아 전선 접경 지대에 병력을 추가로 배치했습니다. ?][? if c_reinf = 1: 오스만 제국이 코카서스 전선의 병력을 강화했습니다. ?]

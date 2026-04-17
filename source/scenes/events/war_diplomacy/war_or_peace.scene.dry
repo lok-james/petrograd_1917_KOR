@@ -1,12 +1,12 @@
-title: War or Peace
-subtitle: After the armistice, we must either sign a lasting peace or resume the war.
+title: 전쟁이냐 평화냐
+subtitle: 휴전 협정 이후, 우리는 영구적인 평화 조약을 체결하거나 전쟁을 재개해야 합니다.
 new-page: true
 view-if: is_armistice and not is_peace and war_or_peace_timer = 0 and war_progress < 0
 on-arrival: war_or_peace_seen += 1; war_or_peace_timer = 8; central_negotiations += 2
 tags: event
 
-= War or Peace
+= 전쟁이냐 평화냐
 
-We have signed an armistice, but not yet a final peace. The Central Powers are becoming impatient, and they are presenting an ultimatum regarding a final peace treaty. We can either sign, or allow war to resume.
+우리는 휴전에는 합의했으나 아직 최종적인 평화 조약에는 서명하지 않았습니다. 동맹국 측은 인내심의 한계에 다다랐으며, 최종 평화 조약 체결에 관한 최후통첩을 보내왔습니다. 우리는 조약에 서명하거나, 아니면 전쟁이 재개되는 것을 지켜봐야 합니다.
 
-- @foreign_policy.sign_peace: What are the Central Powers' demands?
+- @foreign_policy.sign_peace: 동맹국 측이 제시한 요구 사항은 뭐지?

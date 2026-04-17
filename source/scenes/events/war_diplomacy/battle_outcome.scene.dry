@@ -1,5 +1,5 @@
-title: Battle Outcome
-subtitle: The outcome of our offensive...
+title: 전투 결과
+subtitle: 공세의 결과가 나왔습니다...
 new-page: true
 view-if: in_offensive_battle = 1 and not in_june_offensive
 set-jump: battle_outcome.post_battle
@@ -16,49 +16,49 @@ on-arrival: in_offensive_battle = 0;
 @defeat_2
 on-arrival: defensist_strength -= 6; social_patriot_strength -= 10; right_sr_strength -= 6; soldiers_sr -= 8 if sr_in_gov; soldiers_sr -= 6 if sr_war_policy <= 1; soldiers_m -= 9 if m_in_gov; soldiers_m -= 6 if m_war_position <= 1; soldiers_k -= 15; morale *= 0.8; discipline *= 0.7; train_capacity *= 0.999; soldiers_b += 15 if not b_in_gov; military_progress -= 2; coup_progress += 2; soldier_unrest += 5; prov_gov_legitimacy -= 4
 
-= Total Defeat
+= 처참한 패배
 
-Our casualties: [+ friendly_casualties +]0,000 troops
+아군 사상자: [+ friendly_casualties +]0,000명
 
-Enemy casualties: [+ hostile_casualties +]0,000 troops
+적군 사상자: [+ hostile_casualties +]0,000명
 
-Our forces have been totally defeated by the Central Powers armies, and are retreating behind their starting positions.
+우리 군은 동맹국 군대에 의해 궤멸적인 타격을 입었으며, 공세 시작 지점보다 더 뒤쪽으로 패퇴하고 있습니다.
 
-The defeat has made the people ever more tired of war.
+이번 패배로 인해 국민들의 전쟁 혐오증은 극에 달했습니다
 
 @defeat_1
 on-arrival: defensist_strength -= 6; social_patriot_strength -= 10; right_sr_strength -= 6; soldiers_sr -= 7 if sr_in_gov; soldiers_sr -= 3 if sr_war_policy <= 1; soldiers_m -= 7 if m_in_gov; soldiers_m -= 4 if m_war_policy <= 1; soldiers_k -= 10; morale *= 0.9; discipline *= 0.7; train_capacity *= 0.9999; soldiers_b += 10 if not b_in_gov; military_progress -= 1; coup_progress += 1; soldier_unrest += 3; prov_gov_legitimacy -= 2
 
-= Defeat
+= 패배
 
-Our casualties: [+ friendly_casualties +]0,000 troops
+아군 사상자: [+ friendly_casualties +]0,000명
 
-Enemy casualties: [+ hostile_casualties +]0,000 troops
+적군 사상자: [+ hostile_casualties +]0,000명
 
-The Central Powers have inflicted a defeat upon us. Our forces have retreated to their starting positions.
+동맹국 군대가 우리에게 패배를 안겨주었습니다. 우리 군은 공세 시작 지점까지 밀려났습니다.
 
-The defeat has made the people ever more tired of war.
+이번 패배로 인해 국민들은 전쟁에 대해 더욱 깊은 피로감을 느끼고 있습니다.
 
 @victory_1
 on-arrival: defensist_strength += 10; social_patriot_strength += 10; right_sr_strength += 10; morale *= 1.05; discipline *= 0.9; defense_bonus = 0; train_capacity *= 0.9999; military_progress += 1; soldier_unrest -= 5; prov_gov_legitimacy += 3;
 achievement: victory
 
-= Victory
+= 승리
 
-Our casualties: [+ friendly_casualties +]0,000 troops
+아군 사상자: [+ friendly_casualties +]0,000명
 
-Enemy casualties: [+ hostile_casualties +]0,000 troops
+적군 사상자: [+ hostile_casualties +]0,000명
 
-We have achieved a victory over the enemy! We have gained some territory.
+적군을 상대로 값진 승리를 거두었습니다! 우리는 일부 영토를 탈환하는 데 성공했습니다.
 
 @victory_2
 on-arrival: defensist_strength += 10; social_patriot_strength += 10; right_sr_strength += 10; morale *= 1.05; discipline *= 0.9; defense_bonus = 0; train_capacity *= 0.9999; military_progress += 2; soldier_unrest -= 8; prov_gov_legitimacy += 5;
 achievement: victory
 
-= Total Victory
+= 압도적인 승리
 
-Our casualties: [+ friendly_casualties +]0,000 troops
+아군 사상자: [+ friendly_casualties +]0,000명
 
-Enemy casualties: [+ hostile_casualties +]0,000 troops
+적군 사상자: [+ hostile_casualties +]0,000명
 
-We have achieved a total victory over the enemy! We have gained a great deal of teritory.
+적군을 상대로 완벽한 승리를 거두었습니다! 광활한 영토를 확보하며 전선을 크게 밀어냈습니다.

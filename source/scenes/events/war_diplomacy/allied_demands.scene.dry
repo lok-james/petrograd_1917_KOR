@@ -1,41 +1,41 @@
-title: Allied Demands, Domestic Demands
-subtitle: The Allies and the socialist parties have diverging goals regarding the war.
+title: 협상국의 요구와 국내의 요구
+subtitle: 협상국과 사회주의 정당들이 전쟁을 두고 서로 다른 목표를 지향하고 있습니다.
 new-page: true
 view-if: player_party = "k" and month = 3 and week >= 3 and allied_demands_seen = 0
 on-arrival: allied_demands_seen += 1
 tags: event
 
-= Allied Demands, Domestic Demands
+= 협상국의 요구와 국내의 요구
 
-The Allies, Britain and France, have high expectations of post-revolutionary Russia. They expect us to continue persecuting the war against Germany and Austria, with hopefully greater effectiveness now that the incompetent Tsar and Tsarina are out of the way. 
+협상국인 영국과 프랑스는 혁명 이후의 러시아에 대해 높은 기대를 품고 있습니다. 그들은 무능했던 차르 부부가 물러난 만큼, 러시아가 이전보다 더 효율적으로 독일 및 오스트리아와의 전쟁을 지속해주기를 바라고 있습니다.
 
-Meanwhile, we are pressured domestically by anti-war sentiment among the socialists. The "revolutionary defensists" are agitating for a renouncement of aggressive goals such as annexations and are calling us to support a general peace among all combatants. More radical socialists are even calling for a separate peace to take Russia out of the war.
+한편, 국내에서는 사회주의자들 사이에서 번지는 반전 여론이 우리를 압박하고 있습니다. "혁명적 방어주의자들"은 영토 병합과 같은 침략적 전쟁 목표를 포기하라고 선동하며, 모든 교전국이 참여하는 보편적 평화 협상을 지지하라고 요구합니다. 더 급진적인 사회주의자들은 러시아를 전쟁에서 완전히 이탈시키기 위한 단독 강화 조약까지 주장하고 있습니다.
 
-The Allies look upon these radical demands with alarm. They are looking for some written acknowledgment that we will continue the course of the war.
+협상국은 이러한 급진적인 요구들을 우려 섞인 시선으로 지켜보고 있습니다. 그들은 우리가 전쟁을 끝까지 수행할 것이라는 확고한 서면 약속을 원하고 있습니다.
 
 - @reassure
 - @repudiate
 - @repudiate_allies
 
 @reassure
-title: Publicly send a message calling for a general peace, while secretly reassuring allies that we will continue the war.
+title: 대외적으로는 보편적 평화를 촉구하되, 비밀리에 협상국에게는 전쟁 지속 의사를 전달한다.
 
-We will openly call for a peace without annexations and indemnities, while at the same time, Foreign Minister Milyukov will send a letter to the allies reassuring them of our war aims and our continuation of the war.
+우리는 겉으로는 영토 병합이나 배상금 없는 평화를 주장할 것입니다. 동시에 밀류코프 외무장관은 협상국에 서한을 보내, 우리의 전쟁 목표에는 변함이 없으며 전쟁을 끝까지 지속할 것임을 확인해 줄 것입니다.
 
 @repudiate
-title: Repudiate the socialist anti-war demands.
+title: 사회주의자들의 반전 요구를 단호히 거부한다.
 on-arrival: peace_demands_rejected = 1; m_k_relation -= 8; sr_k_relation -= 8; prov_gov_legitimacy -= 10; soviet_cooperation -= 0.05; internationalist_strength += 8; left_sr_strength += 8; left_kadet_dissent += 8;
 
-Repudiating the Soviet peace formula hurts our relations with the socialist parties, and strenghthens the hand of the factions that are opposed to cooperation with the Provisional Government.
+소비에트의 평화 안을 거부하는 것은 사회주의 정당들과의 관계를 악화시키며, 임시 정부와의 협력에 반대하는 강경 파벌들의 입지만 넓혀줄 뿐입니다.
 
 
 @repudiate_allies
-title: Repudiate the allies; we must seek a general peace.
-unavailable-subtitle: Our party will never do this.
+title: 협상국과의 관계를 끊고 독자적인 평화 노선을 추구한다.
+unavailable-subtitle: 우리 당은 결코 이런 선택을 하지 않을 것입니다.
 choose-if: k_war_policy >= 1
 on-arrival: allied_demands_rejected = 1; west_relation -= 20; war_exhaustion -= 2; general_negotiations += 1; sr_k_relation += 5*(1-k_dissent); m_k_relation += 5*(1-k_dissent); right_kadet_dissent += 20;
 
 # this prevents the April Days, for now.
 
-The Allies are displeased at our rejection of their overtures regarding the war.
+협상국은 전쟁 지속에 관한 자신들의 제안을 거부한 우리 측의 태도에 깊은 유감을 표했습니다.
 

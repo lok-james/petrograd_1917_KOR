@@ -1,5 +1,5 @@
-title: June Offensive Conclusion
-subtitle: News from the front...
+title: 6월 공세의 결말
+subtitle: 전선에서 소식이 도착했습니다...
 new-page: true
 view-if: in_june_offensive = 1 and june_offensive_conclusion_timer = 0 
 on-arrival: attacking = 1; front = "southwestern"; enemey_front = "southwestern";
@@ -16,47 +16,47 @@ on-arrival: in_june_offensive = 0;
 @defeat_2
 on-arrival: defensist_strength -= 6; social_patriot_strength -= 10; right_sr_strength -= 6; soldiers_sr -= 9 if sr_in_gov; soldiers_sr -= 9 if sr_war_policy <= 1; soldiers_m -= 9 if m_in_gov; soldiers_m -= 7 if m_war_policy <= 1; soldiers_k -= 15; morale *= 0.8; discipline *= 0.7; train_capacity *= 0.999; soldiers_b += 15 if not b_in_gov; military_progress -= 2; coup_progress += 2; june_offensive_defeat = 1;
 
-= Total Defeat
+= 처참한 패배
 
-Our casualties: [+ friendly_casualties +] divisions
+아군 손실: [+ friendly_casualties +]개 사단
 
-Enemy casualties: [+ hostile_casualties +] divisions
+적군 손실: [+ hostile_casualties +]개 사단
 
-Our forces have been totally defeated by the Central Powers armies, and are retreating behind their starting positions. The defeat has accelerated the trend towards anti-war sentiment.
+아군이 동맹국 군대에 의해 궤멸적인 타격을 입고 공세 시작 지점 너머로 패퇴하고 있습니다. 이번 패배는 민심이 반전 여론으로 급격히 쏠리는 기폭제가 되었습니다.
 
 @defeat_1
 on-arrival: defensist_strength -= 6; social_patriot_strength -= 10; right_sr_strength -= 6; soldiers_sr -= 7 if sr_in_gov; soldiers_sr -= 4 if sr_war_policy <= 1; soldiers_m -= 7 if m_in_gov; soldiers_m -= 4 if m_war_policy <= 1; soldiers_k -= 10; morale *= 0.9; discipline *= 0.7; train_capacity *= 0.9999; soldiers_b += 10 if not b_in_gov; military_progress -= 1; coup_progress += 1; june_offensive_defeat = 1
 
-= Defeat
+= 패배
 
-Our casualties: [+ friendly_casualties +] divisions
+아군 손실: [+ friendly_casualties +]개 사단
 
-Enemy casualties: [+ hostile_casualties +] divisions
+적군 손실: [+ hostile_casualties +]개 사단
 
-The Central Powers have inflicted a defeat upon us. Our forces have retreated to their starting positions. The defeat has accelerated the trend towards anti-war sentiment.
+동맹국 군대가 우리에게 패배를 안겨주었습니다. 아군은 공세 시작 지점까지 밀려났으며, 이로 인해 반전 여론이 더욱 거세지고 있습니다.
 
 
 @victory_1
 on-arrival: defensist_strength += 10; social_patriot_strength += 10; right_sr_strength += 10; morale *= 1.05; discipline *= 0.9; defense_bonus = 0; train_capacity *= 0.9999; military_progress -= 1; june_offensive_victory = 1;
 achievement: victory
 
-= Victory
+= 승리
 
-Our casualties: [+ friendly_casualties +] divisions
+아군 손실: [+ friendly_casualties +]개 사단
 
-Enemy casualties: [+ hostile_casualties +] divisions
+적군 손실: [+ hostile_casualties +]개 사단
 
-We have achieved a victory over the enemy! We have gained some territory.
+적군을 상대로 승리를 거두었습니다! 우리는 일부 영토를 탈환하는 데 성공했습니다.
 
 @victory_2
 on-arrival: defensist_strength += 10; social_patriot_strength += 10; right_sr_strength += 10; morale *= 1.05; discipline *= 0.9; defense_bonus = 0; train_capacity *= 0.9999; military_progress -= 2; june_offensive_victory = 1
 achievement: victory
 
-= Total Victory
+= 압도적인 승리
 
-Our casualties: [+ friendly_casualties +] divisions
+아군 손실: [+ friendly_casualties +]개 사단
 
-Enemy casualties: [+ hostile_casualties +] divisions
+적군 손실: [+ hostile_casualties +]개 사단
 
-We have achieved a total victory over the enemy! We have gained a great deal of teritory.
+적군을 상대로 완벽한 승리를 거두었습니다! 광활한 영토를 확보하며 전선을 크게 밀어냈습니다.
 

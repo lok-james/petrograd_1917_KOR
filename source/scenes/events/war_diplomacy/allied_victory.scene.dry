@@ -1,5 +1,5 @@
-title: Allied Victory!
-subtitle: Finally, the Central Powers are collapsing...
+title: 협상국의 승리!
+subtitle: 마침내 동맹국들이 무너지고 있습니다...
 new-page: true
 view-if: ((caucasus_progress >= 2) or (northern_progress >= 2) or (southwestern_progress >= 2) or (romanian_progress >= 2)) and ((northern_progress >= 4) or (western_progress >= 4) or (southwestern_progress >= 4) or (romanian_progress >= 4)) and ((northern_progress >= -2) and (western_progress >= -3) and (southwestern_progress >= -2) and (romanian_progress >= -3)) and not is_armistice and not is_peace and ((year = 1917 and month >= 6) or year > 1917)
 on-arrival: ottoman_capitulation = 1; allied_victory = 1; prov_gov_legitimacy += 45; west_relation += 20; war_weariness -= 30; workers_b -= 25; soldiers_b -= 25; peasants_b -= 15; middle_k += 10; workers_k += 5; soldiers_k += 10; soldiers_other += 5; workers_m += 10*(1-m_dissent) if m_war_policy <= 1; workers_sr += 10*(1-sr_dissent) if sr_war_policy <= 1; soldiers_m += 10*(1-m_dissent) if m_war_policy <= 1; soldiers_sr += 10*(1-sr_dissent) if sr_war_policy <= 1; right_sr_strength += 10 if not right_sr_split; workers_right_sr += 5 if right_sr_split; soldiers_right_sr += 10 if right_sr_split; defensist_strength += 10 if not defensist_split; workers_defensist += 5 if defensist_split; soldiers_defensist += 10 if defensist_split; prov_gov_efficacy += 0.2; soldier_unrest -= 30; worker_unrest -= 20; bolshevik_coup_timer += 10 if bolshevik_coup_timer > 0;
@@ -7,15 +7,15 @@ achievement: milyukovs_dream
 max-visits: 1
 tags: event
 
-= Allied Victory
+= 협상국의 승리
 
-Germany's army is broken in the east and the west. Mutinies have broken out among its sailors and soldiers, and the front is collapsing. Knowing that they cannot continue the war, Germany's general staff have signed an armistice, along with Austria, the Ottoman Empire, and their other co-belligerents.
+독일군은 동부와 서부 전선 모두에서 궤멸되었습니다. 수병들과 병사들 사이에서 반란이 들불처럼 번졌고, 전선은 완전히 붕괴했습니다. 더 이상 전쟁을 지속할 수 없음을 깨달은 독일 참모본부는 오스트리아, 오스만 제국 및 기타 동맹국들과 함께 휴전 협정에 서명했습니다.
 
-- @great_day: Finally, the Great War is coming to an end...
+- @great_day: 마침내 대전쟁이 막을 내리고 있다...
 
 @great_day
 achievement: allied_victory
 
-Millions of lives have been lost in the war, on all sides. Will the Allied victory prove their sacrifices worthwhile? The future is unwritten; only time will tell.
+모든 교전국에서 수백만 명의 고귀한 생명이 희생되었습니다. 협상국의 승리가 그들의 희생을 헛되지 않게 증명해 줄 수 있을까요? 미래는 아직 정해지지 않았으며, 오직 시간만이 그 답을 알고 있을 것입니다.
 
-Domestically, the victory has boosted the legitimacy of the provisional government, the standing of the pro-war parties (that is, the Kadets), and the strength of defensist factions among the socialists. The allure of the Bolsheviks is greatly lessened among the workers and soldiers. Now, we must demobilize the military and remake Russia for peacetime.
+국내적으로 이번 승리는 임시 정부의 정통성을 크게 높였으며, 카데트와 같은 전쟁 지지 정당들의 위상과 사회주의 진영 내 방위주의 파벌의 세력을 강화했습니다. 노동자와 병사들 사이에서 볼셰비키의 선동은 힘을 잃었습니다. 이제 우리는 군대를 해산하고 평화로운 러시아를 재건하는 과업에 집중해야 합니다.
