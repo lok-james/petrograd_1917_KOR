@@ -218,7 +218,7 @@ go-to: eg_menu
 
 
 @achievements
-title: Achievements
+title: 업적
 view-if: achievement_game_completed == 1
 tags: endings
 go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
