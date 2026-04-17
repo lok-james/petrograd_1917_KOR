@@ -1,5 +1,5 @@
-title: The End of Hunger
-subtitle: Has the famine truly ended...?
+title: 기근의 종식
+subtitle: 기근이 정말로 끝난 것일까요...?
 new-page: true
 view-if: hunger < 11
 max-visits: 1
@@ -7,6 +7,6 @@ on-arrival: end_of_hunger_timer += 200; workers_m += 3; workers_sr += 3; workers
 achievement: end_famine
 tags: event
 
-= The End of Hunger
+= 기근의 종식
 
-Finally, Russia's urban residents have bread. This is a significant credit to the provisional government.
+마침내 도시 거주자들에게 빵이 공급되기 시작했습니다. 이는 임시 정부가 거둔 커다란 성과로 평가받을 것입니다.

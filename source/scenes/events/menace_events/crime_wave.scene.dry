@@ -1,15 +1,15 @@
-title: Crime Wave
-subtitle: Petty thefts, gangs of deserters, and mob justice...
+title: 범죄의 물결
+subtitle: 좀도둑질, 탈영병 범죄 조직, 그리고 사적 제재...
 view-if: crime_wave_timer == 0 and crime > 30
 on-arrival: crime_wave_timer = 5; prov_gov_legitimacy -= 3; workers_m -= 2 if m_in_gov; workers_sr -= 2 if sr_in_gov; middle_m -= 2 if m_in_gov; middle_sr -= 2 if sr_in_gov; middle_popular_socialist -= 4 if sr_in_gov or k_in_gov; middle_other -= 2; middle_none += 2; industry *= 0.995;
 new-page: true
 tags: event
 
-= Crime Wave
+= 범죄의 물결
 
-In the wake of the revolution, a crime wave has erupted throughout Russia, and Petrograd in particular. The newspapers tell lurid stories of thefts caused by desperation and hunger, of released prisoners returning to their criminal craft, of deserting soldiers resorting to banditry. In response, many citizens have turned to vigilantism, enacting mob justice on accused thieves. The economic deprivation and rapid changes in government have combined to create an atmosphere of chaos.
+혁명의 여파로 러시아 전역, 특히 페트로그라드에서 범죄가 기승을 부리고 있습니다. 신문들은 절망과 굶주림으로 인한 절도, 석방된 죄수들의 재범, 산적으로 돌변한 탈영병들의 이야기를 자극적으로 보도하고 있습니다. 이에 대응하여 많은 시민이 자경단을 조직해 절도범으로 몰린 이들에게 잔혹한 사적 제재를 가하고 있습니다. 경제적 빈곤과 급격한 정권 교체가 맞물려 사회 전반에 혼돈의 분위기가 감돌고 있습니다.
 
-What can we do?
+어떻게 대응해야 할까요?
 
 - @city_militia
 - @workers_militias
@@ -24,41 +24,41 @@ What can we do?
 # 
 
 @city_militia
-title: Use the city militia to restore order.
+title: 도시 민병대를 동원해 질서를 회복한다.
 choose-if: player_in_gov
-unavailable-subtitle: [? if not player_in_gov: We must be part of the government. ?]
+unavailable-subtitle: [? if not player_in_gov: 정부에 참여하고 있어야 합니다. ?]
 on-arrival: crime -= city_militia_strength*city_militia_militancy*unrest_modifier; prov_gov_legitimacy += 5 if crime < 30
 
-We have deployed our city militia to fight crime. A replacement for the tsarist police, the militias are comprised mostly of enthusiastic but ill-trained and equiped student volunteers. [? if crime > 5: We should improve their quality if they are to successfully combat crime. ?]
+범죄에 대응하기 위해 도시 민병대를 투입했습니다. 차르 체제의 경찰을 대체하기 위해 조직된 이 민병대는 대부분 열정은 넘치나 훈련과 장비가 턱없이 부족한 학생 자원봉사자들로 구성되어 있습니다. [? if crime > 5: 이들이 범죄를 성공적으로 소탕하려면 전반적인 역량 강화가 시급합니다. ?]
 
-[? if crime < 30 : Crime rates have been successfully reduced to an extent. ?]
+[? if crime < 30 : 범죄율이 어느 정도 감소하는 성과를 거두었습니다. ?]
 
 @workers_militias
-title: Use the workers' militias to restore order.
+title: 노동자 민병대를 동원해 질서를 회복한다.
 view-if: (player_party = "b" or player_party = "m" or player_party = "sr")
 choose-if: player_in_exco
-unavailable-subtitle: [? if not player_in_exco : We must be part of the Soviet Executive Committee. ?]
+unavailable-subtitle: [? if not player_in_exco : 소비에트 집행위원회에 참여하고 있어야 합니다. ?]
 on-arrival: crime -= workers_militia_strength*workers_militia_militancy*unrest_modifier; prov_gov_legitimacy += 5 if crime < 30
 
-We have deployed the workers' militia to fight crime. In the working-class neighborhoods, they have already been successful in deterring criminal activity. [? if crime > 5 : Now, we will see if they can be effective in other parts of the city. ?]
+범죄 소탕을 위해 노동자 민병대를 투입했습니다. 노동자 거주 지역에서는 이미 이들이 범죄를 억제하는 데 큰 역할을 하고 있습니다. [? if crime > 5 : 이제 이들이 도시의 다른 지역에서도 실력을 발휘할 수 있을지 지켜봐야 할 것입니다. ?]
 
-[? if crime < 30 : Crime rates have been successfully reduced to an extent. ?]
+[? if crime < 30 : 범죄율이 어느 정도 감소하는 성과를 거두었습니다. ?]
 
 @punishment
-title: Increase legal punishments for criminals and hold speedy trials.
+title: 범죄자에 대한 법적 처벌을 강화하고 신속 재판을 실시한다.
 choose-if: player_in_gov
-unavailable-subtitle: [? if not player_in_gov: We must be part of the government. ?]
+unavailable-subtitle: [? if not player_in_gov: 정부에 참여하고 있어야 합니다. ?]
 
 
 @economic_change
-title: Only economic change can reduce the causes of crime.
+title: 근본적인 경제적 변화만이 범죄의 원인을 제거할 수 있다.
 on-arrival: crime -= 8*unrest_modifier if inflation <= 50 and crime > 30; crime -= 6*unrest_modifier if inflation <= 20 and crime > 30; crime -= 6*unrest_modifier if hunger < 20; prov_gov_legitimacy += 5 if crime < 30
 
-[? if inflation <= 50: Our inflation rates, while still high, are no longer at their peak. ?][? if hunger < 20: Rates of hunger have been lowered, which should lower the rates of economic crime. ?][? if inflation > 50 and hunger > 20 : Unfortunately, the economic suffering continues, and so will the crime wave. ?]
+[? if inflation <= 50: 인플레이션율이 여전히 높기는 하지만, 최악의 고비는 넘긴 것으로 보입니다. ?][? if hunger < 20: 기근 문제가 완화되면서 생계형 범죄도 줄어들 것으로 기대됩니다. ?][? if inflation > 50 and hunger > 20 : 불행히도 경제적 고통이 계속되고 있어, 범죄의 물결 또한 쉽게 가라앉지 않을 것입니다. ?]
 
-[? if crime < 30 : Crime rates have been successfully reduced to an extent. ?]
+[? if crime < 30 : 범죄율이 어느 정도 감소하는 성과를 거두었습니다. ?]
 
 @nothing
-title: Nothing can be done.
+title: 할 수 있는 일이 없다.
 
-There is nothing we can do. The crime wave continues to run rampant.
+우리가 할 수 있는 일은 아무것도 없습니다. 범죄의 물결은 계속해서 걷잡을 수 없이 번져나가고 있습니다.

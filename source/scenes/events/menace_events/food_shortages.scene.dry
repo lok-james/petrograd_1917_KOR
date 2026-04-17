@@ -1,52 +1,52 @@
-title: Food Shortages
-subtitle: Hunger reigns in the cities...
+title: 식량 부족
+subtitle: 도시에 기근이 몰아치고 있습니다...
 new-page: true
 view-if: hunger >= 25 and food_shortages_timer = 0
 on-arrival: food_shortages_timer += 6; workers_none += 4; workers_m -= 3; workers_sr -= 3; workers_k -= 4; workers_other -= 1; workers_anarchist += 1; workers_b += 3 if not b_is_player; prov_gov_legitimacy -= 4; coup_progress += 1; labor_unrest += 2 if labor_unrest < 70; crime_rate += 3 if crime < 50
 face-image: img/breadline.jpg
 tags: event
 
-= Food Shortages
+= 식량 부족
 
-The cities are wracked by hunger. Rationing and bread lines have been a constant feature of the past year of war, and they show no signs of improving.
+도시들이 극심한 굶주림에 시달리고 있습니다. 배급제와 길게 늘어선 빵 배급 줄은 지난 1년간의 전쟁 기간 동안 일상이 되었으며, 상황이 나아질 기미는 전혀 보이지 않습니다.
 
-Workers are beginning to wonder: if the revolution does not solve the issue of bread, then what was it even for?
+노동자들은 의문을 품기 시작했습니다. 혁명이 빵 문제조차 해결해주지 못한다면, 도대체 무엇을 위해 혁명을 한 것인가?
 
 # policies: expand rationing amd reduce rations, target private profiteers and the black market, form a grain monopoly, 
-- @party_funds: The party should use its funds to help the workers!
+- @party_funds: 당의 자금을 동원해 노동자들을 도와야 한다!
 - @agitate
 - @grain_monopoly
 - @increase_price
-- @nothing: Unfortunately, there is nothing we can do.
+- @nothing: 안타깝게도 우리가 할 수 있는 일은 없다.
 
 @party_funds
 view-if: player_party = "b" or player_party = "m" or player_party = "sr"
 choose-if: (player_party = "b" and b_resources >= 1) or (player_party = "m" and m_resources >= 1) or (player_party = "sr" and sr_resources >= 1)
-subtitle: -1 resource
+subtitle: 자원 -1
 on-arrival: b_resources -= 1 if player_party = "b"; m_resources -= 1 if player_party = "m"; sr_resources -= 1 if player_party = "sr"; workers_b += 4*(1-b_dissent) if player_party = "b"; workers_m += 4*(1-m_dissent) if player_party = "m"; workers_sr += 4*(1-sr_dissent) if player_party = "sr"
 
-We have used some of our party resources to send "bag-men" to purchase grain directly from peasants, and provide them to the workers. These are at best temporary measures, however.
+우리는 당의 자원을 투입해 농민들로부터 직접 곡물을 사들여 노동자들에게 공급할 '보따리상'들을 파견했습니다. 그러나 이는 어디까지나 임시방편일 뿐입니다.
 
 @agitate
-title: We must agitate against the Provisional Government for failing to address the food supply!
+title: 식량 공급 문제 해결에 실패한 임시 정부를 규탄하는 선동을 펼쳐야 한다!
 view-if: player_party = "b" and not b_in_gov
 on-arrival: workers_b += 4*(1-b_dissent); prov_gov_legitimacy -= 2;
 
-We publish articles and make speeches about the Provisional Government's failure to provide bread. The propaganda is effective in turning the workers against the bourgeois government, and it creates an impression that the Bolshevik party is the only party taking the problem seriously.
+우리는 임시 정부의 무능한 식량 정책을 비판하는 기사를 싣고 연설을 이어가고 있습니다. 이러한 선전 활동은 노동자들이 부르주아 정부에 등을 돌리게 하는 데 효과적이며, 볼셰비키만이 이 문제를 진지하게 고민하는 유일한 정당이라는 인상을 심어주고 있습니다.
 
 @nothing
 on-arrival: workers_m -= 2 if player_party = "m"; workers_sr -= 2 if player_party = "sr"; workers_b -= 2 if player_party = "b"; workers_k -= 2 if player_party = "k";
 go-to: root
 
 @grain_monopoly
-title: Create a state monopoly for grain purchasing.
-subtitle: -2 budget
+title: 곡물 수매 전매제를 실시한다.
+subtitle: 예산 -2
 view-if: player_in_gov and grain_monopoly = 0
 go-to: food_policy.state_buyer
 
 
 @increase_price
-title: Increase the price of grain paid out to farmers.
-subtitle: -2 budget
+title: 농민들에게 지급하는 곡물 수매 가격을 인상한다.
+subtitle: 예산 -2
 view-if: grain_monopoly = 1 and player_in_gov
 go-to: food_policy.increase_price

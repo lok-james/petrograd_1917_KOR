@@ -1,15 +1,15 @@
-title: Capital Flight
-subtitle: Capitalists are closing down their plants and moving assets out of the country.
+title: 자본 도피
+subtitle: 자본가들이 공장을 폐쇄하고 자산을 해외로 유출하고 있습니다.
 new-page: true
 view-if: capital_flight_progress >= 10 and capital_flight_timer = 0 and industries_nationalized + industries_socialized < 50
 on-arrival: capital_flight_timer += 24; industry *= 0.9; coup_progress += 2; unemployed += 5; prov_gov_legitimacy -= 10;
 tags: event
 
-= Capital Flight
+= 자본 도피
 
-Increasingly, capitalists are moving their assets out of the country. They see the economic situation in Russia as untenable, and the chaos unbearable. The inflation, strikes, and hunger all contribute to the businesses' unease.
+자본가들이 점점 더 많은 자산을 해외로 빼돌리고 있습니다. 이들은 러시아의 경제 상황이 한계에 다다랐으며, 현재의 혼란을 더 이상 견딜 수 없다고 판단하고 있습니다. 인플레이션과 파업, 그리고 기근은 기업가들의 불안감을 증폭시키고 있습니다.
 
-Factories are shuttering, and industrial production is collapsing.
+공장들은 문을 닫고 있으며, 산업 생산은 붕괴 직전입니다.
 
 - @nationalize
 - @takeovers
@@ -19,29 +19,29 @@ Factories are shuttering, and industrial production is collapsing.
 # TODO: how to respond? factory takeovers
 
 @nationalize
-title: The government should seize unoccupied industries.
-subtitle: -1 budget
-unavailable-subtitle: [? if not (player_in_gov) : We must be in the government. ?][? if not ((player_party = "sr" and sr_industrial_policy >= 1) or (player_party = "m" and m_industrial_policy >= 1) or (player_party = "b")) : Our party does not support this radical course. ?]
+title: 정부가 가동이 중단된 산업 시설을 몰수해야 한다.
+subtitle: 예산 -1
+unavailable-subtitle: [? if not (player_in_gov) : 정부에 참여하고 있어야 합니다. ?][? if not ((player_party = "sr" and sr_industrial_policy >= 1) or (player_party = "m" and m_industrial_policy >= 1) or (player_party = "b")) : 우리 당은 이런 급진적인 노선을 지지하지 않습니다. ?]
 choose-if: (player_in_gov) and ((player_party = "sr" and sr_industrial_policy >= 1) or (player_party = "m" and m_industrial_policy >= 1) or (player_party = "b"))
 on-arrival: prov_gov_legitimacy += 5; budget -= 1; industries_nationalized += 20*(prov_gov_efficacy); industry *= 1.08; capital_flight_progress -= 5
 
 
 @takeovers
-title: Workers must take over factories and organize production themselves!
+title: 노동자들이 공장을 인수하여 직접 생산을 조직해야 한다!
 view-if: player_party != "k"
-unavailable-subtitle: [? if not (player_in_gov or player_in_exco) : We must be in the government or the Soviet executive committee. ?][? if not ((player_party = "sr" and sr_industrial_policy >= 1) or (player_party = "m" and m_industrial_policy >= 1) or (player_party = "b")) : Our party does not support this radical course. ?]
+unavailable-subtitle: [? if not (player_in_gov or player_in_exco) : 정부나 소비에트 집행위원회에 참여하고 있어야 합니다. ?][? if not ((player_party = "sr" and sr_industrial_policy >= 1) or (player_party = "m" and m_industrial_policy >= 1) or (player_party = "b")) : 우리 당은 이런 급진적인 노선을 지지하지 않습니다. ?]
 choose-if: (player_in_gov or player_in_exco) and ((player_party = "sr" and sr_industrial_policy >= 1) or (player_party = "m" and m_industrial_policy >= 1) or (player_party = "b"))
 on-arrival: prov_gov_legitimacy += 5; industry *= 1.06; capital_flight_progress -= 5; industries_socialized += 20*(prov_gov_efficacy)
 
-Workers' councils have taken over the operation of factories abandoned by the capitalists, and are doing their best to keep them in operation. However, they are unable to fully 
+노동자 평의회들이 자본가들이 버리고 떠난 공장의 운영권을 인수하여 가동을 유지하기 위해 고군분투하고 있습니다. 하지만 이들만으로는 모든 문제를 해결하기에 역부족입니다.
 
 
 @assuage
-title: Can we assuage the capitalists somehow?
-unavailable-subtitle: [? if not player_in_gov: We must be in government. ?]
+title: 자본가들을 달랠 방안이 있는가?
+unavailable-subtitle: [? if not player_in_gov: 정부에 참여하고 있어야 합니다. ?]
 choose-if: player_in_gov
 
-The capitalists demand the suppression of labor movements and budget austerity.
+자본가들은 노동 운동에 대한 탄압과 강력한 긴축 재정을 요구하고 있습니다.
 
 - @suppress
 - @austerity
@@ -51,41 +51,41 @@ The capitalists demand the suppression of labor movements and budget austerity.
 - @nothing
 
 @suppress
-title: Suppress worker unrest with the city militias.
-subtitle: Use the city militias and loyal troops if we must. This will be dangerous.
-unavailable-subtitle: The city militias are not strong enough.
+title: 도시 민병대를 동원해 노동자 소요를 진압한다.
+subtitle: 필요하다면 도시 민병대와 충성 부대를 투입한다. 이는 매우 위험한 선택이 될 것이다.
+unavailable-subtitle: 도시 민병대의 세력이 충분하지 않습니다.
 view-if: ((player_party = "k" and k_in_gov) or (player_party = "m" and m_in_gov) or (player_party = "sr" and sr_in_gov))
 choose-if: loyal_troops_strength + city_militia_strength > workers_militia_strength
 on-arrival: workers_m -= 8 if m_in_gov; workers_sr -= 8 if sr_in_gov; workers_k -= 15; workers_b += 8*(1-b_dissent); labor_unrest -= 10*unrest_modifier; city_militia_independent += 10; city_militia_strength *= 0.8; prov_gov_legitimacy -= 10; industry *= 1.08; capital_flight_progress -= 5; labor_unrest_timer += 4
 
-We have given the order to suppress strikes and factory council organizing with force if necessary. And force was used. This is a dark day in Russian history, another Bloody Sunday, an action that one would think only the Tsars would commit.
+우리는 필요할 경우 무력을 동원해서라도 파업과 공장 평의회 조직화를 저지하라는 명령을 내렸습니다. 그리고 실제로 무력이 행사되었습니다. 이는 러시아 역사의 비극적인 날이며, 차르 체제에서나 일어날 법한 또 다른 '피의 일요일'로 기록될 것입니다.
 
-Many members of the city militia have chosen to resign rather than commit another action such as this.
+많은 도시 민병대 대원들이 이러한 반인륜적인 행위에 가담하기를 거부하며 사직서를 제출했습니다.
 
 
 @austerity
-title: Commit to budget austerity.
-unavailable-subtitle: There is nothing left to cut.
+title: 긴축 재정을 실시한다.
+unavailable-subtitle: 더 이상 삭감할 예산이 없습니다.
 choose-if: spending > -5
 on-arrival: budget += 2; spending -= 2; middle_none += 5; workers_none += 5; soldiers_none += 5;  workers_m -= 3 if player_party = "m"; workers_sr -= 3 if player_party = "sr"; workers_k -= 3 if player_party = "k"; middle_m -= 3 if player_party = "m"; middle_sr -= 3 if player_party = "sr"; middle_k -= 3 if player_party = "k"; soldiers_m -= 5 if player_party = "m"; soldiers_sr -= 5 if player_party = "sr"; soldiers_k -= 5 if player_party = "k"; train_capacity *= 0.99; morale -= 0.04; benefits -= 1; monthly_inflation -= 0.4; prov_gov_efficacy -= 0.06; labor_unrest += 2; capital_flight_progress -= 5
 
-Cutting the budget hurts the workers and middle class, and also reduces the morales of the soldiers and railroad workers, two of the largest groups of government employees. This makes them less effective at their jobs.
+예산 삭감은 노동자와 중산층에게 고통을 안겨줄 뿐만 아니라, 공무원의 대다수를 차지하는 병사와 철도 노동자들의 사기를 저하시킵니다. 이는 결국 행정 효율성의 저하로 이어질 것입니다.
 
 
 @both
-title: Suppress worker unrest and commit to budget austerity.
-subtitle: This will be dangerous.
-unavailable-subtitle: [? if not (loyal_troops_strength + city_militia_strength > workers_militia_strength) : The city militias are not strong enough. ?]
+title: 노동자 소요 진압과 긴축 재정을 동시에 실시한다.
+subtitle: 이는 매우 위험한 선택이 될 것입니다.
+unavailable-subtitle: [? if not (loyal_troops_strength + city_militia_strength > workers_militia_strength) : 도시 민병대의 세력이 충분하지 않습니다. ?]
 view-if: ((player_party = "k" and k_in_gov) or (player_party = "m" and m_in_gov) or (player_party = "sr" and sr_in_gov))
 choose-if: loyal_troops_strength + city_militia_strength > workers_militia_strength
 on-arrival: workers_m -= 8 if m_in_gov; workers_sr -= 8 if sr_in_gov; workers_k -= 15; workers_b += 8*(1-b_dissent); labor_unrest -= 10*unrest_modifier; city_militia_independent += 10; city_militia_strength *= 0.8; prov_gov_legitimacy -= 15; industry *= 1.12; capital_flight_progress -= 5; labor_unrest_timer += 4; budget += 2; spending -= 2; middle_none += 5; workers_none += 5; soldiers_none += 5;  workers_m -= 3 if player_party = "m"; workers_sr -= 3 if player_party = "sr"; workers_k -= 3 if player_party = "k"; middle_m -= 3 if player_party = "m"; middle_sr -= 3 if player_party = "sr"; middle_k -= 3 if player_party = "k"; soldiers_m -= 5 if player_party = "m"; soldiers_sr -= 5 if player_party = "sr"; soldiers_k -= 5 if player_party = "k"; train_capacity *= 0.99; morale -= 0.04; benefits -= 1; monthly_inflation -= 0.4; prov_gov_efficacy -= 0.06; labor_unrest += 2; capital_flight_progress -= 5
 
-We have sent in the militias to suppress workers, and cut the government budget. This assuages the capitalists and increases their confidence in our government, but it severely hurts the government's credibility with the masses.
+민병대를 투입해 노동자들을 진압하는 동시에 정부 예산을 삭감했습니다. 이 조치로 자본가들의 불안은 해소되고 정부에 대한 신뢰는 높아졌으나, 민중들 사이에서 정부의 신뢰도는 바닥으로 추락했습니다.
 
 
 
 
 @nothing
-title: There is nothing we can do.
+title: 우리가 할 수 있는 일은 없다.
 
-There is nothing we can do.
+우리가 할 수 있는 일은 아무것도 없습니다.

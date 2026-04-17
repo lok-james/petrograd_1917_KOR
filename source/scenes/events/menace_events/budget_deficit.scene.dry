@@ -1,17 +1,17 @@
-title: Budget Deficit
-subtitle: The budget deficit must be addressed somehow...
+title: 예산 적자
+subtitle: 예산 적자 문제를 어떻게든 해결해야 합니다...
 view-if: budget <= -4
 new-page: true
 on-arrival: capital_flight_progress += 1; prov_gov_legitimacy -= 5; monthly_inflation += 0.2;
 go-to: budget_deficit_self if ((player_party = "k" and k_in_gov and (finance_minister_party = "Kadet" or finance_minister_party = "Independent" or finance_minister_party = "Progressive" or finance_minister_party = "Octobrist" or finance_minister_party = "Trudovik" or finance_minister_party = "Popular Socialist")) or (player_party = "sr" and sr_in_gov and (finance_minister_party = "SR" or finance_minister_party = "Trudovik" or finance_minister_party = "Popular Socialist")) or (player_party = "m" and m_in_gov and finance_minister_party = "Menshevik")); budget_deficit_other if not ((player_party = "k" and k_in_gov and (finance_minister_party = "Kadet" or finance_minister_party = "Independent" or finance_minister_party = "Progressive" or finance_minister_party = "Octobrist" or finance_minister_party = "Trudovik" or finance_minister_party = "Popular Socialist")) or (player_party = "sr" and sr_in_gov and (finance_minister_party = "SR" or finance_minister_party = "Trudovik" or finance_minister_party = "Popular Socialist")) or (player_party = "m" and m_in_gov and finance_minister_party = "Menshevik"))
 tags: event
 
-= Budget Deficit
+= 예산 적자
 
 @budget_deficit_self
 go-to: budget_deficit_menu
 
-We are spending more than our revenues. How do we address the hole in our budget?
+현재 지출이 세입을 초과하고 있습니다. 예산에 난 구멍을 어떻게 메워야 할까요?
 
 @budget_deficit_menu
 
@@ -23,55 +23,55 @@ We are spending more than our revenues. How do we address the hole in our budget
 
 
 @print_money
-title: We can always turn on the money printers...
-subtitle: +2 budget
+title: 화폐를 찍어낸다...
+subtitle: 예산 +2
 view-if: budget < 0
 on-arrival: monthly_inflation += 0.4; budget += 2; workers_none += 5; middle_none += 5; soldiers_none += 5;
 go-to: budget_deficit_menu
 
-We have turned on the money printers. This is bad for our government's legitimacy, and will contribute to inflation.
+화폐 인쇄기를 가동했습니다. 이 조치는 정부의 정통성을 훼손하고 인플레이션을 가속화할 것입니다.
 
 @foreign_loans
-title: Seek out more foreign loans.
-subtitle: +2 budget
+title: 외채 도입을 추진한다.
+subtitle: 예산 +2
 view-if: budget < 0
-unavailable-subtitle: Our relation with the West is not good enough.
+unavailable-subtitle: 서구 열강과의 관계가 충분히 우호적이지 않습니다.
 choose-if: west_relation >= 60
 on-arrival: west_relation -= 10; west_loans += 2; foreign_debt += 2; budget += 2;
 go-to: budget_deficit_menu
 
-We have taken out more loans from the Western powers. This reduces our relations, and may impede our opportunity to take out loans again.
+서구 열강으로부터 추가 차관을 도입했습니다. 이로 인해 외교 관계가 다소 소원해졌으며, 향후 추가 차관 도입에 어려움을 겪을 수 있습니다.
 
 @raise_taxes
-title: Raise taxes.
-subtitle: +2 budget
-unavailable-subtitle: Taxes are already too high.
+title: 세금을 인상한다.
+subtitle: 예산 +2
+unavailable-subtitle: 세율이 이미 너무 높습니다.
 choose-if: income_taxes < 5 and business_taxes < 5
 view-if: budget < 0
 on-arrival: budget += 2; income_taxes += 1; business_taxes += 1; middle_none += 7; workers_none += 7; capital_flight_progress += 2; workers_m -= 6 if player_party = "m"; workers_sr -= 6 if player_party = "sr"; workers_k -= 6 if player_party = "k"; middle_m -= 9 if player_party = "m"; middle_sr -= 9 if player_party = "sr"; middle_k -= 9 if player_party = "k"; monthly_inflation -= 0.4;
 go-to: budget_deficit_menu
 
-We have raised income and business taxes to cover our budget deficit. This hurts our support among the workers and middle class, and raises the threat of capital flight.
+예산 적자를 메우기 위해 소득세와 법인세를 인상했습니다. 이 조치는 노동자와 중산층의 지지율을 떨어뜨리고, 자본 도피의 위험을 높일 것입니다.
 
 
 @bonds
-title: Issue more war bonds.
-subtitle: +2 budget
+title: 전쟁 국채를 추가로 발행한다.
+subtitle: 예산 +2
 view-if: budget < 0
-unavailable-subtitle: People cannot afford any more bonds.
+unavailable-subtitle: 국민들이 더 이상 국채를 매입할 여력이 없습니다.
 choose-if: bonding_capacity >= 2
 on-arrival: budget += 2; bonding_capacity -= 2; monthly_inflation -= 0.3;
 go-to: budget_deficit_menu
 
-War bonds are effectively a tax that takes money out of circulation. There is a limited appetite for people to purchase war bonds, however.
+전쟁 국채는 시중의 통화를 회수하는 일종의 세금과 같은 역할을 합니다. 그러나 국민들의 국채 매입 여력에는 한계가 있습니다.
 
 
 @done
-title: Finally, the budget is balanced.
-subtitle: But at what cost?
+title: 마침내 예산 균형을 맞췄다.
+subtitle: 하지만 그 대가는 무엇이었죠?
 view-if: budget >= 0
 
-Finally, the budget has been balanced. But at what cost to the people?
+마침내 예산의 균형이 잡혔습니다. 하지만 인민이 치러야 할 대가는 무엇일까요?
 
 
 
@@ -80,4 +80,4 @@ on-arrival: budget = 0; monthly_inflation += 0.2; prov_gov_legitimacy -= 2; capi
 
 # TODO: this should reduce inter-party relations.
 
-The Provisional Government is running a budget deficit. To plug the deficit, the government attempts to do a combination of raising taxes, taking out foreign and domestic loans, and printing money. These add to the present inflation.
+임시 정부가 예산 적자에 직면해 있습니다. 정부는 이를 해결하기 위해 증세, 내외채 도입, 화폐 발행 등의 수단을 동원하고 있습니다. 이러한 조치들은 현재의 인플레이션을 더욱 악화시키고 있습니다.
