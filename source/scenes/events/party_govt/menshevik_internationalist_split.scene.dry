@@ -1,5 +1,5 @@
-title: Menshevik-Internationalists split! 
-subtitle: The more left-leaning Mensheviks are splitting off to form a new party. 
+title: 멘셰비키 국제주의파 분열! 
+subtitle: 좌익 성향의 멘셰비키들이 탈당하여 신당을 창당하고 있습니다. 
 view-if: internationalist_dissent > m_split_threshold and not internationalist_split
 max-visits: 1 
 go-to: m_internationalist_split

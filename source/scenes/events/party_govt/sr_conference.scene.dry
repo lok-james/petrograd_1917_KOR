@@ -1,22 +1,22 @@
-title: SR Party Convention
-subtitle: The Third Convention of the Party of Socialist-Revolutionaries
+title: 사회혁명당 전당대회
+subtitle: 제3차 사회혁명당 전당대회
 new-page: True
 view-if: not sr_is_player and month = 5 and week = 4 and sr_conference_seen = 0
 on-arrival: sr_conference_seen += 1
 max-visits: 1
 tags: event
 
-= SR Party Convention
+= 사회혁명당 전당대회
 
 # depending on actions, the party either adopts left-SR or right-SR or center-SR platform.
 
 # Source: Radkey, The Agrarian Foes of Bolshevism
 
-There is a national convention of the Party of Socialist-Revolutionaries held in Petrograd, where the party is to decide its program for the post-revolutionary era. This is the first convention in a decade, and it is crucial for the party's future direction.
+페트로그라드에서 사회혁명당 전당대회가 개최되어, 혁명 이후 시대를 위한 당의 강령을 결정하고자 합니다. 10년 만에 열리는 이번 대회는 당의 향후 행보를 결정지을 중대한 분수령이 될 것입니다.
 
-The SRs are torn by the issue of the war and the relation to the Provisional Government. Left-wing SRs favor an internationalist policy that calls for a separate peace, and the formation of an all-socialist government to replace the bourgeois Provisional Government. The broad centrist faction, with both left-leaning and right-leaning sub-factions, is united in opposing a separate peace and instead calling for a negotiated general peace without annexations or indemnities (i.e. the "revolutionary defensist" formula). The rightmost SRs favor a policy of patriotic national defense and unconditional support for the Allies of France and Britain, and support a governing coalition with the bourgeoisie.
+현재 사회혁명당은 전쟁 지속 여부와 임시 정부와의 관계 설정을 두고 심각한 내홍을 겪고 있습니다. 좌파 사회혁명당원들은 단독 강화를 주장하는 국제주의 노선을 지지하며, 부르주아 중심의 임시 정부를 대신할 순수 사회주의 정부 구성을 요구합니다. 좌우 양측에 하부 파벌을 둔 광범위한 중앙파는 단독 강화에는 반대하되, 영토 병합이나 배상금 없는 협상에 의한 보편적 평화(이른바 '혁명적 방위주의')를 촉구하며 단결하고 있습니다. 가장 우측의 사회혁명당원들은 애국적인 조국 방위와 영·프 연합군에 대한 무조건적 지지를 선호하며, 부르주아 세력과의 연립 정부 구성을 지지합니다.
 
-What will happen at this conference? Will we attempt to interfere?
+이번 대회에서 어떤 결론이 내려질까요? 우리가 개입해야 할까요?
 
 - @support_left_srs
 - @support_right_srs
@@ -24,12 +24,12 @@ What will happen at this conference? Will we attempt to interfere?
 
 
 @support_left_srs
-title: Support the Left-SRs.
+title: 사회혁명당 좌파를 지지한다.
 choose-if: ((player_party = "m" and m_sr_relation >= 60) or (player_party = "b" and b_sr_relation >= 60) or (player_party = "k" and sr_k_relation >= 60)) and ((player_party = "m" and m_war_policy >= 2) or player_party = "b")
 unavailable-subtitle: [? if (player_party = "m" and m_sr_relation < 60) or (player_party = "b" and b_sr_relation < 60) or (player_party = "k" and sr_k_relation < 60): Our relation with the SRs is not good enough. ?][? if not ((player_party = "m" and m_war_policy >= 2) or player_party = "b"): Our party does not support the Left-SR positions. ?]
 on-arrival: left_sr_strength += 2*sr_support_change; right_sr_strength -= 2*sr_support_change; right_sr_dissent += 6;
 
-We have supported the Left-SRs in this conference.
+이번 대회에서 사회혁명당 좌파에 힘을 실어주었습니다.
 
 - @left_sr_dominate
 - @right_center_dominate
@@ -37,34 +37,34 @@ We have supported the Left-SRs in this conference.
 
 
 @support_right_srs
-title: Support the Right-SRs.
+title: 사회혁명당 우파를 지지한다.
 choose-if: ((player_party = "m" and m_sr_relation >= 60) or (player_party = "b" and b_sr_relation >= 60) or (player_party = "k" and sr_k_relation >= 60)) and ((player_party = "m" and m_war_policy <= 1) or player_party = "k")
 unavailable-subtitle: [? if (player_party = "m" and m_sr_relation < 60) or (player_party = "b" and b_sr_relation < 60) or (player_party = "k" and sr_k_relation < 60): Our relation with the SRs is not good enough. ?][? if not ((player_party = "m" and m_war_policy <= 1) or player_party = "k"): Our party does not support the Right-SR positions. ?]
 on-arrival: right_sr_strength += 2*sr_support_change; left_sr_strength -= 2*sr_support_change; left_sr_dissent += 6;
 
-We have supported the Right-SRs in this conference.
+이번 대회에서 사회혁명당 우파에 힘을 실어주었습니다.
 
 - @left_sr_dominate
 - @right_center_dominate
 
 @no_interference
-title: We will not interfere.
+title: 개입하지 않는다.
 
 - @left_sr_dominate
 - @right_center_dominate
 
 
 @left_sr_dominate
-title: The Left dominates the conference.
+title: 좌파가 대회를 주도한다.
 view-if: left_sr_strength > right_sr_strength + center_sr_strength
 on-arrival: sr_leadership = 1; sr_war_policy = 2; sr_prov_gov_policy = 3; sr_industrial_policy = 2; right_sr_dissent += 6;
 
-Led by radicals such as Maria Spirodonova, Boris Kamkov, and Mark Natanson, the left has led the party towards a position of internationalism regarding the war, and opposition to the Provisional Government.
+마리아 스피리도노바, 보리스 캄코프, 마르크 나탄손 등 급진파의 주도하에, 당은 전쟁에 대한 국제주의적 입장과 임시 정부에 대한 반대 노선을 확정했습니다.
 
 
 @right_center_dominate
-title: The Right and Center dominate the conference.
+title: 우파와 중앙파가 대회를 주도한다.
 view-if: right_sr_strength + center_sr_strength >= left_sr_strength
 on-arrival: sr_leadership = 0; sr_war_policy = 1; sr_prov_gov_policy = 0; sr_nationality_policy = 0; left_sr_dissent += 6
 
-Through a series of convoluted resolutions by leaders such as Abram Gots and Viktor Chernov, the SRs in essence adopt a revolutionary defensist policy towards the war, and support for the Provisional Government. They have also adopted a more centralist policy regarding the nationalities.
+아브람 고츠와 빅토르 체르노프 같은 지도자들이 제안한 일련의 복잡한 결의안들을 통해, 사회혁명당은 사실상 전쟁에 대한 혁명적 방위주의 정책을 채택하고 임시 정부 지지를 선언했습니다. 또한 민족 문제에 있어서도 보다 중앙집권적인 정책을 받아들였습니다.

@@ -1,4 +1,4 @@
-title: Soviet Government Formation
+title: 소비에트 정부 구성
 view-if: government_form = 1
 on-arrival: {!
 Q.government_form = 1;
@@ -76,13 +76,13 @@ if (Q.player_party == 'm') {
 }
 !}
 
-= Forming a Soviet Government
+= 소비에트 정부 구성
 
-We are forming a government based in the All-Russian Soviet of Workers' and Soldiers' Deputies. The Executive Committee of the Soviet will decide the composition of the new government.
+전러시아 노동자 및 병사 대표 소비에트에 기반한 새로운 정부를 구성합니다. 소비에트 집행 위원회가 새 내각의 인선과 구성을 결정할 것입니다.
 
-Chair: [+ soviet_chair +] ([+ soviet_chair_party +])
+의장: [+ soviet_chair +] ([+ soviet_chair_party +])
 
-Executive committee: [? if m_in_exco: Mensheviks, ?] [? if sr_in_exco: SRs ?] [? if b_in_exco: Bolsheviks ?][? if defensist_in_exco:, Menshevik-Defensists ?][? if internationalist_in_exco:, Menshevik-Internationalists ?][? if left_sr_in_exco:, Left-SRs ?][? if right_sr_in_exco:, Right-SRs ?]
+집행 위원회 구성: [? if m_in_exco: 멘셰비키, ?] [? if sr_in_exco: 사회혁명당 ?] [? if b_in_exco: 볼셰비키 ?][? if defensist_in_exco:, 멘셰비키 방어주의파 ?][? if internationalist_in_exco:, 멘셰비키 국제주의파 ?][? if left_sr_in_exco:, 좌파 사회혁명당 ?][? if right_sr_in_exco:, 우파 사회혁명당 ?]
 
-- @m_join_prov_gov: We must choose our ministries.
-- @sr_join_prov_gov: We must choose our ministries.
+- @m_join_prov_gov: 담당할 부처를 선택해야 한다.
+- @sr_join_prov_gov: 담당할 부처를 선택해야 한다.

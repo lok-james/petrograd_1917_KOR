@@ -1,5 +1,5 @@
-title: Provisional Government Policies
-subtitle: The Provisional Government is enacting its policies...
+title: 임시 정부의 정책 시행
+subtitle: 임시 정부가 주요 정책들을 집행하고 있습니다...
 view-if: prov_gov_policies_timer = 0 and ((player_party = "m" and not m_in_gov) or (player_party = "b" and not b_in_gov) or (player_party = "sr" and not sr_in_gov))
 new-page: true
 on-arrival: prov_gov_policies_timer += 4; prov_gov_policies_seen += 1;
@@ -9,21 +9,21 @@ tags: event
 
 # different policies for every month...
 
-= Provisional Government Policies
+= 임시 정부의 정책 시행
 
 @week1
 on-arrival: womens_rights += 1; ca_progress += 1; freedom_of_religion += 1; budget -= 2; grain_price += 1; food_sold += 0.015*prov_gov_efficacy; grain_monopoly = 1; monthly_inflation += 0.01;
 
-The Provisional Government has had a busy month of policy-making. It has expanded women's rights, giving women the right to vote, and it has decreed freedom of religion. Preparations for a Constituent Assembly election have begun, but it is slow going.
+임시 정부는 지난 한 달 동안 수많은 정책을 쏟아내며 분주한 시간을 보냈습니다. 여성에게 참정권을 부여하여 권리를 확대했으며, 종교의 자유를 공식 선포했습니다. 제헌 의회 선거를 위한 준비 작업도 시작되었으나 진행 속도는 더딘 편입니다.
 
-On the economic side, the Provisional Government has created a state monopoly for grain purchases in order to stabilize the price of food.
+경제 분야에서는 식량 가격 안정을 위해 국가가 곡물 매입을 독점하는 체제를 구축했습니다.
 
 @week2
 on-arrival: land_reform_progress += 1 if sr_in_gov; land_reform = 1 if sr_in_gov; budget -= 2;
 
-The Provisional Government has started on its land reform program, creating land committees.
+임시 정부는 토지 위원회를 설치하고 토지 개혁 프로그램을 본격적으로 가동하기 시작했습니다.
 
-In preparation for a possible future military offensive, the army is reinstating discipline in the ranks.
+또한 향후 예상되는 군사적 공세에 대비하여, 군 내부의 기강을 바로잡는 작업에 착수했습니다.
 
 # month 1: pardon for all political prisoners, state monopoly for food
 

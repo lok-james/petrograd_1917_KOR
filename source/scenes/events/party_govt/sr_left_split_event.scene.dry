@@ -1,5 +1,5 @@
-title: Left-SRs split!
-subtitle: The left-wing Socialist-Revolutionaries are splitting off to form a new party.
+title: 좌파 사회혁명당 분열!
+subtitle: 좌파 성향의 사회혁명당원들이 탈당하여 신당을 창당하고 있습니다.
 view-if: left_sr_dissent > sr_split_threshold and not left_sr_split
 max-visits: 1
 go-to: sr_left_split

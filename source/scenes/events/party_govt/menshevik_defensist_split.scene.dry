@@ -1,5 +1,5 @@
-title: Menshevik-Defensists split!
-subtitle: The more right-leaning Mensheviks are splitting off to form a new party.
+title: 멘셰비키 방위주의파 분열!
+subtitle: 우익 성향의 멘셰비키들이 탈당하여 신당을 창당하고 있습니다.
 view-if: defensist_dissent > m_split_threshold and not defensist_split
 max-visits: 1
 go-to: m_defensist_split
