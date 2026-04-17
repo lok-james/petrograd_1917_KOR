@@ -122,7 +122,7 @@ Q.unemployed_disp = Q.unemployed.toFixed(1);
 
 국가 예산: [+ budget +]
 
-[? if not ca_election_held: 제헌의회 선거 일정: [? if ca_scheduled: [+ next_election_year +]년 [+ next_election_month : month + [+ next_election_week +]주차로 예정 ?] [? if not ca_scheduled: 아직 일정이 잡히지 않았음 ?] ?]
+[? if not ca_election_held: 제헌의회 선거 일정: [? if ca_scheduled: [+ next_election_year +]년 [+ next_election_month : month +] [+ next_election_week +]주차로 예정 ?] [? if not ca_scheduled: 아직 일정이 잡히지 않았음 ?] ?]
 
 [? if ca_election_held: 제헌의회 소집일: [+ ca_year +]년 [+ ca_month : month +] [+ ca_week +]주차 ?]
 
