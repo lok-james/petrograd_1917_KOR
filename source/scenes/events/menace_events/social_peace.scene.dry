@@ -1,5 +1,5 @@
-title: Social Peace?
-subtitle: Unrest and instability have been reduced.
+title: 사회적 안정
+subtitle: 소요와 불안이 잦아들었습니다.
 new-page: true
 view-if: labor_unrest <= 30 and rural_unrest <= 30 and soldier_unrest <= 30 and crime <= 50 and not in_civil_war
 max-visits: 1
@@ -9,6 +9,6 @@ tags: event
 
 # TODO: maybe if you get a coup attempt, you shouldn't get social peace lmao
 
-= Social Peace
+= 사회적 안정
 
-Unrest among the workers, soldiers, and peasantry has been successfully reduced, at least for now. Common crime is also on a downward trend. Russia is finally entering a time of internal peace, thanks to the policies of the [+ government_form : government_form +].
+노동자, 병사, 그리고 농민들 사이의 소요가 마침내 진정되었습니다. 일반 범죄율 또한 하락세를 보이고 있습니다. 러시아는 이제 [+ government_form : government_form +]의 현명한 정책 덕분에 내부적인 평화와 안정의 시기로 접어들고 있습니다.

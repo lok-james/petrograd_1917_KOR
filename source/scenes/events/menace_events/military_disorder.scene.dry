@@ -1,13 +1,13 @@
-title: Military Disorder
-subtitle: Desertions, attacks on officers, refusals to follow orders...
+title: 군 기강 해이
+subtitle: 탈영, 장교 폭행, 명령 불복종...
 new-page: true
 view-if: military_disorder_timer = 0 and soldier_unrest > 30 and not is_armistice and not is_peace
 on-arrival: military_disorder_timer += 6; discipline *= 0.9; morale *= 0.95; northern_front_soldiers -= 1 if northern_front_soldiers > 0; western_front_soldiers -= 1 if western_front_soldiers > 0; southwestern_front_soldiers -= 1 if southwestern_front_soldiers > 0; romanian_front_soldiers -= 1 if romanian_front_soldiers > 0; reserve_soldiers -= 1 if reserve_soldiers > 0;
 tags: event
 
-= Military Disorder
+= 군 기강 해이
 
-There is dissension throughout the ranks. The pent-up inequities and resentments in the army have finally reached a boiling point with the revolution. Soldiers are attacking their officers, and desertions have become commonplace. Many units are also refusing orders to attack, and in some cases are even fraternizing with the enemy.
+군 내부의 불만이 폭발 직전입니다. 군대에 오랫동안 쌓여온 불평등과 원한이 혁명을 기점으로 마침내 터져 나왔습니다. 병사들이 장교를 공격하는 일이 빈번해졌고, 탈영은 일상이 되었습니다. 많은 부대가 공격 명령을 거부하고 있으며, 심지어 전선에서 적군과 내통하거나 어울리는 사례까지 발생하고 있습니다.
 
 - @support_soldiers
 - @councils_discipline
@@ -15,31 +15,31 @@ There is dissension throughout the ranks. The pent-up inequities and resentments
 - @nothing
 
 @support_soldiers
-title: Support the soldiers' class struggle!
+title: 병사들의 계급 투쟁을 적극 지지한다!
 view-if: player_party = "b"
 on-arrival: m_b_relation -= 5; b_sr_relation -= 5; b_k_relation -= 10; discipline -= 0.02; morale -= 0.02;
 
-Our propaganda is aimed at accentuating the soldiers' struggle against the aristocratic officer class! This increases the soldiers' unrest, making government actions to restore order ineffective.
+우리의 선전 활동은 귀족 출신 장교 계급에 맞선 병사들의 투쟁을 고취하는 데 집중되어 있습니다! 이는 병사들의 불만을 더욱 부채질하여, 질서를 회복하려는 정부의 노력을 무력화시키고 있습니다.
 
 @councils_discipline
-title: Task the soldiers' councils to restore discipline.
+title: 병사 평의회에 군 기강 확립의 전권을 위임한다.
 view-if: (player_party = "sr" and sr_in_exco) or (player_party = "m" and m_in_exco) or (player_party = "b" and b_in_exco)
 on-arrival: soldier_unrest -= 10*unrest_modifier; morale += 0.01; discipline += 0.01
 
-Commissars from the Petrograd Soviet have been sent to the frontlines to guide the soldiers' councils into restoring order. This is very slightly effective in restoring morale and discipline.
+페트로그라드 소비에트에서 파견된 위원들이 전선을 방문하여 병사 평의회가 스스로 질서를 회복할 수 있도록 지도하고 있습니다. 이는 군의 사기와 기강을 회복하는 데 아주 미미한 효과를 거두고 있습니다.
 
 
 @restore_discipline
-title: Impose harsher punishments to restore discipline.
+title: 강력한 처벌을 통해 군 기강을 바로잡는다.
 view-if: (player_party = "sr" and sr_in_gov) or (player_party = "m" and m_in_gov) or (player_party = "k" and k_in_gov)
 on-arrival: soldier_unrest -= 10*unrest_modifier; discipline += 0.02; morale -= 0.01; soldiers_m -= 5 if m_in_gov; soldiers_sr -= 5 if sr_in_gov; soldiers_k -= 5 if k_in_gov; soldiers_other -= 5; m_b_relation -= 5 if m_in_gov and not b_in_gov; b_sr_relation -= 5 if sr_in_gov and not b_in_gov; soldiers_b += 5 if not b_in_gov
 
-The government has imposed harsher punishments for deserters. This is effective in restoring discipline, but morale is still low, and the soldiers' political allegiances are falling towards the Bolsheviks.
+정부는 탈영병에 대해 더욱 엄격한 처벌 규정을 도입했습니다. 이 조치는 기강을 바로잡는 데는 효과적이었으나 군의 사기는 여전히 낮으며, 병사들의 정치적 지지는 점차 볼셰비키 쪽으로 기울고 있습니다.
 
 @nothing
-title: There is nothing we can do.
+title: 할 수 있는 일이 없다.
 on-arrival: soldier_unrest -= 4*unrest_modifier if k_in_gov; soldiers_k -= 4 if k_in_gov; soldiers_m -= 4 if m_in_gov; soldiers_sr -= 3 if sr_in_gov; soldiers_other -= 5
 
-[? if k_in_gov: The Kadets in the Provisional Government take action by restoring the death penalty for deserting troops. ?]
+[? if k_in_gov: 임시 정부 내의 카데트들은 탈영병에 대한 사형제를 부활시키는 강경책을 내놓았습니다. ?]
 
 # if the player is not in government: the government will restore discipline

@@ -1,48 +1,48 @@
-title: High Inflation
-subtitle: Workers are seeing their purchasing power decline.
+title: 극심한 인플레이션
+subtitle: 노동자들의 구매력이 눈에 띄게 약화되고 있습니다.
 view-if: inflation >= 25 and high_inflation_timer = 0
 new-page: true
 on-arrival: capital_flight_progress += 1; industry *= 0.99; high_inflation_timer = 12 if inflation >= 25; high_inflation_timer = 8 if inflation >= 50; high_inflation_timer = 4 if inflation >= 90; prov_gov_legitimacy -= 3; labor_unrest += 2 if labor_unrest < 70; food_sold -= 0.002; coup_progress += 1; crime_rate += 3 if crime_rate < 50
 tags: event
 
-= High Inflation
+= 극심한 인플레이션
 
-Prices are spiralling out of control, and everyone across Russia is seeing their purchasing power decline. The workers are suffering, unable to purchase enough food and necessities. Factories are having difficulty maintaining their supply chains. The peasants are hoarding grain, since inflation is making currency useless.
+물가가 걷잡을 수 없이 치솟으면서 러시아 전역에서 국민들의 구매력이 급감하고 있습니다. 노동자들은 식량과 생필품을 제때 구하지 못해 고통받고 있으며, 공장들은 원자재 공급망 유지에 난항을 겪고 있습니다. 농민들은 화폐 가치 하락으로 인해 돈이 종잇조각이 되자 곡물을 내놓지 않고 쌓아두기만 합니다.
 
-Is there anything we can do?
+정부 차원에서 취할 수 있는 조치가 있을까요?
 
 - @soviet_control
 - @price_controls
 - @austerity
 - @campaign
-- @nothing: Nothing can be done.
+- @nothing: 현재로서는 할 수 있는 일이 없다.
 
 @soviet_control
-title: The Soviet should impose a regime of price and wage controls.
-subtitle: If the Provisional Government is unable or unwilling, the Soviet must play a larger role in organizing the economy.
+title: 소비에트가 주도하여 가격 및 임금 통제 체제를 도입한다.
+subtitle: 임시 정부가 경제 문제를 해결할 능력이 없거나 의지가 부족하다면, 소비에트가 경제 조직화에 더 적극적으로 나서야 합니다.
 view-if: (player_party = "m" and m_in_exco) or (player_party = "sr" and sr_in_exco) or (player_party = "b" and b_in_exco)
-unavailable-subtitle: The Soviet does not yet have the efficacy for this policy.
+unavailable-subtitle: 아직 소비에트의 행정력이 이 정책을 수행하기에 부족합니다.
 choose-if: soviet_efficacy >= 0.7
 on-arrival: monthly_inflation -= 0.3;
 
-We use the influence of the Soviet to coordinate action on prices.
+소비에트의 영향력을 동원해 물가 안정을 위한 조치들을 조율하기 시작했습니다.
 
 @price_controls
-title: Impose price controls and rationing on basic necessities.
-subtitle: This may simply push trade to the black market.
+title: 주요 생필품에 대한 가격 통제와 배급제를 실시한다.
+subtitle: 이 조치는 거래를 암시장으로 숨어들게 만드는 부작용을 낳을 수 있습니다.
 view-if: (player_party = "m" and m_in_gov) or (player_party = "sr" and sr_in_gov) or (player_party = "k" and k_in_gov)
 on-arrival: monthly_inflation -= 0.4 if prov_gov_efficacy >= 0.7; monthly_inflation -= 0.2 if prov_gov_efficacy < 0.7; food_sold -= 0.001;
 
-Price controls and rationing can reduce prices for some goods, but it only further depresses the amount of grain sold by peasants.
+가격 통제와 배급제는 일부 품목의 가격을 낮추는 데 도움이 될 수 있으나, 농민들이 시장에 내놓는 곡물의 양을 더욱 줄어들게 할 뿐입니다.
 
 
 @austerity
-title: Impose a program of austerity.
-subtitle: Raise taxes, cut government spending.
+title: 강력한 긴축 재정 정책을 시행한다.
+subtitle: 증세와 정부 지출 삭감을 병행합니다.
 view-if: (player_party = "m" and m_in_gov) or (player_party = "sr" and sr_in_gov) or (player_party = "k" and k_in_gov)
 on-arrival: budget += 2; middle_none += 5; workers_none += 5; soldiers_none += 5;  workers_m -= 3; workers_sr -= 3; workers_k -= 3; middle_m -= 3; middle_sr -= 3; middle_k -= 3; soldiers_m -= 5; soldiers_sr -= 5; soldiers_k -= 5; train_capacity *= 0.999; morale -= 0.04; benefits -= 1; monthly_inflation -= 0.5 if monthly_inflation >= 5; monthly_inflation -= 0.4 if monthly_inflation >= 4; prov_gov_efficacy -= 0.06; labor_unrest += 1
 
-Our program of austerity severely hurts the workers, middle class, and soldiers.
+긴축 정책의 여파로 노동자, 중산층, 그리고 병사들의 삶이 매우 팍팍해졌습니다.
 
 
 # the soviet should impose a regime of price and wage controls. The soviet must play a larger role in organizing the economy, if the provisional government is unwilling.
@@ -54,11 +54,11 @@ Our program of austerity severely hurts the workers, middle class, and soldiers.
 @nothing
 on-arrival: workers_b += 3*(1-b_dissent) if not b_is_player
 
-There is nothing we can do about this.
+현재 상황에서는 손을 쓸 방도가 없습니다.
 
 @campaign
-title: Campaign against the ineptitude of the Provisional Government!
+title: 임시 정부의 무능을 규탄하는 선전 활동을 전개한다!
 view-if: player_party = "b"
 on-arrival: workers_b += 4*(1-b_dissent)
 
-We use the issue of inflation to campaign against the Provisional Government.
+인플레이션 문제를 부각하며 임시 정부의 무능함을 비판하는 대대적인 선전 활동에 돌입했습니다.

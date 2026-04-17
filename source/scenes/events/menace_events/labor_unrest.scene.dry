@@ -1,15 +1,15 @@
-title: Labor Unrest
-subtitle: A wave of strikes affecting industry.
+title: 노동계의 동요
+subtitle: 산업 전반에 걸친 파업의 물결.
 new-page: true
 view-if: labor_unrest_timer = 0 and labor_unrest >= 40
 on-arrival: labor_unrest_timer += 6; industry *= 0.98;
 tags: event
 
-= Labor Unrest
+= 노동계의 동요
 
-A wave of strikes is roiling Russia's factories. The revolution has given workers the right to organize and strike, and pent-up economic demands are finally expressing themselves. The ongoing inflation is a great source of concern among workers, along with the stagnation of industrial wages. Workers also seek more control over the means of production.
+파업의 물결이 러시아의 공장들을 뒤흔들고 있습니다. 혁명으로 노동자들은 조직권과 단체 행동권을 얻었고, 그동안 억눌려 왔던 경제적 요구들이 마침내 터져 나오기 시작했습니다. 계속되는 인플레이션과 정체된 임금 수준은 노동자들 사이에서 큰 불만의 원인이 되고 있습니다. 또한 노동자들은 생산 수단에 대한 더 많은 통제권을 요구하고 있습니다.
 
-What can we do?
+어떻게 대응해야 할까요?
 
 - @8_hour
 - @8_hour_soviet
@@ -22,75 +22,75 @@ What can we do?
 - @nothing
 
 @suppress
-title: Suppress the labor unrest, with force if needed!
-subtitle: Use the city militias and loyal troops if we must. This will be dangerous.
-unavailable-subtitle: The city militias are not strong enough.
+title: 필요하다면 무력을 동원해서라도 노동 소요를 진압한다!
+subtitle: 도시 민병대와 충성 부대를 투입한다. 이는 매우 위험한 도박이 될 것이다.
+unavailable-subtitle: 도시 민병대의 세력이 충분하지 않습니다.
 view-if: ((player_party = "k" and k_in_gov) or (player_party = "m" and m_in_gov) or (player_party = "sr" and sr_in_gov))
 choose-if: loyal_troops_strength + city_militia_strength > workers_militia_strength
 on-arrival: workers_m -= 8 if m_in_gov; workers_sr -= 8 if sr_in_gov; workers_k -= 15; workers_b += 8*(1-b_dissent); labor_unrest -= 10*unrest_modifier; city_militia_independent += 10; city_militia_strength *= 0.8; prov_gov_legitimacy -= 10; industry *= 1.02; labor_unrest_timer += 4
 
-We have given the order to suppress the strikes with force if necessary. And force was used. This is a dark day in Russian history, another Bloody Sunday, an action that one would think only the Tsars would commit.
+우리는 필요할 경우 무력을 써서라도 파업을 저지하라는 명령을 내렸습니다. 그리고 실제로 무력이 행사되었습니다. 이는 러시아 역사의 비극적인 날이며, 차르 체제에서나 일어날 법한 또 다른 '피의 일요일'로 기록될 것입니다.
 
-Many members of the city militia have chosen to resign rather than commit another action such as this.
+많은 도시 민병대 대원들이 이러한 반인륜적인 행위에 가담하기를 거부하며 사직했습니다.
 
 @8_hour
-title: The Provisional Government should legislate the 8-hour workday.
+title: 임시 정부 차원에서 8시간 노동제를 입법한다.
 view-if: ((player_party = "k" and k_in_gov) or (player_party = "m" and m_in_gov) or (player_party = "sr" and sr_in_gov)) and workday = 0
 on-arrival: monthly_inflation += 0.2; capital_flight_progress += 1; industry *= 0.95; workers_m += 6*(1-m_dissent) if m_in_gov; workers_sr += 6*(1-sr_dissent) if sr_in_gov; workers_b += 5*(1-b_dissent) if b_in_gov; m_k_relation += 6 if player_party = "k"; sr_k_relation += 6 if player_party = "k"; income += 1; labor_unrest -= 15*unrest_modifier; workday = 1; labor_unrest_timer += 6; prov_gov_legitimacy += 5;
 
-Legislating the 8-hour workday mollifies many of the workers' demands. However, this reduces industrial production.
+8시간 노동제의 입법은 노동자들의 요구를 상당 부분 충족시켜 주었습니다. 하지만 이로 인해 산업 생산량은 다소 감소했습니다.
 
 @8_hour_soviet
-title: The Soviet will negotiate with employers for an 8-hour workday.
+title: 소비에트가 고용주들과 협상하여 8시간 노동제를 도입한다.
 view-if: ((player_party = "b" and b_in_exco) or (player_party = "m" and m_in_exco) or (player_party = "sr" and sr_in_exco)) and workday = 0
 on-arrival: monthly_inflation += 0.2; capital_flight_progress += 1; industry *= 0.96; workers_m += 6*(1-m_dissent); workers_sr += 6*(1-sr_dissent); workers_b += 5*(1-b_dissent) if player_party = "b"; m_k_relation -= 4 if player_party != "k"; sr_k_relation -= 4 if player_party != "k"; income += 1; labor_unrest -= 15*unrest_modifier; workday = 1; labor_unrest_timer += 6; prov_gov_legitimacy += 5;
 
-Enacting the 8-hour workday mollifies many of the workers' demands. However, this reduces industrial production.
+8시간 노동제의 실시는 노동자들의 불만을 잠재우는 데 효과적이었습니다. 그러나 산업 생산성의 저하는 피할 수 없었습니다.
 
 @8_hour_soviet_b
-title: The Soviet has negotiated with employers for an 8-hour workday.
+title: 소비에트가 고용주들과의 협상을 통해 8시간 노동제를 쟁취했다.
 view-if: ((player_party = "b" and not b_in_exco) or (player_party = "k" and not k_in_exco) or (player_party = "m" and not m_in_exco) or (player_party = "sr" and not sr_in_exco)) and workday = 0
 on-arrival: monthly_inflation += 0.2; capital_flight_progress += 1; industry *= 0.96; workers_m += 6*(1-m_dissent); workers_sr += 6*(1-sr_dissent); workers_b += 5*(1-b_dissent) if player_party = "b"; m_k_relation -= 4 if player_party != "k"; sr_k_relation -= 4 if player_party != "k"; income += 1; labor_unrest -= 15*unrest_modifier; workday = 1; labor_unrest_timer += 6; prov_gov_legitimacy += 5;
 
 # See Wade p.90
 
-Acting independently, the Petrograd Soviet has negotiated with employers to enact an 8-hour workday. Enacting the 8-hour workday mollifies many of the workers' demands. However, this reduces industrial production.
+페트로그라드 소비에트는 독자적인 행동을 통해 고용주들과 8시간 노동제 도입에 합의했습니다. 이 조치는 노동자들의 열렬한 지지를 받았으나, 산업 생산량은 감소했습니다.
 
 
 
 
 @concessions
-title: The Provisional Government should negotiate minor concessions by both sides.
+title: 임시 정부가 중재하여 노사 양측의 사소한 양보를 끌어낸다.
 view-if: ((player_party = "k" and k_in_gov and workday = 1) or (player_party = "m" and m_in_gov) or (player_party = "sr" and sr_in_gov))
 on-arrival: monthly_inflation += 0.05; workers_m += 2*(1-m_dissent) if m_in_gov; workers_sr += 2*(1-sr_dissent) if sr_in_gov; workers_b += 2*(1-b_dissent) if b_in_gov; workers_k += 2*(1-k_dissent) if k_in_gov; income += 1; labor_unrest -= 5; industry *= 1.01; unemployed += 0.1; prov_gov_legitimacy += 4; labor_unrest_timer += 2
 
-We have negotiated for minor concessions from employers, and some tactical retreat by the workers. The workers are not entirely happy about the deals, but they see us as on their side, for now.
+고용주들의 양보와 노동자들의 전술적 후퇴를 이끌어내며 중재안을 타결시켰습니다. 노동자들이 이 결과에 완전히 만족하는 것은 아니지만, 적어도 현재로서는 정부가 자신들의 편에 서 있다고 느끼고 있습니다.
 
 @soviet_help
-title: The Soviet should support the workers' demands for higher wages and improved working conditions.
+title: 소비에트가 임금 인상과 처우 개선을 요구하는 노동자들의 편에 선다.
 view-if: ((player_party = "b" and b_in_exco) or (player_party = "m" and m_in_exco) or (player_party = "sr" and sr_in_exco) or (player_party = "k" and k_in_exco))
 on-arrival: monthly_inflation += 0.1; capital_flight_progress += 1; workers_m += 5*(1-m_dissent) if m_in_exco; workers_sr += 5*(1-sr_dissent) if sr_in_exco; workers_b += 5*(1-b_dissent) if b_in_exco; m_k_relation -= 4 if m_in_exco; sr_k_relation -= 4 if sr_in_exco; prov_gov_soviet_cooperation -= 0.02; income += 1; labor_unrest -= 5; unemployed += 0.6
 
-We have supported the workers in their economic demands and their struggles with their employers. Strikes are ended with agreements favorable to workers. The employers are somewhat displeased, and higher wages without increased production can lead to more inflation.
+우리는 고용주에 맞선 노동자들의 경제적 요구와 투쟁을 적극적으로 지지했습니다. 파업은 노동자들에게 유리한 조건으로 마무리되었습니다. 고용주들은 강한 불만을 표시하고 있으며, 생산량 증가 없는 임금 인상은 인플레이션을 더욱 부추길 위험이 있습니다.
 
 @soviet_stop
-title: The Soviet should convince the workers to stop striking.
+title: 소비에트가 노동자들을 설득하여 파업을 중단시킨다.
 view-if: ((player_party = "b" and b_in_exco) or (player_party = "m" and m_in_exco) or (player_party = "sr" and sr_in_exco) or (player_party = "k" and k_in_exco))
 on-arrival: workers_m -= 4 if m_in_exco; workers_sr -= 4 if sr_in_exco; workers_b -= 4 if b_in_exco; workers_b += 5 if not b_in_exco; labor_unrest -= 5; production *= 1.02;
 
-The Soviet propaganda organs exhort the workers to stop striking for the sake of stability and unity. Eventually the workers do stop, but the Soviet parties are tainted in the eyes of the workers.
+소비에트 선전 기구들을 동원해 국가의 안정과 단결을 위해 파업을 자제해 줄 것을 노동자들에게 호소했습니다. 결국 파업은 멈췄으나, 소비에트 내 정당들은 노동자들로부터 변절자라는 비판을 받게 되었습니다.
 
 @support
-title: Support the strikes rhetorically.
+title: 파업에 대해 수사적인 지지를 보낸다.
 view-if: (player_party = "b" or player_party = "m" or player_party = "sr") and workday = 1
 on-arrival: labor_unrest -= 1; monthly_inflation += 0.1;
 
-We have supported the strikers with our propaganda, without taking any actions. This might absolve us of any responsibility for their success or failure.
+실질적인 조치 없이 선전 활동을 통해서만 파업을 지지했습니다. 이는 파업의 성패에 따른 책임에서 비껴나기 위한 고육지책일 수도 있습니다.
 
 
 @nothing
-title: There is nothing we can do.
+title: 할 수 있는 일이 없다.
 view-if: workday = 1
 on-arrival: workers_m -= 6 if player_party = "m"; workers_sr -= 6 if player_party = "sr"; workers_b -= 6 if player_party = "b"; workers_k -= 6 if player_party = "k";
 
-There is nothing we can do. The strikes end by themselves, with negotiations from both sides.
+우리가 할 수 있는 일은 없습니다. 파업은 노사 양측의 개별적인 협상을 통해 자연스럽게 마무리될 것입니다.
